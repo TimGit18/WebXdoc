@@ -1,0 +1,223 @@
+<html lang="de">
+    <head>
+        <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>Java Archive Tool</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="http://localhost:8080/xdoc/resources/css/bootstrap.min.css">
+        <link rel="stylesheet" href="http://localhost:8080/xdoc/resources/css/bootstrap-toc.min.css">
+        <link rel="icon" href="http://localhost:8080/xdoc/resources/favicon.ico">
+    </head>
+    <body data-spy="scroll" data-target="#toc">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-2 bg-light">
+                    <figure class="figure">
+                        <img class="figure-img img-fluid rounded" src="http://localhost:8080/xdoc/resources/getsitelogo.png">
+                    </figure>
+                    <nav id="toc" class="sticky-top" data-toggle="toc"></nav>
+                </div>
+                <div class="col-sm-10">
+                    <nav class="navbar navbar-expand-lg sticky-top navbar-light bg-light">
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav mr-auto">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="http://localhost:8080/xdoc/xapp/html/xapp.html">Home</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                    <p></p>
+                        
+                    <h2>Java Archive Tool</h2>
+                        
+                    <p></p>
+                          Das Java Archive Tool (jar) b&uuml;ndelt mehrere Java-Dateien in eine Archivdatei oder JAR-Datei mit dem Suffix .jar. Das Kompressionsformat basiert 
+      auf dem Zip-Format. Ein Java-Archiv kann als externe Bibliothek in dem Klassenpfad einer Anwendung eingebunden werden. Wird mit dem Java-Archiv auch 
+      eine Hauptklasse verpackt, so kann das Archiv als eigene Anwendung gestartet werden.
+    
+                    <p></p>
+                        
+                    <h3>Jar-Kommando</h3>
+                        
+                    <p></p>
+                          Das Jar-Kommando verpackt Klassen in ein Archiv. Der Name des Archivs muss angegeben werden. Um ein neues Archiv zu erzeugen, wird das Jar-Kommando 
+      auf der Kommandozeile der Console mit der folgenden Option aufgerufen:
+    
+                    <p></p>
+                        
+                    <pre>
+                        <code>jar [Optionen] Archivdatei Manifestdatei [-C Klassen] Dateien</code>
+                    </pre>
+                        
+                    <h3>Optionen</h3>
+                        
+                    <p></p>
+                    <b>-c</b>
+                    <p></p>
+                        
+                    <p></p>
+                          Diese Option erzeugt ein neues Archiv (create). 
+    
+                    <p></p>
+                        
+                    <p></p>
+                    <b>-f</b>
+                    <p></p>
+                        
+                    <p></p>
+                          Diese Option benennt den Namen der Archivdatei (file). Entf&auml;llt diese Option, so wird das Archiv an die Standardausgabe gesendet. Die Option 
+      f und der Name der Archivdatei geh&ouml;ren immer zusammen. 
+    
+                    <p></p>
+                        
+                    <p></p>
+                    <b>-m</b>
+                    <p></p>
+                        
+                    <p></p>
+                          Diese Option bezieht eine mitangegebene Manifestdatei mit ein. 
+    
+                    <p></p>
+                        
+                    <p></p>
+                    <b>-t</b>
+                    <p></p>
+                        
+                    <p></p>
+                          Diese Option listet das Inhaltsverzeichnis des Archivs auf.
+    
+                    <p></p>
+                        
+                    <p></p>
+                    <b>-x </b>
+                    <p></p>
+                        
+                    <p></p>
+                          Diese Option extrahiert alle Dateien aus dem Archiv. 
+    
+                    <p></p>
+                        
+                    <p></p>
+                    <b>-C</b>
+                    <p></p>
+                        
+                    <p></p>
+                          Diese Option wechselt zeitweise in das angegebene Verzeichnis (change directory), w&auml;hrend das Jar-Kommando ausgef&uuml;hrt wird. Es f&uuml;gt alle Klassen 
+      des Verzeichnisses dem Archiv hinzu. Das Verzeichnis selbst wird nicht in dem Archiv angelegt. Anschlie&szlig;end wechselt die Ablaufkontrolle wieder in 
+      das urspr&uuml;ngliche Verzeichnis, das vor Ausf&uuml;hrung des Kommandos g&uuml;ltig war. 
+    
+                    <p></p>
+                        
+                    <h3>Manifest-Datei</h3>
+                        
+                    <p></p>
+                          Die Manifestdatei hei&szlig;t normalerweise MANIFEST.MF und besitzt einen Verweis auf die Hauptklasse. Diese Information ist im Parameter Main-Class 
+      der Manifestdatei enthalten:
+    
+                    <p></p>
+                        
+                    <pre>
+                        <code>Main-Class: de.timdomain.application.main.Main</code>
+                    </pre>
+                        
+                    <p></p>
+                          Normalerweise befindet sich die Manifest im zentralen Verzeichnis, in dem Applikationen, Extensionen, Klassenlader und Dienste konfiguriert 
+      werden. Es tr&auml;gt den Namen META-INF und beinhaltet auch die Manifest-Datei. Das Manifest selbst besteht aus Schl&uuml;ssel-Werte-Paaren. 
+    
+                    <p></p>
+                        
+                    <p></p>
+                          Wenn man Werte hat, die aus mehreren Eintr&auml;gen bestehen, so ist es wichtig, diese durch Leerzeichen zu trennen. So k&ouml;nnen im Klassenpfad der 
+      Manifest-Datei mehrere Bibliotheken mitgegeben werden:
+    
+                    <p></p>
+                        
+                    <pre>
+                        <code>
+         	Class-Path: lib/fop.jar 
+           	  lib/avalon-framework-4.2.0.jar 
+                ...
+    </code>
+                    </pre>
+                        
+                    <p></p>
+                          (Dieses Beispiel stammt nicht aus dem Application-Projekt, sondern aus dem xdoc-Projekt selbst)
+    
+                    <p></p>
+                        
+                    <p></p>
+                          Am Schlu&szlig; der Manifest-Datei muss zwingend eine Leerzeile oder eine neue Zeile stehen, da sonst das Java Archive Tool die vorhergehenden Zeilen 
+      nicht erkennt und etwa Bibliotheken nicht einbindet.
+    
+                    <p></p>
+                        
+                    <p></p>
+                          Wenn wir einen Pfad in den Klassenpfad einbinden wollen, der nicht auf eine jar-Datei verweist, sondern (wie im Beispiel) eine Konfigurationsdatei 
+      log4j2.xml im Verzeichnis properties beinhaltet, so sollte dieser Pfad am Anfang des Klassenpfades stehen:
+    
+                    <p></p>
+                        
+                    <pre>
+                        <code>
+          Manifest-Version: 1.0
+          Main-Class: de.timdomain.application.control.Main
+          Class-Path: file:///C:/Users/test/Daten/Java/Applications/application/properties/
+          file:///C:/Users/test/Daten/Java/Libraries/apache-log4j-2.11.1-bin/log4j-api-2.11.1.jar
+          file:///C:/Users/test/Daten/Java/Libraries/apache-log4j-2.11.1-bin/log4j-core-2.11.1.jar
+    </code>
+                    </pre>
+                        
+                    <p></p>
+                          Anschlie&szlig;end werden die Klassen referenziert, die im Beispiel als Logging-Bibliotheken verwendet werden. Hierbei ist auf die richtige 
+      Verzeichnisreferenz zu achten. Es ist m&ouml;glich, relative Pfade anzugeben:
+    
+                    <p></p>
+                        
+                    <ul>
+                        <li>'./' bedeutet, dass von der aktuellen JAR-Datei ein Unterverzeichnis in den Klassenpfad eingebunden werden soll</li>
+                        <li>'../' bedeutet, dass ein Verzeichnis oberhalb (bei Wiederholung) oder neben des aktuellen Verzeichnisses in den Klassenpfad eingebunden werden soll</li>
+                    </ul>
+                        
+                    <p></p>
+                          Hierbei kann es relativ einfach zu Fehlern kommen, so dass bestimmte Bibliotheken nicht in den Klassenpfad miteingebunden werden. Daher 
+      ist es besser wie im obigen Beispiel, absolute Pfade zu verwenden. Allerdings sollte man die korrekte URL-Kodifizierung der Dateien beachten.
+    
+                    <p></p>
+                        
+                    <h3>Archiv erzeugen</h3>
+                        
+                    <p></p>
+                          Ein Archiv wird erzeugt, indem man das Archivtool mit den entsprechenden Optionen aufruft. In dem folgenden Beispiel wird eine gepackte Applikation 
+      erzeugt und in das bereits vorhandene Verzeichnis target abgelegt. Die verwendete Manifest-Datei stammt aus dem Vezeichnis META-INF. Das Verzeichnis 
+      bin enth&auml;lt eine Paketestruktur mit allen Klassen der Applikation. Die Option "-C" stellt sicher, dass die Paketestruktur &uuml;bernommen wird.  
+    
+                    <p></p>
+                        
+                    <pre>
+                        <code>jar cmf META-INF\MANIFEST.MF target\application.jar -C bin .</code>
+                    </pre>
+                        
+                    <p></p>
+                          Anschlie&szlig;end kann man sich mit der Option "x" den Inhalt des gepackten Archivs auch wieder ausgeben lassen. 
+    
+                    <p></p>
+                        
+                    <h3>Archiv ausf&uuml;hren</h3>
+                        
+                    <p></p>
+                          Um eine Applikation als Archiv ausf&uuml;hren zu k&ouml;nnen, muss diese zuvor korrekt mit den ben&ouml;tigten Bibliotheken und der in der Manifest-Datei 
+      referenzierten Hauptklasse verpackt worden sein. Anschlie&szlig;end kann mit dem Java-Interpreter die Applikation als Archiv ausgef&uuml;hrt werden:
+    
+                    <p></p>
+                        
+                    <pre>
+                        <code>java -jar target\application.jar [Argumente]</code>
+                    </pre>
+                      
+                </div>
+            </div>
+        </div>
+        <script src="http://localhost:8080/xdoc/resources/lib/angular.js"></script><script src="http://localhost:8080/xdoc/resources/lib/jquery-3.2.1.min.js"></script><script src="http://localhost:8080/xdoc/resources/lib/popper.min.js"></script><script src="http://localhost:8080/xdoc/resources/lib/bootstrap.min.js"></script><script src="http://localhost:8080/xdoc/resources/lib/bootstrap-toc.min.js"></script>
+    </body>
+</html>

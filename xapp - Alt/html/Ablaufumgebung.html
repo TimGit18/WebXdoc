@@ -1,0 +1,234 @@
+<html lang="de">
+    <head>
+        <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>Ablaufumgebung</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="http://localhost:8080/xdoc/resources/css/bootstrap.min.css">
+        <link rel="stylesheet" href="http://localhost:8080/xdoc/resources/css/bootstrap-toc.min.css">
+        <link rel="icon" href="http://localhost:8080/xdoc/resources/favicon.ico">
+    </head>
+    <body data-spy="scroll" data-target="#toc">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-2 bg-light">
+                    <figure class="figure">
+                        <img class="figure-img img-fluid rounded" src="http://localhost:8080/xdoc/resources/getsitelogo.png">
+                    </figure>
+                    <nav id="toc" class="sticky-top" data-toggle="toc"></nav>
+                </div>
+                <div class="col-sm-10">
+                    <nav class="navbar navbar-expand-lg sticky-top navbar-light bg-light">
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav mr-auto">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="http://localhost:8080/xdoc/xapp/html/xapp.html">Home</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                    <p></p>
+                        
+                    <h2>Ablaufumgebung</h2>
+                        
+                    <p></p>
+                          Die Ablaufumgebung ist der Ort, in dem die ausf&uuml;hrbaren Anwendungen platziert und auch ausgef&uuml;hrt werden. Im Beispiel lautet die Pfadangabe der 
+      Ablaufumgebung C:/Users//Daten/Java/Applications/application. 
+    
+                    <p></p>
+                        
+                    <h3>&Uuml;bersicht</h3>
+                        
+                    <p></p>
+                          Die Umgebung besitzt die folgende Verzeichnisstruktur, die in der folgenden &Uuml;bersicht zu sehen ist:
+    
+                    <p></p>
+                        
+                    <pre>
+                        <code>
+        Applications/
+            application/
+                build/
+                logs/
+                META-INF/
+                output/   
+                properties/
+                test/
+              
+                application.bat
+                application.jar
+                build.bat
+                deploy.bat
+    </code>
+                    </pre>
+                        
+                    <p></p>
+                          Wichtig hierbei ist, dass die Exekution der Anwendung in dem Verzeichnis passiert, das das properties-Verzeichnis als Unterverzeichnis besitzt,
+      da sonst die Anwendung aufgrund der Konfiguration des Loggers nicht ausgef&uuml;hrt werden kann.
+    
+                    <p></p>
+                        
+                    <h3>Build</h3>
+                        
+                    <p></p>
+                          Das Build-Verzeichnis ist das Verzeichnis, in dem die &uuml;bersetzten Klassen der Anwendung liegen. Dieses Verzeichnis wird w&auml;hrend des Build-Prozesses
+      am Anfang mit Inhalten gel&ouml;scht und dann als leeres Verzeichnis sofort wieder neu angelegt. Anschlie&szlig;end werden die einzelnen Pakete in den 
+      Build-Ordner hineinkompiliert. Dies geschieht durch die Option -d beim Aufruf des Java-Compilers, welche das Directory f&uuml;r die generierten Klassen 
+      spezifiziert.
+    
+                    <p></p>
+                        
+                    <pre>
+                        <code>
+        rem -------
+        rem Cleanup
+        rem -------
+        rmdir /s /q %runtime_build%
+        mkdir %runtime_build%
+        ...
+        javac -encoding UTF8 %source_control%\*.java -d %runtime_build% -cp %runtime_build%;%log4j%
+        javac -encoding UTF8 %source_schema%\*.java -d %runtime_build% -cp %runtime_build%;%log4j%;%mmsql%
+        javac -encoding UTF8 %source_util%\*.java -d %runtime_build% -cp %runtime_build%;%log4j%
+    </code>
+                    </pre>
+                        
+                    <p></p>
+                          Die Verzeichnisstruktur des Build-Verzeichnisses entspricht der Paketestruktur der originalen Quellcode-Verzeichnisse. Entsprechend der 
+      Namenskonventionen f&uuml;r Pakete entspricht der Name der ersten Ebene einer Top-Level-Domain (de), dann folgt die eigentliche Dom&auml;ne (domain) und 
+      schlie&szlig;lich der Name der Anwendung (application). Anschlie&szlig;end folgen die Namen der Einzelpakete der Anwendung. 
+    
+                    <p></p>
+                        
+                    <h3>Logs</h3>
+                        
+                    <p></p>
+                          Das Logs-Verzeichnis beinhaltet alle Logging-Dateien, die bei jedem Lauf der Anwendung protokolliert werden. Die Logging-Dateien liegen in 
+      dem folgenden Format vor:
+    
+                    <p></p>
+                        
+                    <pre>
+                        <code>output_yyyy_MM_dd_HH_mm_ss_SSS.log</code>
+                    </pre>
+                        
+                    <p></p>
+                          Hierbei bezeichnet werden folgende Zeitstempel zu Beginn des Loggings verwendet:
+    
+                    <p></p>
+                        
+                    <p></p>
+                    <table class="table table-hover table-responsive-sm">
+                        <thead class="thead-light">
+                            <tr>
+                                <th>Format</th><th>Datum</th>
+                            </tr>
+                            <tr></tr>
+                        </thead>
+                        <tbody>
+                            <tr></tr>
+                            <tr>
+                                <td>yyyy</td><td>Jahr</td>
+                            </tr>
+                            <tr></tr>
+                            <tr>
+                                <td>MM</td><td>Monat</td>
+                            </tr>
+                            <tr></tr>
+                            <tr>
+                                <td>dd</td><td>Tag</td>
+                            </tr>
+                            <tr></tr>
+                            <tr>
+                                <td>HH</td><td>Stunde</td>
+                            </tr>
+                            <tr></tr>
+                            <tr>
+                                <td>mm</td><td>Minute</td>
+                            </tr>
+                            <tr></tr>
+                            <tr>
+                                <td>ss</td><td>Sekunde</td>
+                            </tr>
+                            <tr></tr>
+                            <tr>
+                                <td>SSS</td><td>Millisekunde</td>
+                            </tr>
+                            <caption>Tabelle 1: Datumsformate f&uuml;r die Logging-Dateien</caption>
+                        </tbody>
+                    </table>
+                    <p></p>
+                        
+                    <p></p>
+                          Das Format f&uuml;r die Logging-Dateien und die Konfiguration des Zielorts werden f&uuml;r den Logger Apache Log4j2 in der zentralen Konfigurationsdatei
+      log4j2.xml festgelegt, die im Verzeichbnis Properties abgelegt ist.
+    
+                    <p></p>
+                        
+                    <h3>META-INF</h3>
+                        
+                    <p></p>
+                          Das Verzeichnis META-INF enth&auml;lt Meta-Informationen wie die Manifest-Datei MANIFEST.MF. Diese Datei ist notwendig f&uuml;r die Konstruktion und 
+      Auslieferung der Anwendung als ausf&uuml;hrbare Jar-Datei. 
+    
+                    <p></p>
+                        
+                    <h3>Output</h3>
+                        
+                    <p></p>
+                          In diesem Verzeichnis liegen die Zusammenfassungen oder Reports der Junit-Tests f&uuml;r die Anwendung. Sie liegen in zwei Formen vor:
+    
+                    <p></p>
+                        
+                    <ol>
+                        <li>Als Text-Datei zur schnellen Lesbarkeit</li>
+                        <li>Als XML-Datei mit weitergehenden, detaillierten Informationen zu den einzelnen Testf&auml;llen.</li>
+                    </ol>
+                        
+                    <p></p>
+                          In der Datei wird das Ergebnis der Junit-Tests zusammengefasst und in einer Statistik pr&auml;sentiert. 
+    
+                    <p></p>
+                        
+                    <h3>Properties</h3>
+                        
+                    <p></p>
+                          Dieses Verzeichnis enth&auml;lt zwei Dateien, in denen globale Eigenschaften oder Konfigurationen definiert
+    
+                    <p></p>
+                        
+                    <ul>
+                        <li>application.properties ist die Properties-Datei der Anwendung selbst, die globale Parameter der Anwendung enth&auml;lt</li>
+                        <li>database,propertues ist die Properties-Datei f&uuml;r die Verbindung der Anwendung zur Datenbank</li>
+                        <li>log4j2.xml ist die Konfigurationsdatei des Apache Loggers und definiert den Konsolen- und Datei-Logger</li>
+                    </ul>
+                        
+                    <p></p>
+                          Im Unterschied zur Entwicklungsumgebung fehlt eine Datei, mit der ein komplexerer Build der Anwendung konfiguriert werden kann, n&auml;mlich die Datei
+      build.properties.
+    
+                    <p></p>
+                        
+                    <h3>Test</h3>
+                        
+                    <p></p>
+                          In diesem Verzeichnis liegen die &uuml;bersetzten Testklassen der Anwendung. Die Verzeichnisstruktur spiegelt die der Quellklassen. In dem einfachen 
+      Build-Prozess wird dieses Verzeichnis nicht ber&uuml;cksichtigt, wohl aber in dem komplexeren Build-Prozess. In diesem wird das Testklassen-Verzeichnis 
+      gel&ouml;scht und wieder neu angelegt. Im Unterschied zur Struktur des Build-Ordners existiert eine weitere Paketebene namens "test", um die Pakete der 
+      Testklassen (auch in &uuml;bersetzter Form) gegen die eigentlichen Quellcode-Pakete abzugrenzen
+    
+                    <p></p>
+                        
+                    <h3>Ausf&uuml;hrbare Dateien</h3>
+                        
+                    <p></p>
+                          Die Dateien build.bat, deploy.bat und application.bat sind ausf&uuml;hrbare Batch-Dateien, die im Kapitel &uuml;ber den einfachen Build-Prozess behandelt
+      wurden. Das exekutierbare Java Archive File application.jar wird von der Kommandodatei application.bat ausgef&uuml;hrt.
+    
+                    <p></p>
+                      
+                </div>
+            </div>
+        </div>
+        <script src="http://localhost:8080/xdoc/resources/lib/angular.js"></script><script src="http://localhost:8080/xdoc/resources/lib/jquery-3.2.1.min.js"></script><script src="http://localhost:8080/xdoc/resources/lib/popper.min.js"></script><script src="http://localhost:8080/xdoc/resources/lib/bootstrap.min.js"></script><script src="http://localhost:8080/xdoc/resources/lib/bootstrap-toc.min.js"></script>
+    </body>
+</html>

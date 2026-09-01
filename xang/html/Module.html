@@ -1,0 +1,320 @@
+<html lang="de">
+    <head>
+        <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>Module</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="http://localhost:8080/xdoc/xang/css/bootstrap.min.css">
+        <link rel="stylesheet" href="http://localhost:8080/xdoc/xang/css/bootstrap-toc.min.css">
+        <link rel="icon" href="http://localhost:8080/xdoc/xang/img/favicon.svg">
+    </head>
+    <body data-spy="scroll" data-target="#toc">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-2 bg-light">
+                    <figure class="figure">
+                        <img class="figure-img img-fluid rounded" src="http://localhost:8080/xdoc/Ressources/getsitelogo.png">
+                    </figure>
+                    <nav id="toc" class="sticky-top" data-toggle="toc"></nav>
+                </div>
+                <div class="col-sm-10">
+                    <nav class="navbar navbar-expand-lg sticky-top navbar-light bg-light">
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav mr-auto">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="http://localhost:8080/xdoc/xang/html/xang.html">Home</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                    <p></p>
+                        
+                    <h2>Angular-Module</h2>
+                        
+                    <p></p>
+                          Angular-Module haben die Aufgabe, eine Webanwendung in verschiedene Verantwortungsbereiche und 
+      Funktionbl&ouml;cke zu gliedern. Alle Bausteine, die logisch zu diesem Bereich geh&ouml;ren, werden mit 
+      dem entsprechenden Angular-Modul registriert. Die so registrierten Bausteine geh&ouml;ren damit zu 
+      dem Angular-Modul. Die Idee, die ECMAScript hier verfolgt, ist, dass TypeScript-Konstrukte wie 
+      Klassen und Funktionen gekapselt werden und nur der Zugriff auf exportierte Konstrukte gestattet
+      wird. Das hei&szlig;t, dass ein anderes Angular-Modul nur auf die Bausteine (Komponenten, Pipes oder
+      Direktiven) zugreifen darf, die von dem eigenen Angular-Modul exportiert werden. 
+    
+                    <p></p>
+                        
+                    <h3>Definition</h3>
+                        
+                    <p></p>
+                          Ein Angular-Modul oder kurz NgModule ist eine in TypeScript geschriebene Klasse, die ein spezielles 
+      Konstrukt nutzt, den NgModule-Decorator. 
+    
+                    <p></p>
+                        
+                    <p></p>
+                          Der Decorator, der durch das Adresszeichen @ gekennzeichnet ist, wird f&uuml;r Klassen und ihre Eigenschaften,
+      Methoden und Parameter genutzt, die zur Laufzeit aufgerufen werden, um die Funktionalit&auml;t der Klasse zu 
+      erweitern. Decoratoren konfigurieren damit Angular-Bausteine und definieren Metadaten. 
+    
+                    <p></p>
+                        
+                    <p></p>
+                          Jedes Angular-Modul hat sein eigenes, dediziertes Verzeichnis. Der Name des Verzeichnisses beschreibt die 
+      Funktionalit&auml;t des Moduls. Das Verzeichnis enth&auml;lt die Datei f&uuml;r das Angular-Modul, die &uuml;ber den Dateinamen
+      gekennzeichnet ist, sowie alle Angular-Bausteine, die zu diesem Angular-Modul geh&ouml;ren. 
+    
+                    <p></p>
+                        
+                    <p></p>
+                          Das folgende Code-Listing zeigt den Inhalt der Datei app.module.ts, die von der Angular-Entwicklungsumgebung 
+      standardm&auml;&szlig;ig generiert wurde und als Hauptmodul f&uuml;r das Projekt fungiert.
+    
+                    <p></p>
+                        
+                    <pre>
+                        <code>
+        import { BrowserModule } from '@angular/platform-browser';
+        import { NgModule } from '@angular/core';
+        import { AppComponent } from './app.component';
+      
+        @NgModule({
+          declarations: [AppComponent],
+          imports: [BrowserModule],
+          providers: [],
+          bootstrap: [AppComponent]
+        })
+        export class AppModule { }
+    </code>
+                    </pre>
+                        
+                    <p></p>
+                          Zun&auml;chst werden drei Konstrukte importiert. Zwei Konstrukte kommen von der Angular-Laufzeitumgebung selbst, wie 
+      man an der Kodifizierung mit dem Adresszeichen sieht, und ein Konstrukt ist die zu dem Modul dazugeh&ouml;rige Komponente. 
+      Die Module der Angular-Laufzeitumgebung m&uuml;ssen daher in der package.json-Konfigurationsdatei aufgef&uuml;hrt und per npm 
+      installiert werden.  
+    
+                    <p></p>
+                        
+                    <p></p>
+                          Anschlie&szlig;end werden einige Eigenschaften des Hauptmoduls dekoriert. Zum Schlu&szlig; wird das Hauptmodul als Klasse exportiert.
+      Zwischen diesen beiden Bestandteilen darf kein eigener Code eingef&uuml;gt werden, da es sonst zur Laufzeit eine Exception 
+      wirft. 
+    
+                    <p></p>
+                        
+                    <p></p>
+                          Das BrowserModule muss in jeder Angular-Anwendung importiert werden, damit die Anwendung mit dem 
+      Browser interagiert. Es darf allerdings auch nur einmal importiert werden.
+    
+                    <p></p>
+                        
+                    <h3>Decorator</h3>
+                        
+                    <p></p>
+                          Der NgModule-Decorator hat f&uuml;nf optionale Eigenschaften. Die Werte dieser Eigenschaften sind alle Arrays. Wenn 
+      eine Eigenschaft keinen Wert besitzt, dann muss dieser auch nicht angegeben werden. Wie im Listing beschrieben, so 
+      hat der Decorator etwa des Angular-Hauptmoduls folgendes Aussehen:
+    
+                    <p></p>
+                        
+                    <pre>
+                        <code>
+        @NgModule({
+          declarations: [AppComponent],
+          imports: [BrowserModule],
+          providers: [],
+          bootstrap: [AppComponent]
+        })
+    </code>
+                    </pre>
+                        
+                    <p></p>
+                    <b>declarations</b>
+                    <p></p>
+                        
+                    <p></p>
+                          Hier deklariert man die Komponenten, Direktiven und Pipes, die zu diesem Angular-Modul geh&ouml;ren. Im Beispiel 
+      ist nur die Hauptkomponente Teil des Angular-Moduls. 
+    
+                    <p></p>
+                        
+                    <p></p>
+                    <b>providers</b>
+                    <p></p>
+                        
+                    <p></p>
+                          Hier registriert man Providers f&uuml;r das Angular-Modul. Providers braucht man, wenn man mit Services arbeitet. 
+      Providers, die hier registriert sind, stehen der gesamten Anwendung zur Verf&uuml;gung. In dem obigen Beispiel 
+      existiert noch kein Provider f&uuml;r das Angular-Hauptmodul.
+    
+                    <p></p>
+                        
+                    <p></p>
+                    <b>exports</b>
+                    <p></p>
+                        
+                    <p></p>
+                          Hier exportiert man die Komponenten, Direktiven und Pipes aus dem eigenen Angular-Modul, die f&uuml;r andere 
+      Angular-Modulen zur Verf&uuml;gung stehen sollen. Dieser Array kann aber auch weitere Angular-Module exportieren.
+      In diesem Fall hat jedes Angular-Modul, das dieses Angular-Modul importiert den Zugriff auf die Exporte dieses 
+      Moduls sowie jeder anderen exportierten Module. Im Beispiel werden keine anderen Bausteine von dem Angular-
+      Hauptmodul exportiert. 
+    
+                    <p></p>
+                        
+                    <p></p>
+                    <b>imports</b>
+                    <p></p>
+                        
+                    <p></p>
+                          Dieses Array beinhaltet die Angular-Module, von denen das aktuelle Angular-Modul abh&auml;ngt. Das k&ouml;nnen externe 
+      Angular-Module aus der Angular-Laufzeitumgebung wie das BrowserModule sein oder aber auch eigene Anular-Module. 
+      In diesem Fall stehen dem importierenden Angular-Modul dann alle Bausteine zur Verf&uuml;gung, die von den importierten
+      Angular-Modulen exportiert werden. Wie bereits oben beschrieben stehen die Providers von importierten Angular-Modulen 
+      er gesamten Anwendung zur Verf&uuml;gung. Das Beispiel zeigt den Import des wesentlichen BrowserModuls f&uuml;r das Angular-
+      Hauptmodul. 
+    
+                    <p></p>
+                        
+                    <p></p>
+                    <b>bootstrap</b>
+                    <p></p>
+                        
+                    <p></p>
+                          Die optionale Eigenschaft bootstrap definiert die Hauptkomponente der Anwendung, die durch einen Klassennamen mit dem 
+      Bestandteil Component gekennzeichnet ist. Die Hauptkomponente der Anwendung wird nur im Angular-Hauptmodul benutzt. 
+      Die Hauptkomponente ist die Wurzel des Komponentenbaums. 
+    
+                    <p></p>
+                        
+                    <h3>Modularten</h3>
+                        
+                    <p></p>
+                          Man kann Angular-Module unterscheiden nach den Arten dieser Module. Die Arten unterscheiden sich in der Rolle, die diese
+      Angular-Module innerhalb einer Anwendung spielen. Technisch gesehen sind alle Modularten Klassen, die mit dem 
+      NgModule-Decorator dekoriert werden. Allerdings hilft es bisweilen, verschiedene Arten von Angular-Modulen zu unterscheiden, 
+      um innerhalb der Anwendung eine Strukturierung zu erzielen. Man kann folgende Modularten unterscheiden:
+    
+                    <p></p>
+                        
+                    <ul>
+                        <li>Hauptmodul</li>
+                        <li>Feature-Module</li>
+                        <li>Routing-Module</li>
+                        <li>Service-Module</li>
+                        <li>Widget-Module</li>
+                    </ul>
+                        
+                    <h3>Hauptmodul</h3>
+                        
+                    <p></p>
+                          Das Angular-Hauptmodul spielt in einer Angular-Anwendung eine spezielle und wesentliche Rolle. Die haupts&auml;chliche TypeScript-Datei 
+      der Anwendung main.ts importiert das Hauptmodul app.module.ts als Klasse AppModule und &uuml;bergibt es der Initialisierungsfunktion:
+    
+                    <p></p>
+                        
+                    <pre>
+                        <code>
+        import { AppModule } from './app/app.module';
+        ...
+        platformBrowserDynamic().bootstrapModule(AppModule)
+          .catch(err =&gt; console.error(err));
+    </code>
+                    </pre>
+                        
+                    <p></p>
+                          Falls es in der Anwendung noch weitere Feature-Module gibt, so werden sie hier ebenfalls importiert. 
+    
+                    <p></p>
+                        
+                    <h3>Feature-Module</h3>
+                        
+                    <p></p>
+                          Die Features einer Anwendung werden in kleinere Funktionsbl&ouml;cke aufgeteilt. Ein Feature-Modul repr&auml;sentiert 
+      damit einen Funktionsblock (Feature) einer Anwendung. Es gibt in der regel ein Feature-Modul, das die Hauptfunktion 
+      der Anwendung enth&auml;lt. Feature-Module k&ouml;nnen in ihrerseits in Untermodule aufgesplittet werden.
+    
+                    <p></p>
+                        
+                    <p></p>
+                          Beispiel: Die Beispiel-Anwendung soll zwei Feature-Module mit folgenden Funktionalit&auml;ten beinhalten: 	
+    
+                    <p></p>
+                        
+                    <ul>
+                        <li>ContactsListsModule verwaltet Kontaktlisten</li>
+                        <li>ContactsModule verwaltet Kontakte</li>
+                    </ul>
+                        
+                    <p></p>
+                          In dem Feature-Modul m&uuml;ssen wie immer folgende Objekte deklariert werden, um das Feature zu implementieren:
+    
+                    <p></p>
+                        
+                    <ul>
+                        <li>Komponenten</li>
+                        <li>Pipes</li>
+                        <li>Direktiven</li>
+                    </ul>
+                        
+                    <p></p>
+                          Feature-Module importieren oft auch weitere Angular-Module. Zum Beispiel enth&auml;lt das Kontaktlisten-Modul ein 
+      Formular. Damit dessen Funktionalit&auml;t dem Feature-Module zur Verf&uuml;gung steht, muss es das ReactiveFormsModule 
+      von Angular importieren. 
+    
+                    <p></p>
+                        
+                    <p></p>
+                          Umgekehrt sollte man ein Feature-Module nur in einem Angular-Modul importiert werden. In der Regel
+      importiert man ein Feature-Modul im Hauptmodul der Anwendung. Untermodule werden vom entsprechenden
+      Feature-Modul importiert.
+    
+                    <p></p>
+                        
+                    <h3>Routing-Module</h3>
+                        
+                    <p></p>
+                          Routing-Module enthalten die Konfiguration f&uuml;r den Angular-Router. Der Angular-Router ist eine Kernfunktionalit&auml;t 
+      der Angular-Plattform und erlaubt die Entwicklung von Single Page-Applikationen mit vielen Sichten und die Navigation
+      zwischen diesen Sichten. Es gibt ein Routing-Modul f&uuml;r die gesamte Anwendung. F&uuml;r jedes Feature-Modul gibt es eigene 
+      Routing-Module.
+    
+                    <p></p>
+                        
+                    <p></p>
+                          In der Beispielanwendung existieren die folgenden Routing-Module:	
+    
+                    <p></p>
+                        
+                    <ul>
+                        <li>AppRoutingModule (f&uuml;r die gesamte Anwendung)	</li>
+                        <li>ContactsListRoutingModule (f&uuml;r das Feature ContactsListsModule)</li>
+                        <li>ContactsRoutingModule	(f&uuml;r das Feature ContactsModule)</li>
+                    </ul>
+                        
+                    <h3>Service-Module</h3>
+                        
+                    <p></p>
+                          Service-Module beinhalten Providers und stellen diese der gesamten Anwendung zur Verf&uuml;gung.
+      Zum Beispiel kann in solch einem Modul ein Service mit Hilfsfunktionen definiert werden. 
+      Ansonsten besitzen Service-Module keine Komponenten, Direktiven oder Pipes. Sie sollten nur in das Hauptmodul der 
+      Anwendung importiert werden. Beispielsweise ist das HttpClientModule von Angular ein Service-Modul.
+    
+                    <p></p>
+                        
+                    <h3>Widget-Module</h3>
+                        
+                    <p></p>
+                          Widget-Module definieren User Interface-Bausteine, die wiederverwendbar sind wie zum Beispiel Komponenten. Ein 
+      Widget ist eine Kombination aus "Window" (Fenster) und "Gadget" (Vorrichtung). Damit diese UI-Bausteine in anderen Anular-Modulen 
+      genutzt werden k&ouml;nnen, m&uuml;ssen sie im declarations-Array deklariert werden und im exports-Array exportiert werden.
+      Die anderen Anular-Module m&uuml;ssen dann diese Widget-Module importieren, um die UI-Bausteine nutzen zu k&ouml;nnen. 
+      Beispielsweise ist das CommonModule von Angular selbst ein Widget-Module. 
+    
+                    <p></p>
+                      
+                </div>
+            </div>
+        </div>
+        <script src="http://localhost:8080/xdoc/xang/lib/angular.js"></script><script src="http://localhost:8080/xdoc/xang/lib/jquery-3.2.1.min.js"></script><script src="http://localhost:8080/xdoc/xang/lib/popper.min.js"></script><script src="http://localhost:8080/xdoc/xang/lib/bootstrap.min.js"></script><script src="http://localhost:8080/xdoc/xang/lib/bootstrap-toc.min.js"></script>
+    </body>
+</html>

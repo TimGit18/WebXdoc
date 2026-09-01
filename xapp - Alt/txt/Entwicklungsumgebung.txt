@@ -1,0 +1,110 @@
+Entwicklungsumgebung
+====================
+Die Entwicklungsumgebung ist der Ort, an dem die Anwendungen entwickelt und auch lokal getestet werden. Im Beispiel lautet die Pfadangabe der 
+Entwicklungsumgebung C:/Users/test/Daten/Java/Projects/application.
+
+
+Übersicht
+=========
+Die Umgebung besitzt die folgende Verzeichnisstruktur, die in der folgenden Übersicht zu sehen ist:
+
+_
+   Projects/
+      application/
+          META-INF/
+          out/   
+          properties/
+          src/
+          test/
+
+          build.xml
+_
+
+
+Quellcode
+=========
+Das Quellcode-Verzeichnis trägt den Namen src (für Sourcen) und beinhaltet die Quellcode-Objekte der Anwendung, die als Java-Klassen in Paketen 
+organisiert sind. Für die angewendeten Werkzeuge wie einen Java-Compiler oder eine Integrierte Enwicklungsumgebung (IDE) soll die Struktur des 
+Quellcode-Verzeichnis immer gleich aussehen, auch wenn die Inhalte sich je nach Projekt unterscheiden. 
+
+Die Verzeichnisstruktur des Build-Verzeichnisses entspricht der Namenskonventionen für Pakete. Der Name der ersten Ebene lautet der einer 
+Top-Level-Domain (de), dann folgt die eigentliche Domäne (timdomain) und schließlich der Name der Anwendung (application). 
+Anschließend folgen die Namen der Einzelpakete der Anwendung. Wir erhalten also eine Übersicht wie folgt:
+
+_
+   src/
+      de/
+         timdomain/
+            application/
+               control/
+               schema/
+               util/
+_
+
+
+Test
+====
+Das Verzeichnis für die Test-Klassen trägt den Namen test und beinhaltet die JUnit-Testtreiber für die Klassen des Quellcodes. Es hat dieselbe 
+Struktur wie das Quellcode-Verzeichnis. Der Unterschied zu dem Quellcode-Verzeichnis besteht darin, dass es eine zusätzliche Paketeschicht 
+test unterhalb des Basispakets gibt, in dem die jeweiligen Testklassen liegen und die einer anderen Namenskonvention unterliegt.
+
+_
+   src/
+      test/
+         de/
+            timdomain/
+               application/
+                  control.test/
+                  schema.test/
+                  util.test/
+_
+
+
+Ausgabe
+=======
+Das Ausgabe-Verzeichnis out (für output) ist das Verzeichnis, in dem die übersetzten Klassen der Anwendung während des Entwicklungsprozesses liegen. 
+Dieses Verzeichnis wird während des Kompilierens befüllt. Die Verzeichnisstruktur des Ausgabe-Verzeichnisses entspricht der Paketestruktur 
+der originalen Quellcode-Verzeichnisse, wobei hier von der IDE noch eine zusätzliche Ebene (production) einzieht, um die Java-Klassen des Projekts
+von den Testklassen zu unterscheiden. Die Paketestruktur des Verzeichnisses test entspricht ebenfalls der Paketestruktur der Test-Klassen.
+
+Ebenfalls Teil des Ausgabe-Verzeichnis sind Artefakte wie zum Beispiel ein ausführbares Java-Archiv
+
+_
+   out/
+      artifacts/
+      production/
+         application/
+            de/
+               timdomain/
+                  application/
+                     control/
+                     schema/
+                     util/
+      test/
+         application/
+            de/
+               timdomain/
+                  application/
+                     control/
+                     schema/
+                     util/
+_
+
+
+Properties
+==========
+Das properties-Verzeichnis beinhaltet Dateien, die zur Konfiguration der Anwendung beitragen oder Eigenschaften der Anwendung definieren. Im 
+Grundzustand befinden sich drei Dateien in diesem Verzeichnis:
+
+
+	1. Die Datei application.properties ist die Properties-Datei der Anwendung selbst, die globale Parameter der Anwendung enthält
+	2. Die Datei database.properties ist die Properties-Datei für die Datenbank-Anbindung der Anwendung
+   3. Die Datei build.properties ist die Properties-Datei für den komplexen Build-Prozess
+	4. Die Datei log4j2.xml ist die Konfiguratations-Datei des Apache Loggers und definiert den Konsolen- und Datei-Logger
+
+
+META-INF
+========
+Das Verzeichnis META-INF enthält Meta-Informationen wie die Manifest-Datei MANIFEST.MF. Diese Datei ist notwendig für die Konstruktion und 
+Auslieferung der Anwendung als ausführbare Jar-Datei. 
+

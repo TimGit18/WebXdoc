@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?><fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format">
+    <fo:layout-master-set>
+        <fo:simple-page-master master-name="page" page-height="29.7cm" page-width="21cm" margin-top="1cm" margin-bottom="1cm" margin-left="2.5cm" margin-right="2.5cm">
+            <fo:region-body margin-top="1cm" margin-bottom="2cm"/>
+            <fo:region-before extent="3cm"/>
+            <fo:region-after extent="0.5cm"/>
+            <fo:region-start extent="2cm"/>
+            <fo:region-end extent="0.5cm"/>
+        </fo:simple-page-master>
+        <fo:page-sequence-master master-name="single-page">
+            <fo:repeatable-page-master-reference master-reference="page"/>
+        </fo:page-sequence-master>
+    </fo:layout-master-set>
+    <fo:page-sequence master-reference="single-page" initial-page-number="1">
+        <fo:static-content flow-name="xsl-region-before">
+            <fo:block space-after="4pt" space-before="4pt" text-align="right">
+                <fo:external-graphic src="url('file:///C:/Users/schmi/Daten/Web/xdoc/resources/logo.svg')" text-align="right"/>
+            </fo:block>
+        </fo:static-content>
+        <fo:static-content flow-name="xsl-region-after">
+            <fo:block text-align="outside" font-family="Helvetica, Arial, sans-serif" font-size="10pt">
+                          Seite
+          
+                <fo:page-number/>
+            </fo:block>
+        </fo:static-content>
+        <fo:flow flow-name="xsl-region-body">
+            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="20pt" font-weight="bold" space-after="10pt" space-before="10pt" text-align="start">
+          &#133;Entwicklungsumgebung</fo:block>
+            <fo:block text-align="start" font-family="Helvetica, Arial, sans-serif" font-size="10pt">Tim Schmitz</fo:block>
+            <fo:block text-align="start" font-family="Helvetica, Arial, sans-serif" font-size="10pt">16.05.2026</fo:block>
+        </fo:flow>
+    </fo:page-sequence>
+    <fo:page-sequence master-reference="single-page" initial-page-number="2">
+        <fo:static-content flow-name="xsl-region-after">
+            <fo:block text-align="outside" font-family="Helvetica, Arial, sans-serif" font-size="10pt">
+                          Seite
+          
+                <fo:page-number/>
+            </fo:block>
+        </fo:static-content>
+        <fo:flow flow-name="xsl-region-body">
+            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="14pt" font-weight="bold" space-after="10pt" space-before="10pt" text-align="start">
+      Inhalt
+    </fo:block>
+            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+                <fo:block text-align-last="justify">
+                    <fo:inline>
+                        Übersicht
+                        <fo:leader leader-pattern="dots"/>
+                        <fo:page-number-citation ref-id="Übersicht"/>
+                    </fo:inline>
+                </fo:block>
+                <fo:block text-align-last="justify">
+                    <fo:inline>
+                        Quellcode
+                        <fo:leader leader-pattern="dots"/>
+                        <fo:page-number-citation ref-id="Quellcode"/>
+                    </fo:inline>
+                </fo:block>
+                <fo:block text-align-last="justify">
+                    <fo:inline>
+                        Test
+                        <fo:leader leader-pattern="dots"/>
+                        <fo:page-number-citation ref-id="Test"/>
+                    </fo:inline>
+                </fo:block>
+                <fo:block text-align-last="justify">
+                    <fo:inline>
+                        Ausgabe
+                        <fo:leader leader-pattern="dots"/>
+                        <fo:page-number-citation ref-id="Ausgabe"/>
+                    </fo:inline>
+                </fo:block>
+                <fo:block text-align-last="justify">
+                    <fo:inline>
+                        Properties
+                        <fo:leader leader-pattern="dots"/>
+                        <fo:page-number-citation ref-id="Properties"/>
+                    </fo:inline>
+                </fo:block>
+                <fo:block text-align-last="justify">
+                    <fo:inline>
+                        META-INF
+                        <fo:leader leader-pattern="dots"/>
+                        <fo:page-number-citation ref-id="META-INF"/>
+                    </fo:inline>
+                </fo:block>
+            </fo:block>
+        </fo:flow>
+    </fo:page-sequence>
+    <fo:page-sequence master-reference="single-page" initial-page-number="3">
+        <fo:static-content flow-name="xsl-region-after">
+            <fo:block text-align="outside" font-family="Helvetica, Arial, sans-serif" font-size="10pt" line-height="14pt">
+                          Seite
+          
+                <fo:page-number/>
+            </fo:block>
+        </fo:static-content>
+        <fo:flow flow-name="xsl-region-body">
+            <fo:block break-after="page" font-family="Helvetica, Arial, sans-serif">
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="20pt" font-weight="bold" space-after="10pt" space-before="10pt" text-align="start">Entwicklungsumgebung</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Die Entwicklungsumgebung ist der Ort, an dem die Anwendungen entwickelt und auch lokal getestet werden. Im Beispiel lautet die Pfadangabe der 
+      Entwicklungsumgebung C:/Users/test/Daten/Java/Projects/application.
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="14pt" font-weight="bold" space-after="10pt" space-before="10pt" text-align="start" id="Übersicht">Übersicht</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Die Umgebung besitzt die folgende Verzeichnisstruktur, die in der folgenden Übersicht zu sehen ist:
+    </fo:block>
+                    
+                <fo:block font-family="Courier" font-size="6pt" linefeed-treatment="preserve" white-space-treatment="preserve" space-before="0pt" space-after="4pt" text-align="start" white-space-collapse="false">
+         Projects/
+            application/
+                META-INF/
+                out/   
+                properties/
+                src/
+                test/
+      
+                build.xml
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="14pt" font-weight="bold" space-after="10pt" space-before="10pt" text-align="start" id="Quellcode">Quellcode</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Das Quellcode-Verzeichnis trägt den Namen src (für Sourcen) und beinhaltet die Quellcode-Objekte der Anwendung, die als Java-Klassen in Paketen 
+      organisiert sind. Für die angewendeten Werkzeuge wie einen Java-Compiler oder eine Integrierte Enwicklungsumgebung (IDE) soll die Struktur des 
+      Quellcode-Verzeichnis immer gleich aussehen, auch wenn die Inhalte sich je nach Projekt unterscheiden. 
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Die Verzeichnisstruktur des Build-Verzeichnisses entspricht der Namenskonventionen für Pakete. Der Name der ersten Ebene lautet der einer 
+      Top-Level-Domain (de), dann folgt die eigentliche Domäne (timdomain) und schließlich der Name der Anwendung (application). 
+      Anschließend folgen die Namen der Einzelpakete der Anwendung. Wir erhalten also eine Übersicht wie folgt:
+    </fo:block>
+                    
+                <fo:block font-family="Courier" font-size="6pt" linefeed-treatment="preserve" white-space-treatment="preserve" space-before="0pt" space-after="4pt" text-align="start" white-space-collapse="false">
+         src/
+            de/
+               timdomain/
+                  application/
+                     control/
+                     schema/
+                     util/
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="14pt" font-weight="bold" space-after="10pt" space-before="10pt" text-align="start" id="Test">Test</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Das Verzeichnis für die Test-Klassen trägt den Namen test und beinhaltet die JUnit-Testtreiber für die Klassen des Quellcodes. Es hat dieselbe 
+      Struktur wie das Quellcode-Verzeichnis. Der Unterschied zu dem Quellcode-Verzeichnis besteht darin, dass es eine zusätzliche Paketeschicht 
+      test unterhalb des Basispakets gibt, in dem die jeweiligen Testklassen liegen und die einer anderen Namenskonvention unterliegt.
+    </fo:block>
+                    
+                <fo:block font-family="Courier" font-size="6pt" linefeed-treatment="preserve" white-space-treatment="preserve" space-before="0pt" space-after="4pt" text-align="start" white-space-collapse="false">
+         src/
+            test/
+               de/
+                  timdomain/
+                     application/
+                        control.test/
+                        schema.test/
+                        util.test/
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="14pt" font-weight="bold" space-after="10pt" space-before="10pt" text-align="start" id="Ausgabe">Ausgabe</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Das Ausgabe-Verzeichnis out (für output) ist das Verzeichnis, in dem die übersetzten Klassen der Anwendung während des Entwicklungsprozesses liegen. 
+      Dieses Verzeichnis wird während des Kompilierens befüllt. Die Verzeichnisstruktur des Ausgabe-Verzeichnisses entspricht der Paketestruktur 
+      der originalen Quellcode-Verzeichnisse, wobei hier von der IDE noch eine zusätzliche Ebene (production) einzieht, um die Java-Klassen des Projekts
+      von den Testklassen zu unterscheiden. Die Paketestruktur des Verzeichnisses test entspricht ebenfalls der Paketestruktur der Test-Klassen.
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Ebenfalls Teil des Ausgabe-Verzeichnis sind Artefakte wie zum Beispiel ein ausführbares Java-Archiv
+    </fo:block>
+                    
+                <fo:block font-family="Courier" font-size="6pt" linefeed-treatment="preserve" white-space-treatment="preserve" space-before="0pt" space-after="4pt" text-align="start" white-space-collapse="false">
+         out/
+            artifacts/
+            production/
+               application/
+                  de/
+                     timdomain/
+                        application/
+                           control/
+                           schema/
+                           util/
+            test/
+               application/
+                  de/
+                     timdomain/
+                        application/
+                           control/
+                           schema/
+                           util/
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="14pt" font-weight="bold" space-after="10pt" space-before="10pt" text-align="start" id="Properties">Properties</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Das properties-Verzeichnis beinhaltet Dateien, die zur Konfiguration der Anwendung beitragen oder Eigenschaften der Anwendung definieren. Im 
+      Grundzustand befinden sich drei Dateien in diesem Verzeichnis:
+    </fo:block>
+                    
+                <fo:list-block provisional-distance-between-starts="50mm" provisional-label-separation="10mm" space-after="4pt" space-before="4pt">
+                    <fo:list-item>
+                        <fo:list-item-label>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="normal">1.
+          </fo:block>
+                        </fo:list-item-label>
+                        <fo:list-item-body>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" start-indent="5mm">Die Datei application.properties ist die Properties-Datei der Anwendung selbst, die globale Parameter der Anwendung enthält</fo:block>
+                        </fo:list-item-body>
+                    </fo:list-item>
+                    <fo:list-item>
+                        <fo:list-item-label>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="normal">2.
+          </fo:block>
+                        </fo:list-item-label>
+                        <fo:list-item-body>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" start-indent="5mm">Die Datei database.properties ist die Properties-Datei für die Datenbank-Anbindung der Anwendung</fo:block>
+                        </fo:list-item-body>
+                    </fo:list-item>
+                    <fo:list-item>
+                        <fo:list-item-label>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="normal">3.
+          </fo:block>
+                        </fo:list-item-label>
+                        <fo:list-item-body>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" start-indent="5mm">Die Datei build.properties ist die Properties-Datei für den komplexen Build-Prozess</fo:block>
+                        </fo:list-item-body>
+                    </fo:list-item>
+                    <fo:list-item>
+                        <fo:list-item-label>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="normal">4.
+          </fo:block>
+                        </fo:list-item-label>
+                        <fo:list-item-body>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" start-indent="5mm">Die Datei log4j2.xml ist die Konfiguratations-Datei des Apache Loggers und definiert den Konsolen- und Datei-Logger</fo:block>
+                        </fo:list-item-body>
+                    </fo:list-item>
+                </fo:list-block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="14pt" font-weight="bold" space-after="10pt" space-before="10pt" text-align="start" id="META-INF">META-INF</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Das Verzeichnis META-INF enthält Meta-Informationen wie die Manifest-Datei MANIFEST.MF. Diese Datei ist notwendig für die Konstruktion und 
+      Auslieferung der Anwendung als ausführbare Jar-Datei. 
+    </fo:block>
+                  
+            </fo:block>
+        </fo:flow>
+    </fo:page-sequence>
+</fo:root>

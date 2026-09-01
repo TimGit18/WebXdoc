@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8" standalone='yes'?>
+<document env="xcbm">
+
+  <main>
+    <topic name="Home" link="http://localhost:8080/xdoc/xcbm/html/xcbm.html"/>
+  </main>
+
+  <links>
+    <link type="stylesheet">http://localhost:8080/xdoc/resources/css/bootstrap.min.css</link>
+    <link type="stylesheet">http://localhost:8080/xdoc/resources/css/bootstrap-toc.min.css</link>
+    <link type="icon">http://localhost:8080/xdoc/resources/favicon.ico</link>
+  </links>
+
+  <scripts>
+    <script>http://localhost:8080/xdoc/resources/lib/angular.js</script>
+    <script>http://localhost:8080/xdoc/resources/lib/jquery-3.2.1.min.js</script>
+    <script>http://localhost:8080/xdoc/resources/lib/popper.min.js</script>
+    <script>http://localhost:8080/xdoc/resources/lib/bootstrap.min.js</script>
+    <script>http://localhost:8080/xdoc/resources/lib/bootstrap-toc.min.js</script>
+  </scripts>
+
+  <title>Datenmodell</title>
+  <author>Tim Schmitz</author>
+  <date>25.10.2024</date>
+
+  <content>
+    <headline>Datenmodell</headline>
+    <abstract>
+      Das Datenmodell für die CBM-Anwendung organisiert die logischen Einheiten der Anwendung und ihre Beziehungen untereinander (Entity-Relatioship Model ERM).
+      Aus dem Datenmodell erkennt man sofort, welche Daten zusammengehören. Da es nicht hierarchisch, sondern als Relationen-Algebra sturkturiert ist, ist 
+      es flexibel und leicht erweiterbar. Jedes relationale Datemodell läßt sich einem entsprechenden Relationalen Datenbank-Managementsystem (RDBMS) in 
+      einer Datenbank abbilden.
+    </abstract>
+
+
+    <subheadline id="Überblick">Überblick</subheadline>
+
+    <text>
+      Insgesamt besteht das Modell aus zwei logischen Entitäten und einer informationstragenden Beziehung. Diese können in einer Entity-Relatioship Diagramm (ERD) 
+      veranschaulicht werden:
+    </text>
+    <figure>
+      <image link="http://localhost:8080/xdoc/xcbm/img/Datenmodell.svg" source="file:///C:/Users/Test/Daten/Web/xdoc/xcbm/img/Datenmodell.svg"/>
+      <figurecaption class="figure-caption text-left">
+        Abbildung 1: Entity-Relationship Diagramm des Datenmodells der Anwendung
+      </figurecaption>
+    </figure>
+
+    <subheadline id="Basisdatentypen">Basisdatentypen</subheadline>
+
+    <text>
+      Folgende Basisdatentypen werden verwendet:
+    </text>
+    <table>
+      <tableheadline>
+        <tablerow>
+          <tableheaditem>Datentyp</tableheaditem>
+          <tableheaditem>Format</tableheaditem>
+        </tablerow>
+      </tableheadline>
+      <tablebody>
+        <tablerow>
+          <tableitem>Ganzzahl</tableitem>
+          <tableitem>Ganze Zahl von -2.147.483.648 bis 2.147.483.647</tableitem>
+        </tablerow>
+        <tablerow>
+          <tableitem>Langtext</tableitem>
+          <tableitem>Zeichenkette von maximal 255 alphanumerischen Zeichen</tableitem>
+        </tablerow>
+        <tablecaption>Tabelle 1: Basisdatentypen</tablecaption>
+      </tablebody>
+    </table>
+
+    <text>
+      Diese Basisdatentypen typisieren keine speziellen fachlichen Objekte, sondern repräsentieren allgemeine Formate. 
+    </text>
+
+    <subheadline id="Fachliche Datentypen">Fachliche Datentypen</subheadline>
+
+    <text>
+      Folgende fachliche Datentypen werden verwendet:
+    </text>
+    <table>
+      <tableheadline>
+        <tablerow>
+          <tableheaditem>Datentyp</tableheaditem>
+          <tableheaditem>Format</tableheaditem>
+        </tablerow>
+      </tableheadline>
+      <tablebody>
+        <tablerow>
+          <tableitem>CBM-Nummer</tableitem>
+          <tableitem>Sechstelliger alphanumerischer Verbund aus dem fixen Kürzel 'CBM' und der Zahldarstellung 001 bis 999</tableitem>
+        </tablerow>
+        <tablerow>
+          <tableitem>ECO-Nummer</tableitem>
+          <tableitem>Dreistelliger alphanumerischer Verbund zwischen einem Buchstaben von A bis E und der Zahldarstellung 00 bis 99</tableitem>
+        </tablerow>
+        <tablecaption>Tabelle 2: Fachdatentypen</tablecaption>
+      </tablebody>
+    </table>
+    <bold>Erläuterung</bold>
+    <list>
+      <listitem>Die CBM-Nummer ist eine fortlaufende Nummer, die hochgezählt wird, zum Beispiel CBM 212</listitem>
+      <listitem>Die ECO-Nummer ist ein Enzyklopädie-Index-Schlüssel mit fünf Hauptgruppen von A bis E und 100 Untergruppen von 00 bis 99, zum Beispiel C54</listitem>
+    </list>
+
+
+    <subheadline id="Entität Magazin">Entität Magazin</subheadline>
+
+    <text>
+      Die Entität (oder das Objekt) Magazin besteht aus folgenden Feldern:
+    </text>
+    <table>
+      <tableheadline>
+        <tablerow>
+          <tableheaditem>Attribut</tableheaditem>
+          <tableheaditem>Datentyp</tableheaditem>
+          <tableheaditem>Erläuterung</tableheaditem>
+        </tablerow>
+      </tableheadline>
+      <tablebody>
+        <tablerow>
+          <tableitem>Identifikator</tableitem>
+          <tableitem>Ganzzahl</tableitem>
+          <tableitem>Technischer Schlüssel</tableitem>
+        </tablerow>
+        <tablerow>
+          <tableitem>Ausgabe</tableitem>
+          <tableitem>CBM-Nummer</tableitem>
+          <tableitem>Fachlicher Schlüssel</tableitem>
+        </tablerow>
+        <tablecaption>Tabelle 3: Felder der Entität Magazin</tablecaption>
+      </tablebody>
+    </table>
+
+    <text>
+      Die Entität Magazin repräsentiert das Objekt ChessBase-Magazin. Jede Instanz des Objekts besteht aus einem Identifikator als technischer Primärschlüssel und einer Magazin-Nummer als fachlicher Schlüssel.
+    </text>
+
+    <subheadline id="Entität Eröffnungsschlüssel">Entität Eröffnungsschlüssel</subheadline>
+
+    <text>
+      Die Entität Eröffnungsschlüssel besteht aus folgenden Feldern:
+    </text>
+    <table>
+      <tableheadline>
+        <tablerow>
+          <tableheaditem>Attribut</tableheaditem>
+          <tableheaditem>Datentyp</tableheaditem>
+          <tableheaditem>Erläuterung</tableheaditem>
+        </tablerow>
+      </tableheadline>
+      <tablebody>
+        <tablerow>
+          <tableitem>Identifikator</tableitem>
+          <tableitem>Ganzzahl</tableitem>
+          <tableitem>Technischer Schlüssel</tableitem>
+        </tablerow>
+        <tablerow>
+          <tableitem>Eröffnungsschlüssel</tableitem>
+          <tableitem>ECO-Nummer</tableitem>
+          <tableitem>Fachlicher Schlüssel</tableitem>
+        </tablerow>
+        <tablerow>
+          <tableitem>Zugfolge</tableitem>
+          <tableitem>Langtext</tableitem>
+          <tableitem>Folge der Anfangszüge der Eröffnung</tableitem>
+        </tablerow>
+        <tablerow>
+          <tableitem>Beschreibung</tableitem>
+          <tableitem>Langtext</tableitem>
+          <tableitem>Beschreibung der Eröffnung</tableitem>
+        </tablerow>
+        <tablecaption>Tabelle 4: Felder der Entität Magazin</tablecaption>
+      </tablebody>
+    </table>
+
+    <text>
+      Die Entität Eröffnungsschlüssel repräsentiert das Objekt Eröffnungscode.
+      Jede Instanz des Objekts besteht aus einem Identifikator als technischer Primärsschlüssel und einer Eröffnungsschlüssel-Nummer als fachlicher Schlüssel.
+      Weiterhin kennzeichnen eine Zugfolge in algebraischer Notation und eine Eröffnungsbeschreibung das Objekt.
+    </text>
+
+    <subheadline id="Informationstragende Beziehung Eröffnungsartikel">Informationstragende Beziehung Eröffnungsartikel</subheadline>
+
+    <text>
+      Die Beziehung Eröffnungsartikel besteht aus folgenden Feldern:
+    </text>
+    <table>
+      <tableheadline>
+        <tablerow>
+          <tableheaditem>Attribut</tableheaditem>
+          <tableheaditem>Datentyp</tableheaditem>
+          <tableheaditem>Erläuterung</tableheaditem>
+        </tablerow>
+      </tableheadline>
+      <tablebody>
+        <tablerow>
+          <tableitem>Identifikator</tableitem>
+          <tableitem>Ganzzahl</tableitem>
+          <tableitem>Technischer Schlüssel</tableitem>
+        </tablerow>
+        <tablerow>
+          <tableitem>Identifikator_Magazin</tableitem>
+          <tableitem>Ganzzahl</tableitem>
+          <tableitem>Fachlicher Fremdschlüssel</tableitem>
+        </tablerow>
+        <tablerow>
+          <tableitem>Identifikator_Eröffnungsschlüssel</tableitem>
+          <tableitem>Ganzzahl</tableitem>
+          <tableitem>Fachlicher Fremdschlüssel</tableitem>
+        </tablerow>
+        <tablerow>
+          <tableitem>Artikelkurzbeschreibung</tableitem>
+          <tableitem>Langtext</tableitem>
+          <tableitem>Stichworte zum Artikel</tableitem>
+        </tablerow>
+        <tablecaption>Tabelle 5: Felder der informationstragenden Beziehung Eröffnungsartikel</tablecaption>
+      </tablebody>
+    </table>
+
+    <text>
+      Diese informationstragende Beziehung zwischen Magazin und Eröffnungsschlüssel repräsentiert das Objekt Eröffnungsartikel.
+      Jede Instanz des Objekts besteht aus einem Identifikator als Primärschlüssel und jeweils einem Fremdschlüssel für eine Instanz des
+      Magazins und des Eröffnungsschlüssels. Die Artikelkurzbeschreibung ist kurze, stichwortartige Beschreibung des Eröffnungsartikels.
+    </text>
+
+    <subheadline id="Kardinälitäten">Kardinälitäten</subheadline>
+
+    <text>
+      Die Kardinalitäten der Beziehung resultieren aus folgenden Tatsachen:
+    </text>
+    <list>
+      <listitem>Ein Magazin hat einen oder mehrere Eröffnungsartikel</listitem>
+      <listitem>Ein Eröffnungsartikel gehört zu genau einem Magazin</listitem>
+      <listitem>Ein Eröffnungsschlüssel taucht in keinem oder in mehreren Eröffnungsartikeln auf</listitem>
+      <listitem>Ein Eröffnungsartikel gehört zu genau einem Eröffnungsschlüssel.</listitem>
+    </list>
+
+  </content>
+</document>

@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8" standalone='yes'?>
+<document env="xtest">
+
+  <main>
+    <topic name="Home" link="http://localhost:8080/xdoc/xtest/html/xtest.html"/>
+    <topic name="Thema" link="http://localhost:8080/xdoc/xtest/html/Thema/Thema.html"/>
+    <topic name="Bereich" link="http://localhost:8080/xdoc/xtest/html/Bereich/Bereich.html"/>
+  </main>
+
+  <links>
+    <link type="stylesheet">http://localhost:8080/xdoc/resources/css/bootstrap.min.css</link>
+    <link type="stylesheet">http://localhost:8080/xdoc/resources/css/bootstrap-toc.min.css</link>
+    <link type="icon">http://localhost:8080/xdoc/resources/favicon.ico</link>
+  </links>
+
+  <scripts>
+    <script>http://localhost:8080/xdoc/resources/lib/angular.js</script>
+    <script>http://localhost:8080/xdoc/resources/lib/jquery-3.2.1.min.js</script>
+    <script>http://localhost:8080/xdoc/resources/lib/popper.min.js</script>
+    <script>http://localhost:8080/xdoc/resources/lib/bootstrap.min.js</script>
+    <script>http://localhost:8080/xdoc/resources/lib/bootstrap-toc.min.js</script>
+  </scripts>
+
+  <title>Unterbereich-Referenz</title>
+  <author>Tim Schmitz</author>
+  <date>29.08.2026</date>
+
+  <content>
+    <headline>Unterbereich-Referenz-Datei für xdoc</headline>
+    <abstract>
+      Dieser Text soll als Referenzdatei für den Dokumenten-Transformator in ein XML-Format fungieren. Zentrale Bedeutung 
+      haben die wesentlichen Struktur-Elemente von Textdateien (Listen, Tabellen, Bild-Referenzen, Code und Sequenzen). 
+      Und so weiter.
+    </abstract>
+
+
+    <subheadline id="Listenstrukturen">Listenstrukturen</subheadline>
+
+    <text>
+      Dieser Abschnitt beinhaltet Listenstrukturen. Zunächst eine nummerierte Liste, anschließend eine unnumerierte Liste. 
+      Die nummerierte Liste hat folgendes Format
+    </text>
+    <numlist>
+      <listitem>Listenelement 1</listitem>
+      <listitem>Listenelement 2</listitem>
+      <listitem>Listenelement 3</listitem>
+    </numlist>
+
+
+    <text>
+      Die unnummerierte Liste hat folgendes Format
+    </text>
+    <list>
+      <listitem>Listenelement A</listitem>
+      <listitem>Listenelement B</listitem>
+      <listitem>Listenelement C</listitem>
+    </list>
+
+
+    <subheadline id="Tabellenstrukturen">Tabellenstrukturen</subheadline>
+
+    <text>
+      Dieser Abschnitt beinhaltet Tabellenstrukturen.
+    </text>
+    <table>
+      <tableheadline>
+        <tablerow>
+          <tableheaditem>Spalte 1</tableheaditem>
+          <tableheaditem>Spalte 2</tableheaditem>
+          <tableheaditem>Spalte 3</tableheaditem>
+          <tableheaditem>Spalte 4</tableheaditem>
+        </tablerow>
+      </tableheadline>
+      <tablebody>
+        <tablerow>
+          <tableitem>Element 1.1</tableitem>
+          <tableitem>Element 1.2</tableitem>
+          <tableitem>Element 1.3</tableitem>
+          <tableitem>Element 1.4</tableitem>
+        </tablerow>
+        <tablerow>
+          <tableitem>Element 2.1</tableitem>
+          <tableitem>Element 2.2</tableitem>
+          <tableitem>Element 2.3</tableitem>
+          <tableitem>Element 2.4</tableitem>
+        </tablerow>
+        <tablerow>
+          <tableitem>Element 3.1</tableitem>
+          <tableitem>Element 3.2</tableitem>
+          <tableitem>Element 3.3</tableitem>
+          <tableitem>Element 3.4</tableitem>
+        </tablerow>
+        <tablecaption>Tabelle 1: Elemente</tablecaption>
+      </tablebody>
+    </table>
+
+    <subheadline id="Bild-Referenzen">Bild-Referenzen</subheadline>
+
+    <text>
+      Dieser Abschnitt beinhaltet eine Referenz auf eine Bilddatei.
+    </text>
+    <figure>
+      <image link="http://localhost:8080/xdoc/xtest/img/Bereich/Unterbereich/Unterbereich-Bild.png" source="file:///C:/Users/schmi/Daten/Web/xdoc/xtest/img/Bereich/Unterbereich/Unterbereich-Bild.png"/>
+      <figurecaption class="figure-caption text-left">
+        Abbildung 1: Bildunterschrift
+      </figurecaption>
+    </figure>
+
+    <subheadline id="Code">Code</subheadline>
+
+    <text>
+      Code wird als Einrückung dargestellt. Zunächst ein mehrzeiliger Codeblock
+    </text>
+    <codebox>
+        String meldung = "hello";
+        System.out.println(meldung);
+        subroutine(value);
+        #?$
+    </codebox>
+
+
+    <text>
+      Danach eine eine einzige Codezeile:
+    </text>
+    <codeline>print "a line";</codeline>
+
+    <subheadline id="Sequenzen">Sequenzen</subheadline>
+
+    <text>
+      Sequenzen sind abfolgende Kommandos oder Dialoge
+    </text>
+    <sequence>
+      <sequenceline start="File" target="Open Project..."/>
+      <sequenceline target="Open Project-Dialog" dialogue="yes"/>
+      <sequenceitem target="Scope" comment="Select one of the following fields"/>
+      <sequenceitem target="All Projects" comment="all available projects of the daatabase"/>
+      <sequenceitem target="All Prep Projects" comment="available and tested projects"/>
+      <sequenceitem target="All user-id Working Projects" comment="own projects"/>
+      <sequenceline target="Project Name" comment="name of the project"/>
+      <sequenceitem target="Project Version" comment="version des Projekts"/>
+      <sequenceitem target="Test without bracket"/>
+      <sequenceline target="Open"/>
+    </sequence>
+
+    <subheadline id="Weitere Strukturen">Weitere Strukturen</subheadline>
+
+    <text>
+      Diese Struktur beschreibt wiederum eine Tabelle.
+    </text>
+    <table>
+      <tableheadline>
+        <tablerow>
+          <tableheaditem>Spalte 1</tableheaditem>
+          <tableheaditem>Spalte 2</tableheaditem>
+          <tableheaditem>Spalte 3</tableheaditem>
+          <tableheaditem>Spalte 4</tableheaditem>
+        </tablerow>
+      </tableheadline>
+      <tablebody>
+        <tablerow>
+          <tableitem>Element 1.1</tableitem>
+          <tableitem>Element 1.2</tableitem>
+          <tableitem>Element 1.3</tableitem>
+          <tableitem>Element 1.4</tableitem>
+        </tablerow>
+        <tablerow>
+          <tableitem>Element 2.1</tableitem>
+          <tableitem>Element 2.2</tableitem>
+          <tableitem>Element 2.3</tableitem>
+          <tableitem>Element 2.4</tableitem>
+        </tablerow>
+        <tablerow>
+          <tableitem>Element 3.1</tableitem>
+          <tableitem>Element 3.2</tableitem>
+          <tableitem>Element 3.3</tableitem>
+          <tableitem>Element 3.4</tableitem>
+        </tablerow>
+        <tablecaption>Tabelle 2: Weitere Elemente</tablecaption>
+      </tablebody>
+    </table>
+    <bold>Abschließend etwas Fettdruck</bold>
+
+    <subheadline id="Links">Links</subheadline>
+
+    <text>
+      Weitere Links sind im folgenden aufgeführt:
+    </text>
+
+    <hyperlinks>
+      <hyperlink name="Test">http://localhost:8080/xdoc/Test/html/Test.html</hyperlink>
+      <hyperlink name="Bereich">http://localhost:8080/xdoc/Test/html/Bereich/Bereich.html</hyperlink>
+      <hyperlink name="Thema">http://localhost:8080/xdoc/Test/html/Thema/Thema.html</hyperlink>
+    </hyperlinks>
+  </content>
+</document>

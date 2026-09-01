@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?><fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format">
+    <fo:layout-master-set>
+        <fo:simple-page-master master-name="page" page-height="29.7cm" page-width="21cm" margin-top="1cm" margin-bottom="1cm" margin-left="2.5cm" margin-right="2.5cm">
+            <fo:region-body margin-top="1cm" margin-bottom="2cm"/>
+            <fo:region-before extent="3cm"/>
+            <fo:region-after extent="0.5cm"/>
+            <fo:region-start extent="2cm"/>
+            <fo:region-end extent="0.5cm"/>
+        </fo:simple-page-master>
+        <fo:page-sequence-master master-name="single-page">
+            <fo:repeatable-page-master-reference master-reference="page"/>
+        </fo:page-sequence-master>
+    </fo:layout-master-set>
+    <fo:page-sequence master-reference="single-page" initial-page-number="1">
+        <fo:static-content flow-name="xsl-region-before">
+            <fo:block space-after="4pt" space-before="4pt" text-align="right">
+                <fo:external-graphic src="url('file:///C:/Users/schmi/Daten/Web/xdoc/resources/logo.svg')" text-align="right"/>
+            </fo:block>
+        </fo:static-content>
+        <fo:static-content flow-name="xsl-region-after">
+            <fo:block text-align="outside" font-family="Helvetica, Arial, sans-serif" font-size="10pt">
+                          Seite
+          
+                <fo:page-number/>
+            </fo:block>
+        </fo:static-content>
+        <fo:flow flow-name="xsl-region-body">
+            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="20pt" font-weight="bold" space-after="10pt" space-before="10pt" text-align="start">
+          &#133;Programmiermodell</fo:block>
+            <fo:block text-align="start" font-family="Helvetica, Arial, sans-serif" font-size="10pt">Tim Schmitz</fo:block>
+            <fo:block text-align="start" font-family="Helvetica, Arial, sans-serif" font-size="10pt">16.05.2026</fo:block>
+        </fo:flow>
+    </fo:page-sequence>
+    <fo:page-sequence master-reference="single-page" initial-page-number="2">
+        <fo:static-content flow-name="xsl-region-after">
+            <fo:block text-align="outside" font-family="Helvetica, Arial, sans-serif" font-size="10pt">
+                          Seite
+          
+                <fo:page-number/>
+            </fo:block>
+        </fo:static-content>
+        <fo:flow flow-name="xsl-region-body">
+            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="14pt" font-weight="bold" space-after="10pt" space-before="10pt" text-align="start">
+      Inhalt
+    </fo:block>
+            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+                <fo:block text-align-last="justify">
+                    <fo:inline>
+                        Java Development Kit
+                        <fo:leader leader-pattern="dots"/>
+                        <fo:page-number-citation ref-id="Java Development Kit"/>
+                    </fo:inline>
+                </fo:block>
+                <fo:block text-align-last="justify">
+                    <fo:inline>
+                        Java Runtime Environment
+                        <fo:leader leader-pattern="dots"/>
+                        <fo:page-number-citation ref-id="Java Runtime Environment"/>
+                    </fo:inline>
+                </fo:block>
+                <fo:block text-align-last="justify">
+                    <fo:inline>
+                        Java Virtual Machine
+                        <fo:leader leader-pattern="dots"/>
+                        <fo:page-number-citation ref-id="Java Virtual Machine"/>
+                    </fo:inline>
+                </fo:block>
+            </fo:block>
+        </fo:flow>
+    </fo:page-sequence>
+    <fo:page-sequence master-reference="single-page" initial-page-number="3">
+        <fo:static-content flow-name="xsl-region-after">
+            <fo:block text-align="outside" font-family="Helvetica, Arial, sans-serif" font-size="10pt" line-height="14pt">
+                          Seite
+          
+                <fo:page-number/>
+            </fo:block>
+        </fo:static-content>
+        <fo:flow flow-name="xsl-region-body">
+            <fo:block break-after="page" font-family="Helvetica, Arial, sans-serif">
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="20pt" font-weight="bold" space-after="10pt" space-before="10pt" text-align="start">Java-Programmiermodell</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Die Programmierung in Java bedeutet die Konstruktion und Implementierung objektorientierter Anwendungen. Diese Anwendungen bestehen aus Klassen, 
+      die in Paketen organisiert sind. Diese Klassen enthalten Daten und Methoden. Die Daten repräsentieren den Zustand, die Methoden das Verhalten der
+      Objekte der Anwendung, wobei Objekte die Instanzen von Klassen sind. Die Programmierung selbst ist Bestandteil der Java-Technologie. Diese besteht 
+      aus einem Entwicklungswerkzeug, dem Java Development Kit (JDK) für die Programmierung von Java-Anwendungen, und einer Laufzeitumgebung, der Java 
+      Runtime Environment (JRE) für die Ausführung dieser Anwendungen. 
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="14pt" font-weight="bold" space-after="10pt" space-before="10pt" text-align="start" id="Java Development Kit">Java Development Kit</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Der Java Development Kit ist ein vollständiges Entwicklungssystem für Java. Das Entwicklungssystem umfasst den Compiler, die Kernbibliotheken 
+      (Core APIs) und die Laufzeitumgebung Java Virtual Machine (JVM). Der interne Compiler javac übersetzt die Java-Quelldateien in Klassendateien. 
+      Die Klassendateien liegen in Bytecode vor, welcher zur Laufzeit virtualisiert, d.h. von der virtuellen Machine interpretiert wird.  
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="14pt" font-weight="bold" space-after="10pt" space-before="10pt" text-align="start" id="Java Runtime Environment">Java Runtime Environment</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Das reduzierte Laufzeitsystem zur Ausführung fertig übersetzter Java-Anwendungen ist das Java Runtime Environment. Es beinhaltet die Java 
+      Virtual Maschine und die Laufzeitbibliotheken. Das Laufzeitsystem ist für den reinen Betrieb von Java-Anwendungen ohne Entwicklung geeignet und 
+      wesentlich kleiner als das komplette Entwicklungssystem. 
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="bold">Achtung: </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Die maximale von Oracle angebotene JRE Version ist die JRE 8. Der aktuelle JDK hat allerdings die Version 21. Software, die mit dieser Version 
+      entwickelt wurde, ist auf einer älteren JRE nicht ausführbar. Man sollte daher die im JDK mitgelieferte aktuelle JRE als Runtime Environment verwenden.
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="14pt" font-weight="bold" space-after="10pt" space-before="10pt" text-align="start" id="Java Virtual Machine">Java Virtual Machine</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Die Java Virtual Machine (JVM) ist die eigentliche Laufzeitumgebung. Sie interpretiert den Bytecode, der vom Java Compiler durch Übersetzung erzeugt 
+      wird. Als virtueller Prozessor arbeitet die Virtual Maschine die Maschineninstruktionen ab und entkoppelt somit den Bytecode vom Betriebssystem. 
+      Sie lädt über den Class Loader die Java-Klassen zur Laufzeit der Anwendung und instantiiert diese dynamisch.
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Zusammen mit der Java API bildet die Java Virtual Machine die Java-Plattform. Anwendungen kommunizieren mit dem Betriebssystem nur über die Virtual 
+      Machine und die Programmier-Schnittstellen.
+    </fo:block>
+                    
+                <fo:block space-after="4pt" space-before="4pt" line-height="0pt">
+                    <fo:external-graphic src="url('file:///C:/Users/schmi/Daten/Web/xdoc/xapp/img/Java-Programmiermodell.svg')"/>
+                </fo:block>
+                <fo:block space-after="6pt" space-before="6pt" font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-style="italic">
+        Abbildung 1: Komponenten des Java-Programmiermodels
+      </fo:block>
+                  
+            </fo:block>
+        </fo:flow>
+    </fo:page-sequence>
+</fo:root>

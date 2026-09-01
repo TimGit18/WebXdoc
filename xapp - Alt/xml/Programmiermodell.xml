@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" standalone='yes'?>
+<document env="xapp">
+
+  <main>
+    <topic name="Home" link="http://localhost:8080/xdoc/xapp/html/xapp.html"/>
+  </main>
+
+  <links>
+    <link type="stylesheet">http://localhost:8080/xdoc/resources/css/bootstrap.min.css</link>
+    <link type="stylesheet">http://localhost:8080/xdoc/resources/css/bootstrap-toc.min.css</link>
+    <link type="icon">http://localhost:8080/xdoc/resources/favicon.ico</link>
+  </links>
+
+  <scripts>
+    <script>http://localhost:8080/xdoc/resources/lib/angular.js</script>
+    <script>http://localhost:8080/xdoc/resources/lib/jquery-3.2.1.min.js</script>
+    <script>http://localhost:8080/xdoc/resources/lib/popper.min.js</script>
+    <script>http://localhost:8080/xdoc/resources/lib/bootstrap.min.js</script>
+    <script>http://localhost:8080/xdoc/resources/lib/bootstrap-toc.min.js</script>
+  </scripts>
+
+  <title>Programmiermodell</title>
+  <author>Tim Schmitz</author>
+  <date>16.05.2026</date>
+
+  <content>
+    <headline>Java-Programmiermodell</headline>
+    <abstract>
+      Die Programmierung in Java bedeutet die Konstruktion und Implementierung objektorientierter Anwendungen. Diese Anwendungen bestehen aus Klassen, 
+      die in Paketen organisiert sind. Diese Klassen enthalten Daten und Methoden. Die Daten repräsentieren den Zustand, die Methoden das Verhalten der
+      Objekte der Anwendung, wobei Objekte die Instanzen von Klassen sind. Die Programmierung selbst ist Bestandteil der Java-Technologie. Diese besteht 
+      aus einem Entwicklungswerkzeug, dem Java Development Kit (JDK) für die Programmierung von Java-Anwendungen, und einer Laufzeitumgebung, der Java 
+      Runtime Environment (JRE) für die Ausführung dieser Anwendungen. 
+    </abstract>
+
+
+    <subheadline id="Java Development Kit">Java Development Kit</subheadline>
+
+    <text>
+      Der Java Development Kit ist ein vollständiges Entwicklungssystem für Java. Das Entwicklungssystem umfasst den Compiler, die Kernbibliotheken 
+      (Core APIs) und die Laufzeitumgebung Java Virtual Machine (JVM). Der interne Compiler javac übersetzt die Java-Quelldateien in Klassendateien. 
+      Die Klassendateien liegen in Bytecode vor, welcher zur Laufzeit virtualisiert, d.h. von der virtuellen Machine interpretiert wird.  
+    </text>
+
+    <subheadline id="Java Runtime Environment">Java Runtime Environment</subheadline>
+
+    <text>
+      Das reduzierte Laufzeitsystem zur Ausführung fertig übersetzter Java-Anwendungen ist das Java Runtime Environment. Es beinhaltet die Java 
+      Virtual Maschine und die Laufzeitbibliotheken. Das Laufzeitsystem ist für den reinen Betrieb von Java-Anwendungen ohne Entwicklung geeignet und 
+      wesentlich kleiner als das komplette Entwicklungssystem. 
+    </text>
+    <bold>Achtung: </bold>
+
+    <text>
+      Die maximale von Oracle angebotene JRE Version ist die JRE 8. Der aktuelle JDK hat allerdings die Version 21. Software, die mit dieser Version 
+      entwickelt wurde, ist auf einer älteren JRE nicht ausführbar. Man sollte daher die im JDK mitgelieferte aktuelle JRE als Runtime Environment verwenden.
+    </text>
+
+    <subheadline id="Java Virtual Machine">Java Virtual Machine</subheadline>
+
+    <text>
+      Die Java Virtual Machine (JVM) ist die eigentliche Laufzeitumgebung. Sie interpretiert den Bytecode, der vom Java Compiler durch Übersetzung erzeugt 
+      wird. Als virtueller Prozessor arbeitet die Virtual Maschine die Maschineninstruktionen ab und entkoppelt somit den Bytecode vom Betriebssystem. 
+      Sie lädt über den Class Loader die Java-Klassen zur Laufzeit der Anwendung und instantiiert diese dynamisch.
+    </text>
+
+    <text>
+      Zusammen mit der Java API bildet die Java Virtual Machine die Java-Plattform. Anwendungen kommunizieren mit dem Betriebssystem nur über die Virtual 
+      Machine und die Programmier-Schnittstellen.
+    </text>
+    <figure>
+      <image link="http://localhost:8080/xdoc/xapp/img/Java-Programmiermodell.svg" source="file:///C:/Users/schmi/Daten/Web/xdoc/xapp/img/Java-Programmiermodell.svg"/>
+      <figurecaption class="figure-caption text-left">
+        Abbildung 1: Komponenten des Java-Programmiermodels
+      </figurecaption>
+    </figure>
+  </content>
+</document>

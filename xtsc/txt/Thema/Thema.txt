@@ -1,0 +1,11 @@
+Thema
+=====
+Dies ist die Test-Seite für die xdoc-Anwendung. Es werden einfache Strukturelemente vorgestellt. 
+Die Überschrift referenziert auf die Domäne der Anwendung. Der Abstract ist eine Zusammenfassung des 
+Themas und sollte möglichst kompakt sein. Abschließend folgt das Inhaltsverzeichnis mit Verweisen auf 
+weitere Themen sowie auf einzelne Seiten. 
+
+
+Inhalt
+======
+Thema-Referenz

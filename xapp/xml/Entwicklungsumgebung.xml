@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8" standalone='yes'?>
+<document env="xapp">
+
+  <main>
+    <topic name="Home" link="http://localhost:8080/xdoc/xapp/html/xapp.html"/>
+  </main>
+
+  <links>
+    <link type="stylesheet">http://localhost:8080/xdoc/resources/css/bootstrap.min.css</link>
+    <link type="stylesheet">http://localhost:8080/xdoc/resources/css/bootstrap-toc.min.css</link>
+    <link type="icon">http://localhost:8080/xdoc/resources/favicon.ico</link>
+  </links>
+
+  <scripts>
+    <script>http://localhost:8080/xdoc/resources/lib/angular.js</script>
+    <script>http://localhost:8080/xdoc/resources/lib/jquery-3.2.1.min.js</script>
+    <script>http://localhost:8080/xdoc/resources/lib/popper.min.js</script>
+    <script>http://localhost:8080/xdoc/resources/lib/bootstrap.min.js</script>
+    <script>http://localhost:8080/xdoc/resources/lib/bootstrap-toc.min.js</script>
+  </scripts>
+
+  <title>Entwicklungsumgebung</title>
+  <author>Tim Schmitz</author>
+  <date>01.09.2026</date>
+
+  <content>
+    <headline>Java-Entwicklungsumgebung</headline>
+    <abstract>
+      Für größere Projekte benötigt man eine professionelle Integrierte Entwicklungsumgebung (IDE) wie etwa IntelliJ, die eine 
+      breite Werkzeugunterstützung anbietet und das Progrmmieren vereinfacht.
+    </abstract>
+
+
+    <subheadline id="Projekt-Anlage">Projekt-Anlage</subheadline>
+
+    <text>
+      Ein neues Projekt wird in IntelliJ wie folgt angelegt:
+    </text>
+    <sequence>
+      <sequenceline start="File" target="New Project..."/>
+      <sequenceline target="New Project-Dialog" dialogue="yes"/>
+      <sequenceitem target="New Project" comment="Java"/>
+      <sequenceline target="Name" comment="application"/>
+      <sequenceitem target="Location" comment="~\Daten\Java\Projects"/>
+      <sequenceitem target="Create Git repository" comment="Check"/>
+      <sequenceitem target="Build system" comment="IntelliJ"/>
+      <sequenceitem target="JDK" comment="21"/>
+      <sequenceitem target="Add sample code" comment="Uncheck"/>
+      <sequenceline target="Advanced Settings"/>
+      <sequenceitem target="Module Name" comment="application"/>
+      <sequenceitem target="Content root" comment="~\Daten\Java\Projects\application"/>
+      <sequenceitem target="Module file location" comment="~\Daten\Java\Projects\application"/>
+    </sequence>
+
+    <text>
+      Dabei passiert folgendes:
+    </text>
+    <numlist>
+      <listitem>Das Projekt wird mit seinem Namen an einem physischem Ort initialisiert</listitem>
+      <listitem>Es wird ein Git-Repository bei der Anlage erzeugt</listitem>
+      <listitem>Die Build-Umgebung für das Projekt (Entwicklungsumgebung und JDK 21) wird festgelegt</listitem>
+      <listitem>Vordefinierte Klassen (Sample Code) werden nicht erzeugt</listitem>
+    </numlist>
+
+
+    <subheadline id="Hauptklasse">Hauptklasse</subheadline>
+
+    <text>
+      Um Klassen zu erzeugen, muss zunächst eine Verzeichnisstruktur definiert werden.
+      Die Startklasse der Anwendung wird dann in einem neuen Paket erzeugt. Zunächst wird im Projekt-Explorer 
+      das Quellcode-Verzeichnis selektiert:
+    </text>
+    <sequence>
+      <sequenceline start="src" target="Kontextmenü"/>
+      <sequenceline target="New"/>
+      <sequenceline target="Package"/>
+      <sequenceitem target="Name" comment="de.domain.application.core"/>
+    </sequence>
+
+    <text>
+      Anschließend wird das Paket selektiert und die Hauptklasse angelegt:
+    </text>
+    <sequence>
+      <sequenceline start="Package" target="New"/>
+      <sequenceline target="Java Class"/>
+      <sequenceitem target="Name" comment="Main"/>
+    </sequence>
+
+    <text>
+      Die Frage, ob die neue Datei dem Git-Repository hinzugefügt werden soll, wird bejaht.	
+      Um die Anwendung testen zu können, muss ein Quellcode-Rumpf in der Hauptklasse mit der Hauptmethode geschrieben werden.
+    </text>
+    <codebox>
+      	package de.domain.application.core;
+      
+      	public class ApplicationMain {
+      
+      		public static void main(String[] args) {
+      			System.out.println("Hello Application - Main");
+      		}
+      
+      	}
+    </codebox>
+
+
+    <subheadline id="Konfiguration">Konfiguration</subheadline>
+
+    <text>
+      Eine Laufzeit-Konfiguration wird definiert, um die Anwendung zu übersetzen und auszuführen.
+    </text>
+    <sequence>
+      <sequenceline start="Run" target="Edit Configurations..."/>
+      <sequenceitem target="Run/Debug Configurations"/>
+      <sequenceitem target="Add new run configuration..."/>
+      <sequenceitem target="Application"/>
+      <sequenceitem target="Name" comment="Application"/>
+      <sequenceitem target="Main Class" comment="ApplicationMain"/>
+    </sequence>
+
+    <text>
+      Anschließend kann die Anwendung Apply und Run ausgeführt werden. Alternativ ist jederzeit eine Ausführung wie folgt möglich:
+    </text>
+    <sequence>
+      <sequenceline start="Run" target="Run 'Application' 		(Shift + F10)"/>
+    </sequence>
+
+    <subheadline id="Bibliotheken">Bibliotheken</subheadline>
+
+    <text>
+      Bibliotheken werden wie folgt eingebunden:
+    </text>
+    <sequence>
+      <sequenceline start="File" target="Project Structure..."/>
+      <sequenceline target="Project Structure-Dialog" dialogue="yes"/>
+      <sequenceline target="Project Settings" comment="Navigation"/>
+      <sequenceitem target="Libraries"/>
+      <sequenceline target="Add:" comment="+"/>
+      <sequenceitem target="New Project Library"/>
+      <sequenceitem target="Java"/>
+    </sequence>
+
+    <text>
+      Die Auswahl der Bibliotheken erfolgt über einen Open-Dialog, der mit Apply und OK bestätigt wird.
+      Es empfiehlt sich, die Libraries einzeln dazu zu binden, damit sie auch in der Programmbibliothek External Libraries 
+      sichtbar sind.
+    </text>
+
+    <text>
+      Folgende Bibliotheken des Logging-Pakets apache-log4j-2.25.3-bin sollen eingebunden werden:
+    </text>
+    <list>
+      <listitem>log4j-api-2.25.3.jar</listitem>
+      <listitem>log4j-core-2.25.3.jar</listitem>
+    </list>
+
+
+    <subheadline id="Properties">Properties</subheadline>
+
+    <text>
+      Properties sind applikationsspezifische Attributierungen (Key-Value-Paare). Sie werden in einer separaten Datei abgelegt:
+    </text>
+    <sequence>
+      <sequenceline start="application" target="New..."/>
+      <sequenceline target="Directory"/>
+      <sequenceline target="New Directory-Dialog" dialogue="yes"/>
+      <sequenceitem target="Name:" comment="properties"/>
+    </sequence>
+
+    <text>
+      Anschließend kann in dem Verzeichnis die Properties-Datei angelegt werden:
+    </text>
+    <sequence>
+      <sequenceline start="properties" target="New..."/>
+      <sequenceline target="File"/>
+      <sequenceline target="New File-Dialog" dialogue="yes"/>
+      <sequenceitem target="Name:" comment="application.properties"/>
+    </sequence>
+
+    <text>
+      Wichtig ist, dass das Verzeichnis properties, das auf der ersten Ebene der Applikation liegt, wie folgt markiert wird:
+    </text>
+    <sequence>
+      <sequenceline start="properties" target="Kontextmenü"/>
+      <sequenceline target="Mark Directory as"/>
+      <sequenceline target="Resources root"/>
+    </sequence>
+
+    <text>
+      Die Markierung erlaubt es dem Build der IDE, das Verzeichnis in den Build-Pfad mitaufzunehmen.
+    </text>
+  </content>
+</document>

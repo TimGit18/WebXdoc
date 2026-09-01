@@ -1,0 +1,11 @@
+Python
+======
+Diese Seite beschreibt Elemente der Skriptsprache Python, die aufgrund ihres vielfältigen Einsatzes 
+sich als wirkungsmächtigste und effektivste herausgestellt hat. 
+
+
+Inhalt
+======
+Start
+Typen
+

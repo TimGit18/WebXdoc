@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:osb="http://www.openswatchbook.org/uri/2009/osb"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="137.78333mm"
+   height="58.023758mm"
+   viewBox="0 0 137.78332 58.023758"
+   version="1.1"
+   id="svg8"
+   sodipodi:docname="Übersetzung.svg"
+   inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)">
+  <defs
+     id="defs2">
+    <linearGradient
+       id="linearGradient4563"
+       osb:paint="solid">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop4561" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient4555"
+       osb:paint="solid">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop4553" />
+    </linearGradient>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1"
+     inkscape:cx="543.82249"
+     inkscape:cy="-79.289201"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="true"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="1358"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     showguides="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0">
+    <inkscape:grid
+       type="xygrid"
+       id="grid57"
+       originx="103.2875"
+       originy="-228.76458" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Ebene 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(103.2875,-10.211667)">
+    <rect
+       style="fill:#ffffff;stroke:#000000;stroke-width:0.19999999;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect16"
+       width="44.979164"
+       height="14.552081"
+       x="-103.1875"
+       y="53.583344" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333311px;line-height:1.25;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="-102.25684"
+       y="59.061703"
+       id="text20"
+       inkscape:transform-center-x="-26.203512"
+       inkscape:transform-center-y="50.705496"><tspan
+         sodipodi:role="line"
+         id="tspan18"
+         x="-102.25684"
+         y="59.061703"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333311px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;stroke-width:0.26458332">Python Entwicklungs-</tspan><tspan
+         sodipodi:role="line"
+         x="-102.25684"
+         y="64.353371"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333311px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;stroke-width:0.26458332"
+         id="tspan827">       umgebung</tspan></text>
+    <rect
+       style="fill:#ffffff;stroke:#000000;stroke-width:0.20000002;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect16-1"
+       width="34.395836"
+       height="14.552085"
+       x="-103.1875"
+       y="21.833342" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333311px;line-height:1.25;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="-102.78041"
+       y="27.229513"
+       id="text20-8"
+       inkscape:transform-center-x="-26.203512"
+       inkscape:transform-center-y="50.705496"><tspan
+         sodipodi:role="line"
+         x="-102.78041"
+         y="27.229513"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333311px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;stroke-width:0.26458332"
+         id="tspan827-3">Python Quellcode</tspan><tspan
+         sodipodi:role="line"
+         x="-102.78041"
+         y="32.521179"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333311px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;stroke-width:0.26458332"
+         id="tspan880">       script.py</tspan><tspan
+         sodipodi:role="line"
+         x="-102.78041"
+         y="37.812847"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333311px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;stroke-width:0.26458332"
+         id="tspan852" /></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.17493916px;line-height:1.25;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="-50.675785"
+       y="61.320103"
+       id="text20-8-5"
+       inkscape:transform-center-x="-25.485605"
+       inkscape:transform-center-y="50.705497"
+       transform="scale(0.98620623,1.0139867)"><tspan
+         sodipodi:role="line"
+         x="-50.675785"
+         y="61.320103"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.17493916px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;stroke-width:0.26458332"
+         id="tspan827-3-6">__pychache__</tspan></text>
+    <rect
+       style="fill:#ffffff;stroke:#000000;stroke-width:0.2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect16-1-8-2"
+       width="37.041668"
+       height="14.552083"
+       x="-55.5625"
+       y="21.833342" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.17493916px;line-height:1.25;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="2.2190533"
+       y="59.568905"
+       id="text20-8-5-3-5"
+       inkscape:transform-center-x="-25.485607"
+       inkscape:transform-center-y="50.705495"
+       transform="scale(0.98620623,1.0139867)"><tspan
+         sodipodi:role="line"
+         x="2.2190533"
+         y="59.568905"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.17493916px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;stroke-width:0.26458332"
+         id="tspan923-8">Python Virtual</tspan><tspan
+         sodipodi:role="line"
+         x="2.2190533"
+         y="64.787582"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.17493916px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;stroke-width:0.26458332"
+         id="tspan948">   Machine</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.26535562px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m -68.791666,29.770843 c 13.229168,0 13.229168,0 13.229168,0"
+       id="path978"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:#000000;stroke:#000000;stroke-width:0.00803871;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m -56.620832,29.241676 v -0.42799 l 0.425381,0.425282 c 0.233961,0.233905 0.425381,0.426501 0.425381,0.42799 0,0.0015 -0.19142,0.0027 -0.425381,0.0027 h -0.425381 z"
+       id="path75"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:#000000;stroke:#000000;stroke-width:0.00803871;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m -56.620843,30.30001 v -0.420064 h 0.529171 0.529171 l -0.525779,0.420064 c -0.289177,0.231036 -0.527306,0.420065 -0.529171,0.420065 -0.002,0 -0.0034,-0.189029 -0.0034,-0.420065 z"
+       id="path77"
+       inkscape:connector-curvature="0" />
+    <rect
+       style="fill:none;stroke:#000000;stroke-width:0.19999999;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect16-1-8-2-0"
+       width="29.104166"
+       height="14.552082"
+       x="1.5894561e-06"
+       y="21.833342" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.26535562px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m -18.520834,29.770842 c 18.5208338027777,0 18.5208338027777,0 18.5208338027777,0"
+       id="path978-8"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:#000000;stroke:#000000;stroke-width:0.00803871;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m -56.62071,29.241675 v -0.42799 l 0.48938,0.425282 c 0.26916,0.233905 0.48938,0.426501 0.48938,0.42799 0,0.0015 -0.22022,0.0027 -0.48938,0.0027 h -0.48938 z"
+       id="path75-2"
+       inkscape:connector-curvature="0" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333311px;line-height:1.25;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="-58.025707"
+       y="13.851755"
+       id="text20-8-2-4"
+       inkscape:transform-center-x="-26.203512"
+       inkscape:transform-center-y="50.705496"><tspan
+         sodipodi:role="line"
+         x="-58.025707"
+         y="13.851755"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333311px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;stroke-width:0.26458332"
+         id="tspan827-3-7-9">Byte Code Übersetzung</tspan></text>
+    <path
+       sodipodi:type="spiral"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.20618744"
+       id="path1034"
+       sodipodi:cx="34.395832"
+       sodipodi:cy="31.09376"
+       sodipodi:expansion="1"
+       sodipodi:revolution="3"
+       sodipodi:radius="5.454525"
+       sodipodi:argument="-17.523739"
+       sodipodi:t0="0"
+       d="m 34.395832,31.09376 c 0.06633,0.265315 -0.324916,0.220307 -0.440972,0.110243 -0.314506,-0.298268 -0.09398,-0.798022 0.220485,-0.992188 0.562508,-0.347317 1.274053,-6.17e-4 1.543403,0.551215 0.395283,0.809835 -0.09174,1.757905 -0.881943,2.094618 -1.053215,0.448786 -2.244713,-0.183444 -2.645834,-1.212672 -0.50477,-1.295178 0.274763,-2.732972 1.543401,-3.197049 1.536491,-0.56206 3.222059,0.36585 3.748265,1.874129 0.620116,1.777455 -0.456791,3.711662 -2.204858,4.299481 -2.018213,0.67866 -4.201609,-0.547634 -4.850696,-2.535588 -0.737534,-2.258838 0.638409,-4.691798 2.866316,-5.401911 2.499375,-0.796639 5.182164,0.729136 5.953127,3.197045 0.855915,2.739847 -0.819826,5.672662 -3.527774,6.504342"
+       transform="matrix(1.3172087,0.01692907,-0.01606398,1.249897,-31.31325,-10.733777)" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333311px;line-height:1.25;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="1.9948756"
+       y="13.78067"
+       id="text20-8-2-4-8-1"
+       inkscape:transform-center-x="-26.203512"
+       inkscape:transform-center-y="50.705496"><tspan
+         sodipodi:role="line"
+         x="1.9948756"
+         y="13.78067"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333311px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;stroke-width:0.26458332"
+         id="tspan827-3-7-9-7-8">Interpretation</tspan></text>
+    <rect
+       style="fill:none;stroke:#000000;stroke-width:0.19999999;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect16-0"
+       width="89.958328"
+       height="14.552085"
+       x="-55.5625"
+       y="53.58334" />
+    <rect
+       style="fill:none;stroke:#000000;stroke-width:0.20000002;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect16-2"
+       width="29.104166"
+       height="10.583335"
+       x="1.5894581e-06"
+       y="56.229176" />
+    <path
+       style="fill:#000000;stroke:#000000;stroke-width:0.00803871;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m -1.3229167,29.241708 v -0.52918 l 0.64824006,0.525832 c 0.35654,0.289209 0.64825,0.527341 0.64825,0.529182 0,0.0019 -0.29171,0.0033 -0.64825,0.0033 H -1.3229167 Z"
+       id="path75-2-6-5"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:#000000;stroke:#000000;stroke-width:0.0080387;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M -1.32281,30.300009 V 29.770842 H -0.6614 0 l -0.65716,0.529167 c -0.36145,0.291042 -0.65908,0.529167 -0.66141,0.529167 -0.003,0 -0.005,-0.238125 -0.005,-0.529167 z"
+       id="path77-3-1-8"
+       inkscape:connector-curvature="0" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333311px;line-height:1.25;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="-89.348289"
+       y="13.587173"
+       id="text20-8-2-4-87"
+       inkscape:transform-center-x="-26.203512"
+       inkscape:transform-center-y="50.705496"><tspan
+         sodipodi:role="line"
+         x="-89.348289"
+         y="13.587173"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333311px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;stroke-width:0.26458332"
+         id="tspan827-3-7-9-6">Edit</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333311px;line-height:1.25;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="-54.13736"
+       y="27.577097"
+       id="text20-8-7"
+       inkscape:transform-center-x="-26.203512"
+       inkscape:transform-center-y="50.705496"><tspan
+         sodipodi:role="line"
+         x="-54.13736"
+         y="27.577097"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333311px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;stroke-width:0.26458332"
+         id="tspan827-3-1">Python Bytecode</tspan><tspan
+         sodipodi:role="line"
+         x="-54.13736"
+         y="32.868763"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333311px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;stroke-width:0.26458332"
+         id="tspan880-9">       script.pyc</tspan><tspan
+         sodipodi:role="line"
+         x="-54.13736"
+         y="38.160431"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333311px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;stroke-width:0.26458332"
+         id="tspan852-0" /></text>
+  </g>
+</svg>

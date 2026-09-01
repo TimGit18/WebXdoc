@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" standalone='yes'?>
+<document env="xunix">
+
+  <main>
+    <topic name="Home" link="http://localhost:8080/xdoc/xunix/html/xunix.html"/>
+  </main>
+
+  <links>
+    <link type="stylesheet">http://localhost:8080/xdoc/resources/css/bootstrap.min.css</link>
+    <link type="stylesheet">http://localhost:8080/xdoc/resources/css/bootstrap-toc.min.css</link>
+    <link type="icon">http://localhost:8080/xdoc/resources/favicon.ico</link>
+  </links>
+
+  <scripts>
+    <script>http://localhost:8080/xdoc/resources/lib/angular.js</script>
+    <script>http://localhost:8080/xdoc/resources/lib/jquery-3.2.1.min.js</script>
+    <script>http://localhost:8080/xdoc/resources/lib/popper.min.js</script>
+    <script>http://localhost:8080/xdoc/resources/lib/bootstrap.min.js</script>
+    <script>http://localhost:8080/xdoc/resources/lib/bootstrap-toc.min.js</script>
+  </scripts>
+
+  <title>Dateikonzept</title>
+  <author>Tim Schmitz</author>
+  <date>04.02.2024</date>
+
+  <content>
+    <headline>Dateikonzept</headline>
+    <abstract>
+      Unix ist ein dateibasiertes Betriebssystem. Eine Datei (file) ist die kleinste sequentiell organisierte Einheit zusammenhängender Daten. Es gibt normale 
+      Dateien, Dateikataloge (Verzeichnisse) und Gerätedateien. 
+    </abstract>
+
+
+    <subheadline id="Verzeichnisstruktur">Verzeichnisstruktur</subheadline>
+
+    <text>
+      Unix besitzt eine hierarchische Dateistruktur. Die Struktur der Dateien und Kataloge ist ein invertierter Baum beliebiger Breite und Tiefe. Jede Datei 
+      befindet sich in einem Verzeichnis (directory). Verzeichnisse beinhalten Dateien und Unterverzeichnisse. Die Hierarchie des Dateisystems beginnt mit der 
+      Wurzel (root) und verteilt sich auf die verschiedenen Zweige.
+    </text>
+    <codebox>
+          /               Root-Verzeichnis
+              /bin        Ausführbare Programme
+              /etc        Konfigurationsdateien
+              /home       Nutzerverzeichnis
+              /lib        Gemeinsam genutzte Bibliotheken
+              /tmp        Temporäre Dateien
+              /usr        Anwendungen
+              /usr/local  Rechnerspezifische Anwendungen  
+    </codebox>
+
+    <figure>
+      <image link="http://localhost:8080/xdoc/xunix/img/Struktur.svg" source="file:///C:/Users/Test/Daten/Web/xdoc/xunix/img/Struktur.svg"/>
+      <figurecaption class="figure-caption text-left">
+        Abbildung 1: Die Verzeichnisstruktur von Unix
+      </figurecaption>
+    </figure>
+  </content>
+</document>

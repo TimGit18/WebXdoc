@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="UTF-8"?><fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format">
+    <fo:layout-master-set>
+        <fo:simple-page-master master-name="page" page-height="29.7cm" page-width="21cm" margin-top="1cm" margin-bottom="1cm" margin-left="2.5cm" margin-right="2.5cm">
+            <fo:region-body margin-top="1cm" margin-bottom="2cm"/>
+            <fo:region-before extent="3cm"/>
+            <fo:region-after extent="0.5cm"/>
+            <fo:region-start extent="2cm"/>
+            <fo:region-end extent="0.5cm"/>
+        </fo:simple-page-master>
+        <fo:page-sequence-master master-name="single-page">
+            <fo:repeatable-page-master-reference master-reference="page"/>
+        </fo:page-sequence-master>
+    </fo:layout-master-set>
+    <fo:page-sequence master-reference="single-page" initial-page-number="1">
+        <fo:static-content flow-name="xsl-region-before">
+            <fo:block space-after="4pt" space-before="4pt" text-align="right">
+                <fo:external-graphic src="url('file:///C:/Users/schmi/Daten/Web/xdoc/resources/logo.svg')" text-align="right"/>
+            </fo:block>
+        </fo:static-content>
+        <fo:static-content flow-name="xsl-region-after">
+            <fo:block text-align="outside" font-family="Helvetica, Arial, sans-serif" font-size="10pt">
+                          Seite
+          
+                <fo:page-number/>
+            </fo:block>
+        </fo:static-content>
+        <fo:flow flow-name="xsl-region-body">
+            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="20pt" font-weight="bold" space-after="10pt" space-before="10pt" text-align="start">
+          &#133;Logging</fo:block>
+            <fo:block text-align="start" font-family="Helvetica, Arial, sans-serif" font-size="10pt">Tim Schmitz</fo:block>
+            <fo:block text-align="start" font-family="Helvetica, Arial, sans-serif" font-size="10pt">16.05.2026</fo:block>
+        </fo:flow>
+    </fo:page-sequence>
+    <fo:page-sequence master-reference="single-page" initial-page-number="2">
+        <fo:static-content flow-name="xsl-region-after">
+            <fo:block text-align="outside" font-family="Helvetica, Arial, sans-serif" font-size="10pt">
+                          Seite
+          
+                <fo:page-number/>
+            </fo:block>
+        </fo:static-content>
+        <fo:flow flow-name="xsl-region-body">
+            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="14pt" font-weight="bold" space-after="10pt" space-before="10pt" text-align="start">
+      Inhalt
+    </fo:block>
+            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+                <fo:block text-align-last="justify">
+                    <fo:inline>
+                        Voraussetzungen
+                        <fo:leader leader-pattern="dots"/>
+                        <fo:page-number-citation ref-id="Voraussetzungen"/>
+                    </fo:inline>
+                </fo:block>
+                <fo:block text-align-last="justify">
+                    <fo:inline>
+                        Konfiguration
+                        <fo:leader leader-pattern="dots"/>
+                        <fo:page-number-citation ref-id="Konfiguration"/>
+                    </fo:inline>
+                </fo:block>
+                <fo:block text-align-last="justify">
+                    <fo:inline>
+                        Level
+                        <fo:leader leader-pattern="dots"/>
+                        <fo:page-number-citation ref-id="Level"/>
+                    </fo:inline>
+                </fo:block>
+                <fo:block text-align-last="justify">
+                    <fo:inline>
+                        Deklaration
+                        <fo:leader leader-pattern="dots"/>
+                        <fo:page-number-citation ref-id="Deklaration"/>
+                    </fo:inline>
+                </fo:block>
+                <fo:block text-align-last="justify">
+                    <fo:inline>
+                        Kodierung
+                        <fo:leader leader-pattern="dots"/>
+                        <fo:page-number-citation ref-id="Kodierung"/>
+                    </fo:inline>
+                </fo:block>
+            </fo:block>
+        </fo:flow>
+    </fo:page-sequence>
+    <fo:page-sequence master-reference="single-page" initial-page-number="3">
+        <fo:static-content flow-name="xsl-region-after">
+            <fo:block text-align="outside" font-family="Helvetica, Arial, sans-serif" font-size="10pt" line-height="14pt">
+                          Seite
+          
+                <fo:page-number/>
+            </fo:block>
+        </fo:static-content>
+        <fo:flow flow-name="xsl-region-body">
+            <fo:block break-after="page" font-family="Helvetica, Arial, sans-serif">
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="20pt" font-weight="bold" space-after="10pt" space-before="10pt" text-align="start">Logging</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Logging ist für ein qualifiziertes Debuggen des Quellcodes und für eine Traceability der Anwendung, d.h. die Nachvollziehbarkeit von Fehlern
+      unerläßlich. Es gibt verschiedene Logger, darunter auch einen im JDK selbst. Als Logger wird hier der frei verfügbare Logger des Apache Subprojects 
+      log4J2 verwendet. Dieser Logger zeichnet sich durch eine weite Verbreitung, eine hohe Stabilität und eine große Flexibilität sowie eine entsprechende
+      Konfigurierbarkeit aus.
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="14pt" font-weight="bold" space-after="10pt" space-before="10pt" text-align="start" id="Voraussetzungen">Voraussetzungen</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Um die Klassen des Loggers zu nutzen, müssen folgende zwei Archive und das Properties-Verzeichnis in den Klassenpfad eingebunden werden. Dies gilt 
+      sowohl für die IDE als auch für den Build und Deployment-Prozess mit einem Build-Tool. 
+    </fo:block>
+                    
+                <fo:list-block provisional-distance-between-starts="50mm" provisional-label-separation="10mm" space-after="4pt" space-before="4pt">
+                    <fo:list-item>
+                        <fo:list-item-label>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="normal">•
+          </fo:block>
+                        </fo:list-item-label>
+                        <fo:list-item-body>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" start-indent="5mm">log4j-api-2.11.1.jar</fo:block>
+                        </fo:list-item-body>
+                    </fo:list-item>
+                    <fo:list-item>
+                        <fo:list-item-label>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="normal">•
+          </fo:block>
+                        </fo:list-item-label>
+                        <fo:list-item-body>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" start-indent="5mm">log4j-core-2.11.1.jar</fo:block>
+                        </fo:list-item-body>
+                    </fo:list-item>
+                    <fo:list-item>
+                        <fo:list-item-label>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="normal">•
+          </fo:block>
+                        </fo:list-item-label>
+                        <fo:list-item-body>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" start-indent="5mm">properties/log4J2.xml</fo:block>
+                        </fo:list-item-body>
+                    </fo:list-item>
+                </fo:list-block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Das properties-Verzeichnis muss deswegen miteingebunden werden, um auf die Konfigurationsdatei log4j2.xml zugreifen zu können. 
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="14pt" font-weight="bold" space-after="10pt" space-before="10pt" text-align="start" id="Konfiguration">Konfiguration</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Um den oder die Logger zu konfigurieren, gibt es mehrere Möglichkeiten. Die hier vorgestellte Möglichkeit basiert auf der Konfiguration 
+      mittels einer XML-Datei log4j2.xml. Diese soll dann verwendet werden, wenn nicht die Standard-Konfiguration (Default Configuration) des 
+      Loggers verwendet werden soll, andererseits aber auch keine Configuration Factory oder kein System-Property zum Einsatz kommt.
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Die Konfigurationsdatei log4j2.xml hat folgendes Aussehen:
+    </fo:block>
+                    
+                <fo:block font-family="Courier" font-size="6pt" linefeed-treatment="preserve" white-space-treatment="preserve" space-before="0pt" space-after="4pt" text-align="start" white-space-collapse="false">
+      &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+      &lt;Configuration status="WARN"&gt;
+        &lt;!-- ++++++++++++++++++++++++++++++++++++++++++++ --&gt;
+        &lt;!-- Definition der Appender Console und Log File --&gt;
+        &lt;!-- ++++++++++++++++++++++++++++++++++++++++++++ --&gt;
+        &lt;Appenders&gt;
+          &lt;Console name="Console" target="SYSTEM_OUT"&gt;
+            &lt;PatternLayout pattern="%d{HH:mm:ss:SSS} %-5level %logger{36} - %msg%n" /&gt;
+          &lt;/Console&gt;
+      
+          &lt;File name="File"
+           fileName="${sys:log.path}/output_${date:yyyy}_${date:MM}_${date:dd}_${date:HH}
+                                           _${date:mm}_${date:ss}_${date:SSS}.log"
+           bufferedIO="true"&gt;
+            &lt;PatternLayout pattern="%d{HH:mm:ss:SSS} %-5level %logger{36} - %msg%n" /&gt;
+          &lt;/File&gt;
+        &lt;/Appenders&gt;
+      
+        &lt;!-- +++++++++++++++++++++ --&gt;
+        &lt;!-- Definition der Logger --&gt;
+        &lt;!-- +++++++++++++++++++++ --&gt;
+        &lt;Loggers&gt;
+          &lt;Root level="trace"&gt;
+            &lt;AppenderRef ref="File" /&gt;
+            &lt;AppenderRef ref="Console" /&gt;
+          &lt;/Root&gt;
+        &lt;/Loggers&gt;
+      &lt;/Configuration&gt;
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Es handelt sich um einen Logger, der in Form von zwei Appendern auftritt, die über spezielle XML-Tags gekennzeichnet sind. 
+    </fo:block>
+                    
+                <fo:list-block provisional-distance-between-starts="50mm" provisional-label-separation="10mm" space-after="4pt" space-before="4pt">
+                    <fo:list-item>
+                        <fo:list-item-label>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="normal">1.
+          </fo:block>
+                        </fo:list-item-label>
+                        <fo:list-item-body>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" start-indent="5mm">Als Console, die den geloggten Output auf der Kommandozeile oder in der Enwicklungsumgebung ausgibt (IDE oder Build-Messages)</fo:block>
+                        </fo:list-item-body>
+                    </fo:list-item>
+                    <fo:list-item>
+                        <fo:list-item-label>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="normal">2.
+          </fo:block>
+                        </fo:list-item-label>
+                        <fo:list-item-body>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" start-indent="5mm">Als Logging File, welches in einem Datei-Format mit dem Suffix .log gespeichert wird </fo:block>
+                        </fo:list-item-body>
+                    </fo:list-item>
+                </fo:list-block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Das Muster der geloggten Ausgabe wird in der Konfigurationsdatei festgelegt und ist immer dasselbe:
+    </fo:block>
+                    
+                <fo:block font-family="Courier" font-size="6pt" linefeed-treatment="preserve" white-space-treatment="preserve" space-before="4pt" space-after="4pt" text-align="start" white-space-collapse="false">23:35:58:920 TRACE de.domain.application.control.MainRun - LogPath: C:\Users\\Daten\Java\Applications\application\logs</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Zunächst wird der Zeitstempel des Events geloggt, also wann der geloggte Code-Teil durchlaufen wurde. Danach wird der Log-Level (zum Beispiel 
+      TRACE) protokolliert. Anschließend folgt der Name der vollqualifizierten Klasse, in die geloggt wurde und zum Schluss die eigentliche Mitteilung.
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="14pt" font-weight="bold" space-after="10pt" space-before="10pt" text-align="start" id="Level">Level</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Es gibt verschiedene Logging-Level. Sie besitzen eine implizite Hierarchie:
+    </fo:block>
+                    
+                <fo:block space-after="10pt" space-before="10pt">
+                    <fo:table table-layout="fixed" width="100%">
+                        <fo:table-header>
+                            <fo:table-row>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block background-color="#f0f0f0" font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="bold">Level</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block background-color="#f0f0f0" font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="bold">Gewichtung</fo:block>
+                                </fo:table-cell>
+                            </fo:table-row>
+                        </fo:table-header>
+                        <fo:table-body>
+                            <fo:table-row>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">OFF</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">0</fo:block>
+                                </fo:table-cell>
+                            </fo:table-row>
+                            <fo:table-row>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">FATAL</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">100</fo:block>
+                                </fo:table-cell>
+                            </fo:table-row>
+                            <fo:table-row>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">ERROR</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">200</fo:block>
+                                </fo:table-cell>
+                            </fo:table-row>
+                            <fo:table-row>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">WARN</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">300</fo:block>
+                                </fo:table-cell>
+                            </fo:table-row>
+                            <fo:table-row>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">INFO</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">400</fo:block>
+                                </fo:table-cell>
+                            </fo:table-row>
+                            <fo:table-row>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">DEBUG</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">500</fo:block>
+                                </fo:table-cell>
+                            </fo:table-row>
+                            <fo:table-row>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">TRACE</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">600</fo:block>
+                                </fo:table-cell>
+                            </fo:table-row>
+                            <fo:table-row>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">ALL</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">Int.MAX_VALUE</fo:block>
+                                </fo:table-cell>
+                            </fo:table-row>
+                        </fo:table-body>
+                    </fo:table>
+                    <fo:block space-after="6pt" space-before="6pt" font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-style="italic">Tabelle 1: Logging-Level</fo:block>
+                </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Setzt man besipielsweise INFO als Level des Logging Levels an, so werden alle Loggings mit dem Level ERROR übernommen, nicht aber die 
+      mit dem Level TRACE. Um den Überbllick nicht zu verlieren. sollte man nicht zu viele Logging-Level verwenden.
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="14pt" font-weight="bold" space-after="10pt" space-before="10pt" text-align="start" id="Deklaration">Deklaration</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Wie bereits in der Anwendungsarchitektur skizziert, wird der Logger in der Klasse MainRun gesetzt, sobald der Computer-Name ermittelt wurde. 
+      Abhängig von diesem wird der Logging-Pfad gesetzt und die für die Konfigurationsdatei System-Property log.path. Dieses geschieht in der Methode
+      setLogPath() der erwähnten Klasse. 
+    </fo:block>
+                    
+                <fo:block font-family="Courier" font-size="6pt" linefeed-treatment="preserve" white-space-treatment="preserve" space-before="0pt" space-after="4pt" text-align="start" white-space-collapse="false">
+        public static String setLogPath(String computerName) {
+          String logPath = "";
+      
+          // Abfrage des Rechnernamens und setzen des Logging Pfads
+          if (TIM_PC.equals(computerName)) {
+            logPath = LOG_PATH_TIM_PC;
+          } else if (META_PC.equals(computerName)) {
+            logPath = LOG_PATH_META_PC;
+          } else if (_PC.equals(computerName)) {
+            logPath = LOG_PATH__PC;
+          } else {
+            System.err.println(ERROR_HOST);
+          }
+      
+          // Setzen des System Logging-Pfades
+          System.setProperty("log.path", logPath);
+          return logPath;
+        }
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="14pt" font-weight="bold" space-after="10pt" space-before="10pt" text-align="start" id="Kodierung">Kodierung</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Um den Logger im Quellcode zu verwenden, müssen drei Handlungen vorgenommen werden:
+    </fo:block>
+                    
+                <fo:list-block provisional-distance-between-starts="50mm" provisional-label-separation="10mm" space-after="4pt" space-before="4pt">
+                    <fo:list-item>
+                        <fo:list-item-label>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="normal">1.
+          </fo:block>
+                        </fo:list-item-label>
+                        <fo:list-item-body>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" start-indent="5mm">Die Klassenbibliotheken des Loggers und des Logging-Managers müssen importiert werden</fo:block>
+                        </fo:list-item-body>
+                    </fo:list-item>
+                    <fo:list-item>
+                        <fo:list-item-label>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="normal">2.
+          </fo:block>
+                        </fo:list-item-label>
+                        <fo:list-item-body>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" start-indent="5mm">Der Logger muss mit dem Namen der geloggten Klasse instantiiert werden</fo:block>
+                        </fo:list-item-body>
+                    </fo:list-item>
+                    <fo:list-item>
+                        <fo:list-item-label>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="normal">3.
+          </fo:block>
+                        </fo:list-item-label>
+                        <fo:list-item-body>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" start-indent="5mm">Die eigentliche Logging-Mitteilung muss an der Stelle im Code geschehen, die protokolliert werden soll. </fo:block>
+                        </fo:list-item-body>
+                    </fo:list-item>
+                </fo:list-block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Dafür bettet sich das Logging harmonisch in den übrigen Java-Code ein. Es hat beispielsweise folgendes Aussehen:
+    </fo:block>
+                    
+                <fo:block font-family="Courier" font-size="6pt" linefeed-treatment="preserve" white-space-treatment="preserve" space-before="0pt" space-after="4pt" text-align="start" white-space-collapse="false">
+        import org.apache.logging.log4j.LogManager;
+        import org.apache.logging.log4j.Logger;
+      
+        public class Control {
+      
+          private static Logger LOG = LogManager.getLogger(Control.class.getName());
+      
+          protected static void run() {
+            LOG.trace("Start der Anwendungssteuerung");
+          }
+        }
+    </fo:block>
+                  
+            </fo:block>
+        </fo:flow>
+    </fo:page-sequence>
+</fo:root>

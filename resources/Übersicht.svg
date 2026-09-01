@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="153.95833mm"
+   height="71.9375mm"
+   viewBox="0 0 153.95833 71.937501"
+   version="1.1"
+   id="svg8"
+   sodipodi:docname="Übersicht.svg"
+   inkscape:version="1.2.1 (9c6d41e410, 2022-07-14)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <defs
+     id="defs2">
+    <linearGradient
+       id="linearGradient4563"
+       inkscape:swatch="solid">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop4561" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient4555"
+       inkscape:swatch="solid">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop4553" />
+    </linearGradient>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="2.1990682"
+     inkscape:cx="660.27966"
+     inkscape:cy="134.14773"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="true"
+     inkscape:window-width="3440"
+     inkscape:window-height="1377"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     showguides="false"
+     inkscape:showpageshadow="2"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1">
+    <inkscape:grid
+       type="xygrid"
+       id="grid57"
+       originx="106.08334"
+       originy="-219.35416" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Ebene 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(106.08334,-5.7083488)">
+    <rect
+       style="fill:#ffffff;stroke:#000000;stroke-width:0.0812099;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect16-1"
+       width="22.480766"
+       height="6.5461726"
+       x="-95.005806"
+       y="15.759827" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.175px;line-height:1.25;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="-92.527893"
+       y="19.726295"
+       id="text20-8"
+       inkscape:transform-center-x="-26.203512"
+       inkscape:transform-center-y="50.705496"><tspan
+         sodipodi:role="line"
+         x="-92.527893"
+         y="19.726295"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.175px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;stroke-width:0.264583"
+         id="tspan827-3">Dateisystem</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.175px;line-height:1.25;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="-30.166586"
+       y="15.661073"
+       id="text20-8-5"
+       inkscape:transform-center-x="-26.203512"
+       inkscape:transform-center-y="50.705496"><tspan
+         sodipodi:role="line"
+         x="-30.166586"
+         y="15.661073"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.175px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;stroke-width:0.264583"
+         id="tspan827-3-6">CBM-Anwendung</tspan></text>
+    <rect
+       style="fill:#ffffff;stroke:#000000;stroke-width:0.0704527;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect16-1-8-2"
+       width="21.224369"
+       height="5.2184138"
+       x="-55.731522"
+       y="20.594366" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;line-height:1.25;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="-41.898655"
+       y="34.037563"
+       id="text20-8-5-3"
+       inkscape:transform-center-x="-26.203512"
+       inkscape:transform-center-y="50.705496"><tspan
+         sodipodi:role="line"
+         x="-41.898655"
+         y="34.037563"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;stroke-width:0.264583"
+         id="tspan923" /></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.175px;line-height:1.25;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="-54.838383"
+       y="24.163729"
+       id="text20-8-5-3-7"
+       inkscape:transform-center-x="-26.203512"
+       inkscape:transform-center-y="50.705496"><tspan
+         sodipodi:role="line"
+         x="-54.838383"
+         y="24.163729"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.175px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;stroke-width:0.264583"
+         id="tspan923-80">cbmParser.py</tspan></text>
+    <rect
+       style="fill:#ffffff;stroke:#000000;stroke-width:0.0704527;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect16-1-8-2-8"
+       width="21.224369"
+       height="5.2184138"
+       x="-27.902235"
+       y="20.605139" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.175px;line-height:1.25;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="-27.009096"
+       y="24.174501"
+       id="text20-8-5-3-7-7"
+       inkscape:transform-center-x="-26.203512"
+       inkscape:transform-center-y="50.705496"><tspan
+         sodipodi:role="line"
+         x="-27.009096"
+         y="24.174501"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.175px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;stroke-width:0.264583"
+         id="tspan923-80-5">cbmParser.py</tspan></text>
+    <rect
+       style="fill:#ffffff;stroke:#000000;stroke-width:0.0704527;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect16-1-8-2-4"
+       width="21.224369"
+       height="5.2184138"
+       x="-0.04905517"
+       y="20.544981" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.175px;line-height:1.25;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="0.84408373"
+       y="24.114344"
+       id="text20-8-5-3-7-4"
+       inkscape:transform-center-x="-26.203512"
+       inkscape:transform-center-y="50.705496"><tspan
+         sodipodi:role="line"
+         x="0.84408373"
+         y="24.114344"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.175px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;stroke-width:0.264583"
+         id="tspan923-80-7">cbmParser.py</tspan></text>
+    <rect
+       style="fill:#ffffff;stroke:#000000;stroke-width:0.0558447;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect16-1-8-2-1"
+       width="13.298114"
+       height="5.2330217"
+       x="-85.721443"
+       y="23.605736" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.175px;line-height:1.25;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="-84.766785"
+       y="27.487129"
+       id="text20-8-7"
+       inkscape:transform-center-x="-26.203512"
+       inkscape:transform-center-y="50.705496"><tspan
+         sodipodi:role="line"
+         x="-84.766785"
+         y="27.487129"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.175px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;stroke-width:0.264583"
+         id="tspan827-3-5">ECO.txt</tspan></text>
+    <rect
+       style="fill:#ffffff;stroke:#000000;stroke-width:0.0708653;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect16-1-8-2-1-7"
+       width="22.199312"
+       height="5.0478487"
+       x="-56.943253"
+       y="32.694092" />
+    <rect
+       style="fill:#ffffff;stroke:#000000;stroke-width:0.0725172;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect16-1-8-2-1-7-1"
+       width="22.495426"
+       height="5.2163491"
+       x="-56.905586"
+       y="40.321072" />
+    <rect
+       style="fill:#ffffff;stroke:#000000;stroke-width:0.0725172;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect16-1-8-2-1-7-1-6"
+       width="22.495428"
+       height="5.2163491"
+       x="-56.926857"
+       y="48.318249" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.175px;line-height:1.25;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="-55.71294"
+       y="36.352261"
+       id="text20-8-7-5"
+       inkscape:transform-center-x="-26.203512"
+       inkscape:transform-center-y="50.705496"><tspan
+         sodipodi:role="line"
+         x="-55.71294"
+         y="36.352261"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.175px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;stroke-width:0.264583"
+         id="tspan827-3-5-0">ecoFile.txt</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.175px;line-height:1.25;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="-55.90144"
+       y="44.313763"
+       id="text20-8-7-7"
+       inkscape:transform-center-x="-26.203512"
+       inkscape:transform-center-y="50.705496"><tspan
+         sodipodi:role="line"
+         x="-55.90144"
+         y="44.313763"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.175px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;stroke-width:0.264583"
+         id="tspan827-3-5-7">cbmFile.txt</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.175px;line-height:1.25;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="-55.638912"
+       y="52.261925"
+       id="text20-8-7-6"
+       inkscape:transform-center-x="-26.203512"
+       inkscape:transform-center-y="50.705496"><tspan
+         sodipodi:role="line"
+         x="-55.638912"
+         y="52.261925"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.175px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;stroke-width:0.264583"
+         id="tspan827-3-5-1">cbmEcoFile.txt</tspan></text>
+  </g>
+</svg>

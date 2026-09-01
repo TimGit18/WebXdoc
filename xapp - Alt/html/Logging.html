@@ -1,0 +1,263 @@
+<html lang="de">
+    <head>
+        <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>Logging</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="http://localhost:8080/xdoc/resources/css/bootstrap.min.css">
+        <link rel="stylesheet" href="http://localhost:8080/xdoc/resources/css/bootstrap-toc.min.css">
+        <link rel="icon" href="http://localhost:8080/xdoc/resources/favicon.ico">
+    </head>
+    <body data-spy="scroll" data-target="#toc">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-2 bg-light">
+                    <figure class="figure">
+                        <img class="figure-img img-fluid rounded" src="http://localhost:8080/xdoc/resources/getsitelogo.png">
+                    </figure>
+                    <nav id="toc" class="sticky-top" data-toggle="toc"></nav>
+                </div>
+                <div class="col-sm-10">
+                    <nav class="navbar navbar-expand-lg sticky-top navbar-light bg-light">
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav mr-auto">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="http://localhost:8080/xdoc/xapp/html/xapp.html">Home</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                    <p></p>
+                        
+                    <h2>Logging</h2>
+                        
+                    <p></p>
+                          Logging ist f&uuml;r ein qualifiziertes Debuggen des Quellcodes und f&uuml;r eine Traceability der Anwendung, d.h. die Nachvollziehbarkeit von Fehlern
+      unerl&auml;&szlig;lich. Es gibt verschiedene Logger, darunter auch einen im JDK selbst. Als Logger wird hier der frei verf&uuml;gbare Logger des Apache Subprojects 
+      log4J2 verwendet. Dieser Logger zeichnet sich durch eine weite Verbreitung, eine hohe Stabilit&auml;t und eine gro&szlig;e Flexibilit&auml;t sowie eine entsprechende
+      Konfigurierbarkeit aus.
+    
+                    <p></p>
+                        
+                    <h3>Voraussetzungen</h3>
+                        
+                    <p></p>
+                          Um die Klassen des Loggers zu nutzen, m&uuml;ssen folgende zwei Archive und das Properties-Verzeichnis in den Klassenpfad eingebunden werden. Dies gilt 
+      sowohl f&uuml;r die IDE als auch f&uuml;r den Build und Deployment-Prozess mit einem Build-Tool. 
+    
+                    <p></p>
+                        
+                    <ul>
+                        <li>log4j-api-2.11.1.jar</li>
+                        <li>log4j-core-2.11.1.jar</li>
+                        <li>properties/log4J2.xml</li>
+                    </ul>
+                        
+                    <p></p>
+                          Das properties-Verzeichnis muss deswegen miteingebunden werden, um auf die Konfigurationsdatei log4j2.xml zugreifen zu k&ouml;nnen. 
+    
+                    <p></p>
+                        
+                    <h3>Konfiguration</h3>
+                        
+                    <p></p>
+                          Um den oder die Logger zu konfigurieren, gibt es mehrere M&ouml;glichkeiten. Die hier vorgestellte M&ouml;glichkeit basiert auf der Konfiguration 
+      mittels einer XML-Datei log4j2.xml. Diese soll dann verwendet werden, wenn nicht die Standard-Konfiguration (Default Configuration) des 
+      Loggers verwendet werden soll, andererseits aber auch keine Configuration Factory oder kein System-Property zum Einsatz kommt.
+    
+                    <p></p>
+                        
+                    <p></p>
+                          Die Konfigurationsdatei log4j2.xml hat folgendes Aussehen:
+    
+                    <p></p>
+                        
+                    <pre>
+                        <code>
+      &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+      &lt;Configuration status="WARN"&gt;
+        &lt;!-- ++++++++++++++++++++++++++++++++++++++++++++ --&gt;
+        &lt;!-- Definition der Appender Console und Log File --&gt;
+        &lt;!-- ++++++++++++++++++++++++++++++++++++++++++++ --&gt;
+        &lt;Appenders&gt;
+          &lt;Console name="Console" target="SYSTEM_OUT"&gt;
+            &lt;PatternLayout pattern="%d{HH:mm:ss:SSS} %-5level %logger{36} - %msg%n" /&gt;
+          &lt;/Console&gt;
+      
+          &lt;File name="File"
+           fileName="${sys:log.path}/output_${date:yyyy}_${date:MM}_${date:dd}_${date:HH}
+                                           _${date:mm}_${date:ss}_${date:SSS}.log"
+           bufferedIO="true"&gt;
+            &lt;PatternLayout pattern="%d{HH:mm:ss:SSS} %-5level %logger{36} - %msg%n" /&gt;
+          &lt;/File&gt;
+        &lt;/Appenders&gt;
+      
+        &lt;!-- +++++++++++++++++++++ --&gt;
+        &lt;!-- Definition der Logger --&gt;
+        &lt;!-- +++++++++++++++++++++ --&gt;
+        &lt;Loggers&gt;
+          &lt;Root level="trace"&gt;
+            &lt;AppenderRef ref="File" /&gt;
+            &lt;AppenderRef ref="Console" /&gt;
+          &lt;/Root&gt;
+        &lt;/Loggers&gt;
+      &lt;/Configuration&gt;
+    </code>
+                    </pre>
+                        
+                    <p></p>
+                          Es handelt sich um einen Logger, der in Form von zwei Appendern auftritt, die &uuml;ber spezielle XML-Tags gekennzeichnet sind. 
+    
+                    <p></p>
+                        
+                    <ol>
+                        <li>Als Console, die den geloggten Output auf der Kommandozeile oder in der Enwicklungsumgebung ausgibt (IDE oder Build-Messages)</li>
+                        <li>Als Logging File, welches in einem Datei-Format mit dem Suffix .log gespeichert wird </li>
+                    </ol>
+                        
+                    <p></p>
+                          Das Muster der geloggten Ausgabe wird in der Konfigurationsdatei festgelegt und ist immer dasselbe:
+    
+                    <p></p>
+                        
+                    <pre>
+                        <code>23:35:58:920 TRACE de.domain.application.control.MainRun - LogPath: C:\Users\\Daten\Java\Applications\application\logs</code>
+                    </pre>
+                        
+                    <p></p>
+                          Zun&auml;chst wird der Zeitstempel des Events geloggt, also wann der geloggte Code-Teil durchlaufen wurde. Danach wird der Log-Level (zum Beispiel 
+      TRACE) protokolliert. Anschlie&szlig;end folgt der Name der vollqualifizierten Klasse, in die geloggt wurde und zum Schluss die eigentliche Mitteilung.
+    
+                    <p></p>
+                        
+                    <h3>Level</h3>
+                        
+                    <p></p>
+                          Es gibt verschiedene Logging-Level. Sie besitzen eine implizite Hierarchie:
+    
+                    <p></p>
+                        
+                    <p></p>
+                    <table class="table table-hover table-responsive-sm">
+                        <thead class="thead-light">
+                            <tr>
+                                <th>Level</th><th>Gewichtung</th>
+                            </tr>
+                            <tr></tr>
+                        </thead>
+                        <tbody>
+                            <tr></tr>
+                            <tr>
+                                <td>OFF</td><td>0</td>
+                            </tr>
+                            <tr></tr>
+                            <tr>
+                                <td>FATAL</td><td>100</td>
+                            </tr>
+                            <tr></tr>
+                            <tr>
+                                <td>ERROR</td><td>200</td>
+                            </tr>
+                            <tr></tr>
+                            <tr>
+                                <td>WARN</td><td>300</td>
+                            </tr>
+                            <tr></tr>
+                            <tr>
+                                <td>INFO</td><td>400</td>
+                            </tr>
+                            <tr></tr>
+                            <tr>
+                                <td>DEBUG</td><td>500</td>
+                            </tr>
+                            <tr></tr>
+                            <tr>
+                                <td>TRACE</td><td>600</td>
+                            </tr>
+                            <tr></tr>
+                            <tr>
+                                <td>ALL</td><td>Int.MAX_VALUE</td>
+                            </tr>
+                            <caption>Tabelle 1: Logging-Level</caption>
+                        </tbody>
+                    </table>
+                    <p></p>
+                        
+                    <p></p>
+                          Setzt man besipielsweise INFO als Level des Logging Levels an, so werden alle Loggings mit dem Level ERROR &uuml;bernommen, nicht aber die 
+      mit dem Level TRACE. Um den &Uuml;berbllick nicht zu verlieren. sollte man nicht zu viele Logging-Level verwenden.
+    
+                    <p></p>
+                        
+                    <h3>Deklaration</h3>
+                        
+                    <p></p>
+                          Wie bereits in der Anwendungsarchitektur skizziert, wird der Logger in der Klasse MainRun gesetzt, sobald der Computer-Name ermittelt wurde. 
+      Abh&auml;ngig von diesem wird der Logging-Pfad gesetzt und die f&uuml;r die Konfigurationsdatei System-Property log.path. Dieses geschieht in der Methode
+      setLogPath() der erw&auml;hnten Klasse. 
+    
+                    <p></p>
+                        
+                    <pre>
+                        <code>
+        public static String setLogPath(String computerName) {
+          String logPath = "";
+      
+          // Abfrage des Rechnernamens und setzen des Logging Pfads
+          if (TIM_PC.equals(computerName)) {
+            logPath = LOG_PATH_TIM_PC;
+          } else if (META_PC.equals(computerName)) {
+            logPath = LOG_PATH_META_PC;
+          } else if (_PC.equals(computerName)) {
+            logPath = LOG_PATH__PC;
+          } else {
+            System.err.println(ERROR_HOST);
+          }
+      
+          // Setzen des System Logging-Pfades
+          System.setProperty("log.path", logPath);
+          return logPath;
+        }
+    </code>
+                    </pre>
+                        
+                    <h3>Kodierung</h3>
+                        
+                    <p></p>
+                          Um den Logger im Quellcode zu verwenden, m&uuml;ssen drei Handlungen vorgenommen werden:
+    
+                    <p></p>
+                        
+                    <ol>
+                        <li>Die Klassenbibliotheken des Loggers und des Logging-Managers m&uuml;ssen importiert werden</li>
+                        <li>Der Logger muss mit dem Namen der geloggten Klasse instantiiert werden</li>
+                        <li>Die eigentliche Logging-Mitteilung muss an der Stelle im Code geschehen, die protokolliert werden soll. </li>
+                    </ol>
+                        
+                    <p></p>
+                          Daf&uuml;r bettet sich das Logging harmonisch in den &uuml;brigen Java-Code ein. Es hat beispielsweise folgendes Aussehen:
+    
+                    <p></p>
+                        
+                    <pre>
+                        <code>
+        import org.apache.logging.log4j.LogManager;
+        import org.apache.logging.log4j.Logger;
+      
+        public class Control {
+      
+          private static Logger LOG = LogManager.getLogger(Control.class.getName());
+      
+          protected static void run() {
+            LOG.trace("Start der Anwendungssteuerung");
+          }
+        }
+    </code>
+                    </pre>
+                      
+                </div>
+            </div>
+        </div>
+        <script src="http://localhost:8080/xdoc/resources/lib/angular.js"></script><script src="http://localhost:8080/xdoc/resources/lib/jquery-3.2.1.min.js"></script><script src="http://localhost:8080/xdoc/resources/lib/popper.min.js"></script><script src="http://localhost:8080/xdoc/resources/lib/bootstrap.min.js"></script><script src="http://localhost:8080/xdoc/resources/lib/bootstrap-toc.min.js"></script>
+    </body>
+</html>

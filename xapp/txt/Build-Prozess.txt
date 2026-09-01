@@ -1,0 +1,7 @@
+Build-Prozess
+=============
+Ein einfacher Build-Prozess besteht aus einigen wenigen Schritten, bei dem lediglich die nativen Werkzeuge des JDK verwendet werden 
+(Java-Compiler javac, Java Archive Tool jar und Java-Interpreter java). Die Steuerung des Builds erfolgt über gescriptete Batch-Dateien. 
+Ansonsten benötigt man für den Prozess nur die Konmmandozeilen-Befehle der unterliegenden Betriebssystems, hier Windows. 
+
+

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone='yes'?>
+<document env="xdoc">
+
+  <main>
+    <topic name="Home" link="http://localhost:8080/xdoc/xdoc/html/xdoc.html"/>
+  </main>
+
+  <links>
+    <link type="stylesheet">http://localhost:8080/xdoc/resources/css/bootstrap.min.css</link>
+    <link type="stylesheet">http://localhost:8080/xdoc/resources/css/bootstrap-toc.min.css</link>
+    <link type="icon">http://localhost:8080/xdoc/resources/favicon.ico</link>
+  </links>
+
+  <scripts>
+    <script>http://localhost:8080/xdoc/resources/lib/angular.js</script>
+    <script>http://localhost:8080/xdoc/resources/lib/jquery-3.2.1.min.js</script>
+    <script>http://localhost:8080/xdoc/resources/lib/popper.min.js</script>
+    <script>http://localhost:8080/xdoc/resources/lib/bootstrap.min.js</script>
+    <script>http://localhost:8080/xdoc/resources/lib/bootstrap-toc.min.js</script>
+  </scripts>
+
+  <title>xdoc</title>
+  <author>Tim Schmitz</author>
+  <date>22.03.2025</date>
+
+  <content>
+    <headline>Die xdoc-Anwendung</headline>
+    <abstract>
+      Diese Seite beschreibt die Anwendung xdoc, die einen Dokumentations-Generator realisiert. 
+      Dieser Generator benötigt als Eingabeformat Textdateien, Bilder und eine festgelegte Verzeichnisstruktur. 
+      Hieraus werden strukturgleiche Zielverzeichnisse generiert, in denen die Dokumente als Web-Dateien und
+      als portable Dokumentenformate erzeugt werden.
+    </abstract>
+
+    <horizontal/>
+    <tableofcontent>
+      <item>
+        <html name="Motivation" link="http://localhost:8080/xdoc/xdoc/html/Motivation.html" type="content"/>
+        <pdf name="Als PDF-Dokument" link="http://localhost:8080/xdoc/xdoc/pdf/Motivation.pdf"/>
+      </item>
+    </tableofcontent>
+  </content>
+</document>

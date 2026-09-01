@@ -1,0 +1,510 @@
+<?xml version="1.0" encoding="UTF-8"?><fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format">
+    <fo:layout-master-set>
+        <fo:simple-page-master master-name="page" page-height="29.7cm" page-width="21cm" margin-top="1cm" margin-bottom="1cm" margin-left="2.5cm" margin-right="2.5cm">
+            <fo:region-body margin-top="3cm" margin-bottom="1cm"/>
+            <fo:region-before extent="2.5cm"/>
+            <fo:region-after extent="0.5cm"/>
+            <fo:region-start extent="2.5cm"/>
+            <fo:region-end extent="0.5cm"/>
+        </fo:simple-page-master>
+        <fo:page-sequence-master master-name="single-page">
+            <fo:repeatable-page-master-reference master-reference="page"/>
+        </fo:page-sequence-master>
+    </fo:layout-master-set>
+    <fo:page-sequence master-reference="single-page" initial-page-number="1">
+        <fo:static-content flow-name="xsl-region-before">
+            <fo:block space-after="4pt" space-before="4pt" text-align="right">
+                <fo:external-graphic src="url('file:///C:/Users/schmi/Daten/Web/xdoc/Ressources/logo.svg')" text-align="right"/>
+            </fo:block>
+        </fo:static-content>
+        <fo:static-content flow-name="xsl-region-after">
+            <fo:block text-align="outside" font-family="Helvetica, Arial, sans-serif" font-size="10pt">
+                          Seite
+          
+                <fo:page-number/>
+            </fo:block>
+        </fo:static-content>
+        <fo:flow flow-name="xsl-region-body">
+            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="20pt" font-weight="bold" space-after="10pt" space-before="10pt" text-align="start">
+          &#133;Start</fo:block>
+            <fo:block text-align="start" font-family="Helvetica, Arial, sans-serif" font-size="10pt">Tim Schmitz</fo:block>
+            <fo:block text-align="start" font-family="Helvetica, Arial, sans-serif" font-size="10pt">05.07.2023</fo:block>
+        </fo:flow>
+    </fo:page-sequence>
+    <fo:page-sequence master-reference="single-page" initial-page-number="2">
+        <fo:static-content flow-name="xsl-region-before">
+            <fo:block space-after="4pt" space-before="4pt" text-align="right">
+                <fo:external-graphic src="url('file:///C:/Users/schmi/Daten/Web/xdoc/Ressources/logo.svg')" text-align="right"/>
+            </fo:block>
+        </fo:static-content>
+        <fo:static-content flow-name="xsl-region-after">
+            <fo:block text-align="outside" font-family="Helvetica, Arial, sans-serif" font-size="10pt">
+                          Seite
+          
+                <fo:page-number/>
+            </fo:block>
+        </fo:static-content>
+        <fo:flow flow-name="xsl-region-body">
+            <fo:block space-after="10pt" space-before="10pt" text-align="start">
+                          &#133;
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="14pt" font-weight="bold" space-after="10pt" space-before="10pt" text-align="start">
+      Inhalt
+    </fo:block>
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+                    <fo:block text-align-last="justify">
+                        <fo:inline>
+                            Fachbegriffe
+                            <fo:leader leader-pattern="dots"/>
+                            <fo:page-number-citation ref-id="Fachbegriffe"/>
+                        </fo:inline>
+                    </fo:block>
+                    <fo:block text-align-last="justify">
+                        <fo:inline>
+                            Node.js und npm
+                            <fo:leader leader-pattern="dots"/>
+                            <fo:page-number-citation ref-id="Node.js und npm"/>
+                        </fo:inline>
+                    </fo:block>
+                    <fo:block text-align-last="justify">
+                        <fo:inline>
+                            package.json
+                            <fo:leader leader-pattern="dots"/>
+                            <fo:page-number-citation ref-id="package.json"/>
+                        </fo:inline>
+                    </fo:block>
+                    <fo:block text-align-last="justify">
+                        <fo:inline>
+                            Compiler
+                            <fo:leader leader-pattern="dots"/>
+                            <fo:page-number-citation ref-id="Compiler"/>
+                        </fo:inline>
+                    </fo:block>
+                    <fo:block text-align-last="justify">
+                        <fo:inline>
+                            Weitere Tools
+                            <fo:leader leader-pattern="dots"/>
+                            <fo:page-number-citation ref-id="Weitere Tools"/>
+                        </fo:inline>
+                    </fo:block>
+                </fo:block>
+            </fo:block>
+        </fo:flow>
+    </fo:page-sequence>
+    <fo:page-sequence master-reference="single-page" initial-page-number="3">
+        <fo:static-content flow-name="xsl-region-before">
+            <fo:block space-after="4pt" space-before="4pt" text-align="right">
+                <fo:external-graphic src="url('file:///C:/Users/schmi/Daten/Web/xdoc/Ressources/logo.svg')" text-align="right"/>
+                          &#133;&#133;
+        
+            </fo:block>
+        </fo:static-content>
+        <fo:static-content flow-name="xsl-region-after">
+            <fo:block text-align="outside" font-family="Helvetica, Arial, sans-serif" font-size="10pt">
+                          Seite
+          
+                <fo:page-number/>
+            </fo:block>
+        </fo:static-content>
+        <fo:flow flow-name="xsl-region-body">
+            <fo:block break-after="page" font-family="Helvetica, Arial, sans-serif">
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="20pt" font-weight="bold" space-after="10pt" space-before="10pt" text-align="start">Start einer Angular-Anwendung</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Bevor eine Angular-Anwendung, was im Grunde eine client-seitige Web-Anwendung darstellt, entwickelt werden kann, 
+      müssen zunächst einige Vorarbeiten geschehen. 
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="14pt" font-weight="bold" space-after="10pt" space-before="20pt" text-align="start" id="Fachbegriffe">Fachbegriffe</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Folgende Fachbegriffe sollte man kennen:
+    </fo:block>
+                    
+                <fo:list-block provisional-distance-between-starts="50mm" provisional-label-separation="10mm" space-after="4pt" space-before="4pt">
+                    <fo:list-item>
+                        <fo:list-item-label>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="normal">•
+          </fo:block>
+                        </fo:list-item-label>
+                        <fo:list-item-body>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" start-indent="5mm">TypeScript: Echte Programmiersprache, der Angular zugrundeliegt und die nach JavaScript übersetzt wird</fo:block>
+                        </fo:list-item-body>
+                    </fo:list-item>
+                    <fo:list-item>
+                        <fo:list-item-label>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="normal">•
+          </fo:block>
+                        </fo:list-item-label>
+                        <fo:list-item-body>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" start-indent="5mm">ES5: ECMAScript-5-Standard (JavaScript)</fo:block>
+                        </fo:list-item-body>
+                    </fo:list-item>
+                    <fo:list-item>
+                        <fo:list-item-label>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="normal">•
+          </fo:block>
+                        </fo:list-item-label>
+                        <fo:list-item-body>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" start-indent="5mm">Visual Studio Code: Kostenloser Texteditor von Microsoft mit vielen Entwicklungs-Tools</fo:block>
+                        </fo:list-item-body>
+                    </fo:list-item>
+                    <fo:list-item>
+                        <fo:list-item-label>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="normal">•
+          </fo:block>
+                        </fo:list-item-label>
+                        <fo:list-item-body>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" start-indent="5mm">TSLint: Code-Analyzer für TypeScript und Angular</fo:block>
+                        </fo:list-item-body>
+                    </fo:list-item>
+                    <fo:list-item>
+                        <fo:list-item-label>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="normal">•
+          </fo:block>
+                        </fo:list-item-label>
+                        <fo:list-item-body>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" start-indent="5mm">Prettier: Formatierer für TypeScript (in VS Code enthalten)</fo:block>
+                        </fo:list-item-body>
+                    </fo:list-item>
+                    <fo:list-item>
+                        <fo:list-item-label>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="normal">•
+          </fo:block>
+                        </fo:list-item-label>
+                        <fo:list-item-body>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" start-indent="5mm">Karma: Testwerkzeug für Angular</fo:block>
+                        </fo:list-item-body>
+                    </fo:list-item>
+                    <fo:list-item>
+                        <fo:list-item-label>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="normal">•
+          </fo:block>
+                        </fo:list-item-label>
+                        <fo:list-item-body>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" start-indent="5mm">Node.js: JavaScript-Laufzeitumgebung außerhalb eines Browsers</fo:block>
+                        </fo:list-item-body>
+                    </fo:list-item>
+                    <fo:list-item>
+                        <fo:list-item-label>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="normal">•
+          </fo:block>
+                        </fo:list-item-label>
+                        <fo:list-item-body>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" start-indent="5mm">npm: Node Package Manager, ein Tool für die richtige Installation und korrekte Paketabhängigkeiten</fo:block>
+                        </fo:list-item-body>
+                    </fo:list-item>
+                    <fo:list-item>
+                        <fo:list-item-label>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="normal">•
+          </fo:block>
+                        </fo:list-item-label>
+                        <fo:list-item-body>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" start-indent="5mm">Angular CLI: Kommandozeilenbasierte Entwicklungs- und Build-Umgebung</fo:block>
+                        </fo:list-item-body>
+                    </fo:list-item>
+                </fo:list-block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="14pt" font-weight="bold" space-after="10pt" space-before="20pt" text-align="start" id="Node.js und npm">Node.js und npm</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Node.js kann auch für server-seitiges JavaScript verwendet werden. Es führt als Laufzeitumgebung selber 
+      JavaScript aus und liefert auch einen Web-Server (http-server) mit. Bevor man überhaupt anfangen kann, 
+      sollte man die Laufzeitumgebung, die übrigens ein Binärprogramm ist, installieren und auch ein Kommandozeilen-Tool,
+      das funktional über die DOS-Box hinausgeht. 
+    </fo:block>
+                    
+                <fo:list-block provisional-distance-between-starts="50mm" provisional-label-separation="10mm" space-after="4pt" space-before="4pt">
+                    <fo:list-item>
+                        <fo:list-item-label>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="normal">•
+          </fo:block>
+                        </fo:list-item-label>
+                        <fo:list-item-body>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" start-indent="5mm">Download von Node.js 	(npm ist enthalten)</fo:block>
+                        </fo:list-item-body>
+                    </fo:list-item>
+                    <fo:list-item>
+                        <fo:list-item-label>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="normal">•
+          </fo:block>
+                        </fo:list-item-label>
+                        <fo:list-item-body>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" start-indent="5mm">Download von Cmdr 	(als Kommandozeilen-Tool)	</fo:block>
+                        </fo:list-item-body>
+                    </fo:list-item>
+                </fo:list-block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Mit den folgenden Befehlen überprüft man die Versionen von Node.js und npm:
+    </fo:block>
+                    
+                <fo:block font-family="Courier" font-size="6pt" linefeed-treatment="preserve" white-space-treatment="preserve" space-before="0pt" space-after="4pt" text-align="start" white-space-collapse="false">
+        node --version (v10.16.3)
+        npm --version	 (6.9.0)
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="14pt" font-weight="bold" space-after="10pt" space-before="20pt" text-align="start" id="package.json">package.json</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Die Abhängigkeiten des Projekts werden in der Konfigurationsdatei package.json. Hier kann man auch lokale 
+      npm-Pakete definieren, die nur innerhalb des Projekts in dem Verzeichnis node_modules verwendet werden. Die 
+      Konfigurationsdatei (des später initialisierten Projekts) hat folgendes Aussehen:
+    </fo:block>
+                    
+                <fo:block font-family="Courier" font-size="6pt" linefeed-treatment="preserve" white-space-treatment="preserve" space-before="0pt" space-after="4pt" text-align="start" white-space-collapse="false">
+        {
+          "name": "contacts-manager",
+          "version": "0.0.0",
+          "scripts": {
+            "ng": "ng",
+            "start": "ng serve",
+            "build": "ng build",
+            "test": "ng test",
+            "lint": "ng lint",
+            "e2e": "ng e2e"
+          },
+          "private": true,
+          "dependencies": {
+            "@angular/animations": "~10.1.1",
+            "@angular/common": "~10.1.1",
+            ...
+          },
+          "devDependencies": {
+            "@angular-devkit/build-angular": "~0.1001.1",
+            "@angular/cli": "~10.1.1",
+            ...
+          },
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="bold">name</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Hier wird der Name des Projekts beschrieben.
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="bold">version</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      In diesem Wert steht die Version des Projekts. 
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="bold">scripts</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Dieses Objekt beinhaltet Skripte, die über npm gestartet werden. Wenn man das Skript "start" startet, 
+      dann wird in Wirklichkeit der Befehl "ng serve" ausgeführt. Die Ausführung eines Skripts wird mit folgendem 
+      Befehl durchgeführt:
+    </fo:block>
+                    
+                <fo:block font-family="Courier" font-size="6pt" linefeed-treatment="preserve" white-space-treatment="preserve" space-before="4pt" space-after="4pt" text-align="start" white-space-collapse="false">npm run skriptname</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Mit dem Befehl 
+    </fo:block>
+                    
+                <fo:block font-family="Courier" font-size="6pt" linefeed-treatment="preserve" white-space-treatment="preserve" space-before="4pt" space-after="4pt" text-align="start" white-space-collapse="false">npm run</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      erhält man eine Übersicht über die Skripte im Projekt. 
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="bold">dependencies</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      In diesem Objekt stehen alle Abhängigkeiten, die benötigt werden, um die Anwendung zum Laufen zu bringen. 
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="bold">devDependencies</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      In diesem Objekt befinden sich Abhängigkeiten, die während der Entwicklung, aber nicht mehr zur Laufzeit gebraucht
+      werden. 
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="bold">Spezielle Zeichen</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Die Tilde(~) und der Zirkumflex(^) haben spezielle Bedeutungen. Die Tilde vor eine Version gibt an, dass in der 
+      dritten Versionsnummer die neueste genommen werden muss. Der Zirkumflex vor einer Version gibt an, dass in der 
+      zweiten Versionsnummer die neueste genommen werden muss. 
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Neben der Konfigurationsdatei existiert noch ein Datei package-lock.json mit den npm-Paketen, die sich im Verzeichnis 
+      node_modules befinden, und ihrer jeweilgen Version. 
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="14pt" font-weight="bold" space-after="10pt" space-before="20pt" text-align="start" id="Compiler">Compiler</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      TypeScript ist eine typisierte Programmiersprache, von der JavaScript eine Untermenge ist. Der Compiler hat zwei Funktionen:
+    </fo:block>
+                    
+                <fo:list-block provisional-distance-between-starts="50mm" provisional-label-separation="10mm" space-after="4pt" space-before="4pt">
+                    <fo:list-item>
+                        <fo:list-item-label>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="normal">1.
+          </fo:block>
+                        </fo:list-item-label>
+                        <fo:list-item-body>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" start-indent="5mm">Entdeckung von Programmierfehlern</fo:block>
+                        </fo:list-item-body>
+                    </fo:list-item>
+                    <fo:list-item>
+                        <fo:list-item-label>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="normal">2.
+          </fo:block>
+                        </fo:list-item-label>
+                        <fo:list-item-body>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" start-indent="5mm">Umwandlung von TypeScript-Code in JavaScript-Code</fo:block>
+                        </fo:list-item-body>
+                    </fo:list-item>
+                </fo:list-block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Die Zielversion von JavaScript kann man mit den Compiler-Optionen ändern. Die Entwicklungsumgebung Angular CLI wandelt TypeScript 
+      in die JavaScript-Version ES5 (ECMAScript-5-Standard) um, den alle moderenen Browser unterstützen. 
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="bold">Compiler-Fehlermeldungen</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Die hauptsächlichen Fehlermeldungen sind Typfehler oder Syntaxfehler. Typfehler entstehen, wenn Konstrukte wie Variablen typfremd 
+      verwendet werden, etwa durch falsche Zuweisungen. Die fehlende Typisierung in JavaScript wird hiermit erzwungen. Syntaxfehler 
+      entstehen durch fehlerhaften Code. Folgende Fehler können ebenfalls gemeldet werden, wenn die Compiler-Optionen entsprechend 
+      angepasst sind:
+    </fo:block>
+                    
+                <fo:list-block provisional-distance-between-starts="50mm" provisional-label-separation="10mm" space-after="4pt" space-before="4pt">
+                    <fo:list-item>
+                        <fo:list-item-label>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="normal">•
+          </fo:block>
+                        </fo:list-item-label>
+                        <fo:list-item-body>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" start-indent="5mm">Unerreichbarer Code</fo:block>
+                        </fo:list-item-body>
+                    </fo:list-item>
+                    <fo:list-item>
+                        <fo:list-item-label>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="normal">•
+          </fo:block>
+                        </fo:list-item-label>
+                        <fo:list-item-body>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" start-indent="5mm">Überflüssige Funktionsparameter und Variablen</fo:block>
+                        </fo:list-item-body>
+                    </fo:list-item>
+                    <fo:list-item>
+                        <fo:list-item-label>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="normal">•
+          </fo:block>
+                        </fo:list-item-label>
+                        <fo:list-item-body>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" start-indent="5mm">Fehlen von break- oder return-Anweisungen</fo:block>
+                        </fo:list-item-body>
+                    </fo:list-item>
+                </fo:list-block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="bold">Compiler-Optionen</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Die Anpassung der Compiler-Optionen geschieht in der ensprechenden Konfigurationsdatei tsconfig.json. Wie auch in der 
+      zentralen Konfigurationsdatei package.json sind die Daten im JSON-Format als Key-Value-Paare abgelegt. Die folgenden 
+      Optionen werden in die Konfigurationsdatei der zukünftig erzeugten Projekte der Angular CLI eingefügt. 
+    </fo:block>
+                    
+                <fo:block font-family="Courier" font-size="6pt" linefeed-treatment="preserve" white-space-treatment="preserve" space-before="0pt" space-after="4pt" text-align="start" white-space-collapse="false">
+        "compilerOptions": {
+          ...		
+          "noFallthroughCasesInSwitch": true,
+          "noImplicitAny": true,
+          "noUnusedLocals": true,
+          "noUnusedParameters": true
+        }
+    </fo:block>
+                    
+                <fo:block space-after="10pt" space-before="10pt">
+                    <fo:table table-layout="fixed" width="100%">
+                        <fo:table-header>
+                            <fo:table-row>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block background-color="#f0f0f0" font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="bold">Option</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block background-color="#f0f0f0" font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="bold">Bedeutung</fo:block>
+                                </fo:table-cell>
+                            </fo:table-row>
+                        </fo:table-header>
+                        <fo:table-body>
+                            <fo:table-row>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">noFallthroughCasesInSwitch</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">Fehlende break- oder return-Anweisung</fo:block>
+                                </fo:table-cell>
+                            </fo:table-row>
+                            <fo:table-row>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">noImplicitAny</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">Impliziter Typ Any</fo:block>
+                                </fo:table-cell>
+                            </fo:table-row>
+                            <fo:table-row>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">noUnusedLocals</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">Nicht verwendete Variablen</fo:block>
+                                </fo:table-cell>
+                            </fo:table-row>
+                            <fo:table-row>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">noUnusedParameters</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">Nicht verwendete Parameter</fo:block>
+                                </fo:table-cell>
+                            </fo:table-row>
+                        </fo:table-body>
+                    </fo:table>
+                    <fo:block space-after="6pt" space-before="6pt" font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-style="italic">Tabelle 1: Neue Compiler-Optionen</fo:block>
+                </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="14pt" font-weight="bold" space-after="10pt" space-before="20pt" text-align="start" id="Weitere Tools">Weitere Tools</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Es gibt noch weitere Tools, die bei der Erstellung von Angular-Anwendungen hilfreich sind. 
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="bold">TSLint</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Dieses Werkzeug analysiert den TypeScript-Code auf Wartbarkeit, Konsistenz und Schreibstil. Außerdem überprüft er 
+      den Code auch auf Fehler. Die Konfiguration erfolgt wie üblich in einer Konfigurationsdatei tslint.json. Diese 
+      Regeln gelten für das gesamte Projekt. Das codelyzer-Plugin sorgt für die korrekte Benenenung der Bausteine. 
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Das Kommando 
+    </fo:block>
+                    
+                <fo:block font-family="Courier" font-size="6pt" linefeed-treatment="preserve" white-space-treatment="preserve" space-before="4pt" space-after="4pt" text-align="start" white-space-collapse="false">ng lint</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      analysiert den Code. Wenn keine Rückmeldung kommt, war der Code gut.
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="bold">Prettier</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Dieses Werkzeug formatiert den TypeScript-Code. 
+    </fo:block>
+                  
+            </fo:block>
+        </fo:flow>
+    </fo:page-sequence>
+</fo:root>

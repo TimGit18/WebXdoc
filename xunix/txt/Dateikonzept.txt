@@ -1,0 +1,27 @@
+Dateikonzept
+============
+Unix ist ein dateibasiertes Betriebssystem. Eine Datei (file) ist die kleinste sequentiell organisierte Einheit zusammenhängender Daten. Es gibt normale 
+Dateien, Dateikataloge (Verzeichnisse) und Gerätedateien. 
+
+
+Verzeichnisstruktur
+===================
+Unix besitzt eine hierarchische Dateistruktur. Die Struktur der Dateien und Kataloge ist ein invertierter Baum beliebiger Breite und Tiefe. Jede Datei 
+befindet sich in einem Verzeichnis (directory). Verzeichnisse beinhalten Dateien und Unterverzeichnisse. Die Hierarchie des Dateisystems beginnt mit der 
+Wurzel (root) und verteilt sich auf die verschiedenen Zweige.
+
+_
+    /               Root-Verzeichnis
+        /bin        Ausführbare Programme
+        /etc        Konfigurationsdateien
+        /home       Nutzerverzeichnis
+        /lib        Gemeinsam genutzte Bibliotheken
+        /tmp        Temporäre Dateien
+        /usr        Anwendungen
+        /usr/local  Rechnerspezifische Anwendungen  
+_
+
+Abbildung 1 --> Struktur.svg
+Abbildung 1: Die Verzeichnisstruktur von Unix
+
+

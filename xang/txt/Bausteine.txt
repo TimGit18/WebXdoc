@@ -1,0 +1,82 @@
+Bausteine einer Angular-Anwendung
+=================================
+Das Konzept der Angular-Entwicklung geht von einer starken Modularisierung aus, d.h. man 
+arbeitet während der Entwicklung mit vielen Dateien und lokalen Einheiten, die aber nur 
+eine eingeschränkte Funktionalität und nur einen bestimmten Datenraum benötigen. Am Ende des 
+Build-Prozesses, wenn die Anwendung live geht, dann wird ohnehin alles in eine statische HTML-Seite 
+und eine JavaScript-Datei zusammengefasst. 
+
+
+Angular-Bausteine
+=================
+Zu einer Angular-Anwendung gehören mindestens zwei in TypeScript codifizierte Bausteine, die 
+im Applikationsteil des Quellcodes der Anwendung organisiert sind.
+
+	1. Das Angular-Hauptmodul (app.module.ts) 
+	2. Die Angular-Hauptkomponente (app.component.ts)
+
+Dazu kommen noch die beiden weiteren folgenden Dateien:
+
+	1. Die statische Hauptdatei der Anwendung (index.html)
+	2. Die hauptsächliche TypeScript-Datei der Anwendung (main.ts)
+
+Wie diese Bausteine platziert sind, kann man am ehesten in der folgenden Abbildung sehen:
+
+Abbildung 1	-->	Bausteine.svg
+Abbildung 1: Bausteine einer Angular-Anwendung
+
+Allerdings bestehen die Anwendungen nicht nur aus diesen Bausteinen, sondern es gibt in der 
+Regel mehrere Angular-Module und Komponenten, die dann in anderen Paketen organisiert sind. 
+Im Code repräsentieren diese Bausteine die Features, die der Benutzer später im Browser 
+sehen wird.
+
+Weitere Bausteine, die später behandelt werden, lauten:
+
+	* Services, in denen die Logik einer Anwendung behandelt wird
+	* Pipes, mit denen Daten vor der Anzeige transformiert werden können
+	* Direktiven oder Anweisungen
+
+Formal sind alle Angular-Bausteine per definitionem ECMAScript-Module, da sie in TypeScript 
+geschrieben sind. Für sie gibt es zwei Möglichkeiten zu interagieren
+
+	1. export: Mit diesem Schlüsselwort können Funktionen und Klassen aus einem Modul exportiert werden
+	2. import: Mit diesem Schlüsselwort können Konstrukte andere Module importiert und genutzt werden
+
+
+Namenskonventionen
+==================
+Für die Benennung von Angular-Bausteinen gelten die folgenden Namenskonventionen. Angular-Bausteine haben immer 
+zwei Namen:
+
+	* Den Namen der Datei, in der sich der Angular-Baustein befindet
+	* Den Namen der Klasse, die den Angular-Baustein definiert
+
+Der Dateiname ist für die physische Identiät des Angular-Bausteins wichtig. In der Regel wird aber ein 
+Angular-Baustein logisch über seinen Klassennamen identifiziert und referenziert. Der Dateiname ist im allgemeinen 
+wie folgt aufgebaut:
+
+	1. Name der Funktionalität des Angular-Bausteins, beginnend mit einem Kleinbuchstaben
+	2. Name des Typs des Angular-Bausteins wie etwa .component für eine Komponente, beginnend mit Punkt und Kleinbuchstaben
+	3. Dateiendung des Angular-Bausteins, in der Regel .ts für eine TypeScript-Datei
+
+Der Dateiname besitzt also keine Großbuchstaben und die identifizierenden Merkmale sind durch einen Punkt getrennt. 
+
+Entsprechend gelten für den Klassennamen die folgenden Konventionen:
+
+	1. Name der Funktionalität des Angular-Bausteins, beginnend mit einem Großbuchstaben
+	2. Name des Typs des Angular-Bausteins wie etwa Component für eine Komponente, beginnend mit einem Großbuchstaben
+
+Der Klassenamen separiert also seine Merkmale duch Groß- und Kleinschreibung und enthält keine Punkte. Dies wird in dem 
+folgenden Beispiel sichtbar für eine Komponente, die Funktionalitäten für Benutzerobjekte bereithält:
+
+ ------------------------------------
+| Name         | Bezeichnung         |
+ ------------------------------------  
+| Dateinamen   | users.component.ts  |
+| Klassennamen | UsersComponent      |
+ ------------------------------------
+Tabelle 1: Beispiel für Dateinamen und Klassennamen
+
+
+
+

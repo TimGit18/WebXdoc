@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" standalone='yes'?>
+<document env="xapp">
+
+  <main>
+    <topic name="Home" link="http://localhost:8080/xdoc/xapp/html/xapp.html"/>
+  </main>
+
+  <links>
+    <link type="stylesheet">http://localhost:8080/xdoc/resources/css/bootstrap.min.css</link>
+    <link type="stylesheet">http://localhost:8080/xdoc/resources/css/bootstrap-toc.min.css</link>
+    <link type="icon">http://localhost:8080/xdoc/resources/favicon.ico</link>
+  </links>
+
+  <scripts>
+    <script>http://localhost:8080/xdoc/resources/lib/angular.js</script>
+    <script>http://localhost:8080/xdoc/resources/lib/jquery-3.2.1.min.js</script>
+    <script>http://localhost:8080/xdoc/resources/lib/popper.min.js</script>
+    <script>http://localhost:8080/xdoc/resources/lib/bootstrap.min.js</script>
+    <script>http://localhost:8080/xdoc/resources/lib/bootstrap-toc.min.js</script>
+  </scripts>
+
+  <title>Programmiermodell</title>
+  <author>Tim Schmitz</author>
+  <date>01.09.2026</date>
+
+  <content>
+    <headline>Java-Programmiermodell</headline>
+    <abstract>
+      Java ist eine objektorientierte Programmiersprache. Anwendungen bestehen aus Klassen, die in Paketen organisiert sind. 
+    </abstract>
+
+
+    <subheadline id="Sprachmerkmale">Sprachmerkmale</subheadline>
+
+    <text>
+      Die wichtigste Sprachmerkmale lauten:
+    </text>
+    <list>
+      <listitem>Die Klassen definieren die Struktur und das Verhalten einer Java-Anwendung</listitem>
+      <listitem>Die Attribute einer Klasse repräsentieren die Daten und beschreiben den Zustand der Anwendung</listitem>
+      <listitem>Die Methoden einer definieren das Verhalten das Verhalten der Anwendung</listitem>
+      <listitem>Objekte sind Instanzen von Klassen und besitzen einen Lebenszyklus</listitem>
+    </list>
+
+
+    <subheadline id="Komponenten der Plattform">Komponenten der Plattform</subheadline>
+
+    <text>
+      Die folgende Liste gibt einen Überblick über die Komponenten der Plattform:
+    </text>
+    <list>
+      <listitem>JDK (Java Development Kit) </listitem>
+      <listitem>JVM (Java Virtual Machine)</listitem>
+      <listitem>JRE (Java Runtime Environment)</listitem>
+    </list>
+
+
+    <subheadline id="JDK (Java Development Kit) ">JDK (Java Development Kit) </subheadline>
+
+    <text>
+      Der Java Development Kit ist eine Software, die zur Entwicklung von Anwendungen dient. Es umfasst die folgenden Hauptbestandteile:
+    </text>
+    <list>
+      <listitem>Der Compiler javac übersetzt Quellcode in Bytecode</listitem>
+      <listitem>Die Java Virtual Machine (JVM) führt Programme aus</listitem>
+      <listitem>Die Standardbibliotheken (Core APIs) stellen grundlegende Funktionen bereit</listitem>
+    </list>
+
+
+    <subheadline id="Java Runtime Environment (JRE)">Java Runtime Environment (JRE)</subheadline>
+
+    <text>
+      Die JRE ist die Laufzeitumgebung für Java-Anwendungen. Sie umfasst:
+    </text>
+    <list>
+      <listitem>Die Java Virtual Machine (JVM)</listitem>
+      <listitem>Die Laufzeitbibliotheken</listitem>
+    </list>
+
+
+    <text>
+      Hinweis: Seit Java 9 wird keine separate JRE mehr bereitgestellt. Die Laufzeitumgebung ist seitdem Bestandteil des JDK.
+    </text>
+
+    <subheadline id="Java-Projekte">Java-Projekte</subheadline>
+
+    <text>
+      Um Anwendungen in Java zu entwickeln, werden Projekte und Entwicklungswerkzeuge benötigt. Der gewöhnliche Entwicklungszyklus 
+      einer Anwendung besteht aus Editieren, Kompilieren, Testen, Ausliefern (Deployment) und Ausführung (Betrieb). 
+      Eine geeignete Projektstruktur unterstützt dieses Vorgehen und trennt die einzelnen Komponenten des Projekt nach Anwendungsbereichen. 
+    </text>
+  </content>
+</document>

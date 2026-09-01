@@ -1,0 +1,26 @@
+Anwendungsarchitektur
+=====================
+Obwohl es sich bei der Beispiel-Anwendung um eine kleine Stand-Alone-Applikation handelt ohne Web-API oder User Interface handelt, ist es bereits notwendig, 
+einige grundlegende architektonische Konzepte und Prinzipien zu beachten. Diese dienen dazu, die Anwendung verständlich und wartbar zu halten. Gleichzeitig 
+kann die Applikation als Muster für weitergehende, komplexere Anwendungsmodelle verwendet werden.
+
+
+Aufrufhierarchie
+================
+Die Aufrufhierarchie der Anwendung lautet wie folgt:
+
+    * Durch die Hauptklasse ApplicationMain wird die Anwendung von außen gestartet
+    * Die Hauptklasse ruft den Wrapper ApplicationStart 
+    * Dieser Wrapper delegiert die Programmausführung an die Ladeklasse ApplicationBootstrap
+    * Die Ladeklasse ApplicationBootstrap lädt die Konfiguration über die entsprechende Klasse ApplicationConfig
+    * Im nächsten Schritt ermittelt die Ladeklasse den Hostnamen über die Klasse HostNameResolver
+    * Mittels des Hostnamen und der Konfiguration wird der passende Log-Pfad über die Klasse LogPathResolver ermittelt
+    * Danach wird von der Ladeklasse der ControlService gestartet, der die drei Phasen start(), process() und complete() verwaltet.
+
+
+Kapselung
+=========
+Das Prinzip der Kapselung von Daten und Methoden ermöglicht es, nur diejenigen Informationen und Daten in einem Modul zu verarbeiten, die gleichartige 
+Anwendungszwecke besitzen. Dazu werden die Module bewusst klein und kompakt gehalten. 
+
+

@@ -1,0 +1,9 @@
+TypeScript
+==========
+TypeScript ist eine von Microsoft entwickelte Programmiersprache, die eine Obermenge von JavaScript darstellt.
+Eigentlich handelt es sich um eine typisierte Version von JavaScript. 
+
+Inhalt
+======
+Start
+Datentypen

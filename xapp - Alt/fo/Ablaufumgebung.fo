@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="UTF-8"?><fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format">
+    <fo:layout-master-set>
+        <fo:simple-page-master master-name="page" page-height="29.7cm" page-width="21cm" margin-top="1cm" margin-bottom="1cm" margin-left="2.5cm" margin-right="2.5cm">
+            <fo:region-body margin-top="1cm" margin-bottom="2cm"/>
+            <fo:region-before extent="3cm"/>
+            <fo:region-after extent="0.5cm"/>
+            <fo:region-start extent="2cm"/>
+            <fo:region-end extent="0.5cm"/>
+        </fo:simple-page-master>
+        <fo:page-sequence-master master-name="single-page">
+            <fo:repeatable-page-master-reference master-reference="page"/>
+        </fo:page-sequence-master>
+    </fo:layout-master-set>
+    <fo:page-sequence master-reference="single-page" initial-page-number="1">
+        <fo:static-content flow-name="xsl-region-before">
+            <fo:block space-after="4pt" space-before="4pt" text-align="right">
+                <fo:external-graphic src="url('file:///C:/Users/schmi/Daten/Web/xdoc/resources/logo.svg')" text-align="right"/>
+            </fo:block>
+        </fo:static-content>
+        <fo:static-content flow-name="xsl-region-after">
+            <fo:block text-align="outside" font-family="Helvetica, Arial, sans-serif" font-size="10pt">
+                          Seite
+          
+                <fo:page-number/>
+            </fo:block>
+        </fo:static-content>
+        <fo:flow flow-name="xsl-region-body">
+            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="20pt" font-weight="bold" space-after="10pt" space-before="10pt" text-align="start">
+          &#133;Ablaufumgebung</fo:block>
+            <fo:block text-align="start" font-family="Helvetica, Arial, sans-serif" font-size="10pt">Tim Schmitz</fo:block>
+            <fo:block text-align="start" font-family="Helvetica, Arial, sans-serif" font-size="10pt">16.05.2026</fo:block>
+        </fo:flow>
+    </fo:page-sequence>
+    <fo:page-sequence master-reference="single-page" initial-page-number="2">
+        <fo:static-content flow-name="xsl-region-after">
+            <fo:block text-align="outside" font-family="Helvetica, Arial, sans-serif" font-size="10pt">
+                          Seite
+          
+                <fo:page-number/>
+            </fo:block>
+        </fo:static-content>
+        <fo:flow flow-name="xsl-region-body">
+            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="14pt" font-weight="bold" space-after="10pt" space-before="10pt" text-align="start">
+      Inhalt
+    </fo:block>
+            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+                <fo:block text-align-last="justify">
+                    <fo:inline>
+                        Übersicht
+                        <fo:leader leader-pattern="dots"/>
+                        <fo:page-number-citation ref-id="Übersicht"/>
+                    </fo:inline>
+                </fo:block>
+                <fo:block text-align-last="justify">
+                    <fo:inline>
+                        Build
+                        <fo:leader leader-pattern="dots"/>
+                        <fo:page-number-citation ref-id="Build"/>
+                    </fo:inline>
+                </fo:block>
+                <fo:block text-align-last="justify">
+                    <fo:inline>
+                        Logs
+                        <fo:leader leader-pattern="dots"/>
+                        <fo:page-number-citation ref-id="Logs"/>
+                    </fo:inline>
+                </fo:block>
+                <fo:block text-align-last="justify">
+                    <fo:inline>
+                        META-INF
+                        <fo:leader leader-pattern="dots"/>
+                        <fo:page-number-citation ref-id="META-INF"/>
+                    </fo:inline>
+                </fo:block>
+                <fo:block text-align-last="justify">
+                    <fo:inline>
+                        Output
+                        <fo:leader leader-pattern="dots"/>
+                        <fo:page-number-citation ref-id="Output"/>
+                    </fo:inline>
+                </fo:block>
+                <fo:block text-align-last="justify">
+                    <fo:inline>
+                        Properties
+                        <fo:leader leader-pattern="dots"/>
+                        <fo:page-number-citation ref-id="Properties"/>
+                    </fo:inline>
+                </fo:block>
+                <fo:block text-align-last="justify">
+                    <fo:inline>
+                        Test
+                        <fo:leader leader-pattern="dots"/>
+                        <fo:page-number-citation ref-id="Test"/>
+                    </fo:inline>
+                </fo:block>
+                <fo:block text-align-last="justify">
+                    <fo:inline>
+                        Ausführbare Dateien
+                        <fo:leader leader-pattern="dots"/>
+                        <fo:page-number-citation ref-id="Ausführbare Dateien"/>
+                    </fo:inline>
+                </fo:block>
+            </fo:block>
+        </fo:flow>
+    </fo:page-sequence>
+    <fo:page-sequence master-reference="single-page" initial-page-number="3">
+        <fo:static-content flow-name="xsl-region-after">
+            <fo:block text-align="outside" font-family="Helvetica, Arial, sans-serif" font-size="10pt" line-height="14pt">
+                          Seite
+          
+                <fo:page-number/>
+            </fo:block>
+        </fo:static-content>
+        <fo:flow flow-name="xsl-region-body">
+            <fo:block break-after="page" font-family="Helvetica, Arial, sans-serif">
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="20pt" font-weight="bold" space-after="10pt" space-before="10pt" text-align="start">Ablaufumgebung</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Die Ablaufumgebung ist der Ort, in dem die ausführbaren Anwendungen platziert und auch ausgeführt werden. Im Beispiel lautet die Pfadangabe der 
+      Ablaufumgebung C:/Users//Daten/Java/Applications/application. 
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="14pt" font-weight="bold" space-after="10pt" space-before="10pt" text-align="start" id="Übersicht">Übersicht</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Die Umgebung besitzt die folgende Verzeichnisstruktur, die in der folgenden Übersicht zu sehen ist:
+    </fo:block>
+                    
+                <fo:block font-family="Courier" font-size="6pt" linefeed-treatment="preserve" white-space-treatment="preserve" space-before="0pt" space-after="4pt" text-align="start" white-space-collapse="false">
+        Applications/
+            application/
+                build/
+                logs/
+                META-INF/
+                output/   
+                properties/
+                test/
+              
+                application.bat
+                application.jar
+                build.bat
+                deploy.bat
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Wichtig hierbei ist, dass die Exekution der Anwendung in dem Verzeichnis passiert, das das properties-Verzeichnis als Unterverzeichnis besitzt,
+      da sonst die Anwendung aufgrund der Konfiguration des Loggers nicht ausgeführt werden kann.
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="14pt" font-weight="bold" space-after="10pt" space-before="10pt" text-align="start" id="Build">Build</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Das Build-Verzeichnis ist das Verzeichnis, in dem die übersetzten Klassen der Anwendung liegen. Dieses Verzeichnis wird während des Build-Prozesses
+      am Anfang mit Inhalten gelöscht und dann als leeres Verzeichnis sofort wieder neu angelegt. Anschließend werden die einzelnen Pakete in den 
+      Build-Ordner hineinkompiliert. Dies geschieht durch die Option -d beim Aufruf des Java-Compilers, welche das Directory für die generierten Klassen 
+      spezifiziert.
+    </fo:block>
+                    
+                <fo:block font-family="Courier" font-size="6pt" linefeed-treatment="preserve" white-space-treatment="preserve" space-before="0pt" space-after="4pt" text-align="start" white-space-collapse="false">
+        rem -------
+        rem Cleanup
+        rem -------
+        rmdir /s /q %runtime_build%
+        mkdir %runtime_build%
+        ...
+        javac -encoding UTF8 %source_control%\*.java -d %runtime_build% -cp %runtime_build%;%log4j%
+        javac -encoding UTF8 %source_schema%\*.java -d %runtime_build% -cp %runtime_build%;%log4j%;%mmsql%
+        javac -encoding UTF8 %source_util%\*.java -d %runtime_build% -cp %runtime_build%;%log4j%
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Die Verzeichnisstruktur des Build-Verzeichnisses entspricht der Paketestruktur der originalen Quellcode-Verzeichnisse. Entsprechend der 
+      Namenskonventionen für Pakete entspricht der Name der ersten Ebene einer Top-Level-Domain (de), dann folgt die eigentliche Domäne (domain) und 
+      schließlich der Name der Anwendung (application). Anschließend folgen die Namen der Einzelpakete der Anwendung. 
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="14pt" font-weight="bold" space-after="10pt" space-before="10pt" text-align="start" id="Logs">Logs</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Das Logs-Verzeichnis beinhaltet alle Logging-Dateien, die bei jedem Lauf der Anwendung protokolliert werden. Die Logging-Dateien liegen in 
+      dem folgenden Format vor:
+    </fo:block>
+                    
+                <fo:block font-family="Courier" font-size="6pt" linefeed-treatment="preserve" white-space-treatment="preserve" space-before="4pt" space-after="4pt" text-align="start" white-space-collapse="false">output_yyyy_MM_dd_HH_mm_ss_SSS.log</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Hierbei bezeichnet werden folgende Zeitstempel zu Beginn des Loggings verwendet:
+    </fo:block>
+                    
+                <fo:block space-after="10pt" space-before="10pt">
+                    <fo:table table-layout="fixed" width="100%">
+                        <fo:table-header>
+                            <fo:table-row>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block background-color="#f0f0f0" font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="bold">Format</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block background-color="#f0f0f0" font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="bold">Datum</fo:block>
+                                </fo:table-cell>
+                            </fo:table-row>
+                        </fo:table-header>
+                        <fo:table-body>
+                            <fo:table-row>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">yyyy</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">Jahr</fo:block>
+                                </fo:table-cell>
+                            </fo:table-row>
+                            <fo:table-row>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">MM</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">Monat</fo:block>
+                                </fo:table-cell>
+                            </fo:table-row>
+                            <fo:table-row>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">dd</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">Tag</fo:block>
+                                </fo:table-cell>
+                            </fo:table-row>
+                            <fo:table-row>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">HH</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">Stunde</fo:block>
+                                </fo:table-cell>
+                            </fo:table-row>
+                            <fo:table-row>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">mm</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">Minute</fo:block>
+                                </fo:table-cell>
+                            </fo:table-row>
+                            <fo:table-row>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">ss</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">Sekunde</fo:block>
+                                </fo:table-cell>
+                            </fo:table-row>
+                            <fo:table-row>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">SSS</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">Millisekunde</fo:block>
+                                </fo:table-cell>
+                            </fo:table-row>
+                        </fo:table-body>
+                    </fo:table>
+                    <fo:block space-after="6pt" space-before="6pt" font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-style="italic">Tabelle 1: Datumsformate für die Logging-Dateien</fo:block>
+                </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Das Format für die Logging-Dateien und die Konfiguration des Zielorts werden für den Logger Apache Log4j2 in der zentralen Konfigurationsdatei
+      log4j2.xml festgelegt, die im Verzeichbnis Properties abgelegt ist.
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="14pt" font-weight="bold" space-after="10pt" space-before="10pt" text-align="start" id="META-INF">META-INF</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Das Verzeichnis META-INF enthält Meta-Informationen wie die Manifest-Datei MANIFEST.MF. Diese Datei ist notwendig für die Konstruktion und 
+      Auslieferung der Anwendung als ausführbare Jar-Datei. 
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="14pt" font-weight="bold" space-after="10pt" space-before="10pt" text-align="start" id="Output">Output</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      In diesem Verzeichnis liegen die Zusammenfassungen oder Reports der Junit-Tests für die Anwendung. Sie liegen in zwei Formen vor:
+    </fo:block>
+                    
+                <fo:list-block provisional-distance-between-starts="50mm" provisional-label-separation="10mm" space-after="4pt" space-before="4pt">
+                    <fo:list-item>
+                        <fo:list-item-label>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="normal">1.
+          </fo:block>
+                        </fo:list-item-label>
+                        <fo:list-item-body>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" start-indent="5mm">Als Text-Datei zur schnellen Lesbarkeit</fo:block>
+                        </fo:list-item-body>
+                    </fo:list-item>
+                    <fo:list-item>
+                        <fo:list-item-label>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="normal">2.
+          </fo:block>
+                        </fo:list-item-label>
+                        <fo:list-item-body>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" start-indent="5mm">Als XML-Datei mit weitergehenden, detaillierten Informationen zu den einzelnen Testfällen.</fo:block>
+                        </fo:list-item-body>
+                    </fo:list-item>
+                </fo:list-block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      In der Datei wird das Ergebnis der Junit-Tests zusammengefasst und in einer Statistik präsentiert. 
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="14pt" font-weight="bold" space-after="10pt" space-before="10pt" text-align="start" id="Properties">Properties</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Dieses Verzeichnis enthält zwei Dateien, in denen globale Eigenschaften oder Konfigurationen definiert
+    </fo:block>
+                    
+                <fo:list-block provisional-distance-between-starts="50mm" provisional-label-separation="10mm" space-after="4pt" space-before="4pt">
+                    <fo:list-item>
+                        <fo:list-item-label>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="normal">•
+          </fo:block>
+                        </fo:list-item-label>
+                        <fo:list-item-body>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" start-indent="5mm">application.properties ist die Properties-Datei der Anwendung selbst, die globale Parameter der Anwendung enthält</fo:block>
+                        </fo:list-item-body>
+                    </fo:list-item>
+                    <fo:list-item>
+                        <fo:list-item-label>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="normal">•
+          </fo:block>
+                        </fo:list-item-label>
+                        <fo:list-item-body>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" start-indent="5mm">database,propertues ist die Properties-Datei für die Verbindung der Anwendung zur Datenbank</fo:block>
+                        </fo:list-item-body>
+                    </fo:list-item>
+                    <fo:list-item>
+                        <fo:list-item-label>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="normal">•
+          </fo:block>
+                        </fo:list-item-label>
+                        <fo:list-item-body>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" start-indent="5mm">log4j2.xml ist die Konfigurationsdatei des Apache Loggers und definiert den Konsolen- und Datei-Logger</fo:block>
+                        </fo:list-item-body>
+                    </fo:list-item>
+                </fo:list-block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Im Unterschied zur Entwicklungsumgebung fehlt eine Datei, mit der ein komplexerer Build der Anwendung konfiguriert werden kann, nämlich die Datei
+      build.properties.
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="14pt" font-weight="bold" space-after="10pt" space-before="10pt" text-align="start" id="Test">Test</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      In diesem Verzeichnis liegen die übersetzten Testklassen der Anwendung. Die Verzeichnisstruktur spiegelt die der Quellklassen. In dem einfachen 
+      Build-Prozess wird dieses Verzeichnis nicht berücksichtigt, wohl aber in dem komplexeren Build-Prozess. In diesem wird das Testklassen-Verzeichnis 
+      gelöscht und wieder neu angelegt. Im Unterschied zur Struktur des Build-Ordners existiert eine weitere Paketebene namens "test", um die Pakete der 
+      Testklassen (auch in übersetzter Form) gegen die eigentlichen Quellcode-Pakete abzugrenzen
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="14pt" font-weight="bold" space-after="10pt" space-before="10pt" text-align="start" id="Ausführbare Dateien">Ausführbare Dateien</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Die Dateien build.bat, deploy.bat und application.bat sind ausführbare Batch-Dateien, die im Kapitel über den einfachen Build-Prozess behandelt
+      wurden. Das exekutierbare Java Archive File application.jar wird von der Kommandodatei application.bat ausgeführt.
+    </fo:block>
+                  
+            </fo:block>
+        </fo:flow>
+    </fo:page-sequence>
+</fo:root>

@@ -1,0 +1,128 @@
+Java-Entwicklungsumgebung
+=========================
+Für größere Projekte benötigt man eine professionelle Integrierte Entwicklungsumgebung (IDE) wie etwa IntelliJ, die eine 
+breite Werkzeugunterstützung anbietet und das Progrmmieren vereinfacht.
+
+
+Projekt-Anlage
+==============
+Ein neues Projekt wird in IntelliJ wie folgt angelegt:
+
+File    ==>	    New Project...
+        ==>     New Project-Dialog
+		        New Project             (Java)
+	    ==>	    Name			        (application)
+		        Location		        (~\Daten\Java\Projects)
+		        Create Git repository	(Check)
+		        Build system		    (IntelliJ)
+		        JDK                     (21)
+		        Add sample code         (Uncheck)
+		==>		Advanced Settings
+		        Module Name             (application)
+		        Content root            (~\Daten\Java\Projects\application)
+		        Module file location    (~\Daten\Java\Projects\application)
+
+Dabei passiert folgendes:
+
+	1. Das Projekt wird mit seinem Namen an einem physischem Ort initialisiert
+    2. Es wird ein Git-Repository bei der Anlage erzeugt
+	3. Die Build-Umgebung für das Projekt (Entwicklungsumgebung und JDK 21) wird festgelegt
+	4. Vordefinierte Klassen (Sample Code) werden nicht erzeugt
+
+
+Hauptklasse
+===========
+Um Klassen zu erzeugen, muss zunächst eine Verzeichnisstruktur definiert werden.
+Die Startklasse der Anwendung wird dann in einem neuen Paket erzeugt. Zunächst wird im Projekt-Explorer 
+das Quellcode-Verzeichnis selektiert:
+
+src	    ==>	    Kontextmenü
+        ==>     New 
+        ==>     Package
+		        Name                    (de.domain.application.core)
+
+Anschließend wird das Paket selektiert und die Hauptklasse angelegt:
+
+Package	==>		New
+		==>		Java Class
+				Name					(Main)
+	
+Die Frage, ob die neue Datei dem Git-Repository hinzugefügt werden soll, wird bejaht.	
+Um die Anwendung testen zu können, muss ein Quellcode-Rumpf in der Hauptklasse mit der Hauptmethode geschrieben werden.
+
+_
+	package de.domain.application.core;
+
+	public class ApplicationMain {
+
+		public static void main(String[] args) {
+			System.out.println("Hello Application - Main");
+		}
+
+	}
+_
+
+
+Konfiguration
+=============
+Eine Laufzeit-Konfiguration wird definiert, um die Anwendung zu übersetzen und auszuführen.
+
+Run		==>		Edit Configurations...
+				Run/Debug Configurations
+				Add new run configuration...
+				Application
+				Name					(Application)			
+				Main Class				(ApplicationMain)
+
+Anschließend kann die Anwendung Apply und Run ausgeführt werden. Alternativ ist jederzeit eine Ausführung wie folgt möglich:
+
+Run		==>		Run 'Application' 		(Shift + F10)
+
+
+Bibliotheken
+============
+Bibliotheken werden wie folgt eingebunden:
+
+File	==>		Project Structure...
+		==>		Project Structure-Dialog  
+		==>		Project Settings 	(Navigation)
+				Libraries			
+		==>		Add: (+)
+				New Project Library
+				Java
+							
+Die Auswahl der Bibliotheken erfolgt über einen Open-Dialog, der mit Apply und OK bestätigt wird.
+Es empfiehlt sich, die Libraries einzeln dazu zu binden, damit sie auch in der Programmbibliothek External Libraries 
+sichtbar sind.
+
+Folgende Bibliotheken des Logging-Pakets apache-log4j-2.25.3-bin sollen eingebunden werden:
+		
+		* log4j-api-2.25.3.jar
+		* log4j-core-2.25.3.jar
+
+		
+Properties
+==========
+Properties sind applikationsspezifische Attributierungen (Key-Value-Paare). Sie werden in einer separaten Datei abgelegt:
+
+application		==>		New...
+				==>		Directory
+				==>		New Directory-Dialog
+						Name:	(properties)
+
+Anschließend kann in dem Verzeichnis die Properties-Datei angelegt werden:
+
+properties		==>		New...
+				==>		File	
+				==>		New File-Dialog
+						Name:	(application.properties)
+
+Wichtig ist, dass das Verzeichnis properties, das auf der ersten Ebene der Applikation liegt, wie folgt markiert wird:
+
+properties		==>		Kontextmenü
+				==>		Mark Directory as
+				==>		Resources root
+
+Die Markierung erlaubt es dem Build der IDE, das Verzeichnis in den Build-Pfad mitaufzunehmen.
+
+

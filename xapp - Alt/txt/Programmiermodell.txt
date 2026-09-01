@@ -1,0 +1,120 @@
+Java-Programmiermodell
+======================
+Die Programmierung in Java bedeutet die Konstruktion und Implementierung objektorientierter Anwendungen. Diese Anwendungen bestehen aus Klassen, 
+die in Paketen organisiert sind. Diese Klassen enthalten Daten und Methoden. Die Daten repräsentieren den Zustand, die Methoden das Verhalten der
+Objekte der Anwendung, wobei Objekte die Instanzen von Klassen sind. Die Programmierung selbst ist Bestandteil der Java-Technologie. Diese besteht 
+aus einem Entwicklungswerkzeug, dem Java Development Kit (JDK) für die Programmierung von Java-Anwendungen, und einer Laufzeitumgebung, der Java 
+Runtime Environment (JRE) für die Ausführung dieser Anwendungen. 
+
+
+Java Development Kit
+====================
+Der Java Development Kit ist ein vollständiges Entwicklungssystem für Java. Das Entwicklungssystem umfasst den Compiler, die Kernbibliotheken 
+(Core APIs) und die Laufzeitumgebung Java Virtual Machine (JVM). Der interne Compiler javac übersetzt die Java-Quelldateien in Klassendateien. 
+Die Klassendateien liegen in Bytecode vor, welcher zur Laufzeit virtualisiert, d.h. von der virtuellen Machine interpretiert wird.  
+
+
+Java Runtime Environment
+========================
+Das reduzierte Laufzeitsystem zur Ausführung fertig übersetzter Java-Anwendungen ist das Java Runtime Environment. Es beinhaltet die Java 
+Virtual Maschine und die Laufzeitbibliotheken. Das Laufzeitsystem ist für den reinen Betrieb von Java-Anwendungen ohne Entwicklung geeignet und 
+wesentlich kleiner als das komplette Entwicklungssystem. 
+
+:Achtung: 
+
+Die maximale von Oracle angebotene JRE Version ist die JRE 8. Der aktuelle JDK hat allerdings die Version 21. Software, die mit dieser Version 
+entwickelt wurde, ist auf einer älteren JRE nicht ausführbar. Man sollte daher die im JDK mitgelieferte aktuelle JRE als Runtime Environment verwenden.
+
+
+Java Virtual Machine
+====================
+Die Java Virtual Machine (JVM) ist die eigentliche Laufzeitumgebung. Sie interpretiert den Bytecode, der vom Java Compiler durch Übersetzung erzeugt 
+wird. Als virtueller Prozessor arbeitet die Virtual Maschine die Maschineninstruktionen ab und entkoppelt somit den Bytecode vom Betriebssystem. 
+Sie lädt über den Class Loader die Java-Klassen zur Laufzeit der Anwendung und instantiiert diese dynamisch.
+
+Zusammen mit der Java API bildet die Java Virtual Machine die Java-Plattform. Anwendungen kommunizieren mit dem Betriebssystem nur über die Virtual 
+Machine und die Programmier-Schnittstellen.
+
+Abbildung 1 --> Java-Programmiermodell.svg
+Abbildung 1: Komponenten des Java-Programmiermodels
+
+Vorschlag von ChatGPT:
+
+Java-Programmiermodell
+======================
+Java-Programmiermodell
+
+Java ist eine objektorientierte Programmiersprache. Anwendungen bestehen aus Klassen, die in Paketen organisiert sind.
+
+Klassen definieren Struktur und Verhalten
+Attribute (Daten) beschreiben den Zustand
+Methoden definieren das Verhalten
+Objekte sind Instanzen von Klassen
+Überblick: Komponenten der Java-Plattform
+
+Zusammenhang:
+
+JDK (Java Development Kit) → Entwicklung von Anwendungen
+JVM (Java Virtual Machine) → Ausführung von Anwendungen
+JRE (Java Runtime Environment) → historische Laufzeitumgebung (heute im JDK enthalten)
+
+Ablauf:
+
+Java-Quellcode → Compiler (javac) → Bytecode → JVM → Ausführung
+
+Java Development Kit (JDK)
+
+Das JDK ist die vollständige Entwicklungsumgebung für Java-Anwendungen.
+
+Es umfasst:
+
+Compiler (javac) – übersetzt Quellcode in Bytecode
+Java Virtual Machine (JVM) – führt Programme aus
+Standardbibliotheken (Core APIs) – stellen grundlegende Funktionen bereit
+
+Der Compiler erzeugt Bytecode (.class-Dateien), der unabhängig vom Betriebssystem ist.
+
+Java Runtime Environment (JRE)
+
+Die JRE ist die Laufzeitumgebung für Java-Anwendungen.
+
+Sie umfasst:
+
+Java Virtual Machine (JVM)
+Laufzeitbibliotheken
+
+Hinweis:
+Seit Java 9 wird keine separate JRE mehr bereitgestellt.
+Die Laufzeitumgebung ist Bestandteil des JDK.
+
+Java Virtual Machine (JVM)
+
+Die JVM führt Java-Programme aus und sorgt für Plattformunabhängigkeit.
+
+Aufgaben der JVM:
+
+Ausführen von Bytecode
+Laden von Klassen zur Laufzeit (Class Loader)
+Speicherverwaltung (Garbage Collection)
+
+Bytecode wird zur Laufzeit:
+
+interpretiert oder
+durch einen Just-in-Time-Compiler (JIT) in nativen Code übersetzt
+
+Dadurch können Java-Anwendungen auf unterschiedlichen Betriebssystemen ohne Anpassung ausgeführt werden.
+
+Java-Plattform
+
+Die Java-Plattform besteht aus:
+
+der Java Virtual Machine (JVM)
+den Standardbibliotheken (Java API)
+
+Java-Anwendungen greifen nicht direkt auf das Betriebssystem zu, sondern über diese Plattform.
+
+Kurzfazit
+Java-Anwendungen bestehen aus Klassen und Objekten
+Das JDK wird zur Entwicklung verwendet
+Die JVM führt Programme aus
+Bytecode ermöglicht Plattformunabhängigkeit

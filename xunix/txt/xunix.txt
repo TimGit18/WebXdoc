@@ -1,0 +1,10 @@
+Unix
+====
+Unix ist ein dateiorientiertes und kommandozeilenbasiertes Mehrbenutzer-Betriebssystem. Es implementiert Konzepte wie die 
+hierarchische Dateistruktur und die Shell. Skripte erlauben eine besonders schnelle und effiziente Datenverarbeitung. 
+
+
+Inhalt
+======
+Ubuntu
+Dateikonzept

@@ -1,0 +1,678 @@
+<?xml version="1.0" encoding="UTF-8"?><fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format">
+    <fo:layout-master-set>
+        <fo:simple-page-master master-name="page" page-height="29.7cm" page-width="21cm" margin-top="1cm" margin-bottom="1cm" margin-left="2.5cm" margin-right="2.5cm">
+            <fo:region-body margin-top="1cm" margin-bottom="2cm"/>
+            <fo:region-before extent="3cm"/>
+            <fo:region-after extent="0.5cm"/>
+            <fo:region-start extent="2cm"/>
+            <fo:region-end extent="0.5cm"/>
+        </fo:simple-page-master>
+        <fo:page-sequence-master master-name="single-page">
+            <fo:repeatable-page-master-reference master-reference="page"/>
+        </fo:page-sequence-master>
+    </fo:layout-master-set>
+    <fo:page-sequence master-reference="single-page" initial-page-number="1">
+        <fo:static-content flow-name="xsl-region-before">
+            <fo:block space-after="4pt" space-before="4pt" text-align="right">
+                <fo:external-graphic src="url('file:///C:/Users/schmi/Daten/Web/xdoc/resources/logo.svg')" text-align="right"/>
+            </fo:block>
+        </fo:static-content>
+        <fo:static-content flow-name="xsl-region-after">
+            <fo:block text-align="outside" font-family="Helvetica, Arial, sans-serif" font-size="10pt">
+                          Seite
+          
+                <fo:page-number/>
+            </fo:block>
+        </fo:static-content>
+        <fo:flow flow-name="xsl-region-body">
+            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="20pt" font-weight="bold" space-after="10pt" space-before="10pt" text-align="start">
+          &#133;Anwendungsarchitektur</fo:block>
+            <fo:block text-align="start" font-family="Helvetica, Arial, sans-serif" font-size="10pt">Tim Schmitz</fo:block>
+            <fo:block text-align="start" font-family="Helvetica, Arial, sans-serif" font-size="10pt">16.05.2026</fo:block>
+        </fo:flow>
+    </fo:page-sequence>
+    <fo:page-sequence master-reference="single-page" initial-page-number="2">
+        <fo:static-content flow-name="xsl-region-after">
+            <fo:block text-align="outside" font-family="Helvetica, Arial, sans-serif" font-size="10pt">
+                          Seite
+          
+                <fo:page-number/>
+            </fo:block>
+        </fo:static-content>
+        <fo:flow flow-name="xsl-region-body">
+            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="14pt" font-weight="bold" space-after="10pt" space-before="10pt" text-align="start">
+      Inhalt
+    </fo:block>
+            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+                <fo:block text-align-last="justify">
+                    <fo:inline>
+                        Übersicht
+                        <fo:leader leader-pattern="dots"/>
+                        <fo:page-number-citation ref-id="Übersicht"/>
+                    </fo:inline>
+                </fo:block>
+                <fo:block text-align-last="justify">
+                    <fo:inline>
+                        Hauptklasse
+                        <fo:leader leader-pattern="dots"/>
+                        <fo:page-number-citation ref-id="Hauptklasse"/>
+                    </fo:inline>
+                </fo:block>
+                <fo:block text-align-last="justify">
+                    <fo:inline>
+                        Eigenschaftenklasse
+                        <fo:leader leader-pattern="dots"/>
+                        <fo:page-number-citation ref-id="Eigenschaftenklasse"/>
+                    </fo:inline>
+                </fo:block>
+                <fo:block text-align-last="justify">
+                    <fo:inline>
+                        Datenbank-Eigenschaftenklasse
+                        <fo:leader leader-pattern="dots"/>
+                        <fo:page-number-citation ref-id="Datenbank-Eigenschaftenklasse"/>
+                    </fo:inline>
+                </fo:block>
+                <fo:block text-align-last="justify">
+                    <fo:inline>
+                        Verbindungsklasse
+                        <fo:leader leader-pattern="dots"/>
+                        <fo:page-number-citation ref-id="Verbindungsklasse"/>
+                    </fo:inline>
+                </fo:block>
+                <fo:block text-align-last="justify">
+                    <fo:inline>
+                        Domänen-Schema
+                        <fo:leader leader-pattern="dots"/>
+                        <fo:page-number-citation ref-id="Domänen-Schema"/>
+                    </fo:inline>
+                </fo:block>
+                <fo:block text-align-last="justify">
+                    <fo:inline>
+                        Tabellen-Schema
+                        <fo:leader leader-pattern="dots"/>
+                        <fo:page-number-citation ref-id="Tabellen-Schema"/>
+                    </fo:inline>
+                </fo:block>
+                <fo:block text-align-last="justify">
+                    <fo:inline>
+                        Anwendungssteuerung
+                        <fo:leader leader-pattern="dots"/>
+                        <fo:page-number-citation ref-id="Anwendungssteuerung"/>
+                    </fo:inline>
+                </fo:block>
+            </fo:block>
+        </fo:flow>
+    </fo:page-sequence>
+    <fo:page-sequence master-reference="single-page" initial-page-number="3">
+        <fo:static-content flow-name="xsl-region-after">
+            <fo:block text-align="outside" font-family="Helvetica, Arial, sans-serif" font-size="10pt" line-height="14pt">
+                          Seite
+          
+                <fo:page-number/>
+            </fo:block>
+        </fo:static-content>
+        <fo:flow flow-name="xsl-region-body">
+            <fo:block break-after="page" font-family="Helvetica, Arial, sans-serif">
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="20pt" font-weight="bold" space-after="10pt" space-before="10pt" text-align="start">Anwendungsarchitektur</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Jede Anwendung benötigt eine Architektur, also eine Sturktur und einen Plan, indem das innere Gerüst der Anwendung organisiert ist. Die Architektur
+      einer Anwendung sollte so stabil und nachhaltig sein, dass sie sich langfristig nicht ändert. Was sich in der Regel ändert, sind Funktionen und 
+      Bedingungen, die von außerhalb, d.h. von der Umgebung und dem Systemkontext, stammen. 
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="14pt" font-weight="bold" space-after="10pt" space-before="10pt" text-align="start" id="Übersicht">Übersicht</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Die folgende Übersicht zeigt eine einfache Anwendungsarchitektur, deren Klassengerüst aus sieben Klassen und drei Paketen 
+      besteht. 
+    </fo:block>
+                    
+                <fo:block space-after="4pt" space-before="4pt" line-height="0pt">
+                    <fo:external-graphic src="url('file:///C:/Users/schmi/Daten/Web/xdoc/xapp/img/Anwendungsarchitektur.svg')"/>
+                </fo:block>
+                <fo:block space-after="6pt" space-before="6pt" font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-style="italic">
+        Abbildung 1: Anwendungsarchitektur
+      </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Der Benutzer (Akteur) startet die Anwendung, indem er über das Exekutionsmodul (application.bat) die Hauptklasse der Anwendung Main ruft. 
+      Die Hauptmethode main() der Hauptklasse initialisiert zunächst den Systemkontext. Dazu benutzt sie die Klasse Property, welche die Datei mit den 
+      Anwendungseigenschaften, die in der Datei application.properties gespiechert sind, lokalisiert und anschließend diese lädt. Hiernach kann die Hauptklasse 
+      verschiedene System-Properties wie den Rechnernamen und den davon abhängigen Logging-Pfad bestimmen. Anschließend wird der Logger instantiiert und die Steuerung 
+      an die eigentlich Anwendungssteuerung, die Klasse Control mit ihrer Hauptmethode run() weitergegeben. 
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Die Klasseen sind in folgenden Paketen organisiert:
+    </fo:block>
+                    
+                <fo:list-block provisional-distance-between-starts="50mm" provisional-label-separation="10mm" space-after="4pt" space-before="4pt">
+                    <fo:list-item>
+                        <fo:list-item-label>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="normal">•
+          </fo:block>
+                        </fo:list-item-label>
+                        <fo:list-item-body>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" start-indent="5mm">de.timdomain.application.control: dieses Paket beinhaltet Hauptklasse und Anwendungssteuerung</fo:block>
+                        </fo:list-item-body>
+                    </fo:list-item>
+                    <fo:list-item>
+                        <fo:list-item-label>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="normal">•
+          </fo:block>
+                        </fo:list-item-label>
+                        <fo:list-item-body>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" start-indent="5mm">de.timdomain.application.schema: dieses Paket beinhaltet das Domänen- und Tabellen-Schema</fo:block>
+                        </fo:list-item-body>
+                    </fo:list-item>
+                    <fo:list-item>
+                        <fo:list-item-label>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="normal">•
+          </fo:block>
+                        </fo:list-item-label>
+                        <fo:list-item-body>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" start-indent="5mm">de.timdomain.application.util: dieses Paket beinhaltet Hilfsklassen wie Connector und Property-Klassen</fo:block>
+                        </fo:list-item-body>
+                    </fo:list-item>
+                </fo:list-block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Eigenständig von der Anwendung, aber mit ihr verbunden sind Komponenten des Datei-Systems wie die Properties oder die Datenbank.
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Generell werden folgende Konventionen verwendet:
+    </fo:block>
+                    
+                <fo:list-block provisional-distance-between-starts="50mm" provisional-label-separation="10mm" space-after="4pt" space-before="4pt">
+                    <fo:list-item>
+                        <fo:list-item-label>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="normal">•
+          </fo:block>
+                        </fo:list-item-label>
+                        <fo:list-item-body>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" start-indent="5mm">Alle Klassen sind in der Regel public</fo:block>
+                        </fo:list-item-body>
+                    </fo:list-item>
+                    <fo:list-item>
+                        <fo:list-item-label>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="normal">•
+          </fo:block>
+                        </fo:list-item-label>
+                        <fo:list-item-body>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" start-indent="5mm">Alle Methoden sind public und static</fo:block>
+                        </fo:list-item-body>
+                    </fo:list-item>
+                    <fo:list-item>
+                        <fo:list-item-label>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="normal">•
+          </fo:block>
+                        </fo:list-item-label>
+                        <fo:list-item-body>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" start-indent="5mm">Alle Variablen und Konstanten sind private und static</fo:block>
+                        </fo:list-item-body>
+                    </fo:list-item>
+                </fo:list-block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      In begründeten Ausnahmefällen werden auch Instanzmethoden oder der Modifier protected verwendet. 
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="14pt" font-weight="bold" space-after="10pt" space-before="10pt" text-align="start" id="Hauptklasse">Hauptklasse</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Die Klasse Main ist die Hauptklasse der Anwendung. Sie inspiziert die System-Umgebung der Anwendung und legt in Abhängigkeit von der Umgebung fest, 
+      wohin die Anwendung gelogget wird. Inhaltlich leistet die Hauptklasse nichts, sondern delegiert die Kontrolle an die Anwendungssteuerung Control.
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Die Hauptmethode der Hauptklasse heißt main() und startet die Anwendung. Sie initialisiert den Umgebungskontext, setzt die System-Properties für den 
+      Rechnernamen und die Logging-Pfad aufgrund der initialisierten Daten und schreibt das so definierte Logging. 
+    </fo:block>
+                    
+                <fo:block font-family="Courier" font-size="6pt" linefeed-treatment="preserve" white-space-treatment="preserve" space-before="0pt" space-after="4pt" text-align="start" white-space-collapse="false">
+        public static void main(String[] args) {
+      
+          // Initialisierung
+          initialize();
+      
+          // Setzen der System-Properties
+          String computerName = getHostName();
+          String logPath = setLogPath(computerName);
+      
+          // Parameter, um den Workflow zu steuern
+          Logger LOG = LogManager.getLogger(MainRun.class.getName());
+          LOG.trace("LogPath: " + logPath);
+      
+          // Aufruf der Anwendung
+          Control.run(computerName);
+        }
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Die Initialisierungsmethode heißt initialize(). Sie setzt die Propiertes der Anwendung und lädt sie. Dann werden die möglichen Computernamen für alle 
+      Rechner-Varianten und ihre zugehörigen Logging-Pfade ermittelt sowie eine Fehlermeldung.
+    </fo:block>
+                    
+                <fo:block font-family="Courier" font-size="6pt" linefeed-treatment="preserve" white-space-treatment="preserve" space-before="0pt" space-after="4pt" text-align="start" white-space-collapse="false">
+        public static void initialize() {
+      
+          // Application Properties setzen und laden
+          ApplicationProperty.setProperties();
+          ApplicationProperty.load();
+      
+          // Computernamen ermitteln
+          META_PC = ApplicationProperty.getMetaPC();
+          TEST_PC = ApplicationProperty.getTestPC();
+      
+          // Logging-Pfade ermitteln
+          LOG_PATH_META_PC = ApplicationProperty.getLogPathMeta();
+          LOG_PATH_TEST_PC = ApplicationProperty.getLogPathTest();
+      
+          // Error Message ermitteln
+          ERROR_HOST = ApplicationProperty.getErrorHost();
+      }
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Zusätzlich zu diesen beiden Methoden gibt es noch die Methoden getHostName() und setLogPath(). Die Methode getHostName() ermittelt den Rechnernamen
+      aus dem Umgebungskontext. Dabei benutzt sie die Systemklasse InetAddress. Da zu diesem Zeitpunkt noch kein Logger initialisiert wurde, muss eine 
+      Ausnahmebehandlung durch die System-Error-Message erfolgen. 
+    </fo:block>
+                    
+                <fo:block font-family="Courier" font-size="6pt" linefeed-treatment="preserve" white-space-treatment="preserve" space-before="0pt" space-after="4pt" text-align="start" white-space-collapse="false">
+        public static String getHostName() {
+          String hostName = "";
+      
+          // Den Rechnernamen aus der Umgebung holen
+          try {
+            hostName = InetAddress.getLocalHost().getHostName();
+          } catch (IOException ioException) {
+            System.err.println(ioException.getMessage());
+          }
+          return hostName;
+        }
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Die Methode setLogPath() setzt den Logging Path abhänging vom Rechnernamen. Dabei wird der Computername als Parameter übergeben. In Abhängikeit vom 
+      benötigt wird. Auch hier muss eine Fehlermeldung noch mit der System-Error-Message erfolgen.
+    </fo:block>
+                    
+                <fo:block font-family="Courier" font-size="6pt" linefeed-treatment="preserve" white-space-treatment="preserve" space-before="0pt" space-after="4pt" text-align="start" white-space-collapse="false">
+        public static String setLogPath(String computerName) {
+          String logPath = "";
+      
+          // Abfrage des Rechnernamens und setzen des Logging Pfads
+          if (TIM_PC.equals(computerName)) {
+            logPath = LOG_PATH_TIM_PC;
+          } else if (META_PC.equals(computerName)) {
+            logPath = LOG_PATH_META_PC;
+          } else if (TEST_PC.equals(computerName)) {
+            logPath = LOG_PATH_TEST_PC;
+          } else {
+            System.err.println(ERROR_HOST);
+          }
+          
+          // Setzen des System Logging-Pfades
+          System.setProperty("log.path", logPath);
+          return logPath;
+        }
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="14pt" font-weight="bold" space-after="10pt" space-before="10pt" text-align="start" id="Eigenschaftenklasse">Eigenschaftenklasse</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Die Klasse ApplicationProperty ist die Property-Klasse der Anwendung. Sie lädt die Properties, setzt die Keys und ermittelt für jeden Key 
+      das entsprechende Property, d.h. den Eigenschaftswert. Dazu liest die Daten aus der Eigenschaftendatei application.properties aus. Diese Daten sind in 
+      Key-Value-Formaten organisiert. 
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Die Datei application.properties hat folgendes Aussehen:
+    </fo:block>
+                    
+                <fo:block font-family="Courier" font-size="6pt" linefeed-treatment="preserve" white-space-treatment="preserve" space-before="0pt" space-after="4pt" text-align="start" white-space-collapse="false">
+        tim.pc = Tim-PC
+        meta.pc = 16H0054
+        test.pc = DESKTOP-LERLCJ6
+        error.host = Kein Computername definiert
+        logpath.tim = C:\\Users\\Tim\\Daten\\Java\\Applications\\application\\logs
+        logpath.meta = C:\\Users\\TSZ\\Daten\\Java\\Applications\\application\\logs
+        logpath.test = C:\\Users\\test\\Daten\\Java\\Applications\\application\\logs
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Die Keys, über die die Properties referenziert werden, bestehen aus zwei oder mehr zusammenhörigen Begriffen, die jeweils durch Punkte miteinander
+      verbunden werden. Die Values bestehen jeweils aus einem String, der technisch als endlich lange Folge von character-Zeichen realisiert wird. 
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Die Methode setProperties() definiert das Property-File samt Pfad, um später darauf zugreifen zu können. Dafür wird das Verzeichnis initialisiert,
+      in dem die Properties-Datei liegt. In diesem Fall ist es das aktuelle Verzeichnis, in dem die Anwendung läuft ("user.dir") und darunter das 
+      Unterverzeichnis properties - dieselbe Struktur muss deswegen auch in der Ablaufumgebung abgebildet werden. Anschließend wird die Properties-Datei als
+      File insantiiert sowie ein Properties-Objekt. Im letzten Schritt wird das Setzen der Keys vorgenommen. 
+    </fo:block>
+                    
+                <fo:block font-family="Courier" font-size="6pt" linefeed-treatment="preserve" white-space-treatment="preserve" space-before="0pt" space-after="4pt" text-align="start" white-space-collapse="false">
+        public static void setProperties() {
+          // Statische Variablen für den Zugriff auf die Properties
+          String directory = System.getProperty("user.dir") + File.separator + "properties";
+          file = new File(directory, "application.properties");
+          properties = new Properties();
+          setKeys();
+        }
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Die Methode setKey() setzt für jedes Property die Keys, um später einen Value für den jeweiligen Key auszuwerten. Dabei müssen die Keys der 
+      Properties-Datei bekannt sein und benutzt werden. 
+    </fo:block>
+                    
+                <fo:block font-family="Courier" font-size="6pt" linefeed-treatment="preserve" white-space-treatment="preserve" space-before="0pt" space-after="4pt" text-align="start" white-space-collapse="false">
+        private static void setKeys() {
+          timPC = "tim.pc";
+          metaPC = "meta.pc";
+          testPC = "test.pc";
+          errorHost = "error.host";
+          logPathTim = "logpath.tim";
+          logPathMeta = "logpath.meta";
+          logPathTest = "logpath.test";
+        }
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Die Methode load(), die anschließend von der Hauptklasse der Anwendung aufgerufen wird, erzeugt einen Eingabestrom mit Dateinamen und lädt die
+      Properties des Projekts über die Entsprechende Objektmethode. Da es sich um eine Datei-Operation handelt, muss eine Eingabe-Ausgabe-Ausnahmebehandlung
+      hinzugefügt werden. Damit sind alle Properties der Eigenschaftendatei für die Anwendung zugreifbar. 
+    </fo:block>
+                    
+                <fo:block font-family="Courier" font-size="6pt" linefeed-treatment="preserve" white-space-treatment="preserve" space-before="0pt" space-after="4pt" text-align="start" white-space-collapse="false">
+        public static void load() {
+          try {
+            FileInputStream inputStream = new FileInputStream(file);
+            properties.load(inputStream);
+          } catch (IOException ioException) {
+            ioException.getMessage();
+          }
+        }
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Die Getter der Property-Klasse haben alle dasselbe Aussehen und geben den Value des über den Key referenzierten Properties zurück. Damit werden die 
+      Getter zu einfachen Einzeilern. 
+    </fo:block>
+                    
+                <fo:block font-family="Courier" font-size="6pt" linefeed-treatment="preserve" white-space-treatment="preserve" space-before="0pt" space-after="4pt" text-align="start" white-space-collapse="false">
+        public static String getTimPC() {
+          return properties.getProperty(timPC);
+        }
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="14pt" font-weight="bold" space-after="10pt" space-before="10pt" text-align="start" id="Datenbank-Eigenschaftenklasse">Datenbank-Eigenschaftenklasse</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Die Klasse DatabaseProperty ist die Property-Klasse der Datenbank. Sie lädt die Properties für den Datebank-Zugriff, setzt die Keys und ermittelt für jeden Key 
+      das entsprechende Database-Property, d.h. den Eigenschaftswert. Dazu liest die Daten aus der Eigenschaftendatei database.properties aus. Diese Daten sind in 
+      Key-Value-Formaten organisiert. Man erkennt schnell, dass die Klasse DatabaseProperty sich genauso verhält wie die Klasse ApplicationProperty und daher dieselben
+      Methoden und Zugriffe verwendet.
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Die Datei database.properties hat dabei folgendes Aussehen
+    </fo:block>
+                    
+                <fo:block font-family="Courier" font-size="6pt" linefeed-treatment="preserve" white-space-treatment="preserve" space-before="0pt" space-after="4pt" text-align="start" white-space-collapse="false">
+        database.user=tim
+        database.password.test=TimSql#xxxx
+        database.password.meta=TimSql#yyyy
+        database.server.test=DESKTOP-LERLCJ6
+        database.server.meta=22H0566
+        database.driver=com.microsoft.sqlserver.jdbc.SQLServerDriver
+        database.port=jdbc:sqlserver://localhost:1434
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Die Methode setKey() setzt analog für jedes Property die Keys, um später einen Value für den jeweiligen Key auszuwerten. Dabei müssen die Keys der 
+      Properties-Datei bekannt sein und benutzt werden. 
+    </fo:block>
+                    
+                <fo:block font-family="Courier" font-size="6pt" linefeed-treatment="preserve" white-space-treatment="preserve" space-before="0pt" space-after="4pt" text-align="start" white-space-collapse="false">
+        private static void setKeys() {
+      
+          // Login
+          databaseUser = "database.user";
+          databasePasswordTest = "database.password.test";
+          databasePasswordMeta = "database.password.meta";
+          databaseServerTest = "database.server.test";
+          databaseServerMeta = "database.server.meta";
+      
+          // Connector
+          databaseDriver = "database.driver";
+          databasePort = "database.port";
+        }
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Die Methode load() und die Getter dieser Eigenschaftenklasse arbeiten identisch wie in der Klasse ApplicationProperty.
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="14pt" font-weight="bold" space-after="10pt" space-before="10pt" text-align="start" id="Verbindungsklasse">Verbindungsklasse</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Die Verbindungsklasse Connector stellt Methoden bereit, mit denen sich die Anwendung mit der Datenbank verbinden und von der Datenbank auch 
+      wieder trennen kann. Wie die beiden Property-Klassen ist sie Teil des Util-Pakets, da sie nicht-funktionale Anforderungen realisiert. Dafür 
+      müssen zunächst die java.sql-Pakete importiert. Anschließend kann der Datenbank-Treiber mit der Methode loadDriver() geladen werden.
+    </fo:block>
+                    
+                <fo:block font-family="Courier" font-size="6pt" linefeed-treatment="preserve" white-space-treatment="preserve" space-before="0pt" space-after="4pt" text-align="start" white-space-collapse="false">
+        public static void loadDriver(String databaseDriver) {
+          try {
+              Class.forName(databaseDriver);
+              LOG.trace("Datenbank-Treiber laden: ");
+              LOG.trace(databaseDriver);
+          } catch (ClassNotFoundException classNotFoundException) {
+              LOG.error("Class Not Found: ");
+              LOG.error(classNotFoundException.getMessage());
+          }
+        }
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Die Methode connect() stellt eine Verbindung zur Datenbank her. Dafür benötigt die Methode den Datenbank-Lokator, den Datenbank-Benutzer und 
+      sein Passwort. Der Rückgabewert dieser Methode ist die Verbindung zur Datenbank. 
+    </fo:block>
+                    
+                <fo:block font-family="Courier" font-size="6pt" linefeed-treatment="preserve" white-space-treatment="preserve" space-before="0pt" space-after="4pt" text-align="start" white-space-collapse="false">
+        public static Connection connect(String databaseURL, String databaseUser, String databasePassword) {
+          Connection connection = null;
+          try {
+              connection = DriverManager.getConnection(databaseURL, databaseUser, databasePassword);
+              LOG.trace("Zur Datenbank verbinden: ");
+              LOG.trace(databaseURL);
+          } catch (SQLException sqlException) {
+              LOG.error("SQL-Exception: ");
+              LOG.error(sqlException.getMessage());
+          }
+          return connection;
+        }
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Abschließend definiert die Methode closeConnection() die Trennung von der Datenbank. Dafür benötigt die Methode die Verbindung zur 
+      Datenbank als Übergabe-Parameter. 
+    </fo:block>
+                    
+                <fo:block font-family="Courier" font-size="6pt" linefeed-treatment="preserve" white-space-treatment="preserve" space-before="0pt" space-after="4pt" text-align="start" white-space-collapse="false">
+        public static void closeConnection(Connection connection) {
+          try {
+              if (connection != null) connection.close();
+          } catch (SQLException sqlException) {
+              LOG.trace("SQL-Exception: ");
+              LOG.trace(sqlException.getMessage());
+          } finally {
+              LOG.trace("Datenbank-Verbindung trennen");
+          }
+        }
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="14pt" font-weight="bold" space-after="10pt" space-before="10pt" text-align="start" id="Domänen-Schema">Domänen-Schema</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Das Domänen-Schema repräsentiert in formaler Weise einen Wertebreich, dessen Daten strukturiert sind. In diesem Fall ist die Domäne die spezifische 
+      Datenbank des Relationalen Datenbank-Managementsystems SQL Server, hier genannt "CBM". 
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Da der Connector nicht direkt von der Anwendung angesprochen werden soll, übernimmt diese Aufgabe das Domänen-Schema. Dieses wird seinerseits von der 
+      Anwendungssteuerung gerufen. Die Methode getConnection() lädt also via des Connectors den Datenbank-Treiber und stellt eben damit auch die Verbindung zur Datenbank her.
+    </fo:block>
+                    
+                <fo:block font-family="Courier" font-size="6pt" linefeed-treatment="preserve" white-space-treatment="preserve" space-before="0pt" space-after="4pt" text-align="start" white-space-collapse="false">
+        public static void getConnection(String databaseDriver, String databasePort, String databaseUser,
+                                         String databasePassword) {
+          LOG.trace("Aufbau der SQL Server Connection...");
+          Connector.loadDriver(databaseDriver);
+          sqlServerConnection = Connector.connect(databasePort + ";databaseName=CBM", databaseUser,
+                  databasePassword);
+        }
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Enstprechend ruft die Methode closeConnection() die gleichnamige Methode des Connectors und beendet die Verbindung mit der Datenbank.
+    </fo:block>
+                    
+                <fo:block font-family="Courier" font-size="6pt" linefeed-treatment="preserve" white-space-treatment="preserve" space-before="0pt" space-after="4pt" text-align="start" white-space-collapse="false">
+        public static void closeConnection() {
+          LOG.trace("close SQL Server Connection...");
+          Connector.closeConnection(sqlServerConnection);
+        }
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="14pt" font-weight="bold" space-after="10pt" space-before="10pt" text-align="start" id="Tabellen-Schema">Tabellen-Schema</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Das Tabelle-Schema repräsentiert eine Relation der Datenbank. Hier dient es dazu, einen lesenden Zugriff auf die Datenbank programmatisch zu ermöglichen. 
+      Es besteht aus einer einzigen Methode selectAllFromTable(), die eine Multiselect-Query auf einer Tabelle der Datenbank realisiert. Erst an dieser Stelle
+      wird natives SQL verwendet.
+    </fo:block>
+                    
+                <fo:block font-family="Courier" font-size="6pt" linefeed-treatment="preserve" white-space-treatment="preserve" space-before="0pt" space-after="4pt" text-align="start" white-space-collapse="false">
+        public static void selectAllFromTable() {
+          Statement statement;
+          ResultSet resultSet;
+          String selection = "select id, ecokey from CBM.dbo.ECO";
+      
+          try {
+            statement = sqlServerConnection.createStatement();
+            resultSet = statement.executeQuery(selection);
+            while(resultSet.next()) {
+              String eco_id  = resultSet.getString("ID");
+              String eco_key = resultSet.getString("ECOKEY");
+              LOG.trace(eco_id + ":" + eco_key);
+              }
+          }
+          catch(SQLException sqlException ) {
+            System.err.println(sqlException.getMessage());
+          }
+        }
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="14pt" font-weight="bold" space-after="10pt" space-before="10pt" text-align="start" id="Anwendungssteuerung">Anwendungssteuerung</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Die Klasse Control repräsentiert die Anwendungssteuerung der Anwendung und ist damit die wichtigste Klasse der Anwenndung. Sie ist in diesem Fall eine leere Hülle, 
+      die eigentlich nur zu Delegationszwecken besteht, aber ein Bindeglied zur Datenbank und Datenverarbeitung darstellt. Dabei is die rückgabelose und parameterfreie Methode 
+      run() die Hauptmethode der Anwendungssteuerung, die von der Hauptmethode der Hauptklasse gerufen wird. An dieser Stelle wird die fachliche und technische Logik der Anwendung 
+      gesteuert. 
+    </fo:block>
+                    
+                <fo:block font-family="Courier" font-size="6pt" linefeed-treatment="preserve" white-space-treatment="preserve" space-before="0pt" space-after="4pt" text-align="start" white-space-collapse="false">
+        public static void run(String computerName) {
+          LOG = LogManager.getLogger(Control.class.getName());
+          password =  initialize(computerName);
+          start(password);
+          process();
+          complete();
+        }
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Diese Methode ruft vier Subroutinen, um die Steuerung zu initialisieren, die Verarbeitung zu beginnen, durchzuführen und abzuschließen. Die Initialisierung wird von der Methode
+      initialize() vorgenommen, die die Datenbank-Properties setzt und lädt sowie in Abhängigkeit von dem Rechnernamen das zugehörige Passwort setzt, welches gleichzeitig auch der 
+      Rückgabewert der Methode ist.
+    </fo:block>
+                    
+                <fo:block font-family="Courier" font-size="6pt" linefeed-treatment="preserve" white-space-treatment="preserve" space-before="0pt" space-after="4pt" text-align="start" white-space-collapse="false">
+        public static String initialize(String computerName) {
+      
+          // Database-Properties setzen und laden
+          DatabaseProperty.setProperties();
+          DatabaseProperty.load();
+      
+          // Werte laden
+          DATABASE_USER = DatabaseProperty.getDatabaseUser();
+          DATABASE_PASSWORD_TEST = DatabaseProperty.getDatabasePasswordTest();
+          DATABASE_PASSWORD_META = DatabaseProperty.getDatabasePasswordMeta();
+          DATABASE_SERVER_TEST = DatabaseProperty.getDatabaseServerTest();
+          DATABASE_SERVER_META = DatabaseProperty.getDatabaseServerMeta();
+          DATABASE_DRIVER = DatabaseProperty.getDatabaseDriver();
+          DATABASE_PORT = DatabaseProperty.getDatabasePort();
+      
+          // Abfrage des Rechnernamens und setzen des Passworts
+          if (DATABASE_SERVER_META.equals(computerName)) {
+            password = DATABASE_PASSWORD_META;
+        } else if (DATABASE_SERVER_TEST.equals(computerName)) {
+            password = DATABASE_PASSWORD_TEST;
+          } else {
+            LOG.error("Keine Server definiert");
+          }
+      
+          return password;
+        }
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Anschließend ruft die Hauptroutine die Start-Methode start() mit dem Datenbank-Passwort als Argument. Die Start-Methode verwendet das Domänen-Schema und stellt eine 
+      Verbindung zur Datenbank her. 
+    </fo:block>
+                    
+                <fo:block font-family="Courier" font-size="6pt" linefeed-treatment="preserve" white-space-treatment="preserve" space-before="0pt" space-after="4pt" text-align="start" white-space-collapse="false">
+        public static void start(String databasePassword) {
+          LOG.trace("Starten der Anwendungssteuerung");
+          Domain.getConnection(DATABASE_DRIVER, DATABASE_PORT, DATABASE_USER, databasePassword);
+          LOG.trace("Verbinden mit der Datenbank");
+        }
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Im nächsten Schritt wird die Anwendungssteuerung durch die Methode process() verarbeitet. Diese Methode ruft das Tabellen-Schema, um eine einfache Selektion auf der Datebank
+      auszuführen.
+    </fo:block>
+                    
+                <fo:block font-family="Courier" font-size="6pt" linefeed-treatment="preserve" white-space-treatment="preserve" space-before="0pt" space-after="4pt" text-align="start" white-space-collapse="false">
+        public static void process() {
+          LOG.trace("Verarbeiten der Anwendungssteuerung");
+          Table.selectAllFromTable();
+          LOG.trace("Lesen der Datenbank");
+        }
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Den Abschluss der Anwendungssteuerung bildet die Methode complete(), welche über das Domänen-Schema die Verbindung zur Datenbank wieder trennt. 
+    </fo:block>
+                    
+                <fo:block font-family="Courier" font-size="6pt" linefeed-treatment="preserve" white-space-treatment="preserve" space-before="0pt" space-after="4pt" text-align="start" white-space-collapse="false">
+        public static void complete() {
+          LOG.trace("Beenden der Anwendungssteuerung");
+          Domain.closeConnection();
+          LOG.trace("Trennen der Datenbank");
+        }
+    </fo:block>
+                  
+            </fo:block>
+        </fo:flow>
+    </fo:page-sequence>
+</fo:root>

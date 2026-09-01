@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="UTF-8"?><fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format">
+    <fo:layout-master-set>
+        <fo:simple-page-master master-name="page" page-height="29.7cm" page-width="21cm" margin-top="1cm" margin-bottom="1cm" margin-left="2.5cm" margin-right="2.5cm">
+            <fo:region-body margin-top="1cm" margin-bottom="2cm"/>
+            <fo:region-before extent="3cm"/>
+            <fo:region-after extent="0.5cm"/>
+            <fo:region-start extent="2cm"/>
+            <fo:region-end extent="0.5cm"/>
+        </fo:simple-page-master>
+        <fo:page-sequence-master master-name="single-page">
+            <fo:repeatable-page-master-reference master-reference="page"/>
+        </fo:page-sequence-master>
+    </fo:layout-master-set>
+    <fo:page-sequence master-reference="single-page" initial-page-number="1">
+        <fo:static-content flow-name="xsl-region-before">
+            <fo:block space-after="4pt" space-before="4pt" text-align="right">
+                <fo:external-graphic src="url('file:///C:/Users/schmi/Daten/Web/xdoc/resources/logo.svg')" text-align="right"/>
+            </fo:block>
+        </fo:static-content>
+        <fo:static-content flow-name="xsl-region-after">
+            <fo:block text-align="outside" font-family="Helvetica, Arial, sans-serif" font-size="10pt">
+                          Seite
+          
+                <fo:page-number/>
+            </fo:block>
+        </fo:static-content>
+        <fo:flow flow-name="xsl-region-body">
+            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="20pt" font-weight="bold" space-after="10pt" space-before="10pt" text-align="start">
+          &#133;JUnit-Tests</fo:block>
+            <fo:block text-align="start" font-family="Helvetica, Arial, sans-serif" font-size="10pt">Tim Schmitz</fo:block>
+            <fo:block text-align="start" font-family="Helvetica, Arial, sans-serif" font-size="10pt">16.05.2026</fo:block>
+        </fo:flow>
+    </fo:page-sequence>
+    <fo:page-sequence master-reference="single-page" initial-page-number="2">
+        <fo:static-content flow-name="xsl-region-after">
+            <fo:block text-align="outside" font-family="Helvetica, Arial, sans-serif" font-size="10pt">
+                          Seite
+          
+                <fo:page-number/>
+            </fo:block>
+        </fo:static-content>
+        <fo:flow flow-name="xsl-region-body">
+            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="14pt" font-weight="bold" space-after="10pt" space-before="10pt" text-align="start">
+      Inhalt
+    </fo:block>
+            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+                <fo:block text-align-last="justify">
+                    <fo:inline>
+                        Minimalkonfiguration
+                        <fo:leader leader-pattern="dots"/>
+                        <fo:page-number-citation ref-id="Minimalkonfiguration"/>
+                    </fo:inline>
+                </fo:block>
+                <fo:block text-align-last="justify">
+                    <fo:inline>
+                        Test-Klasse
+                        <fo:leader leader-pattern="dots"/>
+                        <fo:page-number-citation ref-id="Test-Klasse"/>
+                    </fo:inline>
+                </fo:block>
+                <fo:block text-align-last="justify">
+                    <fo:inline>
+                        Test-Aufbau
+                        <fo:leader leader-pattern="dots"/>
+                        <fo:page-number-citation ref-id="Test-Aufbau"/>
+                    </fo:inline>
+                </fo:block>
+                <fo:block text-align-last="justify">
+                    <fo:inline>
+                        Test-Ausführung
+                        <fo:leader leader-pattern="dots"/>
+                        <fo:page-number-citation ref-id="Test-Ausführung"/>
+                    </fo:inline>
+                </fo:block>
+                <fo:block text-align-last="justify">
+                    <fo:inline>
+                        Build-Test
+                        <fo:leader leader-pattern="dots"/>
+                        <fo:page-number-citation ref-id="Build-Test"/>
+                    </fo:inline>
+                </fo:block>
+            </fo:block>
+        </fo:flow>
+    </fo:page-sequence>
+    <fo:page-sequence master-reference="single-page" initial-page-number="3">
+        <fo:static-content flow-name="xsl-region-after">
+            <fo:block text-align="outside" font-family="Helvetica, Arial, sans-serif" font-size="10pt" line-height="14pt">
+                          Seite
+          
+                <fo:page-number/>
+            </fo:block>
+        </fo:static-content>
+        <fo:flow flow-name="xsl-region-body">
+            <fo:block break-after="page" font-family="Helvetica, Arial, sans-serif">
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="20pt" font-weight="bold" space-after="10pt" space-before="10pt" text-align="start">JUnit-Tests</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Unit-Tests in Java werden am besten mit dem Testframework JUnit durchgeführt. Die aktuelle Version des Frameworks ist JUnit 5.
+      Es besteht aus einer Plattforma und der Test-Engine Jupiter. 
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="14pt" font-weight="bold" space-after="10pt" space-before="10pt" text-align="start" id="Minimalkonfiguration">Minimalkonfiguration</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Für die Minimalkonfiguration werden die folgenden Java Archive-Dateien benötigt:
+    </fo:block>
+                    
+                <fo:list-block provisional-distance-between-starts="50mm" provisional-label-separation="10mm" space-after="4pt" space-before="4pt">
+                    <fo:list-item>
+                        <fo:list-item-label>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="normal">•
+          </fo:block>
+                        </fo:list-item-label>
+                        <fo:list-item-body>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" start-indent="5mm">junit-jupiter-api-5.6.1	</fo:block>
+                        </fo:list-item-body>
+                    </fo:list-item>
+                    <fo:list-item>
+                        <fo:list-item-label>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="normal">•
+          </fo:block>
+                        </fo:list-item-label>
+                        <fo:list-item-body>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" start-indent="5mm">junit-platform-commons-1.6.1</fo:block>
+                        </fo:list-item-body>
+                    </fo:list-item>
+                </fo:list-block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="14pt" font-weight="bold" space-after="10pt" space-before="10pt" text-align="start" id="Test-Klasse">Test-Klasse</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Die JUnit Test-Klasse hat einen möglichst ähnlichen Namen und einen analogen Paketpfad wie die Klasse, die unter diesem Test steht. 
+      Ebenso sollten die Methoden der JUnit Test-Klasse entsprechend lautende Namen besitzen wie in dem folgenden Beispiel:
+    </fo:block>
+                    
+                <fo:block space-after="10pt" space-before="10pt">
+                    <fo:table table-layout="fixed" width="100%">
+                        <fo:table-header>
+                            <fo:table-row>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block background-color="#f0f0f0" font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="bold">Bezeichnung</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block background-color="#f0f0f0" font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="bold">Source</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block background-color="#f0f0f0" font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="bold">JUnit Test</fo:block>
+                                </fo:table-cell>
+                            </fo:table-row>
+                        </fo:table-header>
+                        <fo:table-body>
+                            <fo:table-row>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">Klassen-Name</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">Property</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">PropertyTest</fo:block>
+                                </fo:table-cell>
+                            </fo:table-row>
+                            <fo:table-row>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">Paket</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">de.domain.application.util</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">de.domain.application.util.test</fo:block>
+                                </fo:table-cell>
+                            </fo:table-row>
+                            <fo:table-row>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">Methode</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">getTimPC()</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">testGetTimPC()</fo:block>
+                                </fo:table-cell>
+                            </fo:table-row>
+                        </fo:table-body>
+                    </fo:table>
+                    <fo:block space-after="6pt" space-before="6pt" font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-style="italic">Tabelle 1: Bezeichner von Original und Test-Klasse</fo:block>
+                </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="14pt" font-weight="bold" space-after="10pt" space-before="10pt" text-align="start" id="Test-Aufbau">Test-Aufbau</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Der JUnit-Test testet eine Methode oder Eigenschaft einer Klasse. Im folgenden Beispiel wird der Funktionsweise einer Methode getestet, 
+      indem sie auf eine Equals-Assertion getestet wird, also auf die Behauptung einer Gleichheit. 
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Zunächst müssen die verwendeten Methoden und Annotationen importiert werden sowie die Klasse, die unter Test steht:
+    </fo:block>
+                    
+                <fo:block font-family="Courier" font-size="6pt" linefeed-treatment="preserve" white-space-treatment="preserve" space-before="0pt" space-after="4pt" text-align="start" white-space-collapse="false">
+        import static org.junit.jupiter.api.Assertions.assertEquals;
+      
+        // Notwendig wegen JUnit 5
+        import org.junit.jupiter.api.BeforeAll;
+        import org.junit.jupiter.api.Test;
+      
+        // Klasse unter Test
+        import de.domain.application.util.Property;
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Anschließend wird mit der Annotation @BeforeAll sichergestellt, dass - bevor irgendein Testfall ausgeführt wird - die entsprechenden Daten 
+      geladen werden. Dafür werden statische Methoden der unter zu Test stehenden Klassen geladen.
+    </fo:block>
+                    
+                <fo:block font-family="Courier" font-size="6pt" linefeed-treatment="preserve" white-space-treatment="preserve" space-before="0pt" space-after="4pt" text-align="start" white-space-collapse="false">
+        @BeforeAll
+        public static void prepare() {
+          Property.setProperties();
+          Property.load();
+        }
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Anschließend können die Testfälle definiert werden. Im Beispiel wird die Methode getTimPC() getestet und dabei auf einen behaupteten Erwartungswert
+      abgefragt:
+    </fo:block>
+                    
+                <fo:block font-family="Courier" font-size="6pt" linefeed-treatment="preserve" white-space-treatment="preserve" space-before="0pt" space-after="4pt" text-align="start" white-space-collapse="false">
+        @Test
+        void testGetTimPC() {
+          assertEquals(EXPECTED_TIM_PC, Property.getTimPC());
+        }
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Der Test vergleicht nun den Erwartungswert EXPECTED_TIM_PC (einen String) mit dem Ergebnis der getesteten Methode Property.getTimPC(). 
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="14pt" font-weight="bold" space-after="10pt" space-before="10pt" text-align="start" id="Test-Ausführung">Test-Ausführung</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Der JUnit-Test kann ausgeführt werden, indem in der Projektstruktur der IDE mit der rechten Maustaste auf die Test-Klasse navigiert wird und dort 
+      Run [Testklasse]... gewählt wird. Die IDE führt dann alle Tests der Test-Klasse aus und listet die Resultate auf.
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="14pt" font-weight="bold" space-after="10pt" space-before="10pt" text-align="start" id="Build-Test">Build-Test</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Wenn die JUnit-Tests in den Apache Ant Build-Prozess integriert werden sollen, dann bedeutet dies eine Zusatzarbeit, die man zumindest in der 
+      Entwicklungsumgebung IntelliJ IDEA Community Edition durchführen muss. Das Target compile-test übersetzt die Testklassen der Anwendung in 
+      ausführbare Tests. Dazu muss die Jupiter API Archive-Datei in den Klassenpfad eingebunden werden. 
+    </fo:block>
+                    
+                <fo:block font-family="Courier" font-size="6pt" linefeed-treatment="preserve" white-space-treatment="preserve" space-before="0pt" space-after="4pt" text-align="start" white-space-collapse="false">
+        &lt;!-- ********************************************* --&gt;
+        &lt;!-- Target compile-test übersetzt die Testtreiber --&gt;
+        &lt;!-- ********************************************* --&gt;
+        &lt;target name="compile-test" depends="compile"&gt;
+          &lt;javac srcdir="${project.test}" destdir="${runtime.test}" includeantruntime="false"&gt;
+            &lt;classpath&gt;
+              &lt;pathelement location="${junit.api}/junit-jupiter-api-5.6.2.jar"/&gt;
+              &lt;pathelement path="${runtime.build}"/&gt;
+            &lt;/classpath&gt;
+          &lt;/javac&gt;
+        &lt;/target&gt;
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Anschließend können im Target test die übersetzten Testklassen ausgeführt werden. Wichtig ist hier allerdings die Ordnerstruktur der 
+      Entwicklungsumgebung IntelliJ richtig zu nutzen und die entsprechenden Klassen der JUnit 5-Komponentenbibliothek in das Ant-Lib-Verzeichnis von
+      IntelliJ IDEA zu kopieren. Der Pfad dazu lautet
+    </fo:block>
+                    
+                <fo:block font-family="Courier" font-size="6pt" linefeed-treatment="preserve" white-space-treatment="preserve" space-before="4pt" space-after="4pt" text-align="start" white-space-collapse="false">C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.2.5\lib\ant\lib</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Die Testfälle selber liegen in der Ablaufumgebung und werden dort ausgeführt. Die Testergebnisse werden dort in ein Verzeichnis output geschrieben 
+      und liegen - wie bereits erwähnt - als XML- und textuelle Dateien vor. 
+    </fo:block>
+                    
+                <fo:block font-family="Courier" font-size="6pt" linefeed-treatment="preserve" white-space-treatment="preserve" space-before="0pt" space-after="4pt" text-align="start" white-space-collapse="false">
+        &lt;!-- ************************************************************************************+* --&gt;
+        &lt;!-- Target test führt die Tests durch                                                      --&gt;
+        &lt;!-- ACHTUNG: die jupiter- und junit-apis werden in den ant/lib-Ordner von IntelliJ kopiert --&gt;
+        &lt;!-- ************************************************************************************** --&gt;
+          &lt;target name="test" depends="compile-test"&gt;
+            &lt;junitlauncher&gt;
+              &lt;classpath&gt;
+                &lt;pathelement path="${runtime.test}"/&gt;
+                &lt;pathelement path="${runtime.build}"/&gt;
+              &lt;/classpath&gt;
+              &lt;testclasses outputdir="${runtime.output}"&gt;
+                &lt;fileset dir="${runtime.test}"/&gt;
+                &lt;listener type="legacy-brief" sendSysOut="true"/&gt;
+                &lt;listener type="legacy-xml" sendSysErr="true" sendSysOut="true"/&gt;
+              &lt;/testclasses&gt;
+          &lt;/junitlauncher&gt;
+        &lt;/target&gt;
+    </fo:block>
+                  
+            </fo:block>
+        </fo:flow>
+    </fo:page-sequence>
+</fo:root>

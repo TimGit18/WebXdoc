@@ -1,0 +1,326 @@
+<html lang="de">
+    <head>
+        <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>Datenbank</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="http://localhost:8080/xdoc/resources/css/bootstrap.min.css">
+        <link rel="stylesheet" href="http://localhost:8080/xdoc/resources/css/bootstrap-toc.min.css">
+        <link rel="icon" href="http://localhost:8080/xdoc/resources/favicon.ico">
+    </head>
+    <body data-spy="scroll" data-target="#toc">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-2 bg-light">
+                    <figure class="figure">
+                        <img class="figure-img img-fluid rounded" src="http://localhost:8080/xdoc/resources/getsitelogo.png">
+                    </figure>
+                    <nav id="toc" class="sticky-top" data-toggle="toc"></nav>
+                </div>
+                <div class="col-sm-10">
+                    <nav class="navbar navbar-expand-lg sticky-top navbar-light bg-light">
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav mr-auto">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="http://localhost:8080/xdoc/xcbm/html/xcbm.html">Home</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                    <p></p>
+                        
+                    <h2>Datenbank</h2>
+                        
+                    <p></p>
+                          Die Datenbank ist die physische Implementierung des logischen Datenmodells. Dabei wird idealerweise jeder Entit&auml;t und jeder 
+      Beziehung eine Tabelle zugeordnet. Aus Performance-Gr&uuml;nden wird die Datenbank oft nicht normalisiert abgebildet, sondern es 
+      wird mit Datensichten oder denormalisierten Tabellen gearbeitet, dies ist aber bei kleinen Datenbanken wie der CBM-Datenbank 
+      nicht notwendig. Im Grunde k&ouml;nnte man auch in dieser Anwendungsdom&auml;ne auch ohne Datenbank areiten, jedoch ist sie hier aus 
+      didaktischen Gr&uuml;nden n&uuml;tzlich.
+    
+                    <p></p>
+                        
+                    <h3>Implementierung</h3>
+                        
+                    <p></p>
+                          Das zugrundeliegende Relationale Datenbank-Managementsystem (RDBMS) ist ein SQL Server 2022 von Microsoft. Als Werkzeug zur 
+      Administration der Datenbank wird dasw SQL Server Management Studio verwendet. 
+    
+                    <p></p>
+                        
+                    <h3>&Uuml;berblick</h3>
+                        
+                    <p></p>
+                          Insgesamt besteht die Datenbank aus drei Tabellen, wie in folgender &Uuml;bersicht zu sehen ist:
+    
+                    <p></p>
+                        
+                    <figure class="figure">
+                        <img class="figure-img img-fluid rounded" src="http://localhost:8080/xdoc/xcbm/img/Datenbank.svg">
+                        <figcaption class="figure-caption text-left">
+        Abbildung 1: Tabellen der CBM-Datenbank
+      </figcaption>
+                    </figure>
+                        
+                    <h3>Erstellung</h3>
+                        
+                    <p></p>
+                          Die Erstellung der Datenbank ben&ouml;tigt eine Administrator-Account. Mit folgendem Kommando wird die Datenbank CBM angelegt:
+    
+                    <p></p>
+                        
+                    <pre>
+                        <code>create database CBM;</code>
+                    </pre>
+                        
+                    <h3>Tabelle Magazine</h3>
+                        
+                    <p></p>
+                          Die Tabelle Magazin ist die Implementierung der Entit&auml;t Magazin. Sie wird mit dem folgenden Kommando in der Datenbank 
+      angelegt:
+    
+                    <p></p>
+                        
+                    <pre>
+                        <code>
+        create table CBM.dbo.Magazine (
+          id integer not null,
+          issue nvarchar(6) not null,
+          primary key (id));	
+    </code>
+                    </pre>
+                        
+                    <p></p>
+                          Die Tabelle besteht aus folgenden Feldern:
+    
+                    <p></p>
+                        
+                    <p></p>
+                    <table class="table table-hover table-responsive-sm">
+                        <thead class="thead-light">
+                            <tr>
+                                <th>Feld</th><th>Datentyp</th><th>Bedeutung</th>
+                            </tr>
+                            <tr></tr>
+                        </thead>
+                        <tbody>
+                            <tr></tr>
+                            <tr>
+                                <td>id</td><td>int</td><td>Technischer Schl&uuml;ssel</td>
+                            </tr>
+                            <tr></tr>
+                            <tr>
+                                <td>issue</td><td>nvarchar(6)</td><td>Fachlicher Schl&uuml;ssel</td>
+                            </tr>
+                            <caption>Tabelle 1: Felder der Tabelle Magazine</caption>
+                        </tbody>
+                    </table>
+                    <p></p>
+                        
+                    <h3>Tabelle ECO</h3>
+                        
+                    <p></p>
+                          Die Tabelle ECO ist die Implementierung der Entit&auml;t Er&ouml;ffnungsschl&uuml;ssel. Sie wird mit dem folgenden Kommando in der Datenbank 
+      angelegt:
+    
+                    <p></p>
+                        
+                    <pre>
+                        <code>
+        create table CBM.dbo.ECO (
+          id integer not null,
+          ecokey char(03) not null,
+          moves nvarchar(255) not null,	
+          eco_description nvarchar(255) not null,
+          primary key (id));	
+    </code>
+                    </pre>
+                        
+                    <p></p>
+                          Die Tabelle besteht aus folgenden Feldern:
+    
+                    <p></p>
+                        
+                    <p></p>
+                    <table class="table table-hover table-responsive-sm">
+                        <thead class="thead-light">
+                            <tr>
+                                <th>Feld</th><th>Datentyp</th><th>Bedeutung</th>
+                            </tr>
+                            <tr></tr>
+                        </thead>
+                        <tbody>
+                            <tr></tr>
+                            <tr>
+                                <td>id</td><td>int</td><td>Technischer Schl&uuml;ssel</td>
+                            </tr>
+                            <tr></tr>
+                            <tr>
+                                <td>ecokey</td><td>char(03)</td><td>Fachlicher Schl&uuml;ssel</td>
+                            </tr>
+                            <tr></tr>
+                            <tr>
+                                <td>moves</td><td>nvarchar(255)</td><td>Anfangsz&uuml;ge</td>
+                            </tr>
+                            <tr></tr>
+                            <tr>
+                                <td>eco_description</td><td>nvarchar(255)</td><td>Wikipedia-Beschreibung</td>
+                            </tr>
+                            <caption>Tabelle 2: Felder der Tabelle ECO</caption>
+                        </tbody>
+                    </table>
+                    <p></p>
+                        
+                    <h3>Tabelle Magazine_ECO</h3>
+                        
+                    <p></p>
+                          Die Tabelle Magazine_ECO ist die Implementierung der informationstragenden Beziehung Er&ouml;ffnungsschl&uuml;ssel. Sie wird mit dem folgenden Kommando in der Datenbank 
+      angelegt:
+    
+                    <p></p>
+                        
+                    <pre>
+                        <code>
+        create table CBM.dbo.Magazine_ECO(
+          id integer not null,
+          id_magazine integer not null,
+          id_eco integer not null,
+          cbm_eco_description nvarchar(255) not null,
+          primary key (id));
+    </code>
+                    </pre>
+                        
+                    <p></p>
+                          Die Tabelle besteht aus folgenden Feldern:
+    
+                    <p></p>
+                        
+                    <p></p>
+                    <table class="table table-hover table-responsive-sm">
+                        <thead class="thead-light">
+                            <tr>
+                                <th>Feld</th><th>Datentyp</th><th>Bedeutung</th>
+                            </tr>
+                            <tr></tr>
+                        </thead>
+                        <tbody>
+                            <tr></tr>
+                            <tr>
+                                <td>id</td><td>int</td><td>Technischer Schl&uuml;ssel</td>
+                            </tr>
+                            <tr></tr>
+                            <tr>
+                                <td>id_magazine</td><td>int</td><td>Fremdschl&uuml;ssel</td>
+                            </tr>
+                            <tr></tr>
+                            <tr>
+                                <td>id_eco</td><td>int</td><td>Fremdschl&uuml;ssel</td>
+                            </tr>
+                            <tr></tr>
+                            <tr>
+                                <td>cbm_eco_description</td><td>nvarchar(255)</td><td>Artikelkurzbeschreibung</td>
+                            </tr>
+                            <caption>Tabelle 3: Felder der Tabelle Magazine_ECO</caption>
+                        </tbody>
+                    </table>
+                    <p></p>
+                        
+                    <h3>Query &uuml;ber alle drei Tabellen</h3>
+                        
+                    <p></p>
+                          Die folgende Query stellt einen Join &uuml;ber alle drei verkn&uuml;pften Tabellen dar:
+    
+                    <p></p>
+                        
+                    <pre>
+                        <code>
+        select t1.issue,
+               t2.ecokey,
+               t2.moves,
+               t2.eco_description,
+               t3.cbm_eco_description
+        from   CBM.dbo.Magazine t1,
+               CBM.dbo.ECO t2,
+               CBM.dbo.Magazine_ECO t3
+        where  t1.id = t3.id_magazine
+        and    t2.id = t3.id_eco
+        order by t2.ecokey;
+    </code>
+                    </pre>
+                        
+                    <p></p>
+                          Dieser Abfrage selektiert alle Er&ouml;ffnungsartikel mitsamt den dazugeh&ouml;rigen Er&ouml;ffnungsschl&uuml;sseln und Magazinen sowie den 
+      dazugeh&ouml;rigen Beschreibungen und Z&uuml;gen. Sortiert wird der Result Set am Ende nach den Er&ouml;ffnungsschl&uuml;sseln wie in der 
+      folgenden Teilmenge dessen zeigt:
+    
+                    <p></p>
+                        
+                    <p></p>
+                    <table class="table table-hover table-responsive-sm">
+                        <thead class="thead-light">
+                            <tr>
+                                <th>issue</th><th>ecokey</th><th>moves</th><th>eco_description</th><th>cbm_eco_descr</th>
+                            </tr>
+                            <tr></tr>
+                        </thead>
+                        <tbody>
+                            <tr></tr>
+                            <tr>
+                                <td>CBM204</td><td>A01</td><td>1. b3</td><td>Larsen-Er&ouml;ffnung</td><td>Larsen Opening</td>
+                            </tr>
+                            <tr></tr>
+                            <tr>
+                                <td>CBM195</td><td>A05</td><td>1. Sf3 Sf6</td><td>&Uuml;bergang in verschiedene Er&ouml;ffnungen</td><td>Reti_2g3_b5</td>
+                            </tr>
+                            <tr></tr>
+                            <tr>
+                                <td>CBM171</td><td>A05</td><td>1. Sf3 Sf6</td><td>&Uuml;bergang in verschiedene Er&ouml;ffnungen</td><td>Reti Opening</td>
+                            </tr>
+                            <tr></tr>
+                            <tr>
+                                <td>CBM170</td><td>A07</td><td>1. Sf3 d5 2. g3 ohne 2. c5</td><td>3. Lg2 (Barcza-System)</td><td>Reversed Pirc</td>
+                            </tr>
+                            <tr></tr>
+                            <tr>
+                                <td>CBM212</td><td>A07</td><td>1. Sf3 d5 2. g3 ohne 2. c5</td><td>3. Lg2 (Barcza-System)</td><td>Reti</td>
+                            </tr>
+                            <tr></tr>
+                            <tr>
+                                <td>CBM220</td><td>A07</td><td>1. Sf3 d5 2. g3 ohne 2. c5</td><td>3. Lg2 (Barcza-System)</td><td>Reti</td>
+                            </tr>
+                            <tr></tr>
+                            <tr>
+                                <td>CBM173</td><td>A07</td><td>1. Sf3 d5 2. g3 ohne 2. c5</td><td>3. Lg2 (Barcza-System)</td><td>Reti Opening</td>
+                            </tr>
+                            <tr></tr>
+                            <tr>
+                                <td>CBM173</td><td>A09</td><td>1. Sf3 d5 2. c4</td><td>R&eacute;ti-Er&ouml;ffnung</td><td>Reti Opening</td>
+                            </tr>
+                            <tr></tr>
+                            <tr>
+                                <td>CBM168</td><td>A09</td><td>1. Sf3 d5 2. c4</td><td>R&eacute;ti-Er&ouml;ffnung</td><td>Reti Opening</td>
+                            </tr>
+                            <tr></tr>
+                            <tr>
+                                <td>CBM206</td><td>A09</td><td>1. Sf3 d5 2. c4</td><td>R&eacute;ti-Er&ouml;ffnung</td><td>Reti 3b4 g5</td>
+                            </tr>
+                            <tr></tr>
+                            <tr>
+                                <td>CBM201</td><td>A10</td><td>1. c4 ohne 1. c6 1. e6 1. Sf6</td><td>Abarten von Holl&auml;ndisch Damenindisch und K&ouml;nigsindisch (ohne d4)</td><td>Stonewall against English</td>
+                            </tr>
+                            <caption>Tabelle 4: Ergebnisse der Query</caption>
+                        </tbody>
+                    </table>
+                    <p></p>
+                        
+                    <p></p>
+                          Hinweis: Aus Platzgr&uuml;nden wurde die &Uuml;berschrift der letzten Tabellenspalte von cbm_eco_description auf cbm_eco_descr abgek&uuml;rzt.
+    
+                    <p></p>
+                      
+                </div>
+            </div>
+        </div>
+        <script src="http://localhost:8080/xdoc/resources/lib/angular.js"></script><script src="http://localhost:8080/xdoc/resources/lib/jquery-3.2.1.min.js"></script><script src="http://localhost:8080/xdoc/resources/lib/popper.min.js"></script><script src="http://localhost:8080/xdoc/resources/lib/bootstrap.min.js"></script><script src="http://localhost:8080/xdoc/resources/lib/bootstrap-toc.min.js"></script>
+    </body>
+</html>

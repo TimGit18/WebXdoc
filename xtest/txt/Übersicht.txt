@@ -1,0 +1,120 @@
+Referenz-Datei für xdoc
+=======================
+Dieser Text soll als Referenzdatei für den Dokumenten-Transformator in ein XML-Format fungieren. Zentrale Bedeutung 
+haben die wesentlichen Struktur-Elemente von Textdateien (Listen, Tabellen, Bild-Referenzen, Code und Sequenzen). 
+Und so weiter.
+
+
+Listenstrukturen
+================
+Dieser Abschnitt beinhaltet Listenstrukturen. Zunächst eine nummerierte Liste, anschließend eine unnumerierte Liste. 
+Die nummerierte Liste hat folgendes Format
+
+	1. Listenelement 1
+	2. Listenelement 2
+	3. Listenelement 3
+
+Die unnummerierte Liste hat folgendes Format
+
+	* Listenelement A
+	* Listenelement B
+	* Listenelement C
+
+Noch einmal ein wenig Text zur Erbauung. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, 
+sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. 
+At vero eos et accusam et justo duo dolores et ea rebum. 
+
+Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. 
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut 
+labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores 
+et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+
+
+Tabellenstrukturen
+==================
+Dieser Abschnitt beinhaltet Tabellenstrukturen.
+  
+ -------------------------------------------------------
+| Spalte 1    | Spalte 2    | Spalte 3    | Spalte 4    |
+ -------------------------------------------------------
+| Element 1.1 | Element 1.2 | Element 1.3 | Element 1.4 |
+| Element 2.1 | Element 2.2 | Element 2.3 | Element 2.4 |
+| Element 3.1 | Element 3.2 | Element 3.3 | Element 3.4 |
+ -------------------------------------------------------
+Tabelle 1: Elemente
+
+              
+Bild-Referenzen
+===============
+Dieser Abschnitt beinhaltet eine Referenz auf eine Bilddatei.
+
+Abbildung 1 --> Test-Bild.svg
+Abbildung 1: Bildunterschrift
+
+
+Code
+====
+Code wird als Einrückung dargestellt. Zunächst ein mehrzeiliger Codeblock
+
+_
+  String meldung = "hello";
+  System.out.println(meldung);
+  subroutine(value);
+  #?$
+_
+          
+Danach eine eine einzige Codezeile:
+
+_ print "a line"; _
+
+          
+Sequenzen
+=========
+Sequenzen sind abfolgende Kommandos oder Dialoge
+
+File    ==>     Open Project...
+        ==>     Open Project-Dialog  
+                Scope  		                (Select one of the following fields) 
+                All Projects 		        (all available projects of the daatabase) 
+                All Prep Projects 	        (available and tested projects) 
+                All user-id Working Projects 	(own projects) 
+        ==>     Project Name 		        (name of the project) 
+                Project Version 	        (version des Projekts) 
+		Test without bracket
+        ==>     Open  
+
+
+Weitere Strukturen
+==================
+Diese Struktur beschreibt wiederum eine Tabelle.
+  
+ -------------------------------------------------------
+| Spalte 1    | Spalte 2    | Spalte 3    | Spalte 4    |
+ -------------------------------------------------------
+| Element 1.1 | Element 1.2 | Element 1.3 | Element 1.4 |
+| Element 2.1 | Element 2.2 | Element 2.3 | Element 2.4 |
+| Element 3.1 | Element 3.2 | Element 3.3 | Element 3.4 |
+ -------------------------------------------------------
+Tabelle 2: Weitere Elemente
+ 
+:Abschließend etwas Fettdruck
+
+Erklärung zum Fettdruck.
+
+Und dann wieder Code:
+
+_
+	for (int i=0;i<20;i++) {
+	  set obj(i) = var(i);	
+	}
+_
+
+
+Links
+=====
+Weitere Links sind im folgenden aufgeführt:
+
+Bereich		--->	http://localhost:8080/xdoc/xtest/html/Bereich/Bereich.html
+Thema 		--->	http://localhost:8080/xdoc/xtest/html/Thema/Thema.html
+
+

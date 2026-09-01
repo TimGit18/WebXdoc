@@ -1,0 +1,447 @@
+<?xml version="1.0" encoding="utf-8" standalone='yes'?>
+<document env="xang">
+
+  <main>
+    <topic name="Home" link="http://localhost:8080/xdoc/xang/html/xang.html"/>
+  </main>
+
+  <links>
+    <link type="stylesheet">http://localhost:8080/xdoc/xang/css/bootstrap.min.css</link>
+    <link type="stylesheet">http://localhost:8080/xdoc/xang/css/bootstrap-toc.min.css</link>
+    <link type="icon">http://localhost:8080/xdoc/xang/img/favicon.svg</link>
+  </links>
+
+  <scripts>
+    <script>http://localhost:8080/xdoc/xang/lib/angular.js</script>
+    <script>http://localhost:8080/xdoc/xang/lib/jquery-3.2.1.min.js</script>
+    <script>http://localhost:8080/xdoc/xang/lib/popper.min.js</script>
+    <script>http://localhost:8080/xdoc/xang/lib/bootstrap.min.js</script>
+    <script>http://localhost:8080/xdoc/xang/lib/bootstrap-toc.min.js</script>
+  </scripts>
+
+  <title>Initialisierung</title>
+  <author>Tim Schmitz</author>
+  <date>05.07.2023</date>
+
+  <content>
+    <headline>Initialisierung</headline>
+    <abstract>
+      Die einfachste Möglichkeit der Entwicklung von Web Client-Anwendungen ist die Verwendung der Angular CLI 
+      (Command Line Interface). Mit ihr werden alle Werkzeuge installiert und konfiguriert. Die Bedienung erfolgt
+      über die Kommandozeile, in einer Konsole oder in einem Terminal des Texteditors. 
+    </abstract>
+
+
+    <subheadline id="Installation">Installation</subheadline>
+
+    <text>
+      Die Entwicklungsumgebung wird mit folgendem Befehl auf der Kommandozeile installiert:
+    </text>
+    <codeline>npm install -g @angular/cli</codeline>
+
+    <text>
+      Damit wird eine globale Installation der Angular CLI bewirkt. Der folgende Befehl überprüft die Version der Angular CLI.
+    </text>
+    <codeline>ng --version</codeline>
+
+    <text>
+      Mit der Entwicklungsumgebung werden einige Features wie ein automatisierter Build-Prozess mitgeliefert. Weitere Features sind:
+    </text>
+    <list>
+      <listitem>Integration mit TSLint und codelyzer</listitem>
+      <listitem>Integration mit Testwerkzeugen (Karma für Unit-Tests, Protractor für End-to-End-Tests)</listitem>
+      <listitem>Integration eines eingebauten Web Servers mit Live-Reload</listitem>
+      <listitem>Integration mit dem TypeScript-Compiler</listitem>
+      <listitem>Integration mit dem Angular-Compiler (Übersetzung von Komponenten und Template in JavaScript)</listitem>
+    </list>
+
+
+    <text>
+      Mit dem folgenden Kommando werden Bausteine generiert:
+    </text>
+    <codeline>ng generate</codeline>
+
+    <text>
+      Das anschließende Kommando gibt an, welche Bausteine in der Angular CLI generiert werden können.
+    </text>
+    <codeline>ng generate --help</codeline>
+
+    <subheadline id="Projekt-Initialisierung">Projekt-Initialisierung</subheadline>
+
+    <text>
+      Die Initialisierung des Projekts erfolgt im Prinzip mit dem ng new-Kommando. Anschließend müssen interaktiv einige Fragen
+      beantwortet werden. Danach legt die Entwicklungsumgebung die nötigen Konfigurationsdateien an und installiert mit dem Node
+      Package Manager die Abhängigkeiten. Das neue Projekt befindet sich in einem Unterverzeichnis des aktuellen Verzeichnisses.
+      Dabei wird der Projektname als Verzeichnisname verwendet. Abgesehen von den Konfigurationsdateien wird ein Gerüst oder 
+      Skelett von Verzeichnissen sowie rudimentärer Beispielcode angelegt. Mit dem folgenden Kommando wird die Beispielanwendung 
+      "contacts-manager" direkt angelegt, d.h. ohne den interaktiven Modus, aber mit Benennung des Projektnamens.
+    </text>
+    <codeline>ng new --interactive=false contacts-manager</codeline>
+
+    <text>
+      Mit dem folgenden Befehl werden Endungen für Stylesheet-Dateien definiert.
+    </text>
+    <codeline>ng new --style=scss</codeline>
+
+    <text>
+      Standardmäßig wird für Angular-Projekte das Format CSS (Cascading Stylesheets) mit der Endung .css verwendet. Weitere Optionen
+      werden mit dem Befehl 
+    </text>
+    <codeline>ng new --help</codeline>
+
+    <text>
+      angezeigt. Wenn man bereits ein existierendes Angular-Projekt besitzt, dann werden mit 
+    </text>
+    <codeline>npm install</codeline>
+
+    <text>
+      alle Abhängigkeiten des Projekts installiert. 
+    </text>
+
+    <subheadline id="Verzeichnisstruktur">Verzeichnisstruktur</subheadline>
+
+    <text>
+      Die Verzeichnisstruktur, die von Angular bei der Initialisierung des Projekts angelegt wurde, hat folgendes Aussehen:
+    </text>
+    <figure>
+      <image link="http://localhost:8080/xdoc/xang/img/Verzeichnisstruktur.svg" source="file:///C:/Users/Test/Daten/Web/xdoc/xang/img/Verzeichnisstruktur.svg"/>
+      <figurecaption class="figure-caption text-left">
+        Abbildung 1: Verzeichnisstruktur des Projekts
+      </figurecaption>
+    </figure>
+
+    <text>
+      Auf der obersten Ebene existieren vier Verzeichnisse und viele Dateien im Hauptverzeichnis. 
+    </text>
+    <bold>dist</bold>
+
+    <text>
+      Dieses Verzeichnis beinhaltet den Code, der bei einem Build erzeugt wird. 
+    </text>
+    <bold>node_modules</bold>
+
+    <text>
+      Hier kann man auch lokale npm-Pakete definieren, die nur innerhalb des Projekts in dem Verzeichnis node_modules verwendet werden.
+    </text>
+    <bold>e2e</bold>
+
+    <text>
+      Dieses Verzeichnis beinhaltet Code und Konfigurationsdateien für die End-to-End-Tests.
+    </text>
+    <bold>src</bold>
+
+    <text>
+      Dieser Ordner enthält alle Dateien, die für die Anwendung benötigt werden wie zum Beispiel Bilder oder Schriftarten sowie 
+      den gesamten Quellcode der Anwendung.
+    </text>
+
+    <text>
+      Folgende Dateien befinden sich im Hauptverzeichnis:
+    </text>
+    <bold>.angulardoc.json</bold>
+
+    <text>
+      Diese Datei wurde generiert von der Erweiterung AngularDoc der Entwicklungsumgebung Visual Studio Code. Sie ist nur interessant, 
+      wenn ein Repository benutzt wird und wenn mehrere Entwickler den Service von AngularDoc verwenden. Für Alleinstellungs-Projekte 
+      hat die Datei keine Bedeutung. 
+    </text>
+    <bold>.editorconfig</bold>
+
+    <text>
+      Diese Datei ist eine Konfigurationsdatei für Texteditoren. Dort werden Einstellungen vorgenommen, die nicht Angular-spezifisch 
+      sind, wie der verwendete Zeichensatz oder die Anzahl der Stellen, die bei Einrückungen definiert werden.
+    </text>
+    <bold>.browserlistrc</bold>
+
+    <text>
+      Diese Datei wird vom Build verwendet, um die CSS- und JavaScript-Ausgaben auf die verschiedenen Browser (Chrome, Firefox, Edge,
+      Safari) einzustellen. Der Internet Explorer wird nicht unterstützt.
+    </text>
+    <bold>.gitignore</bold>
+
+    <text>
+      Als Standard erzeugt die Angular-Enwicklungsumgebung ein git-Repository für jedes Projekt. Mit der folgenden Option kann die 
+      Erstellung eines Repositories verhindert werden:
+    </text>
+    <codeline>ng new --skip-git</codeline>
+
+    <text>
+      In jedem Fall wird ein .gitignore-Datei angelegt. Diese beinhaltet alle (generierten) Dateien, die nicht in das Repository 
+      hochgepuscht werden. 
+    </text>
+    <bold>angular.json		</bold>
+
+    <text>
+      Diese Datei ist die Konfigurationsdatei der Angular CLI. Sie enthält - wie man später sieht - Optionen zur Steuerung der 
+      Entwicklungsumgebung. 
+    </text>
+    <bold>karma.conf.js</bold>
+
+    <text>
+      Diese Datei ist die Konfigurationsdatei von Karma, dem Testwerkzeug der Angular-Entwicklungsumgebung für Unit-Tests.
+    </text>
+    <bold>package.json</bold>
+
+    <text>
+      Diese Datei ist die Konfigurationsdatei von npm mit Abhängigkeiten und Versionen. 
+    </text>
+    <bold>tsconfig.*.json	</bold>
+
+    <text>
+      Es gibt insgesamt drei Konfigurationsdateien für den Typescript-Compiler. Die Datei tsconfig.json ist die zentrale Konfigurationsdatei
+      für den TypeScript-Compiler. Die Datei tsconfig.app.json ist eine anwendungsspezifische Datei, falls in dem Projekt mehrere Applikationen
+      entwickelt werden. Die Datei tsconfig.spec.json ist eine Datei, die für die Spezifikation von Tests verwendet wird. 
+    </text>
+    <bold>tslint.json</bold>
+
+    <text>
+      Diese Datei ist die globale Konfigurationsdatei von TSLint für das Angular-Projekt. 
+    </text>
+
+    <text>
+      In dem End-to-End-Ordner e2e existieren die folgenden Dateien und Verzeichnisse:
+    </text>
+    <bold>src</bold>
+
+    <text>
+      In diesem Vezeichnis wird der Code für die End-to-End-Tests in einem Angular-Projekt gehalten. 
+    </text>
+    <bold>protractor.conf.js</bold>
+
+    <text>
+      Diese Datei ist die Konfigurationsdatei von Protractor, dem Testwerkzeug für Angular-Projekte für End-to-End-Tests. 
+    </text>
+    <bold>tsconfig.e2e.json</bold>
+
+    <text>
+      Diese Datei ist die Konfigurationsdatei für den Typescript-Compiler im Fall von End-to-End-Tests. Sie wird ergänzend 
+      zur Datei tsconfig.json verwendet. 
+    </text>
+
+    <text>
+      Das Verzeichnis src beinhaltet im weitesten Sinne den Source Code der Anwendung.
+    </text>
+    <bold>app</bold>
+
+    <text>
+      In diesem Verzeichnis wird der Code der Anwendung verwaltet. Hier werden die Entwickler ihre Arbeitsartefakte editieren. 
+    </text>
+    <bold>assets</bold>
+
+    <text>
+      Dieses Verzeichnis beinhaltet in der Regel statische Ressourcen wie Bilder oder Fonts. 
+    </text>
+    <bold>environments</bold>
+
+    <text>
+      Dieses Verzeichnis enthält Konfigurationsdateien für den Build der Anwendung, die umgebungsspezifisch sind (Produktion 
+      oder Test).
+    </text>
+    <bold>favicon.ico</bold>
+
+    <text>
+      Das Favicon-Icon wird standardmäßig von manchen Browsern versucht zu laden - egal, ob vorhanden oder nicht. Daher ist es 
+      möglicherweise eine gute Idee, eine Art Dummy-Objekt hier zu hinterlegen. 
+    </text>
+    <bold>index.html</bold>
+
+    <text>
+      Die Datei index.html ist die Hauptdatei einer jeden Single-Page-Application (SPA). Wird auf die entsprechende URL geroutet, 
+      so lädt der Browser genau dieses Datei. 
+    </text>
+    <bold>main.ts</bold>
+
+    <text>
+      Die Datei main.ts ist die Haupt-TypeScript-Datei für die Anwendung. Genau wie in Java-Projekten existiert hier genau eine 
+      Hauptklasse. 
+    </text>
+    <bold>polyfills.ts</bold>
+
+    <text>
+      Die Datei für Polyfills ist ein Fallback Für ältere Browser, falls man neuere Features damit nutzen will. Es ist hier auch 
+      möglich, eigene Polyfills zu definieren. 
+    </text>
+    <bold>styles.css</bold>
+
+    <text>
+      Die Datei styles.css erlaubt es, globale Stylesheets zu definieren. Standardmäßig ist diese Datei allerdings leer. 
+    </text>
+    <bold>test.ts</bold>
+
+    <text>
+      Diese Datei ist die Hauptdatei für Unit-Tests.
+    </text>
+
+    <subheadline id="angular.json">angular.json</subheadline>
+
+    <text>
+      Die Konfigurationsdatei angular.json wird bei der Initialisierung eines Projekts angelegt. Sie beinhaltet Optionen, die
+      das Verhalten der Enwicklungsumgebung steuern. Dabei ist die Datei in verschiedene Bereiche aufgespalten.
+    </text>
+    <codebox>
+        {
+          ...,
+          "version": 1,
+          "newProjectRoot": "projects",
+          "projects": {
+            "contacts-manager": {
+              "projectType": "application",
+              "schematics": {},
+              "root": "",
+              "sourceRoot": "src",
+              "prefix": "app",
+              "architect": {...}
+            },
+          },
+        }
+    </codebox>
+
+
+    <text>
+      Die version-Eigenschaft gibt das Format der Versionierung an. Die projects-Eigenschaft beschreibt den Bereich der 
+      Projektkonfigurationen. Seine Eigenschaften sind die versichiedenen Projekte, die zum Workspace der Entwicklungsumgebung 
+      gehören. In diesem Fall existiert lediglich das Projekt "contacts-manager". 
+    </text>
+
+    <text>
+      Ein Projekt selber wird in verschiedene Bereiche aufgeteilt. Die schematics-Eigenschaft legt die Verwendung des ng generate-
+      Kommandos fest. Generell können die meisten Optionen, die man hier festlegen kann, auch als Parameter über die Kommandozeile
+      mitgegeben werden. 
+    </text>
+
+    <text>
+      Die architect-Eigenschaft ist wichtig für die Kongiguration der Angular-Kommandos ng build und ng serve. Für jedes dieser 
+      Kommandos gibt es jeweils eine builder-, eine options- und eine configurations-Eigenschaft. 
+    </text>
+    <codebox>
+        "architect": {
+          "build": {
+            "builder": "@angular-devkit/build-angular:browser",
+            "options": {...}
+            "configurations": {
+              "production": {...}
+            }
+          },
+        },
+        ...
+    </codebox>
+
+
+    <text>
+      Die builder-Eigenschaft gibt den eigentlichen Namen des Kommandos an, wenn ng build aufgerufen wird. Er besteht aus dem 
+      Paketnamen und dem Builder-Namen. 
+    </text>
+
+    <text>
+      Im options-Objekt befinden sich Optionen für das Kommando. Im configurations-Objekt werden Standardoptionen überschrieben 
+      oder ergänzt - wie zum Beispiel den Bau einer Produktionsversion. 
+    </text>
+
+    <subheadline id="ng build">ng build</subheadline>
+
+    <text>
+      Das Kommando ng build führt zum Bau der Anwendung und schreibt das Ergebnis in den Ordner dist in ein Verzeichnis, das 
+      genauso heißt wie die Anwendung. In der Regel wird ng build verwendet, wenn es schon einen Webserver gibt, der die 
+      Anwendung ausliefert. Man muss allerdings dann darauf achten, dass der Webserver in dem Verzeichnis gestartet wird, 
+      in dem die Single Page Application läuft. Ansonsten erhält man ständig die HTTP-Response 404 (Not found) zurück, da der 
+      Server versucht, Seiten zu laden, die in einem anderen Verzeichnis liegen als in demjenigen, in dem der Server läuft. 
+    </text>
+    <codebox>
+        cd C:\Users\schmi\Daten\Web\contacts-manager\dist\contacts-manager
+        http-server	
+    </codebox>
+
+
+    <text>
+      Der komplette TypeScript-Code wird nach JavaScript übersetzt und in eine einzige Datei geschrieben (hier: main.js). Sie 
+      heißt das Code-Bündel, und ist die Datei, die vom Server angefordert wird, wenn er index.html lädt. 
+    </text>
+
+    <text>
+      Unter anderem verfügt ng build über folgende Optionen:
+    </text>
+    <bold>--configuration=production</bold>
+
+    <text>
+      Mit dieser Option kann man die Eigenschaften des configurations-Objekt aus der angular.json verwenden, dann wird etwa hier 
+      die entsprechende Datei aus dem environment-Verzeichnis übernommen (environment.prod.ts im Gegensatz zu environment.ts sonst).
+    </text>
+    <bold>--aot</bold>
+
+    <text>
+      Mit dieser Option verwendet ng build den Ahead-of-Time-Compiler, der Komponenten bereits beim Programmieren kompiliert und nicht 
+      erst zur Laufzeit im Browser, was die Früherkennung von Fehlern unterstützt und mehr Sicherheit bietet. 
+    </text>
+    <bold>--prod</bold>
+
+    <text>
+      Dieses Kommando wird verwendet, eine Produktionsversion der Anwendung zu bauen, das übrigens identisch mit dem ersteren 
+      Kommando ist. 
+    </text>
+    <bold>--help</bold>
+
+    <text>
+      Diese Option ist geboten, wenn man alle Optionen aufgelistet haben möchte. 
+    </text>
+
+    <subheadline id="ng serve">ng serve</subheadline>
+
+    <text>
+      Das Kommando ng serve wird aufgerufen, wenn man eine Anwendung baut und direkt danach einen Webserver startet, der die Anwendung
+      ausliefert. Es wird benutzt, wenn die Anwendung entwickelt wird. Der erzeugte Code wird nicht - wie beim ng build - auf die 
+      Festplatte geschrieben, sondern "on the fly" erzeugt und im Arbeitsspeicher gehalten. Daher werden alle Änderungen im Code direkt 
+      zu einem automatischen Neubau der Anwendung führen. Kompilierfehler werden daher auch sofort in der Konsole angezeigt, falls sie 
+      nicht schon sofort im Texteditor angezeigt werden. Die fertige Anwendung wird unter folgender URL im Browser angezeigt:
+    </text>
+    <codeline>http://localhost:4200</codeline>
+
+    <text>
+      Neben allen Optionen des ng build-Kommandos bietet ng serve eigene Optionen:
+    </text>
+    <bold>--port=8080</bold>
+
+    <text>
+      Mit dieser Option kann man einen anderen Webserver als den eingebauten von Angular verwendet. 
+    </text>
+    <bold>--ssl=true</bold>
+
+    <text>
+      Diese Option erlaubt es, die Anwendung über das sichere Http-Protokoll mit https zu erreichen. Ein Zertifikat wird von der 
+      Entwicklungsumgebung bereitgestellt. 
+    </text>
+    <bold>--ssl-key</bold>
+
+    <text>
+      Hiermit wird der SSL-Schlüssel für die ssl-Option spezifiziert. 
+    </text>
+    <bold>--ssl-cert</bold>
+
+    <text>
+      Hiermit wird das SSL-Zertifikat für die ssl-Option spezifiziert. 
+    </text>
+
+    <subheadline id="ng lint">ng lint</subheadline>
+
+    <text>
+      Das Kommando ng lint wird aufgerufen, wenn man eine Anwendung qualitätssichern will. Das Tool TSLint untersucht daraufhin den 
+      Applikationscode. 
+    </text>
+
+    <subheadline id="Checkliste">Checkliste</subheadline>
+
+    <text>
+      Folgende Checks sollten bei der Initialisierung eines neuen Projekts ausgeführt werden 
+    </text>
+    <numlist>
+      <listitem>Installation von Node.js und npm (in Node.js enthalten)</listitem>
+      <listitem>Installation der Entwicklungsumgebung mit npm install -g @angular/cli</listitem>
+      <listitem>Intialisierung des Projekts mit ng new --interactive=false contacts-manager</listitem>
+      <listitem>Anpassung von tsconfig.json für Compiler-Optionen</listitem>
+      <listitem>Erstes Starten mit ng serve</listitem>
+      <listitem>Kleine Code-Änderungen an src/app/app.component.html</listitem>
+      <listitem>Testen von ng lint und ng build</listitem>
+      <listitem>Spätere Abhängigkeiten mit npm install auflösen</listitem>
+    </numlist>
+
+  </content>
+</document>

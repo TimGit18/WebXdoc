@@ -1,0 +1,703 @@
+<?xml version="1.0" encoding="UTF-8"?><fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format">
+    <fo:layout-master-set>
+        <fo:simple-page-master master-name="page" page-height="29.7cm" page-width="21cm" margin-top="1cm" margin-bottom="1cm" margin-left="2.5cm" margin-right="2.5cm">
+            <fo:region-body margin-top="3cm" margin-bottom="1cm"/>
+            <fo:region-before extent="2.5cm"/>
+            <fo:region-after extent="0.5cm"/>
+            <fo:region-start extent="2.5cm"/>
+            <fo:region-end extent="0.5cm"/>
+        </fo:simple-page-master>
+        <fo:page-sequence-master master-name="single-page">
+            <fo:repeatable-page-master-reference master-reference="page"/>
+        </fo:page-sequence-master>
+    </fo:layout-master-set>
+    <fo:page-sequence master-reference="single-page" initial-page-number="1">
+        <fo:static-content flow-name="xsl-region-before">
+            <fo:block space-after="4pt" space-before="4pt" text-align="right">
+                <fo:external-graphic src="url('file:///C:/Users/schmi/Daten/Web/xdoc/Ressources/logo.svg')" text-align="right"/>
+            </fo:block>
+        </fo:static-content>
+        <fo:static-content flow-name="xsl-region-after">
+            <fo:block text-align="outside" font-family="Helvetica, Arial, sans-serif" font-size="10pt">
+                          Seite
+          
+                <fo:page-number/>
+            </fo:block>
+        </fo:static-content>
+        <fo:flow flow-name="xsl-region-body">
+            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="20pt" font-weight="bold" space-after="10pt" space-before="10pt" text-align="start">
+          &#133;Initialisierung</fo:block>
+            <fo:block text-align="start" font-family="Helvetica, Arial, sans-serif" font-size="10pt">Tim Schmitz</fo:block>
+            <fo:block text-align="start" font-family="Helvetica, Arial, sans-serif" font-size="10pt">05.07.2023</fo:block>
+        </fo:flow>
+    </fo:page-sequence>
+    <fo:page-sequence master-reference="single-page" initial-page-number="2">
+        <fo:static-content flow-name="xsl-region-before">
+            <fo:block space-after="4pt" space-before="4pt" text-align="right">
+                <fo:external-graphic src="url('file:///C:/Users/schmi/Daten/Web/xdoc/Ressources/logo.svg')" text-align="right"/>
+            </fo:block>
+        </fo:static-content>
+        <fo:static-content flow-name="xsl-region-after">
+            <fo:block text-align="outside" font-family="Helvetica, Arial, sans-serif" font-size="10pt">
+                          Seite
+          
+                <fo:page-number/>
+            </fo:block>
+        </fo:static-content>
+        <fo:flow flow-name="xsl-region-body">
+            <fo:block space-after="10pt" space-before="10pt" text-align="start">
+                          &#133;
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="14pt" font-weight="bold" space-after="10pt" space-before="10pt" text-align="start">
+      Inhalt
+    </fo:block>
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+                    <fo:block text-align-last="justify">
+                        <fo:inline>
+                            Installation
+                            <fo:leader leader-pattern="dots"/>
+                            <fo:page-number-citation ref-id="Installation"/>
+                        </fo:inline>
+                    </fo:block>
+                    <fo:block text-align-last="justify">
+                        <fo:inline>
+                            Projekt-Initialisierung
+                            <fo:leader leader-pattern="dots"/>
+                            <fo:page-number-citation ref-id="Projekt-Initialisierung"/>
+                        </fo:inline>
+                    </fo:block>
+                    <fo:block text-align-last="justify">
+                        <fo:inline>
+                            Verzeichnisstruktur
+                            <fo:leader leader-pattern="dots"/>
+                            <fo:page-number-citation ref-id="Verzeichnisstruktur"/>
+                        </fo:inline>
+                    </fo:block>
+                    <fo:block text-align-last="justify">
+                        <fo:inline>
+                            angular.json
+                            <fo:leader leader-pattern="dots"/>
+                            <fo:page-number-citation ref-id="angular.json"/>
+                        </fo:inline>
+                    </fo:block>
+                    <fo:block text-align-last="justify">
+                        <fo:inline>
+                            ng build
+                            <fo:leader leader-pattern="dots"/>
+                            <fo:page-number-citation ref-id="ng build"/>
+                        </fo:inline>
+                    </fo:block>
+                    <fo:block text-align-last="justify">
+                        <fo:inline>
+                            ng serve
+                            <fo:leader leader-pattern="dots"/>
+                            <fo:page-number-citation ref-id="ng serve"/>
+                        </fo:inline>
+                    </fo:block>
+                    <fo:block text-align-last="justify">
+                        <fo:inline>
+                            ng lint
+                            <fo:leader leader-pattern="dots"/>
+                            <fo:page-number-citation ref-id="ng lint"/>
+                        </fo:inline>
+                    </fo:block>
+                    <fo:block text-align-last="justify">
+                        <fo:inline>
+                            Checkliste
+                            <fo:leader leader-pattern="dots"/>
+                            <fo:page-number-citation ref-id="Checkliste"/>
+                        </fo:inline>
+                    </fo:block>
+                </fo:block>
+            </fo:block>
+        </fo:flow>
+    </fo:page-sequence>
+    <fo:page-sequence master-reference="single-page" initial-page-number="3">
+        <fo:static-content flow-name="xsl-region-before">
+            <fo:block space-after="4pt" space-before="4pt" text-align="right">
+                <fo:external-graphic src="url('file:///C:/Users/schmi/Daten/Web/xdoc/Ressources/logo.svg')" text-align="right"/>
+                          &#133;&#133;
+        
+            </fo:block>
+        </fo:static-content>
+        <fo:static-content flow-name="xsl-region-after">
+            <fo:block text-align="outside" font-family="Helvetica, Arial, sans-serif" font-size="10pt">
+                          Seite
+          
+                <fo:page-number/>
+            </fo:block>
+        </fo:static-content>
+        <fo:flow flow-name="xsl-region-body">
+            <fo:block break-after="page" font-family="Helvetica, Arial, sans-serif">
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="20pt" font-weight="bold" space-after="10pt" space-before="10pt" text-align="start">Initialisierung</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Die einfachste Möglichkeit der Entwicklung von Web Client-Anwendungen ist die Verwendung der Angular CLI 
+      (Command Line Interface). Mit ihr werden alle Werkzeuge installiert und konfiguriert. Die Bedienung erfolgt
+      über die Kommandozeile, in einer Konsole oder in einem Terminal des Texteditors. 
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="14pt" font-weight="bold" space-after="10pt" space-before="20pt" text-align="start" id="Installation">Installation</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Die Entwicklungsumgebung wird mit folgendem Befehl auf der Kommandozeile installiert:
+    </fo:block>
+                    
+                <fo:block font-family="Courier" font-size="6pt" linefeed-treatment="preserve" white-space-treatment="preserve" space-before="4pt" space-after="4pt" text-align="start" white-space-collapse="false">npm install -g @angular/cli</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Damit wird eine globale Installation der Angular CLI bewirkt. Der folgende Befehl überprüft die Version der Angular CLI.
+    </fo:block>
+                    
+                <fo:block font-family="Courier" font-size="6pt" linefeed-treatment="preserve" white-space-treatment="preserve" space-before="4pt" space-after="4pt" text-align="start" white-space-collapse="false">ng --version</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Mit der Entwicklungsumgebung werden einige Features wie ein automatisierter Build-Prozess mitgeliefert. Weitere Features sind:
+    </fo:block>
+                    
+                <fo:list-block provisional-distance-between-starts="50mm" provisional-label-separation="10mm" space-after="4pt" space-before="4pt">
+                    <fo:list-item>
+                        <fo:list-item-label>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="normal">•
+          </fo:block>
+                        </fo:list-item-label>
+                        <fo:list-item-body>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" start-indent="5mm">Integration mit TSLint und codelyzer</fo:block>
+                        </fo:list-item-body>
+                    </fo:list-item>
+                    <fo:list-item>
+                        <fo:list-item-label>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="normal">•
+          </fo:block>
+                        </fo:list-item-label>
+                        <fo:list-item-body>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" start-indent="5mm">Integration mit Testwerkzeugen (Karma für Unit-Tests, Protractor für End-to-End-Tests)</fo:block>
+                        </fo:list-item-body>
+                    </fo:list-item>
+                    <fo:list-item>
+                        <fo:list-item-label>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="normal">•
+          </fo:block>
+                        </fo:list-item-label>
+                        <fo:list-item-body>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" start-indent="5mm">Integration eines eingebauten Web Servers mit Live-Reload</fo:block>
+                        </fo:list-item-body>
+                    </fo:list-item>
+                    <fo:list-item>
+                        <fo:list-item-label>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="normal">•
+          </fo:block>
+                        </fo:list-item-label>
+                        <fo:list-item-body>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" start-indent="5mm">Integration mit dem TypeScript-Compiler</fo:block>
+                        </fo:list-item-body>
+                    </fo:list-item>
+                    <fo:list-item>
+                        <fo:list-item-label>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="normal">•
+          </fo:block>
+                        </fo:list-item-label>
+                        <fo:list-item-body>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" start-indent="5mm">Integration mit dem Angular-Compiler (Übersetzung von Komponenten und Template in JavaScript)</fo:block>
+                        </fo:list-item-body>
+                    </fo:list-item>
+                </fo:list-block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Mit dem folgenden Kommando werden Bausteine generiert:
+    </fo:block>
+                    
+                <fo:block font-family="Courier" font-size="6pt" linefeed-treatment="preserve" white-space-treatment="preserve" space-before="4pt" space-after="4pt" text-align="start" white-space-collapse="false">ng generate</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Das anschließende Kommando gibt an, welche Bausteine in der Angular CLI generiert werden können.
+    </fo:block>
+                    
+                <fo:block font-family="Courier" font-size="6pt" linefeed-treatment="preserve" white-space-treatment="preserve" space-before="4pt" space-after="4pt" text-align="start" white-space-collapse="false">ng generate --help</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="14pt" font-weight="bold" space-after="10pt" space-before="20pt" text-align="start" id="Projekt-Initialisierung">Projekt-Initialisierung</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Die Initialisierung des Projekts erfolgt im Prinzip mit dem ng new-Kommando. Anschließend müssen interaktiv einige Fragen
+      beantwortet werden. Danach legt die Entwicklungsumgebung die nötigen Konfigurationsdateien an und installiert mit dem Node
+      Package Manager die Abhängigkeiten. Das neue Projekt befindet sich in einem Unterverzeichnis des aktuellen Verzeichnisses.
+      Dabei wird der Projektname als Verzeichnisname verwendet. Abgesehen von den Konfigurationsdateien wird ein Gerüst oder 
+      Skelett von Verzeichnissen sowie rudimentärer Beispielcode angelegt. Mit dem folgenden Kommando wird die Beispielanwendung 
+      "contacts-manager" direkt angelegt, d.h. ohne den interaktiven Modus, aber mit Benennung des Projektnamens.
+    </fo:block>
+                    
+                <fo:block font-family="Courier" font-size="6pt" linefeed-treatment="preserve" white-space-treatment="preserve" space-before="4pt" space-after="4pt" text-align="start" white-space-collapse="false">ng new --interactive=false contacts-manager</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Mit dem folgenden Befehl werden Endungen für Stylesheet-Dateien definiert.
+    </fo:block>
+                    
+                <fo:block font-family="Courier" font-size="6pt" linefeed-treatment="preserve" white-space-treatment="preserve" space-before="4pt" space-after="4pt" text-align="start" white-space-collapse="false">ng new --style=scss</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Standardmäßig wird für Angular-Projekte das Format CSS (Cascading Stylesheets) mit der Endung .css verwendet. Weitere Optionen
+      werden mit dem Befehl 
+    </fo:block>
+                    
+                <fo:block font-family="Courier" font-size="6pt" linefeed-treatment="preserve" white-space-treatment="preserve" space-before="4pt" space-after="4pt" text-align="start" white-space-collapse="false">ng new --help</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      angezeigt. Wenn man bereits ein existierendes Angular-Projekt besitzt, dann werden mit 
+    </fo:block>
+                    
+                <fo:block font-family="Courier" font-size="6pt" linefeed-treatment="preserve" white-space-treatment="preserve" space-before="4pt" space-after="4pt" text-align="start" white-space-collapse="false">npm install</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      alle Abhängigkeiten des Projekts installiert. 
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="14pt" font-weight="bold" space-after="10pt" space-before="20pt" text-align="start" id="Verzeichnisstruktur">Verzeichnisstruktur</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Die Verzeichnisstruktur, die von Angular bei der Initialisierung des Projekts angelegt wurde, hat folgendes Aussehen:
+    </fo:block>
+                    
+                <fo:block space-after="4pt" space-before="4pt">
+                    <fo:external-graphic src="url('file:///C:/Users/Test/Daten/Web/xdoc/xang/img/Verzeichnisstruktur.svg')"/>
+                </fo:block>
+                <fo:block space-after="6pt" space-before="6pt" font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-style="italic">
+        Abbildung 1: Verzeichnisstruktur des Projekts
+      </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Auf der obersten Ebene existieren vier Verzeichnisse und viele Dateien im Hauptverzeichnis. 
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="bold">dist</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Dieses Verzeichnis beinhaltet den Code, der bei einem Build erzeugt wird. 
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="bold">node_modules</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Hier kann man auch lokale npm-Pakete definieren, die nur innerhalb des Projekts in dem Verzeichnis node_modules verwendet werden.
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="bold">e2e</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Dieses Verzeichnis beinhaltet Code und Konfigurationsdateien für die End-to-End-Tests.
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="bold">src</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Dieser Ordner enthält alle Dateien, die für die Anwendung benötigt werden wie zum Beispiel Bilder oder Schriftarten sowie 
+      den gesamten Quellcode der Anwendung.
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Folgende Dateien befinden sich im Hauptverzeichnis:
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="bold">.angulardoc.json</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Diese Datei wurde generiert von der Erweiterung AngularDoc der Entwicklungsumgebung Visual Studio Code. Sie ist nur interessant, 
+      wenn ein Repository benutzt wird und wenn mehrere Entwickler den Service von AngularDoc verwenden. Für Alleinstellungs-Projekte 
+      hat die Datei keine Bedeutung. 
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="bold">.editorconfig</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Diese Datei ist eine Konfigurationsdatei für Texteditoren. Dort werden Einstellungen vorgenommen, die nicht Angular-spezifisch 
+      sind, wie der verwendete Zeichensatz oder die Anzahl der Stellen, die bei Einrückungen definiert werden.
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="bold">.browserlistrc</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Diese Datei wird vom Build verwendet, um die CSS- und JavaScript-Ausgaben auf die verschiedenen Browser (Chrome, Firefox, Edge,
+      Safari) einzustellen. Der Internet Explorer wird nicht unterstützt.
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="bold">.gitignore</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Als Standard erzeugt die Angular-Enwicklungsumgebung ein git-Repository für jedes Projekt. Mit der folgenden Option kann die 
+      Erstellung eines Repositories verhindert werden:
+    </fo:block>
+                    
+                <fo:block font-family="Courier" font-size="6pt" linefeed-treatment="preserve" white-space-treatment="preserve" space-before="4pt" space-after="4pt" text-align="start" white-space-collapse="false">ng new --skip-git</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      In jedem Fall wird ein .gitignore-Datei angelegt. Diese beinhaltet alle (generierten) Dateien, die nicht in das Repository 
+      hochgepuscht werden. 
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="bold">angular.json		</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Diese Datei ist die Konfigurationsdatei der Angular CLI. Sie enthält - wie man später sieht - Optionen zur Steuerung der 
+      Entwicklungsumgebung. 
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="bold">karma.conf.js</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Diese Datei ist die Konfigurationsdatei von Karma, dem Testwerkzeug der Angular-Entwicklungsumgebung für Unit-Tests.
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="bold">package.json</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Diese Datei ist die Konfigurationsdatei von npm mit Abhängigkeiten und Versionen. 
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="bold">tsconfig.*.json	</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Es gibt insgesamt drei Konfigurationsdateien für den Typescript-Compiler. Die Datei tsconfig.json ist die zentrale Konfigurationsdatei
+      für den TypeScript-Compiler. Die Datei tsconfig.app.json ist eine anwendungsspezifische Datei, falls in dem Projekt mehrere Applikationen
+      entwickelt werden. Die Datei tsconfig.spec.json ist eine Datei, die für die Spezifikation von Tests verwendet wird. 
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="bold">tslint.json</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Diese Datei ist die globale Konfigurationsdatei von TSLint für das Angular-Projekt. 
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      In dem End-to-End-Ordner e2e existieren die folgenden Dateien und Verzeichnisse:
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="bold">src</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      In diesem Vezeichnis wird der Code für die End-to-End-Tests in einem Angular-Projekt gehalten. 
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="bold">protractor.conf.js</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Diese Datei ist die Konfigurationsdatei von Protractor, dem Testwerkzeug für Angular-Projekte für End-to-End-Tests. 
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="bold">tsconfig.e2e.json</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Diese Datei ist die Konfigurationsdatei für den Typescript-Compiler im Fall von End-to-End-Tests. Sie wird ergänzend 
+      zur Datei tsconfig.json verwendet. 
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Das Verzeichnis src beinhaltet im weitesten Sinne den Source Code der Anwendung.
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="bold">app</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      In diesem Verzeichnis wird der Code der Anwendung verwaltet. Hier werden die Entwickler ihre Arbeitsartefakte editieren. 
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="bold">assets</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Dieses Verzeichnis beinhaltet in der Regel statische Ressourcen wie Bilder oder Fonts. 
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="bold">environments</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Dieses Verzeichnis enthält Konfigurationsdateien für den Build der Anwendung, die umgebungsspezifisch sind (Produktion 
+      oder Test).
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="bold">favicon.ico</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Das Favicon-Icon wird standardmäßig von manchen Browsern versucht zu laden - egal, ob vorhanden oder nicht. Daher ist es 
+      möglicherweise eine gute Idee, eine Art Dummy-Objekt hier zu hinterlegen. 
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="bold">index.html</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Die Datei index.html ist die Hauptdatei einer jeden Single-Page-Application (SPA). Wird auf die entsprechende URL geroutet, 
+      so lädt der Browser genau dieses Datei. 
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="bold">main.ts</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Die Datei main.ts ist die Haupt-TypeScript-Datei für die Anwendung. Genau wie in Java-Projekten existiert hier genau eine 
+      Hauptklasse. 
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="bold">polyfills.ts</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Die Datei für Polyfills ist ein Fallback Für ältere Browser, falls man neuere Features damit nutzen will. Es ist hier auch 
+      möglich, eigene Polyfills zu definieren. 
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="bold">styles.css</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Die Datei styles.css erlaubt es, globale Stylesheets zu definieren. Standardmäßig ist diese Datei allerdings leer. 
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="bold">test.ts</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Diese Datei ist die Hauptdatei für Unit-Tests.
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="14pt" font-weight="bold" space-after="10pt" space-before="20pt" text-align="start" id="angular.json">angular.json</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Die Konfigurationsdatei angular.json wird bei der Initialisierung eines Projekts angelegt. Sie beinhaltet Optionen, die
+      das Verhalten der Enwicklungsumgebung steuern. Dabei ist die Datei in verschiedene Bereiche aufgespalten.
+    </fo:block>
+                    
+                <fo:block font-family="Courier" font-size="6pt" linefeed-treatment="preserve" white-space-treatment="preserve" space-before="0pt" space-after="4pt" text-align="start" white-space-collapse="false">
+        {
+          ...,
+          "version": 1,
+          "newProjectRoot": "projects",
+          "projects": {
+            "contacts-manager": {
+              "projectType": "application",
+              "schematics": {},
+              "root": "",
+              "sourceRoot": "src",
+              "prefix": "app",
+              "architect": {...}
+            },
+          },
+        }
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Die version-Eigenschaft gibt das Format der Versionierung an. Die projects-Eigenschaft beschreibt den Bereich der 
+      Projektkonfigurationen. Seine Eigenschaften sind die versichiedenen Projekte, die zum Workspace der Entwicklungsumgebung 
+      gehören. In diesem Fall existiert lediglich das Projekt "contacts-manager". 
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Ein Projekt selber wird in verschiedene Bereiche aufgeteilt. Die schematics-Eigenschaft legt die Verwendung des ng generate-
+      Kommandos fest. Generell können die meisten Optionen, die man hier festlegen kann, auch als Parameter über die Kommandozeile
+      mitgegeben werden. 
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Die architect-Eigenschaft ist wichtig für die Kongiguration der Angular-Kommandos ng build und ng serve. Für jedes dieser 
+      Kommandos gibt es jeweils eine builder-, eine options- und eine configurations-Eigenschaft. 
+    </fo:block>
+                    
+                <fo:block font-family="Courier" font-size="6pt" linefeed-treatment="preserve" white-space-treatment="preserve" space-before="0pt" space-after="4pt" text-align="start" white-space-collapse="false">
+        "architect": {
+          "build": {
+            "builder": "@angular-devkit/build-angular:browser",
+            "options": {...}
+            "configurations": {
+              "production": {...}
+            }
+          },
+        },
+        ...
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Die builder-Eigenschaft gibt den eigentlichen Namen des Kommandos an, wenn ng build aufgerufen wird. Er besteht aus dem 
+      Paketnamen und dem Builder-Namen. 
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Im options-Objekt befinden sich Optionen für das Kommando. Im configurations-Objekt werden Standardoptionen überschrieben 
+      oder ergänzt - wie zum Beispiel den Bau einer Produktionsversion. 
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="14pt" font-weight="bold" space-after="10pt" space-before="20pt" text-align="start" id="ng build">ng build</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Das Kommando ng build führt zum Bau der Anwendung und schreibt das Ergebnis in den Ordner dist in ein Verzeichnis, das 
+      genauso heißt wie die Anwendung. In der Regel wird ng build verwendet, wenn es schon einen Webserver gibt, der die 
+      Anwendung ausliefert. Man muss allerdings dann darauf achten, dass der Webserver in dem Verzeichnis gestartet wird, 
+      in dem die Single Page Application läuft. Ansonsten erhält man ständig die HTTP-Response 404 (Not found) zurück, da der 
+      Server versucht, Seiten zu laden, die in einem anderen Verzeichnis liegen als in demjenigen, in dem der Server läuft. 
+    </fo:block>
+                    
+                <fo:block font-family="Courier" font-size="6pt" linefeed-treatment="preserve" white-space-treatment="preserve" space-before="0pt" space-after="4pt" text-align="start" white-space-collapse="false">
+        cd C:\Users\schmi\Daten\Web\contacts-manager\dist\contacts-manager
+        http-server	
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Der komplette TypeScript-Code wird nach JavaScript übersetzt und in eine einzige Datei geschrieben (hier: main.js). Sie 
+      heißt das Code-Bündel, und ist die Datei, die vom Server angefordert wird, wenn er index.html lädt. 
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Unter anderem verfügt ng build über folgende Optionen:
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="bold">--configuration=production</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Mit dieser Option kann man die Eigenschaften des configurations-Objekt aus der angular.json verwenden, dann wird etwa hier 
+      die entsprechende Datei aus dem environment-Verzeichnis übernommen (environment.prod.ts im Gegensatz zu environment.ts sonst).
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="bold">--aot</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Mit dieser Option verwendet ng build den Ahead-of-Time-Compiler, der Komponenten bereits beim Programmieren kompiliert und nicht 
+      erst zur Laufzeit im Browser, was die Früherkennung von Fehlern unterstützt und mehr Sicherheit bietet. 
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="bold">--prod</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Dieses Kommando wird verwendet, eine Produktionsversion der Anwendung zu bauen, das übrigens identisch mit dem ersteren 
+      Kommando ist. 
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="bold">--help</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Diese Option ist geboten, wenn man alle Optionen aufgelistet haben möchte. 
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="14pt" font-weight="bold" space-after="10pt" space-before="20pt" text-align="start" id="ng serve">ng serve</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Das Kommando ng serve wird aufgerufen, wenn man eine Anwendung baut und direkt danach einen Webserver startet, der die Anwendung
+      ausliefert. Es wird benutzt, wenn die Anwendung entwickelt wird. Der erzeugte Code wird nicht - wie beim ng build - auf die 
+      Festplatte geschrieben, sondern "on the fly" erzeugt und im Arbeitsspeicher gehalten. Daher werden alle Änderungen im Code direkt 
+      zu einem automatischen Neubau der Anwendung führen. Kompilierfehler werden daher auch sofort in der Konsole angezeigt, falls sie 
+      nicht schon sofort im Texteditor angezeigt werden. Die fertige Anwendung wird unter folgender URL im Browser angezeigt:
+    </fo:block>
+                    
+                <fo:block font-family="Courier" font-size="6pt" linefeed-treatment="preserve" white-space-treatment="preserve" space-before="4pt" space-after="4pt" text-align="start" white-space-collapse="false">http://localhost:4200</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Neben allen Optionen des ng build-Kommandos bietet ng serve eigene Optionen:
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="bold">--port=8080</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Mit dieser Option kann man einen anderen Webserver als den eingebauten von Angular verwendet. 
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="bold">--ssl=true</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Diese Option erlaubt es, die Anwendung über das sichere Http-Protokoll mit https zu erreichen. Ein Zertifikat wird von der 
+      Entwicklungsumgebung bereitgestellt. 
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="bold">--ssl-key</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Hiermit wird der SSL-Schlüssel für die ssl-Option spezifiziert. 
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="bold">--ssl-cert</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Hiermit wird das SSL-Zertifikat für die ssl-Option spezifiziert. 
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="14pt" font-weight="bold" space-after="10pt" space-before="20pt" text-align="start" id="ng lint">ng lint</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Das Kommando ng lint wird aufgerufen, wenn man eine Anwendung qualitätssichern will. Das Tool TSLint untersucht daraufhin den 
+      Applikationscode. 
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="14pt" font-weight="bold" space-after="10pt" space-before="20pt" text-align="start" id="Checkliste">Checkliste</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Folgende Checks sollten bei der Initialisierung eines neuen Projekts ausgeführt werden 
+    </fo:block>
+                    
+                <fo:list-block provisional-distance-between-starts="50mm" provisional-label-separation="10mm" space-after="4pt" space-before="4pt">
+                    <fo:list-item>
+                        <fo:list-item-label>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="normal">1.
+          </fo:block>
+                        </fo:list-item-label>
+                        <fo:list-item-body>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" start-indent="5mm">Installation von Node.js und npm (in Node.js enthalten)</fo:block>
+                        </fo:list-item-body>
+                    </fo:list-item>
+                    <fo:list-item>
+                        <fo:list-item-label>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="normal">2.
+          </fo:block>
+                        </fo:list-item-label>
+                        <fo:list-item-body>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" start-indent="5mm">Installation der Entwicklungsumgebung mit npm install -g @angular/cli</fo:block>
+                        </fo:list-item-body>
+                    </fo:list-item>
+                    <fo:list-item>
+                        <fo:list-item-label>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="normal">3.
+          </fo:block>
+                        </fo:list-item-label>
+                        <fo:list-item-body>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" start-indent="5mm">Intialisierung des Projekts mit ng new --interactive=false contacts-manager</fo:block>
+                        </fo:list-item-body>
+                    </fo:list-item>
+                    <fo:list-item>
+                        <fo:list-item-label>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="normal">4.
+          </fo:block>
+                        </fo:list-item-label>
+                        <fo:list-item-body>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" start-indent="5mm">Anpassung von tsconfig.json für Compiler-Optionen</fo:block>
+                        </fo:list-item-body>
+                    </fo:list-item>
+                    <fo:list-item>
+                        <fo:list-item-label>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="normal">5.
+          </fo:block>
+                        </fo:list-item-label>
+                        <fo:list-item-body>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" start-indent="5mm">Erstes Starten mit ng serve</fo:block>
+                        </fo:list-item-body>
+                    </fo:list-item>
+                    <fo:list-item>
+                        <fo:list-item-label>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="normal">6.
+          </fo:block>
+                        </fo:list-item-label>
+                        <fo:list-item-body>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" start-indent="5mm">Kleine Code-Änderungen an src/app/app.component.html</fo:block>
+                        </fo:list-item-body>
+                    </fo:list-item>
+                    <fo:list-item>
+                        <fo:list-item-label>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="normal">7.
+          </fo:block>
+                        </fo:list-item-label>
+                        <fo:list-item-body>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" start-indent="5mm">Testen von ng lint und ng build</fo:block>
+                        </fo:list-item-body>
+                    </fo:list-item>
+                    <fo:list-item>
+                        <fo:list-item-label>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="normal">8.
+          </fo:block>
+                        </fo:list-item-label>
+                        <fo:list-item-body>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" start-indent="5mm">Spätere Abhängigkeiten mit npm install auflösen</fo:block>
+                        </fo:list-item-body>
+                    </fo:list-item>
+                </fo:list-block>
+                  
+            </fo:block>
+        </fo:flow>
+    </fo:page-sequence>
+</fo:root>

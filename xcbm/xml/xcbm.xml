@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone='yes'?>
+<document env="xcbm">
+
+  <main>
+    <topic name="Home" link="http://localhost:8080/xdoc/xcbm/html/xcbm.html"/>
+  </main>
+
+  <links>
+    <link type="stylesheet">http://localhost:8080/xdoc/resources/css/bootstrap.min.css</link>
+    <link type="stylesheet">http://localhost:8080/xdoc/resources/css/bootstrap-toc.min.css</link>
+    <link type="icon">http://localhost:8080/xdoc/resources/favicon.ico</link>
+  </links>
+
+  <scripts>
+    <script>http://localhost:8080/xdoc/resources/lib/angular.js</script>
+    <script>http://localhost:8080/xdoc/resources/lib/jquery-3.2.1.min.js</script>
+    <script>http://localhost:8080/xdoc/resources/lib/popper.min.js</script>
+    <script>http://localhost:8080/xdoc/resources/lib/bootstrap.min.js</script>
+    <script>http://localhost:8080/xdoc/resources/lib/bootstrap-toc.min.js</script>
+  </scripts>
+
+  <title>xcbm</title>
+  <author>Tim Schmitz</author>
+  <date>25.10.2024</date>
+
+  <content>
+    <headline>CBM</headline>
+    <abstract>
+      Dies ist die Startseite für die CBM-Anwendung. Die Anwendung liest aus dem Dateisystem digitale Chessbase-Magazine aus,
+      ordnet diese in eine Datenbank ein und exportiert die geordneten Informationen in einen Report. Sie besteht aus daher aus 
+      nur drei Komponenten: einem Parser, einem Export- und einem Importmodul.
+    </abstract>
+
+    <horizontal/>
+    <tableofcontent>
+      <item>
+        <html name="Übersicht" link="http://localhost:8080/xdoc/xcbm/html/Übersicht.html" type="content"/>
+        <pdf name="Als PDF-Dokument" link="http://localhost:8080/xdoc/xcbm/pdf/Übersicht.pdf"/>
+      </item>
+      <item>
+        <html name="Datenmodell" link="http://localhost:8080/xdoc/xcbm/html/Datenmodell.html" type="content"/>
+        <pdf name="Als PDF-Dokument" link="http://localhost:8080/xdoc/xcbm/pdf/Datenmodell.pdf"/>
+      </item>
+      <item>
+        <html name="Datenbank" link="http://localhost:8080/xdoc/xcbm/html/Datenbank.html" type="content"/>
+        <pdf name="Als PDF-Dokument" link="http://localhost:8080/xdoc/xcbm/pdf/Datenbank.pdf"/>
+      </item>
+      <item>
+        <html name="Parser" link="http://localhost:8080/xdoc/xcbm/html/Parser.html" type="content"/>
+        <pdf name="Als PDF-Dokument" link="http://localhost:8080/xdoc/xcbm/pdf/Parser.pdf"/>
+      </item>
+    </tableofcontent>
+  </content>
+</document>

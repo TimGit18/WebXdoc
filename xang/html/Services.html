@@ -1,0 +1,153 @@
+<html lang="de">
+    <head>
+        <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>Services</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="http://localhost:8080/xdoc/xang/css/bootstrap.min.css">
+        <link rel="stylesheet" href="http://localhost:8080/xdoc/xang/css/bootstrap-toc.min.css">
+        <link rel="icon" href="http://localhost:8080/xdoc/xang/img/favicon.svg">
+    </head>
+    <body data-spy="scroll" data-target="#toc">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-2 bg-light">
+                    <figure class="figure">
+                        <img class="figure-img img-fluid rounded" src="http://localhost:8080/xdoc/Ressources/getsitelogo.png">
+                    </figure>
+                    <nav id="toc" class="sticky-top" data-toggle="toc"></nav>
+                </div>
+                <div class="col-sm-10">
+                    <nav class="navbar navbar-expand-lg sticky-top navbar-light bg-light">
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav mr-auto">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="http://localhost:8080/xdoc/xang/html/xang.html">Home</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                    <p></p>
+                        
+                    <h2>Services</h2>
+                        
+                    <p></p>
+                          Wie jeder andere Baustein auch ist ein Service eine Klasse in TypeScript. Ein Service definiert die Logik eines 
+      Anwendungsteils und enth&auml;lt auch noch Hilfsmethoden. Diese Klasse wird aber erst dann zu einem Service, wenn sie 
+      von einem Provider verwendet wird. Alle Bausteine, die von diesem Service abh&auml;ngen, erhalten diesen dann auch 
+      mittels Dependency Injection. 
+    
+                    <p></p>
+                        
+                    <h3>Definition</h3>
+                        
+                    <p></p>
+                          Das folgende Beispiel ist ein schlichter Service, der als einzige Funktion einen Array von Zahlen zur&uuml;ckgibt:
+    
+                    <p></p>
+                        
+                    <pre>
+                        <code>
+        import { Injectable } from '@angular/core';
+      
+        @Injectable()
+          export class DemoService {
+            getData() {
+              return [1, 2, 3];
+          }
+        }
+    </code>
+                    </pre>
+                        
+                    <p></p>
+                          Diese Klasse wird mit dem Injectable-Decorator dekoriert. Somit erh&auml;lt auch diese Klasse wie auch die Klassen von 
+      Komponenten und Angular-Modulen Metadaten. Der Service kann ohne weiteres nicht genutzt werden. Sondern er muss als
+      erstes registriert werden. 
+    
+                    <p></p>
+                        
+                    <p></p>
+                          Wenn man eine neue Klasse (hier die Klasse DemoService als datei demo.service.ts im Verzeichnis demo) einem Projekt 
+      hinzuf&uuml;gt, dann folgt manchmal die Warnung (im Visual Studio Code): "To enable code execution from the current workspace 
+      you must enable workspace library execution". Dies erfolgt wie folgt:
+    
+                    <p></p>
+                        
+                    <ol>
+                        <li>Aufrufen der Kommandopalette mit Ctrl + Shift + P</li>
+                        <li>Eingeben von "TSLint: Manage workspace library execution"</li>
+                        <li>Aufnehmen des entsprechenden Eintrags aus der Vorschlagsliste und die Return-Taste bedienen</li>
+                    </ol>
+                        
+                    <h3>Registrierung</h3>
+                        
+                    <p></p>
+                          Bevor die Klasse DemoService zu einem Service wird und als solcher genutzt werden kann, muss er zun&auml;chst als Provider 
+      registriert werden. Um dies zu erreichen, gibt es zwei M&ouml;glichkeiten:
+    
+                    <p></p>
+                        
+                    <ol>
+                        <li>Die Service-Klasse kann von dem Angular-Module in einem providers-Array registriert werden</li>
+                        <li>Die Service-Klasse kann sich &uuml;ber den Injectable-Decorator selbst registrieren</li>
+                    </ol>
+                        
+                    <p></p>
+                          In der ersten Variante das Angular-Module AppModule den providers-Array nutzen, um die Service-Klasse zu registrieren:
+    
+                    <p></p>
+                        
+                    <pre>
+                        <code>
+        import { DemoService } from './../demo/demo.service';
+        import { BrowserModule } from '@angular/platform-browser';
+        import { NgModule } from '@angular/core';
+        import { AppComponent } from './app.component';
+      
+        @NgModule({
+          declarations: [ AppComponent],
+          imports: [ BrowserModule],
+          providers: [ DemoService ],
+          bootstrap: [AppComponent]
+        })
+        export class AppModule { }
+    </code>
+                    </pre>
+                        
+                    <p></p>
+                          Da der DemoService im Verzeichnis demo neben dem Hauptvereichnis app liegt, muss die Import-Direktive den relativen Pfad 
+      qualifizieren. Die zweite Variante nutzt f&uuml;r die Selbstregistrierung wieder den Injectable-Decorator der Klasse DemoService.
+    
+                    <p></p>
+                        
+                    <pre>
+                        <code>
+        import { Injectable } from '@angular/core';
+      
+        @Injectable({
+          providedIn: 'root'
+        })
+        export class DemoService {
+          getData() {
+            return [1, 2, 3];
+          }
+        }
+    </code>
+                    </pre>
+                        
+                    <p></p>
+                          Es wird ein Objekt mit der Eigenschaft "providedIn" &uuml;bergeben. Der Wert dieser Eigenschaft gibt den Injektor an, in dem der 
+      Service als Provider &uuml;bergeben werden soll. Die Wertauspr&auml;gung "root" legt nun fest, dass der Service im globalen Injektor 
+      registriert werden soll. Der globale Injektor ist dabei identisch mit dem Angular-Hauptmodule AppModule. Man k&ouml;nnte auch ein
+      Angular-Modul oder eine Komponente als Injektor angeben. Diese Providers hei&szlig;en tree-shakeable Providers und sind bevorzugt im 
+      Vergleich zu der Registrierung &uuml;ber providers-Arrays zu verwenden, da sie nur im JavaScript Code-Bundle verbleiben, wenn sie 
+      auch benutzt werden. 
+    
+                    <p></p>
+                      
+                </div>
+            </div>
+        </div>
+        <script src="http://localhost:8080/xdoc/xang/lib/angular.js"></script><script src="http://localhost:8080/xdoc/xang/lib/jquery-3.2.1.min.js"></script><script src="http://localhost:8080/xdoc/xang/lib/popper.min.js"></script><script src="http://localhost:8080/xdoc/xang/lib/bootstrap.min.js"></script><script src="http://localhost:8080/xdoc/xang/lib/bootstrap-toc.min.js"></script>
+    </body>
+</html>

@@ -1,0 +1,240 @@
+<html lang="de">
+    <head>
+        <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>Parser</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="http://localhost:8080/xdoc/resources/css/bootstrap.min.css">
+        <link rel="stylesheet" href="http://localhost:8080/xdoc/resources/css/bootstrap-toc.min.css">
+        <link rel="icon" href="http://localhost:8080/xdoc/resources/favicon.ico">
+    </head>
+    <body data-spy="scroll" data-target="#toc">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-2 bg-light">
+                    <figure class="figure">
+                        <img class="figure-img img-fluid rounded" src="http://localhost:8080/xdoc/resources/getsitelogo.png">
+                    </figure>
+                    <nav id="toc" class="sticky-top" data-toggle="toc"></nav>
+                </div>
+                <div class="col-sm-10">
+                    <nav class="navbar navbar-expand-lg sticky-top navbar-light bg-light">
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav mr-auto">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="http://localhost:8080/xdoc/xcbm/html/xcbm.html">Home</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                    <p></p>
+                        
+                    <h2>Parser</h2>
+                        
+                    <p></p>
+                          Das Skript cbmParser.py ist ein Python-Programm, welches Daten aus dem Dateisystem ausliest und hieraus drei neue Dateien im 
+      Dateisystem erzeugt, um sie sp&auml;ter in die CBM-Datenbank zu importieren.
+    
+                    <p></p>
+                        
+                    <h3>Dateien</h3>
+                        
+                    <p></p>
+                          Die folgenden Dateien werden im Skript verwendet bzw. von dem Skript selbst erzeugt:
+    
+                    <p></p>
+                        
+                    <p></p>
+                    <table class="table table-hover table-responsive-sm">
+                        <thead class="thead-light">
+                            <tr>
+                                <th>Dateiname</th><th>Dateityp</th><th>Bedeutung</th>
+                            </tr>
+                            <tr></tr>
+                        </thead>
+                        <tbody>
+                            <tr></tr>
+                            <tr>
+                                <td>ECO.txt</td><td>Input-Datei</td><td>Vorgegebene Liste von Er&ouml;ffnungsschl&uuml;sseln aus Wikipedia</td>
+                            </tr>
+                            <tr></tr>
+                            <tr>
+                                <td>ecoFile.txt</td><td>Output-Datei</td><td>Indizierte Liste von Er&ouml;ffnungsschl&uuml;sseln aus der Input-Datei</td>
+                            </tr>
+                            <tr></tr>
+                            <tr>
+                                <td>cbmFile.txt</td><td>Output-Datei</td><td>Indizierte Liste von CBM-Magazinnummern aus dem Verzeichnissystem</td>
+                            </tr>
+                            <tr></tr>
+                            <tr>
+                                <td>cbmEcoFile.txt</td><td>Output-Datei</td><td>Kombinierte Liste von CBM-Magazinnummern und Er&ouml;ffnungsschl&uuml;sseln</td>
+                            </tr>
+                            <caption>Tabelle 1: Von dem Skript verwendete bzw. erzeugte Dateien</caption>
+                        </tbody>
+                    </table>
+                    <p></p>
+                        
+                    <p></p>
+                          Als Speicherort im Dateisystem wird ein Verzeichnis innerhalb des Projektverzeichnisses gew&auml;hlt, etwa C:\Users\username\Daten\Python\CBM\Files. Um die 
+      Dateien auszulesen bzw. zu erzeugen sind einige technische Vorbedingungen in dem Python-Skript notwendig, damit die gew&uuml;nschten Funktionen programmgem&auml;&szlig; 
+      arbeiten.
+    
+                    <p></p>
+                        
+                    <p></p>
+                          Die Input-Datei ECO.txt ist eine CSV-Datei (Comma Separated Value-Datei mit einem Semikolon als Trennzeichen) und hat folgendes Aussehen:
+    
+                    <p></p>
+                        
+                    <pre>
+                        <code>
+         A24;1. c4 e5 2. Sc3 Sf6 3. g3 g6;
+         A25;1. c4 e5 2. Sc3 Sc6;3. g3 g6 4. Lg2 Lg7 5. e3
+         A26;1. c4 e5 2. Sc3 Sc6 3. g3 g6 4. Lg2 Lg7 5. d3;
+         A27;1. c4 e5 2. Sc3 Sc6 3. Sf3;Dreispringer-Variante_ Holl&auml;ndische Struktur
+         A28;1. c4 e5 2. Sc3 Sc6 3. Sf3 Sf6;Vierspringer-Variante
+    </code>
+                    </pre>
+                        
+                    <p></p>
+                          Dabei bezeichnet die erste Spalte den eindeutigen Schl&uuml;ssel, n&auml;mlich den ECO-Code. Die zweite Spalte benennt die ersten Z&uuml;ge, die zu diesem Schl&uuml;ssel geh&ouml;ren. 
+      Die dritte Spalte ist optional und dient der Erl&auml;uterung des Codes.
+    
+                    <p></p>
+                        
+                    <h3>Hauptprogramm</h3>
+                        
+                    <p></p>
+                          Idealerweise steht das Hauptprogramm am Ende des Skripts, um keine zus&auml;tzlichen Ladezeiten im Python-Interpreter bereitstellen zu m&uuml;ssen. Das Hauptprogramm ist 
+      so kodiert, dass es einfach durchlaufen werden kann. Das Hauptprogramm besteht aus zwei Teilen:
+    
+                    <p></p>
+                        
+                    <ol>
+                        <li>Im ersten Teil werden die FileHandler f&uuml;r die eine Eingabedatei und die drei Ausgabedateien initialisiert</li>
+                        <li>Im zweiten Teil werden das CBM-Dictionary und die Ausgabedateien erzeugt</li>
+                    </ol>
+                        
+                    <p></p>
+                          Bei dem Dictionary handelt es sich um eine Datenstruktur in Python, die aus Schl&uuml;ssel-Wert-Paaren besteht. Der erste Teil des Hauptprogramms beteht aus vier Aufrufen:
+    
+                    <p></p>
+                        
+                    <ul>
+                        <li>Zun&auml;chst wird der Output-FileHandler f&uuml;r das CBM-File initalisiert, das ist diejenige Datei, die alle CBM-Ausgaben mit ihrer laufenden Nummer und einem fortlaufenden Index beinhaltet</li>
+                        <li>Anschlie&szlig;end erfolgt die Initialisierung des Input-FileHandlers f&uuml;r das ECO-Input-File. Diese Datei enth&auml;lt alle ECO-Schl&uuml;ssel mit Anfangsz&uuml;gen und einer Kurzbeschreibung aus Wikipedia</li>
+                        <li>Danach wird der Output-FileHandler f&uuml;r das ECO-Output-File erzeugt. Diese Datei entspricht der ECO-Input-Datei mitsamt Indizierung</li>
+                        <li>Zum Schluss wird der FileHandler f&uuml;r das CBM-ECO-File kreiiert. Diese Datei beinhaltet alle Verweise auf Er&ouml;ffnungsartikel und verkn&uuml;pft sie mit der entsprechenden Inforamtion aus dem CBM- und dem ECO-File</li>
+                    </ul>
+                        
+                    <p></p>
+                          Der erste Teil des Hauptprogramms besteht also aus vier Zeilen. Jede Zeile entspricht einer Datei als R&uuml;ckgabewerte der Initialisierungs-Subfunktionen. Damit erf&uuml;llt jede der Subfunktionen eine genau abgegrenzte, 
+      enge Aufgabe. 
+    
+                    <p></p>
+                        
+                    <pre>
+                        <code>
+        #----------------------------------------------------------#
+        # Das Hauptprogramm ruft sequentiell die Unterprogramme    #
+        # auf. Zun&auml;chst werden die FileHandler initialisiert.      #
+        #----------------------------------------------------------#         
+        cbmFile       = initCbmFile()
+        ecoInputFile  = initEcoInputFile()
+        ecoOutputFile = initEcoOutputFile()
+        cbmEcoFile    = initCbmEcoFile()
+    </code>
+                    </pre>
+                        
+                    <p></p>
+                          Im zweiten Teil des Hauptprogramms werden die eigentlichen Funktionen des Skripts aufgerufen und abgearbeitet. Jede Funktion erzeugt eine Datei im Dateisystem.
+    
+                    <p></p>
+                        
+                    <ol>
+                        <li>Die Funktion createCbmEcoFile() erzeugt zun&auml;chst das CBM-Dictionary. Anschlie&szlig;end werden die Er&ouml;ffnungsartikel identifiziert, indiziert und in das CBM-ECO-File geschrieben.</li>
+                        <li>Die Funktion createEcoFile() erzeugt aus der vorgegebenen Liste der Er&ouml;ffnungsschl&uuml;ssel eine indizierte Liste derselben.</li>
+                        <li>Die Funktion createCbmFile() erzeugt aus dem Verzeichnis der CBM-Magazine eine indizierte Liste aller CBM-Magazinnummern.</li>
+                    </ol>
+                        
+                    <p></p>
+                          Der zweite Teil des Hauptprogramms besteht also aus drei Zeilen, die jeweils einem Funktionsaufruf entsprechen.
+    
+                    <p></p>
+                        
+                    <pre>
+                        <code>
+        #----------------------------------------------------------#
+        # Anschlie&szlig;end werden das Dictionary und die               #
+        # Ausgabedateien erzeugt                                   #
+        #----------------------------------------------------------#
+        CbmDictionary = createCbmEcoFile()
+        createEcoFile(ecoInputFile, ecoOutputFile) 
+        createCbmFile(CbmDictionary, cbmFile) 
+    </code>
+                    </pre>
+                        
+                    <h3>Initialisierung der Dateien</h3>
+                        
+                    <p></p>
+                          Zur Initialisierung von Input- oder Output-Dateien in Python werden FileHandler verwendet. Das ist im allgmeinenen ein Begriff f&uuml;r die Handhabung von Dateien in Python, es gibt aber auch 
+      eine spezielle Verwendung des Begriffs. Dabei ist der FileHandler in Python ein Bestandteil des logging-Moduls und wird verwendet, um Log-Nachrichten in eine Datei zu schreiben. 
+    
+                    <p></p>
+                        
+                    <p></p>
+                          Es gibt die folgenden Modalkennzeichen:
+    
+                    <p></p>
+                        
+                    <ul>
+                        <li>F&uuml;r das Lesen einer Datei: 'r' f&uuml;r read</li>
+                        <li>F&uuml;r das Schreiben einer Datei: 'w' f&uuml;r write</li>
+                        <li>F&uuml;r das Anh&auml;ngen an eine Datei: 'a' f&uuml;r add</li>
+                    </ul>
+                        
+                    <p></p>
+                          Im Grunde sind die FileHandler f&uuml;r Input- und Output-Dateien sehr &auml;hnlich und unterscheiden sich nur durch ein Modalkennzeichen, das den Modus f&uuml;r diese Datei angibt. Der FileHandler f&uuml;r 
+      die Input-Datei ECO.txt wird in folgender Subroutine definiert, die diesen als R&uuml;ckgabewert behandelt. 
+    
+                    <p></p>
+                        
+                    <pre>
+                        <code>
+        #-----------------------------------------------------#
+        # Die Funktion initEcoInputFile() initialisiert den   #
+        # ECO-Input-Dateihandler des Programms                #
+        #-----------------------------------------------------#
+        def initEcoInputFile():
+          print("Initialisiere EcoInputFileHandler ...")
+          ecoInputFile = open(FILE_LOCATION + 'ECO.txt','r')
+          return ecoInputFile
+    </code>
+                    </pre>
+                        
+                    <h3>Erzeugen des Dictionary</h3>
+                        
+                    <p></p>
+                          In der Routine createCbmEcoFile() erzeugt das sogenannte Dictionary. Ein Dictionary ist eine Datenstruktur, die aus einfachen Schl&uuml;ssel-Werte-Paaren besteht.
+    
+                    <p></p>
+                        
+                    <p></p>
+                          Die folgende Abbildung beschreibt den Ablauf der Subfunktion und skizziert im wesentlichen den Ablauf der 
+      Verarbeitung vom Start links oben bis zum Ende rechts unten. 
+    
+                    <p></p>
+                        
+                    <figure class="figure">
+                        <img class="figure-img img-fluid rounded" src="http://localhost:8080/xdoc/xcbm/img/ParserCreateCbmEcoFile.svg">
+                        <figcaption class="figure-caption text-left">
+        Abbildung 1: Ablauf der Subfunktion
+      </figcaption>
+                    </figure>
+                      
+                </div>
+            </div>
+        </div>
+        <script src="http://localhost:8080/xdoc/resources/lib/angular.js"></script><script src="http://localhost:8080/xdoc/resources/lib/jquery-3.2.1.min.js"></script><script src="http://localhost:8080/xdoc/resources/lib/popper.min.js"></script><script src="http://localhost:8080/xdoc/resources/lib/bootstrap.min.js"></script><script src="http://localhost:8080/xdoc/resources/lib/bootstrap-toc.min.js"></script>
+    </body>
+</html>

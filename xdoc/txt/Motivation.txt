@@ -1,0 +1,27 @@
+Motivation
+==========
+Technische Dokumentationen sollten sich auf Inhalte und die Vermittlung von Informationen konzentrieren. 
+Leider ist die Erstellung von Dokumenten in technologie-neutralen, portablen Formaten aufwändig. 
+Daher wurde eine Lösung entwickelt, die auf der Verwendung der universellen Auszeichnungssprache XML basiert.
+Dabei dient diese Sprache als ein Format, um die textuellen Primärdokumente, Bilder und Verzeichnisse in die 
+entsprechende Zieldokumentation zu überführen. Der Name xdoc ist also Kunstwort, das sowohl die verwendete 
+Technologie als auch den Zweck der Anwendung beschreibt.
+
+
+Grundidee
+=========
+Die einfache Grundidee besteht darin, dass für eine angemessene Dokumentation technischer komplexer Sachverhalte
+nur drei wesentliche Komponenten benötigt werden:
+
+    * Texte 
+    * Bilder 
+    * Verzeichnisse
+
+Texte beschreiben sprachlich Sachverhalte und Zusammenhänge, sie müssen dabei verständlich und korrekt von Menschen 
+geschrieben werden. Bilder können Texte ergänzen und erläutern, indem sie Abläufe oder Situationen illustrieren und den
+beschriebenen Sachverhalt abbilden. Verzeichnisse dienen zur Strukturierung von Dateien und sollten so aufgebaut sein, 
+dass sie einen logischen Zusammenhang zwischen ihren Elementen und anderen Verzeichnissen herstellen. 
+
+Abbildung 1 --> Grundidee.svg
+Abbildung 1: Grundidee
+

@@ -1,0 +1,225 @@
+<html lang="de">
+    <head>
+        <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>JUnit-Tests</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="http://localhost:8080/xdoc/resources/css/bootstrap.min.css">
+        <link rel="stylesheet" href="http://localhost:8080/xdoc/resources/css/bootstrap-toc.min.css">
+        <link rel="icon" href="http://localhost:8080/xdoc/resources/favicon.ico">
+    </head>
+    <body data-spy="scroll" data-target="#toc">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-2 bg-light">
+                    <figure class="figure">
+                        <img class="figure-img img-fluid rounded" src="http://localhost:8080/xdoc/resources/getsitelogo.png">
+                    </figure>
+                    <nav id="toc" class="sticky-top" data-toggle="toc"></nav>
+                </div>
+                <div class="col-sm-10">
+                    <nav class="navbar navbar-expand-lg sticky-top navbar-light bg-light">
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav mr-auto">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="http://localhost:8080/xdoc/xapp/html/xapp.html">Home</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                    <p></p>
+                        
+                    <h2>JUnit-Tests</h2>
+                        
+                    <p></p>
+                          Unit-Tests in Java werden am besten mit dem Testframework JUnit durchgef&uuml;hrt. Die aktuelle Version des Frameworks ist JUnit 5.
+      Es besteht aus einer Plattforma und der Test-Engine Jupiter. 
+    
+                    <p></p>
+                        
+                    <h3>Minimalkonfiguration</h3>
+                        
+                    <p></p>
+                          F&uuml;r die Minimalkonfiguration werden die folgenden Java Archive-Dateien ben&ouml;tigt:
+    
+                    <p></p>
+                        
+                    <ul>
+                        <li>junit-jupiter-api-5.6.1	</li>
+                        <li>junit-platform-commons-1.6.1</li>
+                    </ul>
+                        
+                    <h3>Test-Klasse</h3>
+                        
+                    <p></p>
+                          Die JUnit Test-Klasse hat einen m&ouml;glichst &auml;hnlichen Namen und einen analogen Paketpfad wie die Klasse, die unter diesem Test steht. 
+      Ebenso sollten die Methoden der JUnit Test-Klasse entsprechend lautende Namen besitzen wie in dem folgenden Beispiel:
+    
+                    <p></p>
+                        
+                    <p></p>
+                    <table class="table table-hover table-responsive-sm">
+                        <thead class="thead-light">
+                            <tr>
+                                <th>Bezeichnung</th><th>Source</th><th>JUnit Test</th>
+                            </tr>
+                            <tr></tr>
+                        </thead>
+                        <tbody>
+                            <tr></tr>
+                            <tr>
+                                <td>Klassen-Name</td><td>Property</td><td>PropertyTest</td>
+                            </tr>
+                            <tr></tr>
+                            <tr>
+                                <td>Paket</td><td>de.domain.application.util</td><td>de.domain.application.util.test</td>
+                            </tr>
+                            <tr></tr>
+                            <tr>
+                                <td>Methode</td><td>getTimPC()</td><td>testGetTimPC()</td>
+                            </tr>
+                            <caption>Tabelle 1: Bezeichner von Original und Test-Klasse</caption>
+                        </tbody>
+                    </table>
+                    <p></p>
+                        
+                    <h3>Test-Aufbau</h3>
+                        
+                    <p></p>
+                          Der JUnit-Test testet eine Methode oder Eigenschaft einer Klasse. Im folgenden Beispiel wird der Funktionsweise einer Methode getestet, 
+      indem sie auf eine Equals-Assertion getestet wird, also auf die Behauptung einer Gleichheit. 
+    
+                    <p></p>
+                        
+                    <p></p>
+                          Zun&auml;chst m&uuml;ssen die verwendeten Methoden und Annotationen importiert werden sowie die Klasse, die unter Test steht:
+    
+                    <p></p>
+                        
+                    <pre>
+                        <code>
+        import static org.junit.jupiter.api.Assertions.assertEquals;
+      
+        // Notwendig wegen JUnit 5
+        import org.junit.jupiter.api.BeforeAll;
+        import org.junit.jupiter.api.Test;
+      
+        // Klasse unter Test
+        import de.domain.application.util.Property;
+    </code>
+                    </pre>
+                        
+                    <p></p>
+                          Anschlie&szlig;end wird mit der Annotation @BeforeAll sichergestellt, dass - bevor irgendein Testfall ausgef&uuml;hrt wird - die entsprechenden Daten 
+      geladen werden. Daf&uuml;r werden statische Methoden der unter zu Test stehenden Klassen geladen.
+    
+                    <p></p>
+                        
+                    <pre>
+                        <code>
+        @BeforeAll
+        public static void prepare() {
+          Property.setProperties();
+          Property.load();
+        }
+    </code>
+                    </pre>
+                        
+                    <p></p>
+                          Anschlie&szlig;end k&ouml;nnen die Testf&auml;lle definiert werden. Im Beispiel wird die Methode getTimPC() getestet und dabei auf einen behaupteten Erwartungswert
+      abgefragt:
+    
+                    <p></p>
+                        
+                    <pre>
+                        <code>
+        @Test
+        void testGetTimPC() {
+          assertEquals(EXPECTED_TIM_PC, Property.getTimPC());
+        }
+    </code>
+                    </pre>
+                        
+                    <p></p>
+                          Der Test vergleicht nun den Erwartungswert EXPECTED_TIM_PC (einen String) mit dem Ergebnis der getesteten Methode Property.getTimPC(). 
+    
+                    <p></p>
+                        
+                    <h3>Test-Ausf&uuml;hrung</h3>
+                        
+                    <p></p>
+                          Der JUnit-Test kann ausgef&uuml;hrt werden, indem in der Projektstruktur der IDE mit der rechten Maustaste auf die Test-Klasse navigiert wird und dort 
+      Run [Testklasse]... gew&auml;hlt wird. Die IDE f&uuml;hrt dann alle Tests der Test-Klasse aus und listet die Resultate auf.
+    
+                    <p></p>
+                        
+                    <h3>Build-Test</h3>
+                        
+                    <p></p>
+                          Wenn die JUnit-Tests in den Apache Ant Build-Prozess integriert werden sollen, dann bedeutet dies eine Zusatzarbeit, die man zumindest in der 
+      Entwicklungsumgebung IntelliJ IDEA Community Edition durchf&uuml;hren muss. Das Target compile-test &uuml;bersetzt die Testklassen der Anwendung in 
+      ausf&uuml;hrbare Tests. Dazu muss die Jupiter API Archive-Datei in den Klassenpfad eingebunden werden. 
+    
+                    <p></p>
+                        
+                    <pre>
+                        <code>
+        &lt;!-- ********************************************* --&gt;
+        &lt;!-- Target compile-test &uuml;bersetzt die Testtreiber --&gt;
+        &lt;!-- ********************************************* --&gt;
+        &lt;target name="compile-test" depends="compile"&gt;
+          &lt;javac srcdir="${project.test}" destdir="${runtime.test}" includeantruntime="false"&gt;
+            &lt;classpath&gt;
+              &lt;pathelement location="${junit.api}/junit-jupiter-api-5.6.2.jar"/&gt;
+              &lt;pathelement path="${runtime.build}"/&gt;
+            &lt;/classpath&gt;
+          &lt;/javac&gt;
+        &lt;/target&gt;
+    </code>
+                    </pre>
+                        
+                    <p></p>
+                          Anschlie&szlig;end k&ouml;nnen im Target test die &uuml;bersetzten Testklassen ausgef&uuml;hrt werden. Wichtig ist hier allerdings die Ordnerstruktur der 
+      Entwicklungsumgebung IntelliJ richtig zu nutzen und die entsprechenden Klassen der JUnit 5-Komponentenbibliothek in das Ant-Lib-Verzeichnis von
+      IntelliJ IDEA zu kopieren. Der Pfad dazu lautet
+    
+                    <p></p>
+                        
+                    <pre>
+                        <code>C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.2.5\lib\ant\lib</code>
+                    </pre>
+                        
+                    <p></p>
+                          Die Testf&auml;lle selber liegen in der Ablaufumgebung und werden dort ausgef&uuml;hrt. Die Testergebnisse werden dort in ein Verzeichnis output geschrieben 
+      und liegen - wie bereits erw&auml;hnt - als XML- und textuelle Dateien vor. 
+    
+                    <p></p>
+                        
+                    <pre>
+                        <code>
+        &lt;!-- ************************************************************************************+* --&gt;
+        &lt;!-- Target test f&uuml;hrt die Tests durch                                                      --&gt;
+        &lt;!-- ACHTUNG: die jupiter- und junit-apis werden in den ant/lib-Ordner von IntelliJ kopiert --&gt;
+        &lt;!-- ************************************************************************************** --&gt;
+          &lt;target name="test" depends="compile-test"&gt;
+            &lt;junitlauncher&gt;
+              &lt;classpath&gt;
+                &lt;pathelement path="${runtime.test}"/&gt;
+                &lt;pathelement path="${runtime.build}"/&gt;
+              &lt;/classpath&gt;
+              &lt;testclasses outputdir="${runtime.output}"&gt;
+                &lt;fileset dir="${runtime.test}"/&gt;
+                &lt;listener type="legacy-brief" sendSysOut="true"/&gt;
+                &lt;listener type="legacy-xml" sendSysErr="true" sendSysOut="true"/&gt;
+              &lt;/testclasses&gt;
+          &lt;/junitlauncher&gt;
+        &lt;/target&gt;
+    </code>
+                    </pre>
+                      
+                </div>
+            </div>
+        </div>
+        <script src="http://localhost:8080/xdoc/resources/lib/angular.js"></script><script src="http://localhost:8080/xdoc/resources/lib/jquery-3.2.1.min.js"></script><script src="http://localhost:8080/xdoc/resources/lib/popper.min.js"></script><script src="http://localhost:8080/xdoc/resources/lib/bootstrap.min.js"></script><script src="http://localhost:8080/xdoc/resources/lib/bootstrap-toc.min.js"></script>
+    </body>
+</html>

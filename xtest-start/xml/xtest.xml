@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone='yes'?>
+<document env="xtest">
+
+  <main>
+    <topic name="Home" link="http://localhost:8080/xdoc/xtest/html/xtest.html"/>
+  </main>
+
+  <links>
+    <link type="stylesheet">http://localhost:8080/xdoc/resources/css/bootstrap.min.css</link>
+    <link type="stylesheet">http://localhost:8080/xdoc/resources/css/bootstrap-toc.min.css</link>
+    <link type="icon">http://localhost:8080/xdoc/resources/favicon.ico</link>
+  </links>
+
+  <scripts>
+    <script>http://localhost:8080/xdoc/resources/lib/angular.js</script>
+    <script>http://localhost:8080/xdoc/resources/lib/jquery-3.2.1.min.js</script>
+    <script>http://localhost:8080/xdoc/resources/lib/popper.min.js</script>
+    <script>http://localhost:8080/xdoc/resources/lib/bootstrap.min.js</script>
+    <script>http://localhost:8080/xdoc/resources/lib/bootstrap-toc.min.js</script>
+  </scripts>
+
+  <title>xtest</title>
+  <author>Tim Schmitz</author>
+  <date>28.12.2025</date>
+
+  <content>
+    <headline>Test</headline>
+    <abstract>
+      Dies ist die Test-Seite für die xdoc-Anwendung. Es werden einfache Strukturelemente vorgestellt. 
+      Die Überschrift referenziert auf die Domäne der Anwendung. Der Abstract ist eine Zusammenfassung des 
+      Themas und sollte möglichst kompakt sein. Abschließend folgt das Inhaltsverzeichnis mit Verweisen auf 
+      weitere Themen sowie auf einzelne Seiten. 
+    </abstract>
+
+    <horizontal/>
+    <tableofcontent>
+    </tableofcontent>
+  </content>
+</document>

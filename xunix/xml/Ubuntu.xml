@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" standalone='yes'?>
+<document env="xunix">
+
+  <main>
+    <topic name="Home" link="http://localhost:8080/xdoc/xunix/html/xunix.html"/>
+  </main>
+
+  <links>
+    <link type="stylesheet">http://localhost:8080/xdoc/resources/css/bootstrap.min.css</link>
+    <link type="stylesheet">http://localhost:8080/xdoc/resources/css/bootstrap-toc.min.css</link>
+    <link type="icon">http://localhost:8080/xdoc/resources/favicon.ico</link>
+  </links>
+
+  <scripts>
+    <script>http://localhost:8080/xdoc/resources/lib/angular.js</script>
+    <script>http://localhost:8080/xdoc/resources/lib/jquery-3.2.1.min.js</script>
+    <script>http://localhost:8080/xdoc/resources/lib/popper.min.js</script>
+    <script>http://localhost:8080/xdoc/resources/lib/bootstrap.min.js</script>
+    <script>http://localhost:8080/xdoc/resources/lib/bootstrap-toc.min.js</script>
+  </scripts>
+
+  <title>Ubuntu</title>
+  <author>Tim Schmitz</author>
+  <date>04.02.2024</date>
+
+  <content>
+    <headline>Ubuntu</headline>
+    <abstract>
+      Ubuntu ist eine GNU/Linux-Distribution, die sehr leicht unter Windows installiert werden kann.
+    </abstract>
+
+
+    <subheadline id="Ubuntu-Installation">Ubuntu-Installation</subheadline>
+
+    <text>
+      Die Ubuntu-App wird wie aus dem Microsoft Store installiert (hier in der Version 22.04). Wichtig ist die Festlegung 
+      des Administrators, der auch Besitzer des Trägerssystems ist und in der Unix-Terminologie Root heißt.
+    </text>
+    <list>
+      <listitem>Root:				tim</listitem>
+      <listitem>Root-Passwort:	timubu</listitem>
+    </list>
+
+
+    <subheadline id="Windows-Subsystem für Linux (WSL)">Windows-Subsystem für Linux (WSL)</subheadline>
+
+    <text>
+      Das WSL ist eine Kompatibilitätsschicht unter Windows 10, um ein Ubuntu-Image herunterzuladen und zu installieren. 
+      Die Anwendungen des Image können mit WSL nativ unter Windows ausgeführt werden. Dafür müssen folgende Schritte durchgeführt 
+      werden: 
+    </text>
+    <numlist>
+      <listitem>Aktivieren des Entwicklermodus unter Windows</listitem>
+      <listitem>Aktivieren des Windows-Subsystems für Linux</listitem>
+    </numlist>
+
+
+    <text>
+      Der Entwicklermodus unter Windows wird wie folgt aktiviert:
+    </text>
+    <sequence>
+      <sequenceline start="Start" target="Settings 		(Einstellungen)"/>
+      <sequenceline target="Update &amp; Security" comment="Update &amp; Sicherheit"/>
+      <sequenceline target="For developers" comment="Für Entwickler"/>
+      <sequenceline target="Developer Mode:	Yes" comment="Entwicklermodus: Ein"/>
+    </sequence>
+
+    <text>
+      Das Windows-Subsystem für Linux (WSL) wird wie folgt aktiviert:
+    </text>
+    <sequence>
+      <sequenceline start="Windows + R" target="optionalfeatures.exe"/>
+      <sequenceline target="Windows Subsystem for Linux"/>
+      <sequenceline target="Checkbox aktivieren"/>
+      <sequenceline target="OK"/>
+    </sequence>
+
+    <subheadline id="Info-Message">Info-Message</subheadline>
+
+    <text>
+      Folgerndermaßen wird die Info-Message zum Start deaktiviert. 
+    </text>
+    <codeline>vim /home/tim/.hushlogin</codeline>
+
+    <text>
+      Dies ist eine leere Datei im eigenen Home-Verzeichnis. Sie dient nur zum Deaktivieren der Info-Message.
+    </text>
+
+    <subheadline id="Installation neuer Software-Pakete">Installation neuer Software-Pakete</subheadline>
+
+    <text>
+      Neue Software-Pakete werden mit dem folgenden Kommando installiert:
+    </text>
+    <codeline>sudo apt-get install packagename</codeline>
+  </content>
+</document>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone='yes'?>
+<document env="xtest">
+
+  <main>
+    <topic name="Home" link="http://localhost:8080/xdoc/xtest/html/xtest.html"/>
+    <topic name="Thema" link="http://localhost:8080/xdoc/xtest/html/Thema/Thema.html"/>
+    <topic name="Bereich" link="http://localhost:8080/xdoc/xtest/html/Bereich/Bereich.html"/>
+  </main>
+
+  <links>
+    <link type="stylesheet">http://localhost:8080/xdoc/resources/css/bootstrap.min.css</link>
+    <link type="stylesheet">http://localhost:8080/xdoc/resources/css/bootstrap-toc.min.css</link>
+    <link type="icon">http://localhost:8080/xdoc/resources/favicon.ico</link>
+  </links>
+
+  <scripts>
+    <script>http://localhost:8080/xdoc/resources/lib/angular.js</script>
+    <script>http://localhost:8080/xdoc/resources/lib/jquery-3.2.1.min.js</script>
+    <script>http://localhost:8080/xdoc/resources/lib/popper.min.js</script>
+    <script>http://localhost:8080/xdoc/resources/lib/bootstrap.min.js</script>
+    <script>http://localhost:8080/xdoc/resources/lib/bootstrap-toc.min.js</script>
+  </scripts>
+
+  <title>Bereich</title>
+  <author>Tim Schmitz</author>
+  <date>29.08.2026</date>
+
+  <content>
+    <headline>Ein Bereichsseite</headline>
+    <abstract>
+      Diese Seite ist ein Muster für eine Domänenseite. Der Name der Seite ist identisch zum Verzeichnis.
+    </abstract>
+
+    <horizontal/>
+    <tableofcontent>
+      <item>
+        <html name="Bereich-Referenz" link="http://localhost:8080/xdoc/xtest/html/Bereich/Bereich-Referenz.html" type="content"/>
+        <pdf name="Als PDF-Dokument" link="http://localhost:8080/xdoc/xtest/pdf/Bereich/Bereich-Referenz.pdf"/>
+      </item>
+      <item>
+        <html name="Unterbereich" link="http://localhost:8080/xdoc/xtest/html/Bereich/Unterbereich/Unterbereich.html" type="topic"/>
+        <pdf name="Als PDF-Dokument" link="http://localhost:8080/xdoc/xtest/pdf/Bereich/Unterbereich/Unterbereich.pdf"/>
+      </item>
+    </tableofcontent>
+  </content>
+</document>

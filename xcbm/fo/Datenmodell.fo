@@ -1,0 +1,495 @@
+<?xml version="1.0" encoding="UTF-8"?><fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format">
+    <fo:layout-master-set>
+        <fo:simple-page-master master-name="page" page-height="29.7cm" page-width="21cm" margin-top="1cm" margin-bottom="1cm" margin-left="2.5cm" margin-right="2.5cm">
+            <fo:region-body margin-top="1cm"/>
+            <fo:region-before extent="3cm"/>
+            <fo:region-after extent="0.5cm"/>
+            <fo:region-start extent="2cm"/>
+            <fo:region-end extent="0.5cm"/>
+        </fo:simple-page-master>
+        <fo:page-sequence-master master-name="single-page">
+            <fo:repeatable-page-master-reference master-reference="page"/>
+        </fo:page-sequence-master>
+    </fo:layout-master-set>
+    <fo:page-sequence master-reference="single-page" initial-page-number="1">
+        <fo:static-content flow-name="xsl-region-before">
+            <fo:block space-after="4pt" space-before="4pt" text-align="right">
+                <fo:external-graphic src="url('file:///C:/Users/test/Daten/Web/xdoc/resources/logo.svg')" text-align="right"/>
+            </fo:block>
+        </fo:static-content>
+        <fo:static-content flow-name="xsl-region-after">
+            <fo:block text-align="outside" font-family="Helvetica, Arial, sans-serif" font-size="10pt">
+                          Seite
+          
+                <fo:page-number/>
+            </fo:block>
+        </fo:static-content>
+        <fo:flow flow-name="xsl-region-body">
+            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="20pt" font-weight="bold" space-after="10pt" space-before="10pt" text-align="start">
+          &#133;Datenmodell</fo:block>
+            <fo:block text-align="start" font-family="Helvetica, Arial, sans-serif" font-size="10pt">Tim Schmitz</fo:block>
+            <fo:block text-align="start" font-family="Helvetica, Arial, sans-serif" font-size="10pt">25.10.2024</fo:block>
+        </fo:flow>
+    </fo:page-sequence>
+    <fo:page-sequence master-reference="single-page" initial-page-number="2">
+        <fo:static-content flow-name="xsl-region-after">
+            <fo:block text-align="outside" font-family="Helvetica, Arial, sans-serif" font-size="10pt">
+                          Seite
+          
+                <fo:page-number/>
+            </fo:block>
+        </fo:static-content>
+        <fo:flow flow-name="xsl-region-body">
+            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="14pt" font-weight="bold" space-after="10pt" space-before="10pt" text-align="start">
+      Inhalt
+    </fo:block>
+            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+                <fo:block text-align-last="justify">
+                    <fo:inline>
+                        Überblick
+                        <fo:leader leader-pattern="dots"/>
+                        <fo:page-number-citation ref-id="Überblick"/>
+                    </fo:inline>
+                </fo:block>
+                <fo:block text-align-last="justify">
+                    <fo:inline>
+                        Basisdatentypen
+                        <fo:leader leader-pattern="dots"/>
+                        <fo:page-number-citation ref-id="Basisdatentypen"/>
+                    </fo:inline>
+                </fo:block>
+                <fo:block text-align-last="justify">
+                    <fo:inline>
+                        Fachliche Datentypen
+                        <fo:leader leader-pattern="dots"/>
+                        <fo:page-number-citation ref-id="Fachliche Datentypen"/>
+                    </fo:inline>
+                </fo:block>
+                <fo:block text-align-last="justify">
+                    <fo:inline>
+                        Entität Magazin
+                        <fo:leader leader-pattern="dots"/>
+                        <fo:page-number-citation ref-id="Entität Magazin"/>
+                    </fo:inline>
+                </fo:block>
+                <fo:block text-align-last="justify">
+                    <fo:inline>
+                        Entität Eröffnungsschlüssel
+                        <fo:leader leader-pattern="dots"/>
+                        <fo:page-number-citation ref-id="Entität Eröffnungsschlüssel"/>
+                    </fo:inline>
+                </fo:block>
+                <fo:block text-align-last="justify">
+                    <fo:inline>
+                        Informationstragende Beziehung Eröffnungsartikel
+                        <fo:leader leader-pattern="dots"/>
+                        <fo:page-number-citation ref-id="Informationstragende Beziehung Eröffnungsartikel"/>
+                    </fo:inline>
+                </fo:block>
+                <fo:block text-align-last="justify">
+                    <fo:inline>
+                        Kardinälitäten
+                        <fo:leader leader-pattern="dots"/>
+                        <fo:page-number-citation ref-id="Kardinälitäten"/>
+                    </fo:inline>
+                </fo:block>
+            </fo:block>
+        </fo:flow>
+    </fo:page-sequence>
+    <fo:page-sequence master-reference="single-page" initial-page-number="3">
+        <fo:static-content flow-name="xsl-region-after">
+            <fo:block text-align="outside" font-family="Helvetica, Arial, sans-serif" font-size="10pt" line-height="14pt">
+                          Seite
+          
+                <fo:page-number/>
+            </fo:block>
+        </fo:static-content>
+        <fo:flow flow-name="xsl-region-body">
+            <fo:block break-after="page" font-family="Helvetica, Arial, sans-serif">
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="20pt" font-weight="bold" space-after="10pt" space-before="10pt" text-align="start">Datenmodell</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Das Datenmodell für die CBM-Anwendung organisiert die logischen Einheiten der Anwendung und ihre Beziehungen untereinander (Entity-Relatioship Model ERM).
+      Aus dem Datenmodell erkennt man sofort, welche Daten zusammengehören. Da es nicht hierarchisch, sondern als Relationen-Algebra sturkturiert ist, ist 
+      es flexibel und leicht erweiterbar. Jedes relationale Datemodell läßt sich einem entsprechenden Relationalen Datenbank-Managementsystem (RDBMS) in 
+      einer Datenbank abbilden.
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="14pt" font-weight="bold" space-after="10pt" space-before="10pt" text-align="start" id="Überblick">Überblick</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Insgesamt besteht das Modell aus zwei logischen Entitäten und einer informationstragenden Beziehung. Diese können in einer Entity-Relatioship Diagramm (ERD) 
+      veranschaulicht werden:
+    </fo:block>
+                    
+                <fo:block space-after="4pt" space-before="4pt" line-height="0pt">
+                    <fo:external-graphic src="url('file:///C:/Users/Test/Daten/Web/xdoc/xcbm/img/Datenmodell.svg')"/>
+                </fo:block>
+                <fo:block space-after="6pt" space-before="6pt" font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-style="italic">
+        Abbildung 1: Entity-Relationship Diagramm des Datenmodells der Anwendung
+      </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="14pt" font-weight="bold" space-after="10pt" space-before="10pt" text-align="start" id="Basisdatentypen">Basisdatentypen</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Folgende Basisdatentypen werden verwendet:
+    </fo:block>
+                    
+                <fo:block space-after="10pt" space-before="10pt">
+                    <fo:table table-layout="fixed" width="100%">
+                        <fo:table-header>
+                            <fo:table-row>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block background-color="#f0f0f0" font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="bold">Datentyp</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block background-color="#f0f0f0" font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="bold">Format</fo:block>
+                                </fo:table-cell>
+                            </fo:table-row>
+                        </fo:table-header>
+                        <fo:table-body>
+                            <fo:table-row>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">Ganzzahl</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">Ganze Zahl von -2.147.483.648 bis 2.147.483.647</fo:block>
+                                </fo:table-cell>
+                            </fo:table-row>
+                            <fo:table-row>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">Langtext</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">Zeichenkette von maximal 255 alphanumerischen Zeichen</fo:block>
+                                </fo:table-cell>
+                            </fo:table-row>
+                        </fo:table-body>
+                    </fo:table>
+                    <fo:block space-after="6pt" space-before="6pt" font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-style="italic">Tabelle 1: Basisdatentypen</fo:block>
+                </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Diese Basisdatentypen typisieren keine speziellen fachlichen Objekte, sondern repräsentieren allgemeine Formate. 
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="14pt" font-weight="bold" space-after="10pt" space-before="10pt" text-align="start" id="Fachliche Datentypen">Fachliche Datentypen</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Folgende fachliche Datentypen werden verwendet:
+    </fo:block>
+                    
+                <fo:block space-after="10pt" space-before="10pt">
+                    <fo:table table-layout="fixed" width="100%">
+                        <fo:table-header>
+                            <fo:table-row>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block background-color="#f0f0f0" font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="bold">Datentyp</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block background-color="#f0f0f0" font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="bold">Format</fo:block>
+                                </fo:table-cell>
+                            </fo:table-row>
+                        </fo:table-header>
+                        <fo:table-body>
+                            <fo:table-row>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">CBM-Nummer</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">Sechstelliger alphanumerischer Verbund aus dem fixen Kürzel 'CBM' und der Zahldarstellung 001 bis 999</fo:block>
+                                </fo:table-cell>
+                            </fo:table-row>
+                            <fo:table-row>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">ECO-Nummer</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">Dreistelliger alphanumerischer Verbund zwischen einem Buchstaben von A bis E und der Zahldarstellung 00 bis 99</fo:block>
+                                </fo:table-cell>
+                            </fo:table-row>
+                        </fo:table-body>
+                    </fo:table>
+                    <fo:block space-after="6pt" space-before="6pt" font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-style="italic">Tabelle 2: Fachdatentypen</fo:block>
+                </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="bold">Erläuterung</fo:block>
+                    
+                <fo:list-block provisional-distance-between-starts="50mm" provisional-label-separation="10mm" space-after="4pt" space-before="4pt">
+                    <fo:list-item>
+                        <fo:list-item-label>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="normal">•
+          </fo:block>
+                        </fo:list-item-label>
+                        <fo:list-item-body>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" start-indent="5mm">Die CBM-Nummer ist eine fortlaufende Nummer, die hochgezählt wird, zum Beispiel CBM 212</fo:block>
+                        </fo:list-item-body>
+                    </fo:list-item>
+                    <fo:list-item>
+                        <fo:list-item-label>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="normal">•
+          </fo:block>
+                        </fo:list-item-label>
+                        <fo:list-item-body>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" start-indent="5mm">Die ECO-Nummer ist ein Enzyklopädie-Index-Schlüssel mit fünf Hauptgruppen von A bis E und 100 Untergruppen von 00 bis 99, zum Beispiel C54</fo:block>
+                        </fo:list-item-body>
+                    </fo:list-item>
+                </fo:list-block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="14pt" font-weight="bold" space-after="10pt" space-before="10pt" text-align="start" id="Entität Magazin">Entität Magazin</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Die Entität (oder das Objekt) Magazin besteht aus folgenden Feldern:
+    </fo:block>
+                    
+                <fo:block space-after="10pt" space-before="10pt">
+                    <fo:table table-layout="fixed" width="100%">
+                        <fo:table-header>
+                            <fo:table-row>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block background-color="#f0f0f0" font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="bold">Attribut</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block background-color="#f0f0f0" font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="bold">Datentyp</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block background-color="#f0f0f0" font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="bold">Erläuterung</fo:block>
+                                </fo:table-cell>
+                            </fo:table-row>
+                        </fo:table-header>
+                        <fo:table-body>
+                            <fo:table-row>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">Identifikator</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">Ganzzahl</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">Technischer Schlüssel</fo:block>
+                                </fo:table-cell>
+                            </fo:table-row>
+                            <fo:table-row>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">Ausgabe</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">CBM-Nummer</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">Fachlicher Schlüssel</fo:block>
+                                </fo:table-cell>
+                            </fo:table-row>
+                        </fo:table-body>
+                    </fo:table>
+                    <fo:block space-after="6pt" space-before="6pt" font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-style="italic">Tabelle 3: Felder der Entität Magazin</fo:block>
+                </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Die Entität Magazin repräsentiert das Objekt ChessBase-Magazin. Jede Instanz des Objekts besteht aus einem Identifikator als technischer Primärschlüssel und einer Magazin-Nummer als fachlicher Schlüssel.
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="14pt" font-weight="bold" space-after="10pt" space-before="10pt" text-align="start" id="Entität Eröffnungsschlüssel">Entität Eröffnungsschlüssel</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Die Entität Eröffnungsschlüssel besteht aus folgenden Feldern:
+    </fo:block>
+                    
+                <fo:block space-after="10pt" space-before="10pt">
+                    <fo:table table-layout="fixed" width="100%">
+                        <fo:table-header>
+                            <fo:table-row>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block background-color="#f0f0f0" font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="bold">Attribut</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block background-color="#f0f0f0" font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="bold">Datentyp</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block background-color="#f0f0f0" font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="bold">Erläuterung</fo:block>
+                                </fo:table-cell>
+                            </fo:table-row>
+                        </fo:table-header>
+                        <fo:table-body>
+                            <fo:table-row>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">Identifikator</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">Ganzzahl</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">Technischer Schlüssel</fo:block>
+                                </fo:table-cell>
+                            </fo:table-row>
+                            <fo:table-row>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">Eröffnungsschlüssel</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">ECO-Nummer</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">Fachlicher Schlüssel</fo:block>
+                                </fo:table-cell>
+                            </fo:table-row>
+                            <fo:table-row>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">Zugfolge</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">Langtext</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">Folge der Anfangszüge der Eröffnung</fo:block>
+                                </fo:table-cell>
+                            </fo:table-row>
+                            <fo:table-row>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">Beschreibung</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">Langtext</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">Beschreibung der Eröffnung</fo:block>
+                                </fo:table-cell>
+                            </fo:table-row>
+                        </fo:table-body>
+                    </fo:table>
+                    <fo:block space-after="6pt" space-before="6pt" font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-style="italic">Tabelle 4: Felder der Entität Magazin</fo:block>
+                </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Die Entität Eröffnungsschlüssel repräsentiert das Objekt Eröffnungscode.
+      Jede Instanz des Objekts besteht aus einem Identifikator als technischer Primärsschlüssel und einer Eröffnungsschlüssel-Nummer als fachlicher Schlüssel.
+      Weiterhin kennzeichnen eine Zugfolge in algebraischer Notation und eine Eröffnungsbeschreibung das Objekt.
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="14pt" font-weight="bold" space-after="10pt" space-before="10pt" text-align="start" id="Informationstragende Beziehung Eröffnungsartikel">Informationstragende Beziehung Eröffnungsartikel</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Die Beziehung Eröffnungsartikel besteht aus folgenden Feldern:
+    </fo:block>
+                    
+                <fo:block space-after="10pt" space-before="10pt">
+                    <fo:table table-layout="fixed" width="100%">
+                        <fo:table-header>
+                            <fo:table-row>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block background-color="#f0f0f0" font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="bold">Attribut</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block background-color="#f0f0f0" font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="bold">Datentyp</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block background-color="#f0f0f0" font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="bold">Erläuterung</fo:block>
+                                </fo:table-cell>
+                            </fo:table-row>
+                        </fo:table-header>
+                        <fo:table-body>
+                            <fo:table-row>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">Identifikator</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">Ganzzahl</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">Technischer Schlüssel</fo:block>
+                                </fo:table-cell>
+                            </fo:table-row>
+                            <fo:table-row>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">Identifikator_Magazin</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">Ganzzahl</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">Fachlicher Fremdschlüssel</fo:block>
+                                </fo:table-cell>
+                            </fo:table-row>
+                            <fo:table-row>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">Identifikator_Eröffnungsschlüssel</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">Ganzzahl</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">Fachlicher Fremdschlüssel</fo:block>
+                                </fo:table-cell>
+                            </fo:table-row>
+                            <fo:table-row>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">Artikelkurzbeschreibung</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">Langtext</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">Stichworte zum Artikel</fo:block>
+                                </fo:table-cell>
+                            </fo:table-row>
+                        </fo:table-body>
+                    </fo:table>
+                    <fo:block space-after="6pt" space-before="6pt" font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-style="italic">Tabelle 5: Felder der informationstragenden Beziehung Eröffnungsartikel</fo:block>
+                </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Diese informationstragende Beziehung zwischen Magazin und Eröffnungsschlüssel repräsentiert das Objekt Eröffnungsartikel.
+      Jede Instanz des Objekts besteht aus einem Identifikator als Primärschlüssel und jeweils einem Fremdschlüssel für eine Instanz des
+      Magazins und des Eröffnungsschlüssels. Die Artikelkurzbeschreibung ist kurze, stichwortartige Beschreibung des Eröffnungsartikels.
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="14pt" font-weight="bold" space-after="10pt" space-before="10pt" text-align="start" id="Kardinälitäten">Kardinälitäten</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Die Kardinalitäten der Beziehung resultieren aus folgenden Tatsachen:
+    </fo:block>
+                    
+                <fo:list-block provisional-distance-between-starts="50mm" provisional-label-separation="10mm" space-after="4pt" space-before="4pt">
+                    <fo:list-item>
+                        <fo:list-item-label>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="normal">•
+          </fo:block>
+                        </fo:list-item-label>
+                        <fo:list-item-body>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" start-indent="5mm">Ein Magazin hat einen oder mehrere Eröffnungsartikel</fo:block>
+                        </fo:list-item-body>
+                    </fo:list-item>
+                    <fo:list-item>
+                        <fo:list-item-label>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="normal">•
+          </fo:block>
+                        </fo:list-item-label>
+                        <fo:list-item-body>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" start-indent="5mm">Ein Eröffnungsartikel gehört zu genau einem Magazin</fo:block>
+                        </fo:list-item-body>
+                    </fo:list-item>
+                    <fo:list-item>
+                        <fo:list-item-label>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="normal">•
+          </fo:block>
+                        </fo:list-item-label>
+                        <fo:list-item-body>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" start-indent="5mm">Ein Eröffnungsschlüssel taucht in keinem oder in mehreren Eröffnungsartikeln auf</fo:block>
+                        </fo:list-item-body>
+                    </fo:list-item>
+                    <fo:list-item>
+                        <fo:list-item-label>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="normal">•
+          </fo:block>
+                        </fo:list-item-label>
+                        <fo:list-item-body>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" start-indent="5mm">Ein Eröffnungsartikel gehört zu genau einem Eröffnungsschlüssel.</fo:block>
+                        </fo:list-item-body>
+                    </fo:list-item>
+                </fo:list-block>
+                  
+            </fo:block>
+        </fo:flow>
+    </fo:page-sequence>
+</fo:root>

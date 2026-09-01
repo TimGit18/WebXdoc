@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="UTF-8"?><fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format">
+    <fo:layout-master-set>
+        <fo:simple-page-master master-name="page" page-height="29.7cm" page-width="21cm" margin-top="1cm" margin-bottom="1cm" margin-left="2.5cm" margin-right="2.5cm">
+            <fo:region-body margin-top="1cm"/>
+            <fo:region-before extent="3cm"/>
+            <fo:region-after extent="0.5cm"/>
+            <fo:region-start extent="2cm"/>
+            <fo:region-end extent="0.5cm"/>
+        </fo:simple-page-master>
+        <fo:page-sequence-master master-name="single-page">
+            <fo:repeatable-page-master-reference master-reference="page"/>
+        </fo:page-sequence-master>
+    </fo:layout-master-set>
+    <fo:page-sequence master-reference="single-page" initial-page-number="1">
+        <fo:static-content flow-name="xsl-region-before">
+            <fo:block space-after="4pt" space-before="4pt" text-align="right">
+                <fo:external-graphic src="url('file:///C:/Users/test/Daten/Web/xdoc/resources/logo.svg')" text-align="right"/>
+            </fo:block>
+        </fo:static-content>
+        <fo:static-content flow-name="xsl-region-after">
+            <fo:block text-align="outside" font-family="Helvetica, Arial, sans-serif" font-size="10pt">
+                          Seite
+          
+                <fo:page-number/>
+            </fo:block>
+        </fo:static-content>
+        <fo:flow flow-name="xsl-region-body">
+            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="20pt" font-weight="bold" space-after="10pt" space-before="10pt" text-align="start">
+          &#133;Ubuntu</fo:block>
+            <fo:block text-align="start" font-family="Helvetica, Arial, sans-serif" font-size="10pt">Tim Schmitz</fo:block>
+            <fo:block text-align="start" font-family="Helvetica, Arial, sans-serif" font-size="10pt">04.02.2024</fo:block>
+        </fo:flow>
+    </fo:page-sequence>
+    <fo:page-sequence master-reference="single-page" initial-page-number="2">
+        <fo:static-content flow-name="xsl-region-after">
+            <fo:block text-align="outside" font-family="Helvetica, Arial, sans-serif" font-size="10pt">
+                          Seite
+          
+                <fo:page-number/>
+            </fo:block>
+        </fo:static-content>
+        <fo:flow flow-name="xsl-region-body">
+            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="14pt" font-weight="bold" space-after="10pt" space-before="10pt" text-align="start">
+      Inhalt
+    </fo:block>
+            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+                <fo:block text-align-last="justify">
+                    <fo:inline>
+                        Ubuntu-Installation
+                        <fo:leader leader-pattern="dots"/>
+                        <fo:page-number-citation ref-id="Ubuntu-Installation"/>
+                    </fo:inline>
+                </fo:block>
+                <fo:block text-align-last="justify">
+                    <fo:inline>
+                        Windows-Subsystem für Linux (WSL)
+                        <fo:leader leader-pattern="dots"/>
+                        <fo:page-number-citation ref-id="Windows-Subsystem für Linux (WSL)"/>
+                    </fo:inline>
+                </fo:block>
+                <fo:block text-align-last="justify">
+                    <fo:inline>
+                        Info-Message
+                        <fo:leader leader-pattern="dots"/>
+                        <fo:page-number-citation ref-id="Info-Message"/>
+                    </fo:inline>
+                </fo:block>
+                <fo:block text-align-last="justify">
+                    <fo:inline>
+                        Installation neuer Software-Pakete
+                        <fo:leader leader-pattern="dots"/>
+                        <fo:page-number-citation ref-id="Installation neuer Software-Pakete"/>
+                    </fo:inline>
+                </fo:block>
+            </fo:block>
+        </fo:flow>
+    </fo:page-sequence>
+    <fo:page-sequence master-reference="single-page" initial-page-number="3">
+        <fo:static-content flow-name="xsl-region-after">
+            <fo:block text-align="outside" font-family="Helvetica, Arial, sans-serif" font-size="10pt">
+                          Seite
+          
+                <fo:page-number/>
+            </fo:block>
+        </fo:static-content>
+        <fo:flow flow-name="xsl-region-body">
+            <fo:block break-after="page" font-family="Helvetica, Arial, sans-serif">
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="20pt" font-weight="bold" space-after="10pt" space-before="10pt" text-align="start">Ubuntu</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Ubuntu ist eine GNU/Linux-Distribution, die sehr leicht unter Windows installiert werden kann.
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="14pt" font-weight="bold" space-after="10pt" space-before="10pt" text-align="start" id="Ubuntu-Installation">Ubuntu-Installation</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Die Ubuntu-App wird wie aus dem Microsoft Store installiert (hier in der Version 22.04). Wichtig ist die Festlegung 
+      des Administrators, der auch Besitzer des Trägerssystems ist und in der Unix-Terminologie Root heißt.
+    </fo:block>
+                    
+                <fo:list-block provisional-distance-between-starts="50mm" provisional-label-separation="10mm" space-after="4pt" space-before="4pt">
+                    <fo:list-item>
+                        <fo:list-item-label>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="normal">•
+          </fo:block>
+                        </fo:list-item-label>
+                        <fo:list-item-body>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" start-indent="5mm">Root:				tim</fo:block>
+                        </fo:list-item-body>
+                    </fo:list-item>
+                    <fo:list-item>
+                        <fo:list-item-label>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="normal">•
+          </fo:block>
+                        </fo:list-item-label>
+                        <fo:list-item-body>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" start-indent="5mm">Root-Passwort:	timubu</fo:block>
+                        </fo:list-item-body>
+                    </fo:list-item>
+                </fo:list-block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="14pt" font-weight="bold" space-after="10pt" space-before="10pt" text-align="start" id="Windows-Subsystem für Linux (WSL)">Windows-Subsystem für Linux (WSL)</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Das WSL ist eine Kompatibilitätsschicht unter Windows 10, um ein Ubuntu-Image herunterzuladen und zu installieren. 
+      Die Anwendungen des Image können mit WSL nativ unter Windows ausgeführt werden. Dafür müssen folgende Schritte durchgeführt 
+      werden: 
+    </fo:block>
+                    
+                <fo:list-block provisional-distance-between-starts="50mm" provisional-label-separation="10mm" space-after="4pt" space-before="4pt">
+                    <fo:list-item>
+                        <fo:list-item-label>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="normal">1.
+          </fo:block>
+                        </fo:list-item-label>
+                        <fo:list-item-body>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" start-indent="5mm">Aktivieren des Entwicklermodus unter Windows</fo:block>
+                        </fo:list-item-body>
+                    </fo:list-item>
+                    <fo:list-item>
+                        <fo:list-item-label>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="normal">2.
+          </fo:block>
+                        </fo:list-item-label>
+                        <fo:list-item-body>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" start-indent="5mm">Aktivieren des Windows-Subsystems für Linux</fo:block>
+                        </fo:list-item-body>
+                    </fo:list-item>
+                </fo:list-block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Der Entwicklermodus unter Windows wird wie folgt aktiviert:
+    </fo:block>
+                    
+                <fo:block space-after="6pt" space-before="6pt">
+                    <fo:table table-layout="fixed" width="100%">
+                        <fo:table-column column-width="30mm"/>
+                        <fo:table-column column-width="10mm"/>
+                        <fo:table-column column-width="60mm"/>
+                        <fo:table-column column-width="60mm"/>
+                        <fo:table-body>
+                                  
+                            <fo:table-row>
+                                <fo:table-cell>
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">Start</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell>
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">
+          ==&gt;
+        </fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell>
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">Settings   (Einstellungen)</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell>
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt"/>
+                                </fo:table-cell>
+                            </fo:table-row>
+                                  
+                            <fo:table-row>
+                                <fo:table-cell>
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt"/>
+                                </fo:table-cell>
+                                <fo:table-cell>
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">
+          ==&gt;
+        </fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell>
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">Update &amp; Security</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell>
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt"/>
+                                </fo:table-cell>
+                            </fo:table-row>
+                                  
+                            <fo:table-row>
+                                <fo:table-cell>
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt"/>
+                                </fo:table-cell>
+                                <fo:table-cell>
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">
+          ==&gt;
+        </fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell>
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">For developers</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell>
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt"/>
+                                </fo:table-cell>
+                            </fo:table-row>
+                                  
+                            <fo:table-row>
+                                <fo:table-cell>
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt"/>
+                                </fo:table-cell>
+                                <fo:table-cell>
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">
+          ==&gt;
+        </fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell>
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">Developer Mode: Yes</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell>
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt"/>
+                                </fo:table-cell>
+                            </fo:table-row>
+                                
+                        </fo:table-body>
+                    </fo:table>
+                </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Das Windows-Subsystem für Linux (WSL) wird wie folgt aktiviert:
+    </fo:block>
+                    
+                <fo:block space-after="6pt" space-before="6pt">
+                    <fo:table table-layout="fixed" width="100%">
+                        <fo:table-column column-width="30mm"/>
+                        <fo:table-column column-width="10mm"/>
+                        <fo:table-column column-width="60mm"/>
+                        <fo:table-column column-width="60mm"/>
+                        <fo:table-body>
+                                  
+                            <fo:table-row>
+                                <fo:table-cell>
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">Windows + R</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell>
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">
+          ==&gt;
+        </fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell>
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">optionalfeatures.exe</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell>
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt"/>
+                                </fo:table-cell>
+                            </fo:table-row>
+                                  
+                            <fo:table-row>
+                                <fo:table-cell>
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt"/>
+                                </fo:table-cell>
+                                <fo:table-cell>
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">
+          ==&gt;
+        </fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell>
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">Windows Subsystem for Linux</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell>
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt"/>
+                                </fo:table-cell>
+                            </fo:table-row>
+                                  
+                            <fo:table-row>
+                                <fo:table-cell>
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt"/>
+                                </fo:table-cell>
+                                <fo:table-cell>
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">
+          ==&gt;
+        </fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell>
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">Checkbox aktivieren</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell>
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt"/>
+                                </fo:table-cell>
+                            </fo:table-row>
+                                  
+                            <fo:table-row>
+                                <fo:table-cell>
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt"/>
+                                </fo:table-cell>
+                                <fo:table-cell>
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">
+          ==&gt;
+        </fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell>
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">OK</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell>
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt"/>
+                                </fo:table-cell>
+                            </fo:table-row>
+                                
+                        </fo:table-body>
+                    </fo:table>
+                </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="14pt" font-weight="bold" space-after="10pt" space-before="10pt" text-align="start" id="Info-Message">Info-Message</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Folgerndermaßen wird die Info-Message zum Start deaktiviert. 
+    </fo:block>
+                    
+                <fo:block font-family="Courier" font-size="6pt" linefeed-treatment="preserve" white-space-treatment="preserve" space-before="4pt" space-after="4pt" text-align="start" white-space-collapse="false">vim /home/tim/.hushlogin</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Dies ist eine leere Datei im eigenen Home-Verzeichnis. Sie dient nur zum Deaktivieren der Info-Message.
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="14pt" font-weight="bold" space-after="10pt" space-before="10pt" text-align="start" id="Installation neuer Software-Pakete">Installation neuer Software-Pakete</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Neue Software-Pakete werden mit dem folgenden Kommando installiert:
+    </fo:block>
+                    
+                <fo:block font-family="Courier" font-size="6pt" linefeed-treatment="preserve" white-space-treatment="preserve" space-before="4pt" space-after="4pt" text-align="start" white-space-collapse="false">sudo apt-get install packagename</fo:block>
+                  
+            </fo:block>
+        </fo:flow>
+    </fo:page-sequence>
+</fo:root>

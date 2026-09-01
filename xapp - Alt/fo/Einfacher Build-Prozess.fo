@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="UTF-8"?><fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format">
+    <fo:layout-master-set>
+        <fo:simple-page-master master-name="page" page-height="29.7cm" page-width="21cm" margin-top="1cm" margin-bottom="1cm" margin-left="2.5cm" margin-right="2.5cm">
+            <fo:region-body margin-top="1cm" margin-bottom="2cm"/>
+            <fo:region-before extent="3cm"/>
+            <fo:region-after extent="0.5cm"/>
+            <fo:region-start extent="2cm"/>
+            <fo:region-end extent="0.5cm"/>
+        </fo:simple-page-master>
+        <fo:page-sequence-master master-name="single-page">
+            <fo:repeatable-page-master-reference master-reference="page"/>
+        </fo:page-sequence-master>
+    </fo:layout-master-set>
+    <fo:page-sequence master-reference="single-page" initial-page-number="1">
+        <fo:static-content flow-name="xsl-region-before">
+            <fo:block space-after="4pt" space-before="4pt" text-align="right">
+                <fo:external-graphic src="url('file:///C:/Users/schmi/Daten/Web/xdoc/resources/logo.svg')" text-align="right"/>
+            </fo:block>
+        </fo:static-content>
+        <fo:static-content flow-name="xsl-region-after">
+            <fo:block text-align="outside" font-family="Helvetica, Arial, sans-serif" font-size="10pt">
+                          Seite
+          
+                <fo:page-number/>
+            </fo:block>
+        </fo:static-content>
+        <fo:flow flow-name="xsl-region-body">
+            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="20pt" font-weight="bold" space-after="10pt" space-before="10pt" text-align="start">
+          &#133;Einfacher Build-Prozess</fo:block>
+            <fo:block text-align="start" font-family="Helvetica, Arial, sans-serif" font-size="10pt">Tim Schmitz</fo:block>
+            <fo:block text-align="start" font-family="Helvetica, Arial, sans-serif" font-size="10pt">16.05.2026</fo:block>
+        </fo:flow>
+    </fo:page-sequence>
+    <fo:page-sequence master-reference="single-page" initial-page-number="2">
+        <fo:static-content flow-name="xsl-region-after">
+            <fo:block text-align="outside" font-family="Helvetica, Arial, sans-serif" font-size="10pt">
+                          Seite
+          
+                <fo:page-number/>
+            </fo:block>
+        </fo:static-content>
+        <fo:flow flow-name="xsl-region-body">
+            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="14pt" font-weight="bold" space-after="10pt" space-before="10pt" text-align="start">
+      Inhalt
+    </fo:block>
+            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+                <fo:block text-align-last="justify">
+                    <fo:inline>
+                        Übersicht
+                        <fo:leader leader-pattern="dots"/>
+                        <fo:page-number-citation ref-id="Übersicht"/>
+                    </fo:inline>
+                </fo:block>
+                <fo:block text-align-last="justify">
+                    <fo:inline>
+                        Compile
+                        <fo:leader leader-pattern="dots"/>
+                        <fo:page-number-citation ref-id="Compile"/>
+                    </fo:inline>
+                </fo:block>
+                <fo:block text-align-last="justify">
+                    <fo:inline>
+                        Deployment
+                        <fo:leader leader-pattern="dots"/>
+                        <fo:page-number-citation ref-id="Deployment"/>
+                    </fo:inline>
+                </fo:block>
+                <fo:block text-align-last="justify">
+                    <fo:inline>
+                        Exekution
+                        <fo:leader leader-pattern="dots"/>
+                        <fo:page-number-citation ref-id="Exekution"/>
+                    </fo:inline>
+                </fo:block>
+            </fo:block>
+        </fo:flow>
+    </fo:page-sequence>
+    <fo:page-sequence master-reference="single-page" initial-page-number="3">
+        <fo:static-content flow-name="xsl-region-after">
+            <fo:block text-align="outside" font-family="Helvetica, Arial, sans-serif" font-size="10pt" line-height="14pt">
+                          Seite
+          
+                <fo:page-number/>
+            </fo:block>
+        </fo:static-content>
+        <fo:flow flow-name="xsl-region-body">
+            <fo:block break-after="page" font-family="Helvetica, Arial, sans-serif">
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="20pt" font-weight="bold" space-after="10pt" space-before="10pt" text-align="start">Ein einfacher Build-Prozess</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Ein einfacher Build-Prozess besteht aus wenigen Tätigkeiten und wird hier anhand von Skripten skizziert. Es werden bei diesem Prozess lediglich 
+      die nativen Werkzeuge des JDK verwendet (Java-Compiler javac, Java Archive Tool jar und Java-Interpreter java). Die Steuerung des Builds erfolgt
+      über gescriptete Batch-Dateien. Ansonsten benötigt man für den Prozess nur die Konmmandozeilen-Befehle der unterliegenden Betriebssystems, hier 
+      Windows. 
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="14pt" font-weight="bold" space-after="10pt" space-before="10pt" text-align="start" id="Übersicht">Übersicht</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Die folgende Übersicht demonstriert einen einfachen Build-Prozess, der aus vier Schritten besteht. 
+    </fo:block>
+                    
+                <fo:block space-after="4pt" space-before="4pt" line-height="0pt">
+                    <fo:external-graphic src="url('file:///C:/Users/schmi/Daten/Web/xdoc/xapp/img/Einfacher Build-Prozess.svg')"/>
+                </fo:block>
+                <fo:block space-after="6pt" space-before="6pt" font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-style="italic">
+        Abbildung 1: Einfacher Build-Prozess
+      </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="bold">Edit</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Der Edit-Schritt beinhaltet das Editieren des Quelltexts, der Java-Klasse. Dies wird hier nicht weiter vertieft, da es zu den wesentlichen 
+      Funktionen einer Integrierten Entwicklungsumgebung (IDE) gehört. 
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="bold">Compile</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Im Compile-Schritt wird die Java-Klasse in einen interpretierbaren Bytecode übersetzt. 
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="bold">Deploy</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Im Deployment-Schritt werden die übersetzten Klassen zu einem ausführbaren Archiv zusammengebunden und in die Laufzeitumgebung transportiert.
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="bold">Run</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      In der Ausführung der Anwendung führt der Interpreter die Anwendung aus. Man muss beachten, dass die Ausführung der Anwendung aufgrund der 
+      Konfiguration des Loggers nur in bestimmten Verzeichnissen erfolgen kann. 
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Die Werkzeuge dieses Build-Prozesses liegen in der Ablaufumgebung, die im nächsten Kapitel erläutert wird.
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="14pt" font-weight="bold" space-after="10pt" space-before="10pt" text-align="start" id="Compile">Compile</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Der Compile-Schritt findet statt, wenn eine übersetzbare Java-Klassendatei oder ein Packet von Java-Quellen vorliegt. Das folgende Skript build.bat 
+      definiert die wesentlichen Punkte des Compile-Schritts und läuft auf der Kommandozeile des Betriebssystems Windows.
+    </fo:block>
+                    
+                <fo:list-block provisional-distance-between-starts="50mm" provisional-label-separation="10mm" space-after="4pt" space-before="4pt">
+                    <fo:list-item>
+                        <fo:list-item-label>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="normal">1.
+          </fo:block>
+                        </fo:list-item-label>
+                        <fo:list-item-body>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" start-indent="5mm">Definition der Umgebungsvariablen für die Projekt-Umgebung</fo:block>
+                        </fo:list-item-body>
+                    </fo:list-item>
+                    <fo:list-item>
+                        <fo:list-item-label>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="normal">2.
+          </fo:block>
+                        </fo:list-item-label>
+                        <fo:list-item-body>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" start-indent="5mm">Definition der Umgebungsvariablen für die Ablaufumgebung mit Build-Ordner</fo:block>
+                        </fo:list-item-body>
+                    </fo:list-item>
+                    <fo:list-item>
+                        <fo:list-item-label>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="normal">3.
+          </fo:block>
+                        </fo:list-item-label>
+                        <fo:list-item-body>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" start-indent="5mm">Definition der Bibliotheken (in diesem Fall Logger-Libraries)</fo:block>
+                        </fo:list-item-body>
+                    </fo:list-item>
+                    <fo:list-item>
+                        <fo:list-item-label>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="normal">4.
+          </fo:block>
+                        </fo:list-item-label>
+                        <fo:list-item-body>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" start-indent="5mm">Säuberung der Zielumgebung (Build-Ordner der Ablaufumgebung)</fo:block>
+                        </fo:list-item-body>
+                    </fo:list-item>
+                    <fo:list-item>
+                        <fo:list-item-label>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="normal">5.
+          </fo:block>
+                        </fo:list-item-label>
+                        <fo:list-item-body>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" start-indent="5mm">Kompilation der Quellen in beiden Paketen der Anwendung unter Verwendung der UTF8-Kodierung</fo:block>
+                        </fo:list-item-body>
+                    </fo:list-item>
+                </fo:list-block>
+                    
+                <fo:block font-family="Courier" font-size="6pt" linefeed-treatment="preserve" white-space-treatment="preserve" space-before="0pt" space-after="4pt" text-align="start" white-space-collapse="false">
+        @echo off
+      
+        rem -----------------------------------------------------------
+        rem Umgebungsvariablen für die Projekt-Umgebung
+        rem -----------------------------------------------------------
+        set project=C:\Users\test\Daten\Java\Projects
+        set project_application=%project%\application
+      
+        rem -----------------------------------------------------------
+        rem Umgebungsvariablen für die Ablaufumgebung
+        rem -----------------------------------------------------------
+        set runtime=C:\Users\test\Daten\Java\Applications
+        set runtime_application=%runtime%\application
+        set runtime_build=%runtime_application%\build
+      
+        rem -----------------------------------------------------------
+        rem Bibliotheken
+        rem -----------------------------------------------------------
+        set libraries=C:\Users\test\Daten\Java\Libraries
+        set log4j_api=%libraries%\apache-log4j-2.11.1-bin\log4j-api-2.11.1.jar
+        set log4j_core=%libraries%\apache-log4j-2.11.1-bin\log4j-core-2.11.1.jar
+        set log4j=%log4j_api%;%log4j_core%
+        set mssql=%libraries%\sqljdbc_9.2/mssql-jdbc-9.2.1.jre11.jar
+      
+      
+        rem -------
+        rem Cleanup
+        rem -------
+        rmdir /s /q %runtime_build%
+        mkdir %runtime_build%
+      
+        rem ---------------
+        rem Compile Sourcen 
+        rem ---------------
+        set source=%project_application%\src\de\timdomain\application
+        set source_control=%source%\control
+        set source_schema=%source%\schema
+        set source_util=%source%\util
+      
+        rem ------------
+        rem Compile Util
+        rem ------------
+        javac -encoding UTF8 %source_util%\*.java -d %runtime_build% -cp %runtime_build%;%log4j%
+      
+        rem --------------
+        rem Compile Schema
+        rem --------------
+        javac -encoding UTF8 %source_schema%\*.java -d %runtime_build% -cp %runtime_build%;%log4j%;%mmsql%
+      
+        rem ---------------
+        rem Compile Control
+        rem ---------------
+        javac -encoding UTF8 %source_control%\*.java -d %runtime_build% -cp %runtime_build%;%log4j%
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="14pt" font-weight="bold" space-after="10pt" space-before="10pt" text-align="start" id="Deployment">Deployment</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Der Deployment-Schritt findet statt, wenn die Java-Quelldateien als übersetzte Klassen im Build-Ordner in derselben Paketestruktur wie in der 
+      Entwicklungsumgebung vorliegen. Das folgende Skript deployment.bat definiert die wesentlichen Punkte des Deployment-Schritts und läuft auf der 
+      Kommandozeile des Betriebssystems Windows.
+    </fo:block>
+                    
+                <fo:list-block provisional-distance-between-starts="50mm" provisional-label-separation="10mm" space-after="4pt" space-before="4pt">
+                    <fo:list-item>
+                        <fo:list-item-label>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="normal">1.
+          </fo:block>
+                        </fo:list-item-label>
+                        <fo:list-item-body>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" start-indent="5mm">Definition der Umgebungsvariablen für die Projekt-Umgebung</fo:block>
+                        </fo:list-item-body>
+                    </fo:list-item>
+                    <fo:list-item>
+                        <fo:list-item-label>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="normal">2.
+          </fo:block>
+                        </fo:list-item-label>
+                        <fo:list-item-body>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" start-indent="5mm">Definition der Umgebungsvariablen für die Ablaufumgebung mit Build-Ordner</fo:block>
+                        </fo:list-item-body>
+                    </fo:list-item>
+                    <fo:list-item>
+                        <fo:list-item-label>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="normal">3.
+          </fo:block>
+                        </fo:list-item-label>
+                        <fo:list-item-body>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" start-indent="5mm">Deployment der Anwendung durch Verschieben der Konfigurationsdateien und des Manifests</fo:block>
+                        </fo:list-item-body>
+                    </fo:list-item>
+                    <fo:list-item>
+                        <fo:list-item-label>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="normal">4.
+          </fo:block>
+                        </fo:list-item-label>
+                        <fo:list-item-body>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" start-indent="5mm">Erzeugen der ausführbaren Anwendung durch Verwendung des Java Archive Tools </fo:block>
+                        </fo:list-item-body>
+                    </fo:list-item>
+                </fo:list-block>
+                    
+                <fo:block font-family="Courier" font-size="6pt" linefeed-treatment="preserve" white-space-treatment="preserve" space-before="0pt" space-after="4pt" text-align="start" white-space-collapse="false">
+        @echo off
+      
+        rem -----------------------------------------------------------
+        rem Umgebungsvariablen für die Projekt-Umgebung
+        rem -----------------------------------------------------------
+        set project=C:\Users\\Daten\Java\Projects
+        set project_application=%project%\application
+        set project_build=%project_application%\out\production\application
+        set project_meta_inf=%project_application%\META-INF
+        set project_manifest=%project_meta_inf%\MANIFEST.MF
+        set project_properties=%project_application%\properties
+        set project_log4j2_xml=%project_properties%\log4j2.xml
+        set project_app_props=%project_properties%\application.properties
+      
+        rem -----------------------------------------------------------
+        rem Umgebungsvariablen für die Ablaufumgebung
+        rem -----------------------------------------------------------
+        set runtime=C:\Users\\Daten\Java\Applications
+        set runtime_application=%runtime%\application
+        set runtime_build=%runtime_application%\build
+        set runtime_jar_file=%runtime_application%\application.jar
+        set runtime_meta_inf=%runtime_application%\META-INF
+        set runtime_manifest=%runtime_meta_inf%\MANIFEST.MF
+        set runtime_properties=%runtime_application%\properties
+        set runtime_log4j2_xml=%runtime_properties%\log4j2.xml
+        set runtime_app_props=%runtime_properties%\application.properties
+      
+        rem ------------------------------------------------------------
+        rem Deployment der Anwendung
+        rem ------------------------------------------------------------
+        copy /Y %project_log4j2_xml% %runtime_log4j2_xml%
+        copy /Y %project_app_props% %runtime_app_props%
+        copy /Y %project_manifest% %runtime_manifest%
+      
+        rem -----------------------------------------------------------
+        rem Ausführbare Anwendung erzeugen
+        rem -----------------------------------------------------------
+        jar cfm %runtime_jar_file% %runtime_manifest% -C %runtime_build% .
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="14pt" font-weight="bold" space-after="10pt" space-before="10pt" text-align="start" id="Exekution">Exekution</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Die Anwendung wird ausgeführt, indem der Java-Interpreter das soeben erzeugte, ausührbare jar-File interpretiert. Das folgende Skript application.bat 
+      definiert die wesentlichen Punkte des Ausführungs-Schritts und läuft auf der Kommandozeile des Betriebssystems Windows.
+    </fo:block>
+                    
+                <fo:list-block provisional-distance-between-starts="50mm" provisional-label-separation="10mm" space-after="4pt" space-before="4pt">
+                    <fo:list-item>
+                        <fo:list-item-label>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="normal">1.
+          </fo:block>
+                        </fo:list-item-label>
+                        <fo:list-item-body>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" start-indent="5mm">Definition der Umgebungsvariablen für die Ablaufumgebung mit Kofigurationsdatei für den Logger</fo:block>
+                        </fo:list-item-body>
+                    </fo:list-item>
+                    <fo:list-item>
+                        <fo:list-item-label>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="normal">2.
+          </fo:block>
+                        </fo:list-item-label>
+                        <fo:list-item-body>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" start-indent="5mm">Ausführung der Anwendung unter Verwendung der System-Properties Encoding (auf UTF8) sowie Logging (Konfigurationsatei log4j2.xml)</fo:block>
+                        </fo:list-item-body>
+                    </fo:list-item>
+                </fo:list-block>
+                    
+                <fo:block font-family="Courier" font-size="6pt" linefeed-treatment="preserve" white-space-treatment="preserve" space-before="0pt" space-after="4pt" text-align="start" white-space-collapse="false">
+        @echo off
+      
+        rem ----------------------------------------------------------------------------
+        rem Environment-Variablen für die Ablaufumgebung
+        rem ----------------------------------------------------------------------------
+        set runtime=C:\Users\\Daten\Java\Applications
+        set runtime_application=%runtime%\application
+        set runtime_jar_file=%runtime_application%\application.jar
+        set runtime_log4j_config_file="log4j.configurationFile=file://properties/log4j2.xml"
+      
+        rem ----------
+        rem Ausführung
+        rem ----------
+        java -Dfile.encoding=UTF8 -jar %runtime_jar_file% -D%runtime_log4j_config_file%
+    </fo:block>
+                  
+            </fo:block>
+        </fo:flow>
+    </fo:page-sequence>
+</fo:root>

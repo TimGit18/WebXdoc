@@ -1,0 +1,425 @@
+<html lang="de">
+    <head>
+        <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>Entwicklungsumgebung</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="http://localhost:8080/xdoc/resources/css/bootstrap.min.css">
+        <link rel="stylesheet" href="http://localhost:8080/xdoc/resources/css/bootstrap-toc.min.css">
+        <link rel="icon" href="http://localhost:8080/xdoc/resources/favicon.ico">
+    </head>
+    <body data-spy="scroll" data-target="#toc">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-2 bg-light">
+                    <figure class="figure">
+                        <img class="figure-img img-fluid rounded" src="http://localhost:8080/xdoc/resources/getsitelogo.png">
+                    </figure>
+                    <nav id="toc" class="sticky-top" data-toggle="toc"></nav>
+                </div>
+                <div class="col-sm-10">
+                    <nav class="navbar navbar-expand-lg sticky-top navbar-light bg-light">
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav mr-auto">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="http://localhost:8080/xdoc/xapp/html/xapp.html">Home</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                    <p></p>
+                        
+                    <h2>Java-Entwicklungsumgebung</h2>
+                        
+                    <p></p>
+                          F&uuml;r gr&ouml;&szlig;ere Projekte ben&ouml;tigt man eine professionelle Integrierte Entwicklungsumgebung (IDE) wie etwa IntelliJ, die eine 
+      breite Werkzeugunterst&uuml;tzung anbietet und das Progrmmieren vereinfacht.
+    
+                    <p></p>
+                        
+                    <h3>Projekt-Anlage</h3>
+                        
+                    <p></p>
+                          Ein neues Projekt wird in IntelliJ wie folgt angelegt:
+    
+                    <p></p>
+                        
+                    <dl class="row">
+                              
+                        <dt class="col-sm-2">File</dt>
+                        <dd class="col-sm-1">&rArr;</dd>
+                        <dd class="col-sm-4">New Project...</dd>
+                        <dd class="col-sm-5"></dd>
+                              
+                        <dt class="col-sm-2"></dt>
+                        <dd class="col-sm-1">&rArr;</dd>
+                        <dd class="col-sm-4">
+                            <b>New Project-Dialog</b>
+                        </dd>
+                        <dd class="col-sm-5"></dd>
+                              
+                        <dt class="col-sm-2"></dt>
+                        <dd class="col-sm-1"></dd>
+                        <dd class="col-sm-4">New Project</dd>
+                        <dd class="col-sm-5">Java</dd>
+                              
+                        <dt class="col-sm-2"></dt>
+                        <dd class="col-sm-1">&rArr;</dd>
+                        <dd class="col-sm-4">Name</dd>
+                        <dd class="col-sm-5">application</dd>
+                              
+                        <dt class="col-sm-2"></dt>
+                        <dd class="col-sm-1"></dd>
+                        <dd class="col-sm-4">Location</dd>
+                        <dd class="col-sm-5">~\Daten\Java\Projects</dd>
+                              
+                        <dt class="col-sm-2"></dt>
+                        <dd class="col-sm-1"></dd>
+                        <dd class="col-sm-4">Create Git repository</dd>
+                        <dd class="col-sm-5">Check</dd>
+                              
+                        <dt class="col-sm-2"></dt>
+                        <dd class="col-sm-1"></dd>
+                        <dd class="col-sm-4">Build system</dd>
+                        <dd class="col-sm-5">IntelliJ</dd>
+                              
+                        <dt class="col-sm-2"></dt>
+                        <dd class="col-sm-1"></dd>
+                        <dd class="col-sm-4">JDK</dd>
+                        <dd class="col-sm-5">21</dd>
+                              
+                        <dt class="col-sm-2"></dt>
+                        <dd class="col-sm-1"></dd>
+                        <dd class="col-sm-4">Add sample code</dd>
+                        <dd class="col-sm-5">Uncheck</dd>
+                              
+                        <dt class="col-sm-2"></dt>
+                        <dd class="col-sm-1">&rArr;</dd>
+                        <dd class="col-sm-4">Advanced Settings</dd>
+                        <dd class="col-sm-5"></dd>
+                              
+                        <dt class="col-sm-2"></dt>
+                        <dd class="col-sm-1"></dd>
+                        <dd class="col-sm-4">Module Name</dd>
+                        <dd class="col-sm-5">application</dd>
+                              
+                        <dt class="col-sm-2"></dt>
+                        <dd class="col-sm-1"></dd>
+                        <dd class="col-sm-4">Content root</dd>
+                        <dd class="col-sm-5">~\Daten\Java\Projects\application</dd>
+                              
+                        <dt class="col-sm-2"></dt>
+                        <dd class="col-sm-1"></dd>
+                        <dd class="col-sm-4">Module file location</dd>
+                        <dd class="col-sm-5">~\Daten\Java\Projects\application</dd>
+                            
+                    </dl>
+                        
+                    <p></p>
+                          Dabei passiert folgendes:
+    
+                    <p></p>
+                        
+                    <ol>
+                        <li>Das Projekt wird mit seinem Namen an einem physischem Ort initialisiert</li>
+                        <li>Es wird ein Git-Repository bei der Anlage erzeugt</li>
+                        <li>Die Build-Umgebung f&uuml;r das Projekt (Entwicklungsumgebung und JDK 21) wird festgelegt</li>
+                        <li>Vordefinierte Klassen (Sample Code) werden nicht erzeugt</li>
+                    </ol>
+                        
+                    <h3>Hauptklasse</h3>
+                        
+                    <p></p>
+                          Um Klassen zu erzeugen, muss zun&auml;chst eine Verzeichnisstruktur definiert werden.
+      Die Startklasse der Anwendung wird dann in einem neuen Paket erzeugt. Zun&auml;chst wird im Projekt-Explorer 
+      das Quellcode-Verzeichnis selektiert:
+    
+                    <p></p>
+                        
+                    <dl class="row">
+                              
+                        <dt class="col-sm-2">src</dt>
+                        <dd class="col-sm-1">&rArr;</dd>
+                        <dd class="col-sm-4">Kontextmen&uuml;</dd>
+                        <dd class="col-sm-5"></dd>
+                              
+                        <dt class="col-sm-2"></dt>
+                        <dd class="col-sm-1">&rArr;</dd>
+                        <dd class="col-sm-4">New</dd>
+                        <dd class="col-sm-5"></dd>
+                              
+                        <dt class="col-sm-2"></dt>
+                        <dd class="col-sm-1">&rArr;</dd>
+                        <dd class="col-sm-4">Package</dd>
+                        <dd class="col-sm-5"></dd>
+                              
+                        <dt class="col-sm-2"></dt>
+                        <dd class="col-sm-1"></dd>
+                        <dd class="col-sm-4">Name</dd>
+                        <dd class="col-sm-5">de.domain.application.core</dd>
+                            
+                    </dl>
+                        
+                    <p></p>
+                          Anschlie&szlig;end wird das Paket selektiert und die Hauptklasse angelegt:
+    
+                    <p></p>
+                        
+                    <dl class="row">
+                              
+                        <dt class="col-sm-2">Package</dt>
+                        <dd class="col-sm-1">&rArr;</dd>
+                        <dd class="col-sm-4">New</dd>
+                        <dd class="col-sm-5"></dd>
+                              
+                        <dt class="col-sm-2"></dt>
+                        <dd class="col-sm-1">&rArr;</dd>
+                        <dd class="col-sm-4">Java Class</dd>
+                        <dd class="col-sm-5"></dd>
+                              
+                        <dt class="col-sm-2"></dt>
+                        <dd class="col-sm-1"></dd>
+                        <dd class="col-sm-4">Name</dd>
+                        <dd class="col-sm-5">Main</dd>
+                            
+                    </dl>
+                        
+                    <p></p>
+                          Die Frage, ob die neue Datei dem Git-Repository hinzugef&uuml;gt werden soll, wird bejaht.	
+      Um die Anwendung testen zu k&ouml;nnen, muss ein Quellcode-Rumpf in der Hauptklasse mit der Hauptmethode geschrieben werden.
+    
+                    <p></p>
+                        
+                    <pre>
+                        <code>
+      	package de.domain.application.core;
+      
+      	public class ApplicationMain {
+      
+      		public static void main(String[] args) {
+      			System.out.println("Hello Application - Main");
+      		}
+      
+      	}
+    </code>
+                    </pre>
+                        
+                    <h3>Konfiguration</h3>
+                        
+                    <p></p>
+                          Eine Laufzeit-Konfiguration wird definiert, um die Anwendung zu &uuml;bersetzen und auszuf&uuml;hren.
+    
+                    <p></p>
+                        
+                    <dl class="row">
+                              
+                        <dt class="col-sm-2">Run</dt>
+                        <dd class="col-sm-1">&rArr;</dd>
+                        <dd class="col-sm-4">Edit Configurations...</dd>
+                        <dd class="col-sm-5"></dd>
+                              
+                        <dt class="col-sm-2"></dt>
+                        <dd class="col-sm-1"></dd>
+                        <dd class="col-sm-4">Run/Debug Configurations</dd>
+                        <dd class="col-sm-5"></dd>
+                              
+                        <dt class="col-sm-2"></dt>
+                        <dd class="col-sm-1"></dd>
+                        <dd class="col-sm-4">Add new run configuration...</dd>
+                        <dd class="col-sm-5"></dd>
+                              
+                        <dt class="col-sm-2"></dt>
+                        <dd class="col-sm-1"></dd>
+                        <dd class="col-sm-4">Application</dd>
+                        <dd class="col-sm-5"></dd>
+                              
+                        <dt class="col-sm-2"></dt>
+                        <dd class="col-sm-1"></dd>
+                        <dd class="col-sm-4">Name</dd>
+                        <dd class="col-sm-5">Application</dd>
+                              
+                        <dt class="col-sm-2"></dt>
+                        <dd class="col-sm-1"></dd>
+                        <dd class="col-sm-4">Main Class</dd>
+                        <dd class="col-sm-5">ApplicationMain</dd>
+                            
+                    </dl>
+                        
+                    <p></p>
+                          Anschlie&szlig;end kann die Anwendung Apply und Run ausgef&uuml;hrt werden. Alternativ ist jederzeit eine Ausf&uuml;hrung wie folgt m&ouml;glich:
+    
+                    <p></p>
+                        
+                    <dl class="row">
+                              
+                        <dt class="col-sm-2">Run</dt>
+                        <dd class="col-sm-1">&rArr;</dd>
+                        <dd class="col-sm-4">Run 'Application'   (Shift + F10)</dd>
+                        <dd class="col-sm-5"></dd>
+                            
+                    </dl>
+                        
+                    <h3>Bibliotheken</h3>
+                        
+                    <p></p>
+                          Bibliotheken werden wie folgt eingebunden:
+    
+                    <p></p>
+                        
+                    <dl class="row">
+                              
+                        <dt class="col-sm-2">File</dt>
+                        <dd class="col-sm-1">&rArr;</dd>
+                        <dd class="col-sm-4">Project Structure...</dd>
+                        <dd class="col-sm-5"></dd>
+                              
+                        <dt class="col-sm-2"></dt>
+                        <dd class="col-sm-1">&rArr;</dd>
+                        <dd class="col-sm-4">
+                            <b>Project Structure-Dialog</b>
+                        </dd>
+                        <dd class="col-sm-5"></dd>
+                              
+                        <dt class="col-sm-2"></dt>
+                        <dd class="col-sm-1">&rArr;</dd>
+                        <dd class="col-sm-4">Project Settings</dd>
+                        <dd class="col-sm-5">Navigation</dd>
+                              
+                        <dt class="col-sm-2"></dt>
+                        <dd class="col-sm-1"></dd>
+                        <dd class="col-sm-4">Libraries</dd>
+                        <dd class="col-sm-5"></dd>
+                              
+                        <dt class="col-sm-2"></dt>
+                        <dd class="col-sm-1">&rArr;</dd>
+                        <dd class="col-sm-4">Add:</dd>
+                        <dd class="col-sm-5">+</dd>
+                              
+                        <dt class="col-sm-2"></dt>
+                        <dd class="col-sm-1"></dd>
+                        <dd class="col-sm-4">New Project Library</dd>
+                        <dd class="col-sm-5"></dd>
+                              
+                        <dt class="col-sm-2"></dt>
+                        <dd class="col-sm-1"></dd>
+                        <dd class="col-sm-4">Java</dd>
+                        <dd class="col-sm-5"></dd>
+                            
+                    </dl>
+                        
+                    <p></p>
+                          Die Auswahl der Bibliotheken erfolgt &uuml;ber einen Open-Dialog, der mit Apply und OK best&auml;tigt wird.
+      Es empfiehlt sich, die Libraries einzeln dazu zu binden, damit sie auch in der Programmbibliothek External Libraries 
+      sichtbar sind.
+    
+                    <p></p>
+                        
+                    <p></p>
+                          Folgende Bibliotheken des Logging-Pakets apache-log4j-2.25.3-bin sollen eingebunden werden:
+    
+                    <p></p>
+                        
+                    <ul>
+                        <li>log4j-api-2.25.3.jar</li>
+                        <li>log4j-core-2.25.3.jar</li>
+                    </ul>
+                        
+                    <h3>Properties</h3>
+                        
+                    <p></p>
+                          Properties sind applikationsspezifische Attributierungen (Key-Value-Paare). Sie werden in einer separaten Datei abgelegt:
+    
+                    <p></p>
+                        
+                    <dl class="row">
+                              
+                        <dt class="col-sm-2">application</dt>
+                        <dd class="col-sm-1">&rArr;</dd>
+                        <dd class="col-sm-4">New...</dd>
+                        <dd class="col-sm-5"></dd>
+                              
+                        <dt class="col-sm-2"></dt>
+                        <dd class="col-sm-1">&rArr;</dd>
+                        <dd class="col-sm-4">Directory</dd>
+                        <dd class="col-sm-5"></dd>
+                              
+                        <dt class="col-sm-2"></dt>
+                        <dd class="col-sm-1">&rArr;</dd>
+                        <dd class="col-sm-4">
+                            <b>New Directory-Dialog</b>
+                        </dd>
+                        <dd class="col-sm-5"></dd>
+                              
+                        <dt class="col-sm-2"></dt>
+                        <dd class="col-sm-1"></dd>
+                        <dd class="col-sm-4">Name:</dd>
+                        <dd class="col-sm-5">properties</dd>
+                            
+                    </dl>
+                        
+                    <p></p>
+                          Anschlie&szlig;end kann in dem Verzeichnis die Properties-Datei angelegt werden:
+    
+                    <p></p>
+                        
+                    <dl class="row">
+                              
+                        <dt class="col-sm-2">properties</dt>
+                        <dd class="col-sm-1">&rArr;</dd>
+                        <dd class="col-sm-4">New...</dd>
+                        <dd class="col-sm-5"></dd>
+                              
+                        <dt class="col-sm-2"></dt>
+                        <dd class="col-sm-1">&rArr;</dd>
+                        <dd class="col-sm-4">File</dd>
+                        <dd class="col-sm-5"></dd>
+                              
+                        <dt class="col-sm-2"></dt>
+                        <dd class="col-sm-1">&rArr;</dd>
+                        <dd class="col-sm-4">
+                            <b>New File-Dialog</b>
+                        </dd>
+                        <dd class="col-sm-5"></dd>
+                              
+                        <dt class="col-sm-2"></dt>
+                        <dd class="col-sm-1"></dd>
+                        <dd class="col-sm-4">Name:</dd>
+                        <dd class="col-sm-5">application.properties</dd>
+                            
+                    </dl>
+                        
+                    <p></p>
+                          Wichtig ist, dass das Verzeichnis properties, das auf der ersten Ebene der Applikation liegt, wie folgt markiert wird:
+    
+                    <p></p>
+                        
+                    <dl class="row">
+                              
+                        <dt class="col-sm-2">properties</dt>
+                        <dd class="col-sm-1">&rArr;</dd>
+                        <dd class="col-sm-4">Kontextmen&uuml;</dd>
+                        <dd class="col-sm-5"></dd>
+                              
+                        <dt class="col-sm-2"></dt>
+                        <dd class="col-sm-1">&rArr;</dd>
+                        <dd class="col-sm-4">Mark Directory as</dd>
+                        <dd class="col-sm-5"></dd>
+                              
+                        <dt class="col-sm-2"></dt>
+                        <dd class="col-sm-1">&rArr;</dd>
+                        <dd class="col-sm-4">Resources root</dd>
+                        <dd class="col-sm-5"></dd>
+                            
+                    </dl>
+                        
+                    <p></p>
+                          Die Markierung erlaubt es dem Build der IDE, das Verzeichnis in den Build-Pfad mitaufzunehmen.
+    
+                    <p></p>
+                      
+                </div>
+            </div>
+        </div>
+        <script src="http://localhost:8080/xdoc/resources/lib/angular.js"></script><script src="http://localhost:8080/xdoc/resources/lib/jquery-3.2.1.min.js"></script><script src="http://localhost:8080/xdoc/resources/lib/popper.min.js"></script><script src="http://localhost:8080/xdoc/resources/lib/bootstrap.min.js"></script><script src="http://localhost:8080/xdoc/resources/lib/bootstrap-toc.min.js"></script>
+    </body>
+</html>

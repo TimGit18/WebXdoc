@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone='yes'?>
+<document env="xpyth">
+
+  <main>
+    <topic name="Home" link="http://localhost:8080/xdoc/xpyth/html/xpyth.html"/>
+  </main>
+
+  <links>
+    <link type="stylesheet">http://localhost:8080/xdoc/resources/css/bootstrap.min.css</link>
+    <link type="stylesheet">http://localhost:8080/xdoc/resources/css/bootstrap-toc.min.css</link>
+    <link type="icon">http://localhost:8080/xdoc/resources/favicon.ico</link>
+  </links>
+
+  <scripts>
+    <script>http://localhost:8080/xdoc/resources/lib/angular.js</script>
+    <script>http://localhost:8080/xdoc/resources/lib/jquery-3.2.1.min.js</script>
+    <script>http://localhost:8080/xdoc/resources/lib/popper.min.js</script>
+    <script>http://localhost:8080/xdoc/resources/lib/bootstrap.min.js</script>
+    <script>http://localhost:8080/xdoc/resources/lib/bootstrap-toc.min.js</script>
+  </scripts>
+
+  <title>xpyth</title>
+  <author>Tim Schmitz</author>
+  <date>21.02.2024</date>
+
+  <content>
+    <headline>Python</headline>
+    <abstract>
+      Diese Seite beschreibt Elemente der Skriptsprache Python, die aufgrund ihres vielfältigen Einsatzes 
+      sich als wirkungsmächtigste und effektivste herausgestellt hat. 
+    </abstract>
+
+    <horizontal/>
+    <tableofcontent>
+      <item>
+        <html name="Start" link="http://localhost:8080/xdoc/xpyth/html/Start.html" type="content"/>
+        <pdf name="Als PDF-Dokument" link="http://localhost:8080/xdoc/xpyth/pdf/Start.pdf"/>
+      </item>
+      <item>
+        <html name="Typen" link="http://localhost:8080/xdoc/xpyth/html/Typen.html" type="content"/>
+        <pdf name="Als PDF-Dokument" link="http://localhost:8080/xdoc/xpyth/pdf/Typen.pdf"/>
+      </item>
+    </tableofcontent>
+  </content>
+</document>

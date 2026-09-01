@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone='yes'?>
+<document env="xtsc">
+
+  <main>
+    <topic name="Home" link="http://localhost:8080/xdoc/xtsc/html/xtsc.html"/>
+    <topic name="Thema" link="http://localhost:8080/xdoc/xtsc/html/Thema/Thema.html"/>
+    <topic name="Bereich" link="http://localhost:8080/xdoc/xtsc/html/Bereich/Bereich.html"/>
+  </main>
+
+  <links>
+    <link type="stylesheet">http://localhost:8080/xdoc/xtsc/css/bootstrap.min.css</link>
+    <link type="stylesheet">http://localhost:8080/xdoc/xtsc/css/bootstrap-toc.min.css</link>
+    <link type="icon">http://localhost:8080/xdoc/xtsc/img/favicon.svg</link>
+  </links>
+
+  <scripts>
+    <script>http://localhost:8080/xdoc/xtsc/lib/angular.js</script>
+    <script>http://localhost:8080/xdoc/xtsc/lib/jquery-3.2.1.min.js</script>
+    <script>http://localhost:8080/xdoc/xtsc/lib/popper.min.js</script>
+    <script>http://localhost:8080/xdoc/xtsc/lib/bootstrap.min.js</script>
+    <script>http://localhost:8080/xdoc/xtsc/lib/bootstrap-toc.min.js</script>
+  </scripts>
+
+  <title>Thema</title>
+  <author>Tim Schmitz</author>
+  <date>03.08.2023</date>
+
+  <content>
+    <headline>Thema</headline>
+    <abstract>
+      Dies ist die Test-Seite für die xdoc-Anwendung. Es werden einfache Strukturelemente vorgestellt. 
+      Die Überschrift referenziert auf die Domäne der Anwendung. Der Abstract ist eine Zusammenfassung des 
+      Themas und sollte möglichst kompakt sein. Abschließend folgt das Inhaltsverzeichnis mit Verweisen auf 
+      weitere Themen sowie auf einzelne Seiten. 
+    </abstract>
+
+    <horizontal/>
+    <tableofcontent>
+      <item>
+        <html name="Thema-Referenz" link="http://localhost:8080/xdoc/xtsc/html/Thema/Thema-Referenz.html" type="content"/>
+        <pdf name="Als PDF-Dokument" link="http://localhost:8080/xdoc/xtsc/pdf/Thema/Thema-Referenz.pdf"/>
+      </item>
+    </tableofcontent>
+  </content>
+</document>

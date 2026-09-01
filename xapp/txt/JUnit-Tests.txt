@@ -1,0 +1,65 @@
+JUnit-Tests
+===========
+Das Testen der Anwendungsmodule geschieht am besten über das Testframework JUnit. Im folgenden wird die Minimalkonfiguration und 
+die einfache Verweundung des Testframeworks beschrieben-.
+
+
+Test-Verzeichnis
+================
+Das globale Testverzeichnis der Applikation wird unterhalb der Ebene der Applikation angelegt.
+
+application		==>		New...
+				   ==>		Directory
+				   ==>		New Directory-Dialog
+						      Name:	 (test)
+
+Anschließend wird das Verzeichnis wie folgt markiert:
+
+Wichtig ist, dass das Verzeichnis properties, das auf der ersten Ebene der Applikation liegt, wie folgt markiert wird:
+
+test			==>		Kontextmenü
+				==>		Mark Directory as
+				==>		Test Sources Root
+
+Die Test-Struktur der Anwendung mit den neuen Test-Klassen sieht vereinfacht wie folgt aus:
+
+_
+application
+  --test
+    -- de
+      -- domain
+        -- application
+          -- config
+            -- ApplicationConfigTest.java
+_
+         
+Also eine neue Struktur.
+
+
+Bibliotheken
+============
+Analog den Logging-Bibliotheken werden die folgenden beiden JUnit-Testframework-Libraries eingebunden:
+
+	* junit-jupiter-api-5.6.1	
+	* junit-platform-commons-1.6.1
+
+
+Test-Klasse
+===========
+Die JUnit Test-Klasse hat einen möglichst ähnlichen Namen und einen analogen Paketpfad wie die Klasse, die unter diesem Test steht. 
+Ebenso sollten die Methoden der JUnit Test-Klasse entsprechend lautende Namen besitzen wie in dem folgenden Beispiel:
+
+ -------------------------------------------------------------------------------
+| Bezeichnung  | Source                       | JUnit Test                      |
+ -------------------------------------------------------------------------------
+| Klassen-Name | ApplicationConfig            | ApplicationConfigTest           |
+| Paket        | de.domain.application.config | de.domain.application.config    | 
+ -------------------------------------------------------------------------------
+Tabelle 1: Bezeichner von Original und Test-Klasse
+
+
+Voraussetzungen für Testfälle
+=============================
+Bevor Tests ausgeführt werden können, müssen in der Regel bestimmte Voraussetzungen erfüllt sein.
+
+

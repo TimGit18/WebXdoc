@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8" standalone='yes'?>
+<document env="xang">
+
+  <main>
+    <topic name="Home" link="http://localhost:8080/xdoc/xang/html/xang.html"/>
+  </main>
+
+  <links>
+    <link type="stylesheet">http://localhost:8080/xdoc/xang/css/bootstrap.min.css</link>
+    <link type="stylesheet">http://localhost:8080/xdoc/xang/css/bootstrap-toc.min.css</link>
+    <link type="icon">http://localhost:8080/xdoc/xang/img/favicon.svg</link>
+  </links>
+
+  <scripts>
+    <script>http://localhost:8080/xdoc/xang/lib/angular.js</script>
+    <script>http://localhost:8080/xdoc/xang/lib/jquery-3.2.1.min.js</script>
+    <script>http://localhost:8080/xdoc/xang/lib/popper.min.js</script>
+    <script>http://localhost:8080/xdoc/xang/lib/bootstrap.min.js</script>
+    <script>http://localhost:8080/xdoc/xang/lib/bootstrap-toc.min.js</script>
+  </scripts>
+
+  <title>Bausteine</title>
+  <author>Tim Schmitz</author>
+  <date>05.07.2023</date>
+
+  <content>
+    <headline>Bausteine einer Angular-Anwendung</headline>
+    <abstract>
+      Das Konzept der Angular-Entwicklung geht von einer starken Modularisierung aus, d.h. man 
+      arbeitet während der Entwicklung mit vielen Dateien und lokalen Einheiten, die aber nur 
+      eine eingeschränkte Funktionalität und nur einen bestimmten Datenraum benötigen. Am Ende des 
+      Build-Prozesses, wenn die Anwendung live geht, dann wird ohnehin alles in eine statische HTML-Seite 
+      und eine JavaScript-Datei zusammengefasst. 
+    </abstract>
+
+
+    <subheadline id="Angular-Bausteine">Angular-Bausteine</subheadline>
+
+    <text>
+      Zu einer Angular-Anwendung gehören mindestens zwei in TypeScript codifizierte Bausteine, die 
+      im Applikationsteil des Quellcodes der Anwendung organisiert sind.
+    </text>
+    <numlist>
+      <listitem>Das Angular-Hauptmodul (app.module.ts) </listitem>
+      <listitem>Die Angular-Hauptkomponente (app.component.ts)</listitem>
+    </numlist>
+
+
+    <text>
+      Dazu kommen noch die beiden weiteren folgenden Dateien:
+    </text>
+    <numlist>
+      <listitem>Die statische Hauptdatei der Anwendung (index.html)</listitem>
+      <listitem>Die hauptsächliche TypeScript-Datei der Anwendung (main.ts)</listitem>
+    </numlist>
+
+
+    <text>
+      Wie diese Bausteine platziert sind, kann man am ehesten in der folgenden Abbildung sehen:
+    </text>
+    <figure>
+      <image link="http://localhost:8080/xdoc/xang/img/Bausteine.svg" source="file:///C:/Users/Test/Daten/Web/xdoc/xang/img/Bausteine.svg"/>
+      <figurecaption class="figure-caption text-left">
+        Abbildung 1: Bausteine einer Angular-Anwendung
+      </figurecaption>
+    </figure>
+
+    <text>
+      Allerdings bestehen die Anwendungen nicht nur aus diesen Bausteinen, sondern es gibt in der 
+      Regel mehrere Angular-Module und Komponenten, die dann in anderen Paketen organisiert sind. 
+      Im Code repräsentieren diese Bausteine die Features, die der Benutzer später im Browser 
+      sehen wird.
+    </text>
+
+    <text>
+      Weitere Bausteine, die später behandelt werden, lauten:
+    </text>
+    <list>
+      <listitem>Services, in denen die Logik einer Anwendung behandelt wird</listitem>
+      <listitem>Pipes, mit denen Daten vor der Anzeige transformiert werden können</listitem>
+      <listitem>Direktiven oder Anweisungen</listitem>
+    </list>
+
+
+    <text>
+      Formal sind alle Angular-Bausteine per definitionem ECMAScript-Module, da sie in TypeScript 
+      geschrieben sind. Für sie gibt es zwei Möglichkeiten zu interagieren
+    </text>
+    <numlist>
+      <listitem>export: Mit diesem Schlüsselwort können Funktionen und Klassen aus einem Modul exportiert werden</listitem>
+      <listitem>import: Mit diesem Schlüsselwort können Konstrukte andere Module importiert und genutzt werden</listitem>
+    </numlist>
+
+
+    <subheadline id="Namenskonventionen">Namenskonventionen</subheadline>
+
+    <text>
+      Für die Benennung von Angular-Bausteinen gelten die folgenden Namenskonventionen. Angular-Bausteine haben immer 
+      zwei Namen:
+    </text>
+    <list>
+      <listitem>Den Namen der Datei, in der sich der Angular-Baustein befindet</listitem>
+      <listitem>Den Namen der Klasse, die den Angular-Baustein definiert</listitem>
+    </list>
+
+
+    <text>
+      Der Dateiname ist für die physische Identiät des Angular-Bausteins wichtig. In der Regel wird aber ein 
+      Angular-Baustein logisch über seinen Klassennamen identifiziert und referenziert. Der Dateiname ist im allgemeinen 
+      wie folgt aufgebaut:
+    </text>
+    <numlist>
+      <listitem>Name der Funktionalität des Angular-Bausteins, beginnend mit einem Kleinbuchstaben</listitem>
+      <listitem>Name des Typs des Angular-Bausteins wie etwa .component für eine Komponente, beginnend mit Punkt und Kleinbuchstaben</listitem>
+      <listitem>Dateiendung des Angular-Bausteins, in der Regel .ts für eine TypeScript-Datei</listitem>
+    </numlist>
+
+
+    <text>
+      Der Dateiname besitzt also keine Großbuchstaben und die identifizierenden Merkmale sind durch einen Punkt getrennt. 
+    </text>
+
+    <text>
+      Entsprechend gelten für den Klassennamen die folgenden Konventionen:
+    </text>
+    <numlist>
+      <listitem>Name der Funktionalität des Angular-Bausteins, beginnend mit einem Großbuchstaben</listitem>
+      <listitem>Name des Typs des Angular-Bausteins wie etwa Component für eine Komponente, beginnend mit einem Großbuchstaben</listitem>
+    </numlist>
+
+
+    <text>
+      Der Klassenamen separiert also seine Merkmale duch Groß- und Kleinschreibung und enthält keine Punkte. Dies wird in dem 
+      folgenden Beispiel sichtbar für eine Komponente, die Funktionalitäten für Benutzerobjekte bereithält:
+    </text>
+    <table>
+      <tableheadline>
+        <tablerow>
+          <tableheaditem>Name</tableheaditem>
+          <tableheaditem>Bezeichnung</tableheaditem>
+        </tablerow>
+      </tableheadline>
+      <tablebody>
+        <tablerow>
+          <tableitem>Dateinamen</tableitem>
+          <tableitem>users.component.ts</tableitem>
+        </tablerow>
+        <tablerow>
+          <tableitem>Klassennamen</tableitem>
+          <tableitem>UsersComponent</tableitem>
+        </tablerow>
+        <tablecaption>Tabelle 1: Beispiel für Dateinamen und Klassennamen</tablecaption>
+      </tablebody>
+    </table>
+  </content>
+</document>

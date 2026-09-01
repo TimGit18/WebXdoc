@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" standalone='yes'?>
+<document env="xcbm">
+
+  <main>
+    <topic name="Home" link="http://localhost:8080/xdoc/xcbm/html/xcbm.html"/>
+  </main>
+
+  <links>
+    <link type="stylesheet">http://localhost:8080/xdoc/resources/css/bootstrap.min.css</link>
+    <link type="stylesheet">http://localhost:8080/xdoc/resources/css/bootstrap-toc.min.css</link>
+    <link type="icon">http://localhost:8080/xdoc/resources/favicon.ico</link>
+  </links>
+
+  <scripts>
+    <script>http://localhost:8080/xdoc/resources/lib/angular.js</script>
+    <script>http://localhost:8080/xdoc/resources/lib/jquery-3.2.1.min.js</script>
+    <script>http://localhost:8080/xdoc/resources/lib/popper.min.js</script>
+    <script>http://localhost:8080/xdoc/resources/lib/bootstrap.min.js</script>
+    <script>http://localhost:8080/xdoc/resources/lib/bootstrap-toc.min.js</script>
+  </scripts>
+
+  <title>Übersicht</title>
+  <author>Tim Schmitz</author>
+  <date>25.10.2024</date>
+
+  <content>
+    <headline>Übersicht</headline>
+    <abstract>
+      Diese Seite beschreibt eine Übersicht der CBM-Anwendung. Es wird die Architektur und Komponentensicht der Anwendung
+      dargestellt ohne auf die Details der Verabeitung zu sehr einzugehen. 
+    </abstract>
+
+
+    <subheadline id="Fachlicher Hintergrund">Fachlicher Hintergrund</subheadline>
+
+    <text>
+      Das Chessbase-Magazin (CBM) erscheint mehrmals jährlich und beinhaltet unter anderem digitale fachliche Artikel zu Schacheröffnungen. Diese Artikel 
+      werden über einen Eröffnungsschlüssel namens ECO-Key identifiziert. Hierbei steht ECO für Encyclopedia of Chess Openings. Dies ist ein Index, der 
+      von dem Belgrader Verlag Chess Informant entwickelt wurde, um Eröffnungen zu klassifizieren und zu strukturieren. 
+    </text>
+
+    <text>
+      Die Anwendung soll aus allen verfügbaren Ausgaben diese Eröffnungsartikel extrahieren und sie in der Anwendungsdatenbank in einer geordneten Struktur persistieren. 
+      Hieraus soll ein Bericht im CSV-Format generiert werden, der alle erforderlichen Informationen enthält. Der Anwendungskontext besteht daher aus den folgenden Bereichen:
+    </text>
+    <numlist>
+      <listitem>Das Dateisystem, das sind Laufwerke und Verzeichnisse</listitem>
+      <listitem>Der Anwendungskern, das sind Skripte mit eigenständigen Aufgaben</listitem>
+      <listitem>Die Datenbank als Persistenzbereich für die verarbeiteten Daten</listitem>
+    </numlist>
+
+
+    <subheadline id="Architektur">Architektur</subheadline>
+
+    <text>
+      Dieser Abschnitt beschreibt die Architektur der Anwendung. Die Anwendung besteht aus einem Kern und Umsystemen. 
+    </text>
+    <list>
+      <listitem>Der Kern besteht aus drei Skripten, die in einer Python-Laufzeitumgebung prozessieren</listitem>
+      <listitem>Die Umsysteme sind das Dateisystem und die anwendungsspezifische Datenbank</listitem>
+    </list>
+
+
+    <text>
+      Die folgende Abbildung beschreibt das Zusammenspiel der Komponenten und skizziert im wesentlichen den Ablauf der 
+      Verarbeitung vom Start links oben bis zum Ende rechts unten. 
+    </text>
+    <figure>
+      <image link="http://localhost:8080/xdoc/xcbm/img/Architektur.svg" source="file:///C:/Users/Test/Daten/Web/xdoc/xcbm/img/Architektur.svg"/>
+      <figurecaption class="figure-caption text-left">
+        Abbildung 1: Architektur der Anwendung
+      </figurecaption>
+    </figure>
+
+    <subheadline id="Verarbeitung">Verarbeitung</subheadline>
+
+    <text>
+      Die Verarbeitung enthält folgende Schritte: 
+    </text>
+    <numlist>
+      <listitem>Der Parser liest Informationen aus den CBM-Magazinen, verbindet diese mit der Konfiguration der Eröffnungsschlüssel und schreibt diese Informationen in Dateien auf dem Dateisystem</listitem>
+      <listitem>Der Importeur überträgt diese Informationen aus dem Dateisystem in die Datenbank, indem er zuerst die Tabellen initialisiert und danach diese befüllt</listitem>
+      <listitem>Der Exporteur baut den Ziel-Bericht auf und befüllt diesen mit Daten aus der Datenbank</listitem>
+    </numlist>
+
+  </content>
+</document>

@@ -1,0 +1,626 @@
+<html lang="de">
+    <head>
+        <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>Anwendungsarchitektur</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="http://localhost:8080/xdoc/resources/css/bootstrap.min.css">
+        <link rel="stylesheet" href="http://localhost:8080/xdoc/resources/css/bootstrap-toc.min.css">
+        <link rel="icon" href="http://localhost:8080/xdoc/resources/favicon.ico">
+    </head>
+    <body data-spy="scroll" data-target="#toc">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-2 bg-light">
+                    <figure class="figure">
+                        <img class="figure-img img-fluid rounded" src="http://localhost:8080/xdoc/resources/getsitelogo.png">
+                    </figure>
+                    <nav id="toc" class="sticky-top" data-toggle="toc"></nav>
+                </div>
+                <div class="col-sm-10">
+                    <nav class="navbar navbar-expand-lg sticky-top navbar-light bg-light">
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav mr-auto">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="http://localhost:8080/xdoc/xapp/html/xapp.html">Home</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                    <p></p>
+                        
+                    <h2>Anwendungsarchitektur</h2>
+                        
+                    <p></p>
+                          Jede Anwendung ben&ouml;tigt eine Architektur, also eine Sturktur und einen Plan, indem das innere Ger&uuml;st der Anwendung organisiert ist. Die Architektur
+      einer Anwendung sollte so stabil und nachhaltig sein, dass sie sich langfristig nicht &auml;ndert. Was sich in der Regel &auml;ndert, sind Funktionen und 
+      Bedingungen, die von au&szlig;erhalb, d.h. von der Umgebung und dem Systemkontext, stammen. 
+    
+                    <p></p>
+                        
+                    <h3>&Uuml;bersicht</h3>
+                        
+                    <p></p>
+                          Die folgende &Uuml;bersicht zeigt eine einfache Anwendungsarchitektur, deren Klassenger&uuml;st aus sieben Klassen und drei Paketen 
+      besteht. 
+    
+                    <p></p>
+                        
+                    <figure class="figure">
+                        <img class="figure-img img-fluid rounded" src="http://localhost:8080/xdoc/xapp/img/Anwendungsarchitektur.svg">
+                        <figcaption class="figure-caption text-left">
+        Abbildung 1: Anwendungsarchitektur
+      </figcaption>
+                    </figure>
+                        
+                    <p></p>
+                          Der Benutzer (Akteur) startet die Anwendung, indem er &uuml;ber das Exekutionsmodul (application.bat) die Hauptklasse der Anwendung Main ruft. 
+      Die Hauptmethode main() der Hauptklasse initialisiert zun&auml;chst den Systemkontext. Dazu benutzt sie die Klasse Property, welche die Datei mit den 
+      Anwendungseigenschaften, die in der Datei application.properties gespiechert sind, lokalisiert und anschlie&szlig;end diese l&auml;dt. Hiernach kann die Hauptklasse 
+      verschiedene System-Properties wie den Rechnernamen und den davon abh&auml;ngigen Logging-Pfad bestimmen. Anschlie&szlig;end wird der Logger instantiiert und die Steuerung 
+      an die eigentlich Anwendungssteuerung, die Klasse Control mit ihrer Hauptmethode run() weitergegeben. 
+    
+                    <p></p>
+                        
+                    <p></p>
+                          Die Klasseen sind in folgenden Paketen organisiert:
+    
+                    <p></p>
+                        
+                    <ul>
+                        <li>de.timdomain.application.control: dieses Paket beinhaltet Hauptklasse und Anwendungssteuerung</li>
+                        <li>de.timdomain.application.schema: dieses Paket beinhaltet das Dom&auml;nen- und Tabellen-Schema</li>
+                        <li>de.timdomain.application.util: dieses Paket beinhaltet Hilfsklassen wie Connector und Property-Klassen</li>
+                    </ul>
+                        
+                    <p></p>
+                          Eigenst&auml;ndig von der Anwendung, aber mit ihr verbunden sind Komponenten des Datei-Systems wie die Properties oder die Datenbank.
+    
+                    <p></p>
+                        
+                    <p></p>
+                          Generell werden folgende Konventionen verwendet:
+    
+                    <p></p>
+                        
+                    <ul>
+                        <li>Alle Klassen sind in der Regel public</li>
+                        <li>Alle Methoden sind public und static</li>
+                        <li>Alle Variablen und Konstanten sind private und static</li>
+                    </ul>
+                        
+                    <p></p>
+                          In begr&uuml;ndeten Ausnahmef&auml;llen werden auch Instanzmethoden oder der Modifier protected verwendet. 
+    
+                    <p></p>
+                        
+                    <h3>Hauptklasse</h3>
+                        
+                    <p></p>
+                          Die Klasse Main ist die Hauptklasse der Anwendung. Sie inspiziert die System-Umgebung der Anwendung und legt in Abh&auml;ngigkeit von der Umgebung fest, 
+      wohin die Anwendung gelogget wird. Inhaltlich leistet die Hauptklasse nichts, sondern delegiert die Kontrolle an die Anwendungssteuerung Control.
+    
+                    <p></p>
+                        
+                    <p></p>
+                          Die Hauptmethode der Hauptklasse hei&szlig;t main() und startet die Anwendung. Sie initialisiert den Umgebungskontext, setzt die System-Properties f&uuml;r den 
+      Rechnernamen und die Logging-Pfad aufgrund der initialisierten Daten und schreibt das so definierte Logging. 
+    
+                    <p></p>
+                        
+                    <pre>
+                        <code>
+        public static void main(String[] args) {
+      
+          // Initialisierung
+          initialize();
+      
+          // Setzen der System-Properties
+          String computerName = getHostName();
+          String logPath = setLogPath(computerName);
+      
+          // Parameter, um den Workflow zu steuern
+          Logger LOG = LogManager.getLogger(MainRun.class.getName());
+          LOG.trace("LogPath: " + logPath);
+      
+          // Aufruf der Anwendung
+          Control.run(computerName);
+        }
+    </code>
+                    </pre>
+                        
+                    <p></p>
+                          Die Initialisierungsmethode hei&szlig;t initialize(). Sie setzt die Propiertes der Anwendung und l&auml;dt sie. Dann werden die m&ouml;glichen Computernamen f&uuml;r alle 
+      Rechner-Varianten und ihre zugeh&ouml;rigen Logging-Pfade ermittelt sowie eine Fehlermeldung.
+    
+                    <p></p>
+                        
+                    <pre>
+                        <code>
+        public static void initialize() {
+      
+          // Application Properties setzen und laden
+          ApplicationProperty.setProperties();
+          ApplicationProperty.load();
+      
+          // Computernamen ermitteln
+          META_PC = ApplicationProperty.getMetaPC();
+          TEST_PC = ApplicationProperty.getTestPC();
+      
+          // Logging-Pfade ermitteln
+          LOG_PATH_META_PC = ApplicationProperty.getLogPathMeta();
+          LOG_PATH_TEST_PC = ApplicationProperty.getLogPathTest();
+      
+          // Error Message ermitteln
+          ERROR_HOST = ApplicationProperty.getErrorHost();
+      }
+    </code>
+                    </pre>
+                        
+                    <p></p>
+                          Zus&auml;tzlich zu diesen beiden Methoden gibt es noch die Methoden getHostName() und setLogPath(). Die Methode getHostName() ermittelt den Rechnernamen
+      aus dem Umgebungskontext. Dabei benutzt sie die Systemklasse InetAddress. Da zu diesem Zeitpunkt noch kein Logger initialisiert wurde, muss eine 
+      Ausnahmebehandlung durch die System-Error-Message erfolgen. 
+    
+                    <p></p>
+                        
+                    <pre>
+                        <code>
+        public static String getHostName() {
+          String hostName = "";
+      
+          // Den Rechnernamen aus der Umgebung holen
+          try {
+            hostName = InetAddress.getLocalHost().getHostName();
+          } catch (IOException ioException) {
+            System.err.println(ioException.getMessage());
+          }
+          return hostName;
+        }
+    </code>
+                    </pre>
+                        
+                    <p></p>
+                          Die Methode setLogPath() setzt den Logging Path abh&auml;nging vom Rechnernamen. Dabei wird der Computername als Parameter &uuml;bergeben. In Abh&auml;ngikeit vom 
+      ben&ouml;tigt wird. Auch hier muss eine Fehlermeldung noch mit der System-Error-Message erfolgen.
+    
+                    <p></p>
+                        
+                    <pre>
+                        <code>
+        public static String setLogPath(String computerName) {
+          String logPath = "";
+      
+          // Abfrage des Rechnernamens und setzen des Logging Pfads
+          if (TIM_PC.equals(computerName)) {
+            logPath = LOG_PATH_TIM_PC;
+          } else if (META_PC.equals(computerName)) {
+            logPath = LOG_PATH_META_PC;
+          } else if (TEST_PC.equals(computerName)) {
+            logPath = LOG_PATH_TEST_PC;
+          } else {
+            System.err.println(ERROR_HOST);
+          }
+          
+          // Setzen des System Logging-Pfades
+          System.setProperty("log.path", logPath);
+          return logPath;
+        }
+    </code>
+                    </pre>
+                        
+                    <h3>Eigenschaftenklasse</h3>
+                        
+                    <p></p>
+                          Die Klasse ApplicationProperty ist die Property-Klasse der Anwendung. Sie l&auml;dt die Properties, setzt die Keys und ermittelt f&uuml;r jeden Key 
+      das entsprechende Property, d.h. den Eigenschaftswert. Dazu liest die Daten aus der Eigenschaftendatei application.properties aus. Diese Daten sind in 
+      Key-Value-Formaten organisiert. 
+    
+                    <p></p>
+                        
+                    <p></p>
+                          Die Datei application.properties hat folgendes Aussehen:
+    
+                    <p></p>
+                        
+                    <pre>
+                        <code>
+        tim.pc = Tim-PC
+        meta.pc = 16H0054
+        test.pc = DESKTOP-LERLCJ6
+        error.host = Kein Computername definiert
+        logpath.tim = C:\\Users\\Tim\\Daten\\Java\\Applications\\application\\logs
+        logpath.meta = C:\\Users\\TSZ\\Daten\\Java\\Applications\\application\\logs
+        logpath.test = C:\\Users\\test\\Daten\\Java\\Applications\\application\\logs
+    </code>
+                    </pre>
+                        
+                    <p></p>
+                          Die Keys, &uuml;ber die die Properties referenziert werden, bestehen aus zwei oder mehr zusammenh&ouml;rigen Begriffen, die jeweils durch Punkte miteinander
+      verbunden werden. Die Values bestehen jeweils aus einem String, der technisch als endlich lange Folge von character-Zeichen realisiert wird. 
+    
+                    <p></p>
+                        
+                    <p></p>
+                          Die Methode setProperties() definiert das Property-File samt Pfad, um sp&auml;ter darauf zugreifen zu k&ouml;nnen. Daf&uuml;r wird das Verzeichnis initialisiert,
+      in dem die Properties-Datei liegt. In diesem Fall ist es das aktuelle Verzeichnis, in dem die Anwendung l&auml;uft ("user.dir") und darunter das 
+      Unterverzeichnis properties - dieselbe Struktur muss deswegen auch in der Ablaufumgebung abgebildet werden. Anschlie&szlig;end wird die Properties-Datei als
+      File insantiiert sowie ein Properties-Objekt. Im letzten Schritt wird das Setzen der Keys vorgenommen. 
+    
+                    <p></p>
+                        
+                    <pre>
+                        <code>
+        public static void setProperties() {
+          // Statische Variablen f&uuml;r den Zugriff auf die Properties
+          String directory = System.getProperty("user.dir") + File.separator + "properties";
+          file = new File(directory, "application.properties");
+          properties = new Properties();
+          setKeys();
+        }
+    </code>
+                    </pre>
+                        
+                    <p></p>
+                          Die Methode setKey() setzt f&uuml;r jedes Property die Keys, um sp&auml;ter einen Value f&uuml;r den jeweiligen Key auszuwerten. Dabei m&uuml;ssen die Keys der 
+      Properties-Datei bekannt sein und benutzt werden. 
+    
+                    <p></p>
+                        
+                    <pre>
+                        <code>
+        private static void setKeys() {
+          timPC = "tim.pc";
+          metaPC = "meta.pc";
+          testPC = "test.pc";
+          errorHost = "error.host";
+          logPathTim = "logpath.tim";
+          logPathMeta = "logpath.meta";
+          logPathTest = "logpath.test";
+        }
+    </code>
+                    </pre>
+                        
+                    <p></p>
+                          Die Methode load(), die anschlie&szlig;end von der Hauptklasse der Anwendung aufgerufen wird, erzeugt einen Eingabestrom mit Dateinamen und l&auml;dt die
+      Properties des Projekts &uuml;ber die Entsprechende Objektmethode. Da es sich um eine Datei-Operation handelt, muss eine Eingabe-Ausgabe-Ausnahmebehandlung
+      hinzugef&uuml;gt werden. Damit sind alle Properties der Eigenschaftendatei f&uuml;r die Anwendung zugreifbar. 
+    
+                    <p></p>
+                        
+                    <pre>
+                        <code>
+        public static void load() {
+          try {
+            FileInputStream inputStream = new FileInputStream(file);
+            properties.load(inputStream);
+          } catch (IOException ioException) {
+            ioException.getMessage();
+          }
+        }
+    </code>
+                    </pre>
+                        
+                    <p></p>
+                          Die Getter der Property-Klasse haben alle dasselbe Aussehen und geben den Value des &uuml;ber den Key referenzierten Properties zur&uuml;ck. Damit werden die 
+      Getter zu einfachen Einzeilern. 
+    
+                    <p></p>
+                        
+                    <pre>
+                        <code>
+        public static String getTimPC() {
+          return properties.getProperty(timPC);
+        }
+    </code>
+                    </pre>
+                        
+                    <h3>Datenbank-Eigenschaftenklasse</h3>
+                        
+                    <p></p>
+                          Die Klasse DatabaseProperty ist die Property-Klasse der Datenbank. Sie l&auml;dt die Properties f&uuml;r den Datebank-Zugriff, setzt die Keys und ermittelt f&uuml;r jeden Key 
+      das entsprechende Database-Property, d.h. den Eigenschaftswert. Dazu liest die Daten aus der Eigenschaftendatei database.properties aus. Diese Daten sind in 
+      Key-Value-Formaten organisiert. Man erkennt schnell, dass die Klasse DatabaseProperty sich genauso verh&auml;lt wie die Klasse ApplicationProperty und daher dieselben
+      Methoden und Zugriffe verwendet.
+    
+                    <p></p>
+                        
+                    <p></p>
+                          Die Datei database.properties hat dabei folgendes Aussehen
+    
+                    <p></p>
+                        
+                    <pre>
+                        <code>
+        database.user=tim
+        database.password.test=TimSql#xxxx
+        database.password.meta=TimSql#yyyy
+        database.server.test=DESKTOP-LERLCJ6
+        database.server.meta=22H0566
+        database.driver=com.microsoft.sqlserver.jdbc.SQLServerDriver
+        database.port=jdbc:sqlserver://localhost:1434
+    </code>
+                    </pre>
+                        
+                    <p></p>
+                          Die Methode setKey() setzt analog f&uuml;r jedes Property die Keys, um sp&auml;ter einen Value f&uuml;r den jeweiligen Key auszuwerten. Dabei m&uuml;ssen die Keys der 
+      Properties-Datei bekannt sein und benutzt werden. 
+    
+                    <p></p>
+                        
+                    <pre>
+                        <code>
+        private static void setKeys() {
+      
+          // Login
+          databaseUser = "database.user";
+          databasePasswordTest = "database.password.test";
+          databasePasswordMeta = "database.password.meta";
+          databaseServerTest = "database.server.test";
+          databaseServerMeta = "database.server.meta";
+      
+          // Connector
+          databaseDriver = "database.driver";
+          databasePort = "database.port";
+        }
+    </code>
+                    </pre>
+                        
+                    <p></p>
+                          Die Methode load() und die Getter dieser Eigenschaftenklasse arbeiten identisch wie in der Klasse ApplicationProperty.
+    
+                    <p></p>
+                        
+                    <h3>Verbindungsklasse</h3>
+                        
+                    <p></p>
+                          Die Verbindungsklasse Connector stellt Methoden bereit, mit denen sich die Anwendung mit der Datenbank verbinden und von der Datenbank auch 
+      wieder trennen kann. Wie die beiden Property-Klassen ist sie Teil des Util-Pakets, da sie nicht-funktionale Anforderungen realisiert. Daf&uuml;r 
+      m&uuml;ssen zun&auml;chst die java.sql-Pakete importiert. Anschlie&szlig;end kann der Datenbank-Treiber mit der Methode loadDriver() geladen werden.
+    
+                    <p></p>
+                        
+                    <pre>
+                        <code>
+        public static void loadDriver(String databaseDriver) {
+          try {
+              Class.forName(databaseDriver);
+              LOG.trace("Datenbank-Treiber laden: ");
+              LOG.trace(databaseDriver);
+          } catch (ClassNotFoundException classNotFoundException) {
+              LOG.error("Class Not Found: ");
+              LOG.error(classNotFoundException.getMessage());
+          }
+        }
+    </code>
+                    </pre>
+                        
+                    <p></p>
+                          Die Methode connect() stellt eine Verbindung zur Datenbank her. Daf&uuml;r ben&ouml;tigt die Methode den Datenbank-Lokator, den Datenbank-Benutzer und 
+      sein Passwort. Der R&uuml;ckgabewert dieser Methode ist die Verbindung zur Datenbank. 
+    
+                    <p></p>
+                        
+                    <pre>
+                        <code>
+        public static Connection connect(String databaseURL, String databaseUser, String databasePassword) {
+          Connection connection = null;
+          try {
+              connection = DriverManager.getConnection(databaseURL, databaseUser, databasePassword);
+              LOG.trace("Zur Datenbank verbinden: ");
+              LOG.trace(databaseURL);
+          } catch (SQLException sqlException) {
+              LOG.error("SQL-Exception: ");
+              LOG.error(sqlException.getMessage());
+          }
+          return connection;
+        }
+    </code>
+                    </pre>
+                        
+                    <p></p>
+                          Abschlie&szlig;end definiert die Methode closeConnection() die Trennung von der Datenbank. Daf&uuml;r ben&ouml;tigt die Methode die Verbindung zur 
+      Datenbank als &Uuml;bergabe-Parameter. 
+    
+                    <p></p>
+                        
+                    <pre>
+                        <code>
+        public static void closeConnection(Connection connection) {
+          try {
+              if (connection != null) connection.close();
+          } catch (SQLException sqlException) {
+              LOG.trace("SQL-Exception: ");
+              LOG.trace(sqlException.getMessage());
+          } finally {
+              LOG.trace("Datenbank-Verbindung trennen");
+          }
+        }
+    </code>
+                    </pre>
+                        
+                    <h3>Dom&auml;nen-Schema</h3>
+                        
+                    <p></p>
+                          Das Dom&auml;nen-Schema repr&auml;sentiert in formaler Weise einen Wertebreich, dessen Daten strukturiert sind. In diesem Fall ist die Dom&auml;ne die spezifische 
+      Datenbank des Relationalen Datenbank-Managementsystems SQL Server, hier genannt "CBM". 
+    
+                    <p></p>
+                        
+                    <p></p>
+                          Da der Connector nicht direkt von der Anwendung angesprochen werden soll, &uuml;bernimmt diese Aufgabe das Dom&auml;nen-Schema. Dieses wird seinerseits von der 
+      Anwendungssteuerung gerufen. Die Methode getConnection() l&auml;dt also via des Connectors den Datenbank-Treiber und stellt eben damit auch die Verbindung zur Datenbank her.
+    
+                    <p></p>
+                        
+                    <pre>
+                        <code>
+        public static void getConnection(String databaseDriver, String databasePort, String databaseUser,
+                                         String databasePassword) {
+          LOG.trace("Aufbau der SQL Server Connection...");
+          Connector.loadDriver(databaseDriver);
+          sqlServerConnection = Connector.connect(databasePort + ";databaseName=CBM", databaseUser,
+                  databasePassword);
+        }
+    </code>
+                    </pre>
+                        
+                    <p></p>
+                          Enstprechend ruft die Methode closeConnection() die gleichnamige Methode des Connectors und beendet die Verbindung mit der Datenbank.
+    
+                    <p></p>
+                        
+                    <pre>
+                        <code>
+        public static void closeConnection() {
+          LOG.trace("close SQL Server Connection...");
+          Connector.closeConnection(sqlServerConnection);
+        }
+    </code>
+                    </pre>
+                        
+                    <h3>Tabellen-Schema</h3>
+                        
+                    <p></p>
+                          Das Tabelle-Schema repr&auml;sentiert eine Relation der Datenbank. Hier dient es dazu, einen lesenden Zugriff auf die Datenbank programmatisch zu erm&ouml;glichen. 
+      Es besteht aus einer einzigen Methode selectAllFromTable(), die eine Multiselect-Query auf einer Tabelle der Datenbank realisiert. Erst an dieser Stelle
+      wird natives SQL verwendet.
+    
+                    <p></p>
+                        
+                    <pre>
+                        <code>
+        public static void selectAllFromTable() {
+          Statement statement;
+          ResultSet resultSet;
+          String selection = "select id, ecokey from CBM.dbo.ECO";
+      
+          try {
+            statement = sqlServerConnection.createStatement();
+            resultSet = statement.executeQuery(selection);
+            while(resultSet.next()) {
+              String eco_id  = resultSet.getString("ID");
+              String eco_key = resultSet.getString("ECOKEY");
+              LOG.trace(eco_id + ":" + eco_key);
+              }
+          }
+          catch(SQLException sqlException ) {
+            System.err.println(sqlException.getMessage());
+          }
+        }
+    </code>
+                    </pre>
+                        
+                    <h3>Anwendungssteuerung</h3>
+                        
+                    <p></p>
+                          Die Klasse Control repr&auml;sentiert die Anwendungssteuerung der Anwendung und ist damit die wichtigste Klasse der Anwenndung. Sie ist in diesem Fall eine leere H&uuml;lle, 
+      die eigentlich nur zu Delegationszwecken besteht, aber ein Bindeglied zur Datenbank und Datenverarbeitung darstellt. Dabei is die r&uuml;ckgabelose und parameterfreie Methode 
+      run() die Hauptmethode der Anwendungssteuerung, die von der Hauptmethode der Hauptklasse gerufen wird. An dieser Stelle wird die fachliche und technische Logik der Anwendung 
+      gesteuert. 
+    
+                    <p></p>
+                        
+                    <pre>
+                        <code>
+        public static void run(String computerName) {
+          LOG = LogManager.getLogger(Control.class.getName());
+          password =  initialize(computerName);
+          start(password);
+          process();
+          complete();
+        }
+    </code>
+                    </pre>
+                        
+                    <p></p>
+                          Diese Methode ruft vier Subroutinen, um die Steuerung zu initialisieren, die Verarbeitung zu beginnen, durchzuf&uuml;hren und abzuschlie&szlig;en. Die Initialisierung wird von der Methode
+      initialize() vorgenommen, die die Datenbank-Properties setzt und l&auml;dt sowie in Abh&auml;ngigkeit von dem Rechnernamen das zugeh&ouml;rige Passwort setzt, welches gleichzeitig auch der 
+      R&uuml;ckgabewert der Methode ist.
+    
+                    <p></p>
+                        
+                    <pre>
+                        <code>
+        public static String initialize(String computerName) {
+      
+          // Database-Properties setzen und laden
+          DatabaseProperty.setProperties();
+          DatabaseProperty.load();
+      
+          // Werte laden
+          DATABASE_USER = DatabaseProperty.getDatabaseUser();
+          DATABASE_PASSWORD_TEST = DatabaseProperty.getDatabasePasswordTest();
+          DATABASE_PASSWORD_META = DatabaseProperty.getDatabasePasswordMeta();
+          DATABASE_SERVER_TEST = DatabaseProperty.getDatabaseServerTest();
+          DATABASE_SERVER_META = DatabaseProperty.getDatabaseServerMeta();
+          DATABASE_DRIVER = DatabaseProperty.getDatabaseDriver();
+          DATABASE_PORT = DatabaseProperty.getDatabasePort();
+      
+          // Abfrage des Rechnernamens und setzen des Passworts
+          if (DATABASE_SERVER_META.equals(computerName)) {
+            password = DATABASE_PASSWORD_META;
+        } else if (DATABASE_SERVER_TEST.equals(computerName)) {
+            password = DATABASE_PASSWORD_TEST;
+          } else {
+            LOG.error("Keine Server definiert");
+          }
+      
+          return password;
+        }
+    </code>
+                    </pre>
+                        
+                    <p></p>
+                          Anschlie&szlig;end ruft die Hauptroutine die Start-Methode start() mit dem Datenbank-Passwort als Argument. Die Start-Methode verwendet das Dom&auml;nen-Schema und stellt eine 
+      Verbindung zur Datenbank her. 
+    
+                    <p></p>
+                        
+                    <pre>
+                        <code>
+        public static void start(String databasePassword) {
+          LOG.trace("Starten der Anwendungssteuerung");
+          Domain.getConnection(DATABASE_DRIVER, DATABASE_PORT, DATABASE_USER, databasePassword);
+          LOG.trace("Verbinden mit der Datenbank");
+        }
+    </code>
+                    </pre>
+                        
+                    <p></p>
+                          Im n&auml;chsten Schritt wird die Anwendungssteuerung durch die Methode process() verarbeitet. Diese Methode ruft das Tabellen-Schema, um eine einfache Selektion auf der Datebank
+      auszuf&uuml;hren.
+    
+                    <p></p>
+                        
+                    <pre>
+                        <code>
+        public static void process() {
+          LOG.trace("Verarbeiten der Anwendungssteuerung");
+          Table.selectAllFromTable();
+          LOG.trace("Lesen der Datenbank");
+        }
+    </code>
+                    </pre>
+                        
+                    <p></p>
+                          Den Abschluss der Anwendungssteuerung bildet die Methode complete(), welche &uuml;ber das Dom&auml;nen-Schema die Verbindung zur Datenbank wieder trennt. 
+    
+                    <p></p>
+                        
+                    <pre>
+                        <code>
+        public static void complete() {
+          LOG.trace("Beenden der Anwendungssteuerung");
+          Domain.closeConnection();
+          LOG.trace("Trennen der Datenbank");
+        }
+    </code>
+                    </pre>
+                      
+                </div>
+            </div>
+        </div>
+        <script src="http://localhost:8080/xdoc/resources/lib/angular.js"></script><script src="http://localhost:8080/xdoc/resources/lib/jquery-3.2.1.min.js"></script><script src="http://localhost:8080/xdoc/resources/lib/popper.min.js"></script><script src="http://localhost:8080/xdoc/resources/lib/bootstrap.min.js"></script><script src="http://localhost:8080/xdoc/resources/lib/bootstrap-toc.min.js"></script>
+    </body>
+</html>

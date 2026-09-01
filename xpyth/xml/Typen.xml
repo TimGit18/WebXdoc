@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="utf-8" standalone='yes'?>
+<document env="xpyth">
+
+  <main>
+    <topic name="Home" link="http://localhost:8080/xdoc/xpyth/html/xpyth.html"/>
+  </main>
+
+  <links>
+    <link type="stylesheet">http://localhost:8080/xdoc/resources/css/bootstrap.min.css</link>
+    <link type="stylesheet">http://localhost:8080/xdoc/resources/css/bootstrap-toc.min.css</link>
+    <link type="icon">http://localhost:8080/xdoc/resources/favicon.ico</link>
+  </links>
+
+  <scripts>
+    <script>http://localhost:8080/xdoc/resources/lib/angular.js</script>
+    <script>http://localhost:8080/xdoc/resources/lib/jquery-3.2.1.min.js</script>
+    <script>http://localhost:8080/xdoc/resources/lib/popper.min.js</script>
+    <script>http://localhost:8080/xdoc/resources/lib/bootstrap.min.js</script>
+    <script>http://localhost:8080/xdoc/resources/lib/bootstrap-toc.min.js</script>
+  </scripts>
+
+  <title>Typen</title>
+  <author>Tim Schmitz</author>
+  <date>21.02.2024</date>
+
+  <content>
+    <headline>Objekttypen</headline>
+    <abstract>
+      Der Objektbegriff ist universell im Sprachkonzept von Python. Objekte sind entweder Built-In-Konstrukte der Sprache oder 
+      eigendefiniert. Zusammen mit dem Objektbegriff sind die dazugehörigen Operationen zu sehen. 
+    </abstract>
+
+
+    <subheadline id="Konzeptionelle Hierarchie">Konzeptionelle Hierarchie</subheadline>
+
+    <text>
+      Python-Programme können gemäß folgender Reihenfolge in immer einfachere Bestandteile dekomponiert werden:
+    </text>
+    <numlist>
+      <listitem>Programme bestehen aus Modulen</listitem>
+      <listitem>Module enthalten Statements oder Programm-Anweisungen</listitem>
+      <listitem>Anweisungen enthalten Ausdrücke </listitem>
+      <listitem>Ausdrücke erzeugen und verarbeiten Objekte</listitem>
+    </numlist>
+
+
+    <text>
+      Dabei sind Built-In-Konstrukte eine strukturelle Hilfe, da sie vielfach Routinearbeiten übernehmen wie die Auslagerung und 
+      Allokation von Speichern, die Implementierung von Such- und Zugriffsalgorithmen usw. So haben sie weitere Vorteile wie 
+    </text>
+    <list>
+      <listitem>Einfachere Codierung für viele Problemdomänen wie Collections (Listen) oder Such-Tabellen (Dictionaries)</listitem>
+      <listitem>Selbstentwickelte Erweiterungen basieren oft auf eingebauten Datentypen</listitem>
+      <listitem>Effizientere Lösungen statt selbst programmierter Varianten</listitem>
+      <listitem>Standardisierung</listitem>
+    </list>
+
+
+    <subheadline id="Elementare Objekttypen">Elementare Objekttypen</subheadline>
+
+    <text>
+      Die folgende Tabelle umfasst die elementaren Objekttpyen in Python. Darunter versteht man nicht nur die elementaren Datentypen, 
+      sondern auch komplexere, eingebaute Objekttpyen wie Listen oder Dictionaries sowie höhere Abstraktionsstufen.
+    </text>
+    <table>
+      <tableheadline>
+        <tablerow>
+          <tableheaditem>Objekttyp</tableheaditem>
+          <tableheaditem>Beispiele für Repräsentanten</tableheaditem>
+        </tablerow>
+      </tableheadline>
+      <tablebody>
+        <tablerow>
+          <tableitem>Zahl</tableitem>
+          <tableitem>1234, 3,1415m 3+4j, 0b111, Decimal()</tableitem>
+        </tablerow>
+        <tablerow>
+          <tableitem>String</tableitem>
+          <tableitem>'Spam', "Bob's", b'a\x01c'</tableitem>
+        </tablerow>
+        <tablerow>
+          <tableitem>Listen</tableitem>
+          <tableitem>[1,2,3,4,5], list(range(10))</tableitem>
+        </tablerow>
+        <tablerow>
+          <tableitem>Dictionaries</tableitem>
+          <tableitem>{'#1' : 'spam', '#2' : 'yum'}, dict(hours=10)</tableitem>
+        </tablerow>
+        <tablerow>
+          <tableitem>Dateien</tableitem>
+          <tableitem>open('file.txt'), open(r'C:\text.bin','wb')</tableitem>
+        </tablerow>
+        <tablerow>
+          <tableitem>Mengen</tableitem>
+          <tableitem>set('abc'), {'a','b','c'}</tableitem>
+        </tablerow>
+        <tablerow>
+          <tableitem>Sonstige</tableitem>
+          <tableitem>Boolean, None</tableitem>
+        </tablerow>
+        <tablerow>
+          <tableitem>Programm-Units</tableitem>
+          <tableitem>Funktionen, Module, Klassen</tableitem>
+        </tablerow>
+        <tablecaption>Tabelle 1: Elementare Objekttypen in Python</tablecaption>
+      </tablebody>
+    </table>
+
+    <text>
+      Neben den einfachen Objekttypen sind auch Programm-Einheiten wie Funktionen, Module und Klassen verzeichnet. Diese Einheiten werden 
+      mit Anweisungen und Ausdrücken wie def, class, import und lambda erzeugt. Außerdem bietet Python auch noch implementierte Objekte wie 
+      compilierten Code an. 
+    </text>
+
+    <text>
+      Objekte wie etwa Strings sind durch Anführungsstriche gekennzeichnet, Listen durch eckige und Dictionaries durch geschweifte Klammern. 
+      An Objekte sind Operationen gebunden, wie String-Operationen an Strings und List-Operationen an Listen. Daher ist Python durch diese 
+      automatische dynamisch typisiert, aber auch stark typisiert, denn eine Operation kann nur auf dem zugrundeliegenden Objekttyp operieren. 
+    </text>
+
+    <subheadline id="Zahlen">Zahlen</subheadline>
+
+    <text>
+      Zahlen sind elementare Basistypen. Es gibt folgende numerische Ausprägungen:
+    </text>
+    <list>
+      <listitem>Integers sind ganzahlige Datentypen</listitem>
+      <listitem>Gleitkomma-Zahlen haben einen Bruchteil</listitem>
+      <listitem>Komplexe Zahlen haben einen imaginären Anteil</listitem>
+      <listitem>Dezimalzahlen haben einen festen Dezimalpunkt</listitem>
+      <listitem>Rationale Zahlen bestehen aus Zählern und Nennern</listitem>
+    </list>
+
+
+    <text>
+      Die folgenden Operationen sind elementare Operationen auf elementaren numerischen Datentypen.
+    </text>
+    <codebox>
+        #!usr/bin/python3
+        # numbers.py
+      
+        # Ganzzahlige Addition
+        summand1 = 123
+        summand2 = 222
+        summe = summand1 + summand2
+        print(summe)
+      
+        # Gleitkomma-Multiplikation
+        multiplikator = 1.5
+        multiplikand = 4
+        produkt = multiplikator * multiplikand
+        print(produkt)
+      
+        # Exponentiation
+        basis = 2
+        exponent = 100
+        potenz = basis ** exponent
+        print(potenz)
+    </codebox>
+
+
+    <text>
+      Die Länge einer Zahl wird über die Längenfunktion berechnet, dafür wird die Zahl über die Built-In-Funktion str auf einen String-Datentyp
+      gecastet. 
+    </text>
+    <codebox>
+        # Laenge einer Zahl duch casting
+        hochzahl = 2 ** 1000000
+        laenge = len(str(hochzahl))
+        print(laenge)
+    </codebox>
+
+
+    <text>
+      Mathematische Module helfen bei der Berechnung komplexerer Ausdrücke und liefern nützliche Werkzeuge wie in den folgenden Beispielen, in 
+      denen fortgeschrittene mathematische Funktionen und der Gebrauch der Zufallsfunktion behandelt werden:
+    </text>
+    <codebox>
+        #!usr/bin/python2
+        # math.py
+      
+        import math
+        import random
+      
+        # Berechnung der Kreisszahl Pi
+        print(math.pi)
+      
+        # Berechnung der Wurzel aus 85
+        print(math.sqrt(85))
+      
+        # Zufallszahl zwischen 0 und 1
+        print(random.random())
+      
+        # Zufallszahl aus einer Menge vorgegebener Zahlen
+        print (random.choice([1,2,3,4]))
+    </codebox>
+
+
+    <subheadline id="Strings">Strings</subheadline>
+
+    <text>
+      Strings sind Sequenzen von Zeichen (Characters). Man kann zahlreiche einfache Operationen auf Strings vornehmen. 
+    </text>
+    <bold>Einfache String-Operationen</bold>
+
+    <text>
+      Das folgende Beispiel zeigt simple Operationen auf einem einfachen String. 
+    </text>
+    <codebox>
+        #!usr/bin/python3
+        # strings.py
+      
+        # Deklaration
+        string = 'Spam'
+      
+        # Länge, erstes und zweites Zeichen
+        print(len(string))      # 4
+        print(string[0])        # S
+        print(string[1])        # p
+      
+        # Letzes und vorletzes Zeichen
+        print(string[-1])       # m
+        print(string[-2])       # a
+      
+        # Offsets
+        print(string[1:3])      # pa
+        print(string[1:])       # pam
+        print(string[:3])       # Spa
+        print(string[:])        # Spam
+      
+        # Konkatenation und Repitition
+        print(string+'xyz')     # Spamxyz
+        print(string*2)         # SpamSpam
+    </codebox>
+
+    <bold>String-Manipulationen</bold>
+
+    <text>
+      Strings sind wie andere Basistypen unveränderbar. Aber sie können über andere Konstrukte (Listen, Byte-Arrays) manipuliert werden wie das 
+      folgende Beispiel zeigt.
+    </text>
+    <codebox>
+        #!usr/bin/python3
+        # stringsManipulation.py
+      
+        # String-Casting zu Liste
+        string = 'shruberry'
+        stringList = list(string)
+        print(stringList)			# ['s', 'h', 'r', 'u', 'b', 'e', 'r', 'r', 'y']
+      
+        # Manipulation und 'recasting'
+        stringList[1] =  'c'
+        stringList = ''.join(stringList)
+        print(stringList)			# scruberry
+      
+        # Manipulaiton über Bytelisten
+        byteList = bytearray(b'spam')   	# Hybrid
+        byteList.extend(b'eggs')
+        print(byteList)			# bytearray(b'spameggs')
+        print(byteList.decode())		# spameggs
+    </codebox>
+
+    <bold>Suchen und Ersetzen</bold>
+
+    <text>
+      String-spezifische Methoden sind ebenfalls leicht anwendbar. Die Methode find ist eine Suchoperation auf eine Substring und die Methode 
+      replace ersetzt Strings auf Basis einer globalen Suche. 
+    </text>
+    <codebox>
+        #!usr/bin/python3
+        # stringsMethods.py
+      
+        # Methode find sucht auf einen Substring
+        string = 'Spam'
+        print(string.find('pa'))        	# 1
+      
+        # Die Methode replace ersetzt einen Suchstring durch einen Ersatz
+        print(string.replace('pa','XYZ'))     # SXYZm
+      
+        # Uppercase und Alphanumeric-Test
+        print(string.upper())                   # SPAM
+        print(string.isalpha())                 # True
+    </codebox>
+
+    <bold>Formatierungen</bold>
+
+    <text>
+      Weitere Methoden, die von den String- und Number-Objekttypen unterstützt werden, sind Formatierungsmethoden
+    </text>
+    <codebox>
+        #!usr/bin/python3
+        # stringsNumbsFormat.py
+      
+        # Formatierung von Strings
+        string = '%s, eggs, and %s'                             # Generische Formatierung mit %
+        stringFormat = string % ('spam','SPAM!')                # Ersetze die Platzhalter
+        print(stringFormat)                                     # spam, eggs, and SPAM!
+      
+        # Formatierung von Zahlen (in 1000er Schritten)
+        floatingNumber = 296999.2567
+        floatingNumberFormat = '{:,.2f}'.format(floatingNumber) # Tausender Kennzeichen und
+                                                                # Abrunden zweite Stelle hinter Punkt
+        print(floatingNumberFormat)                             # 296,999.26
+      
+        # Abrunden
+        piNumber = 3.14159
+        roundPiNumber = '%.2f' % piNumber                       # Abrunden zweite Stelle hinter Punkt
+        print(roundPiNumber)                                    # 3.14
+      
+        # Auffüllen
+        negativeNumber = -42
+        paddingNegativeNumber = '%+05d' % negativeNumber        # Auffüllen mit Nullen bis zur 5.Stelle
+        print(paddingNegativeNumber)                            # -0042
+    </codebox>
+
+  </content>
+</document>

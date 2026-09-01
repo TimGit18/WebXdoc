@@ -1,0 +1,12 @@
+Die xdoc-Anwendung
+==================
+Diese Seite beschreibt die Anwendung xdoc, die einen Dokumentations-Generator realisiert. 
+Dieser Generator benötigt als Eingabeformat Textdateien, Bilder und eine festgelegte Verzeichnisstruktur. 
+Hieraus werden strukturgleiche Zielverzeichnisse generiert, in denen die Dokumente als Web-Dateien und
+als portable Dokumentenformate erzeugt werden.
+
+
+Inhalt
+======
+Motivation
+

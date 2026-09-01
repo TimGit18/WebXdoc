@@ -1,0 +1,156 @@
+<html lang="de">
+    <head>
+        <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>Ubuntu</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="http://localhost:8080/xdoc/resources/css/bootstrap.min.css">
+        <link rel="stylesheet" href="http://localhost:8080/xdoc/resources/css/bootstrap-toc.min.css">
+        <link rel="icon" href="http://localhost:8080/xdoc/resources/favicon.ico">
+    </head>
+    <body data-spy="scroll" data-target="#toc">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-2 bg-light">
+                    <figure class="figure">
+                        <img class="figure-img img-fluid rounded" src="http://localhost:8080/xdoc/resources/getsitelogo.png">
+                    </figure>
+                    <nav id="toc" class="sticky-top" data-toggle="toc"></nav>
+                </div>
+                <div class="col-sm-10">
+                    <nav class="navbar navbar-expand-lg sticky-top navbar-light bg-light">
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav mr-auto">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="http://localhost:8080/xdoc/xunix/html/xunix.html">Home</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                    <p></p>
+                        
+                    <h2>Ubuntu</h2>
+                        
+                    <p></p>
+                          Ubuntu ist eine GNU/Linux-Distribution, die sehr leicht unter Windows installiert werden kann.
+    
+                    <p></p>
+                        
+                    <h3>Ubuntu-Installation</h3>
+                        
+                    <p></p>
+                          Die Ubuntu-App wird wie aus dem Microsoft Store installiert (hier in der Version 22.04). Wichtig ist die Festlegung 
+      des Administrators, der auch Besitzer des Tr&auml;gerssystems ist und in der Unix-Terminologie Root hei&szlig;t.
+    
+                    <p></p>
+                        
+                    <ul>
+                        <li>Root:				tim</li>
+                        <li>Root-Passwort:	timubu</li>
+                    </ul>
+                        
+                    <h3>Windows-Subsystem f&uuml;r Linux (WSL)</h3>
+                        
+                    <p></p>
+                          Das WSL ist eine Kompatibilit&auml;tsschicht unter Windows 10, um ein Ubuntu-Image herunterzuladen und zu installieren. 
+      Die Anwendungen des Image k&ouml;nnen mit WSL nativ unter Windows ausgef&uuml;hrt werden. Daf&uuml;r m&uuml;ssen folgende Schritte durchgef&uuml;hrt 
+      werden: 
+    
+                    <p></p>
+                        
+                    <ol>
+                        <li>Aktivieren des Entwicklermodus unter Windows</li>
+                        <li>Aktivieren des Windows-Subsystems f&uuml;r Linux</li>
+                    </ol>
+                        
+                    <p></p>
+                          Der Entwicklermodus unter Windows wird wie folgt aktiviert:
+    
+                    <p></p>
+                        
+                    <dl class="row">
+                              
+                        <dt class="col-sm-2">Start</dt>
+                        <dd class="col-sm-1">&rArr;</dd>
+                        <dd class="col-sm-4">Settings   (Einstellungen)</dd>
+                        <dd class="col-sm-5"></dd>
+                              
+                        <dt class="col-sm-2"></dt>
+                        <dd class="col-sm-1">&rArr;</dd>
+                        <dd class="col-sm-4">Update &amp; Security</dd>
+                        <dd class="col-sm-5">Update &amp; Sicherheit</dd>
+                              
+                        <dt class="col-sm-2"></dt>
+                        <dd class="col-sm-1">&rArr;</dd>
+                        <dd class="col-sm-4">For developers</dd>
+                        <dd class="col-sm-5">F&uuml;r Entwickler</dd>
+                              
+                        <dt class="col-sm-2"></dt>
+                        <dd class="col-sm-1">&rArr;</dd>
+                        <dd class="col-sm-4">Developer Mode: Yes</dd>
+                        <dd class="col-sm-5">Entwicklermodus: Ein</dd>
+                            
+                    </dl>
+                        
+                    <p></p>
+                          Das Windows-Subsystem f&uuml;r Linux (WSL) wird wie folgt aktiviert:
+    
+                    <p></p>
+                        
+                    <dl class="row">
+                              
+                        <dt class="col-sm-2">Windows + R</dt>
+                        <dd class="col-sm-1">&rArr;</dd>
+                        <dd class="col-sm-4">optionalfeatures.exe</dd>
+                        <dd class="col-sm-5"></dd>
+                              
+                        <dt class="col-sm-2"></dt>
+                        <dd class="col-sm-1">&rArr;</dd>
+                        <dd class="col-sm-4">Windows Subsystem for Linux</dd>
+                        <dd class="col-sm-5"></dd>
+                              
+                        <dt class="col-sm-2"></dt>
+                        <dd class="col-sm-1">&rArr;</dd>
+                        <dd class="col-sm-4">Checkbox aktivieren</dd>
+                        <dd class="col-sm-5"></dd>
+                              
+                        <dt class="col-sm-2"></dt>
+                        <dd class="col-sm-1">&rArr;</dd>
+                        <dd class="col-sm-4">OK</dd>
+                        <dd class="col-sm-5"></dd>
+                            
+                    </dl>
+                        
+                    <h3>Info-Message</h3>
+                        
+                    <p></p>
+                          Folgernderma&szlig;en wird die Info-Message zum Start deaktiviert. 
+    
+                    <p></p>
+                        
+                    <pre>
+                        <code>vim /home/tim/.hushlogin</code>
+                    </pre>
+                        
+                    <p></p>
+                          Dies ist eine leere Datei im eigenen Home-Verzeichnis. Sie dient nur zum Deaktivieren der Info-Message.
+    
+                    <p></p>
+                        
+                    <h3>Installation neuer Software-Pakete</h3>
+                        
+                    <p></p>
+                          Neue Software-Pakete werden mit dem folgenden Kommando installiert:
+    
+                    <p></p>
+                        
+                    <pre>
+                        <code>sudo apt-get install packagename</code>
+                    </pre>
+                      
+                </div>
+            </div>
+        </div>
+        <script src="http://localhost:8080/xdoc/resources/lib/angular.js"></script><script src="http://localhost:8080/xdoc/resources/lib/jquery-3.2.1.min.js"></script><script src="http://localhost:8080/xdoc/resources/lib/popper.min.js"></script><script src="http://localhost:8080/xdoc/resources/lib/bootstrap.min.js"></script><script src="http://localhost:8080/xdoc/resources/lib/bootstrap-toc.min.js"></script>
+    </body>
+</html>

@@ -1,0 +1,269 @@
+<html lang="de">
+    <head>
+        <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>Einfacher Build-Prozess</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="http://localhost:8080/xdoc/resources/css/bootstrap.min.css">
+        <link rel="stylesheet" href="http://localhost:8080/xdoc/resources/css/bootstrap-toc.min.css">
+        <link rel="icon" href="http://localhost:8080/xdoc/resources/favicon.ico">
+    </head>
+    <body data-spy="scroll" data-target="#toc">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-2 bg-light">
+                    <figure class="figure">
+                        <img class="figure-img img-fluid rounded" src="http://localhost:8080/xdoc/resources/getsitelogo.png">
+                    </figure>
+                    <nav id="toc" class="sticky-top" data-toggle="toc"></nav>
+                </div>
+                <div class="col-sm-10">
+                    <nav class="navbar navbar-expand-lg sticky-top navbar-light bg-light">
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav mr-auto">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="http://localhost:8080/xdoc/xapp/html/xapp.html">Home</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                    <p></p>
+                        
+                    <h2>Ein einfacher Build-Prozess</h2>
+                        
+                    <p></p>
+                          Ein einfacher Build-Prozess besteht aus wenigen T&auml;tigkeiten und wird hier anhand von Skripten skizziert. Es werden bei diesem Prozess lediglich 
+      die nativen Werkzeuge des JDK verwendet (Java-Compiler javac, Java Archive Tool jar und Java-Interpreter java). Die Steuerung des Builds erfolgt
+      &uuml;ber gescriptete Batch-Dateien. Ansonsten ben&ouml;tigt man f&uuml;r den Prozess nur die Konmmandozeilen-Befehle der unterliegenden Betriebssystems, hier 
+      Windows. 
+    
+                    <p></p>
+                        
+                    <h3>&Uuml;bersicht</h3>
+                        
+                    <p></p>
+                          Die folgende &Uuml;bersicht demonstriert einen einfachen Build-Prozess, der aus vier Schritten besteht. 
+    
+                    <p></p>
+                        
+                    <figure class="figure">
+                        <img class="figure-img img-fluid rounded" src="http://localhost:8080/xdoc/xapp/img/Einfacher Build-Prozess.svg">
+                        <figcaption class="figure-caption text-left">
+        Abbildung 1: Einfacher Build-Prozess
+      </figcaption>
+                    </figure>
+                        
+                    <p></p>
+                    <b>Edit</b>
+                    <p></p>
+                        
+                    <p></p>
+                          Der Edit-Schritt beinhaltet das Editieren des Quelltexts, der Java-Klasse. Dies wird hier nicht weiter vertieft, da es zu den wesentlichen 
+      Funktionen einer Integrierten Entwicklungsumgebung (IDE) geh&ouml;rt. 
+    
+                    <p></p>
+                        
+                    <p></p>
+                    <b>Compile</b>
+                    <p></p>
+                        
+                    <p></p>
+                          Im Compile-Schritt wird die Java-Klasse in einen interpretierbaren Bytecode &uuml;bersetzt. 
+    
+                    <p></p>
+                        
+                    <p></p>
+                    <b>Deploy</b>
+                    <p></p>
+                        
+                    <p></p>
+                          Im Deployment-Schritt werden die &uuml;bersetzten Klassen zu einem ausf&uuml;hrbaren Archiv zusammengebunden und in die Laufzeitumgebung transportiert.
+    
+                    <p></p>
+                        
+                    <p></p>
+                    <b>Run</b>
+                    <p></p>
+                        
+                    <p></p>
+                          In der Ausf&uuml;hrung der Anwendung f&uuml;hrt der Interpreter die Anwendung aus. Man muss beachten, dass die Ausf&uuml;hrung der Anwendung aufgrund der 
+      Konfiguration des Loggers nur in bestimmten Verzeichnissen erfolgen kann. 
+    
+                    <p></p>
+                        
+                    <p></p>
+                          Die Werkzeuge dieses Build-Prozesses liegen in der Ablaufumgebung, die im n&auml;chsten Kapitel erl&auml;utert wird.
+    
+                    <p></p>
+                        
+                    <h3>Compile</h3>
+                        
+                    <p></p>
+                          Der Compile-Schritt findet statt, wenn eine &uuml;bersetzbare Java-Klassendatei oder ein Packet von Java-Quellen vorliegt. Das folgende Skript build.bat 
+      definiert die wesentlichen Punkte des Compile-Schritts und l&auml;uft auf der Kommandozeile des Betriebssystems Windows.
+    
+                    <p></p>
+                        
+                    <ol>
+                        <li>Definition der Umgebungsvariablen f&uuml;r die Projekt-Umgebung</li>
+                        <li>Definition der Umgebungsvariablen f&uuml;r die Ablaufumgebung mit Build-Ordner</li>
+                        <li>Definition der Bibliotheken (in diesem Fall Logger-Libraries)</li>
+                        <li>S&auml;uberung der Zielumgebung (Build-Ordner der Ablaufumgebung)</li>
+                        <li>Kompilation der Quellen in beiden Paketen der Anwendung unter Verwendung der UTF8-Kodierung</li>
+                    </ol>
+                        
+                    <pre>
+                        <code>
+        @echo off
+      
+        rem -----------------------------------------------------------
+        rem Umgebungsvariablen f&uuml;r die Projekt-Umgebung
+        rem -----------------------------------------------------------
+        set project=C:\Users\test\Daten\Java\Projects
+        set project_application=%project%\application
+      
+        rem -----------------------------------------------------------
+        rem Umgebungsvariablen f&uuml;r die Ablaufumgebung
+        rem -----------------------------------------------------------
+        set runtime=C:\Users\test\Daten\Java\Applications
+        set runtime_application=%runtime%\application
+        set runtime_build=%runtime_application%\build
+      
+        rem -----------------------------------------------------------
+        rem Bibliotheken
+        rem -----------------------------------------------------------
+        set libraries=C:\Users\test\Daten\Java\Libraries
+        set log4j_api=%libraries%\apache-log4j-2.11.1-bin\log4j-api-2.11.1.jar
+        set log4j_core=%libraries%\apache-log4j-2.11.1-bin\log4j-core-2.11.1.jar
+        set log4j=%log4j_api%;%log4j_core%
+        set mssql=%libraries%\sqljdbc_9.2/mssql-jdbc-9.2.1.jre11.jar
+      
+      
+        rem -------
+        rem Cleanup
+        rem -------
+        rmdir /s /q %runtime_build%
+        mkdir %runtime_build%
+      
+        rem ---------------
+        rem Compile Sourcen 
+        rem ---------------
+        set source=%project_application%\src\de\timdomain\application
+        set source_control=%source%\control
+        set source_schema=%source%\schema
+        set source_util=%source%\util
+      
+        rem ------------
+        rem Compile Util
+        rem ------------
+        javac -encoding UTF8 %source_util%\*.java -d %runtime_build% -cp %runtime_build%;%log4j%
+      
+        rem --------------
+        rem Compile Schema
+        rem --------------
+        javac -encoding UTF8 %source_schema%\*.java -d %runtime_build% -cp %runtime_build%;%log4j%;%mmsql%
+      
+        rem ---------------
+        rem Compile Control
+        rem ---------------
+        javac -encoding UTF8 %source_control%\*.java -d %runtime_build% -cp %runtime_build%;%log4j%
+    </code>
+                    </pre>
+                        
+                    <h3>Deployment</h3>
+                        
+                    <p></p>
+                          Der Deployment-Schritt findet statt, wenn die Java-Quelldateien als &uuml;bersetzte Klassen im Build-Ordner in derselben Paketestruktur wie in der 
+      Entwicklungsumgebung vorliegen. Das folgende Skript deployment.bat definiert die wesentlichen Punkte des Deployment-Schritts und l&auml;uft auf der 
+      Kommandozeile des Betriebssystems Windows.
+    
+                    <p></p>
+                        
+                    <ol>
+                        <li>Definition der Umgebungsvariablen f&uuml;r die Projekt-Umgebung</li>
+                        <li>Definition der Umgebungsvariablen f&uuml;r die Ablaufumgebung mit Build-Ordner</li>
+                        <li>Deployment der Anwendung durch Verschieben der Konfigurationsdateien und des Manifests</li>
+                        <li>Erzeugen der ausf&uuml;hrbaren Anwendung durch Verwendung des Java Archive Tools </li>
+                    </ol>
+                        
+                    <pre>
+                        <code>
+        @echo off
+      
+        rem -----------------------------------------------------------
+        rem Umgebungsvariablen f&uuml;r die Projekt-Umgebung
+        rem -----------------------------------------------------------
+        set project=C:\Users\\Daten\Java\Projects
+        set project_application=%project%\application
+        set project_build=%project_application%\out\production\application
+        set project_meta_inf=%project_application%\META-INF
+        set project_manifest=%project_meta_inf%\MANIFEST.MF
+        set project_properties=%project_application%\properties
+        set project_log4j2_xml=%project_properties%\log4j2.xml
+        set project_app_props=%project_properties%\application.properties
+      
+        rem -----------------------------------------------------------
+        rem Umgebungsvariablen f&uuml;r die Ablaufumgebung
+        rem -----------------------------------------------------------
+        set runtime=C:\Users\\Daten\Java\Applications
+        set runtime_application=%runtime%\application
+        set runtime_build=%runtime_application%\build
+        set runtime_jar_file=%runtime_application%\application.jar
+        set runtime_meta_inf=%runtime_application%\META-INF
+        set runtime_manifest=%runtime_meta_inf%\MANIFEST.MF
+        set runtime_properties=%runtime_application%\properties
+        set runtime_log4j2_xml=%runtime_properties%\log4j2.xml
+        set runtime_app_props=%runtime_properties%\application.properties
+      
+        rem ------------------------------------------------------------
+        rem Deployment der Anwendung
+        rem ------------------------------------------------------------
+        copy /Y %project_log4j2_xml% %runtime_log4j2_xml%
+        copy /Y %project_app_props% %runtime_app_props%
+        copy /Y %project_manifest% %runtime_manifest%
+      
+        rem -----------------------------------------------------------
+        rem Ausf&uuml;hrbare Anwendung erzeugen
+        rem -----------------------------------------------------------
+        jar cfm %runtime_jar_file% %runtime_manifest% -C %runtime_build% .
+    </code>
+                    </pre>
+                        
+                    <h3>Exekution</h3>
+                        
+                    <p></p>
+                          Die Anwendung wird ausgef&uuml;hrt, indem der Java-Interpreter das soeben erzeugte, aus&uuml;hrbare jar-File interpretiert. Das folgende Skript application.bat 
+      definiert die wesentlichen Punkte des Ausf&uuml;hrungs-Schritts und l&auml;uft auf der Kommandozeile des Betriebssystems Windows.
+    
+                    <p></p>
+                        
+                    <ol>
+                        <li>Definition der Umgebungsvariablen f&uuml;r die Ablaufumgebung mit Kofigurationsdatei f&uuml;r den Logger</li>
+                        <li>Ausf&uuml;hrung der Anwendung unter Verwendung der System-Properties Encoding (auf UTF8) sowie Logging (Konfigurationsatei log4j2.xml)</li>
+                    </ol>
+                        
+                    <pre>
+                        <code>
+        @echo off
+      
+        rem ----------------------------------------------------------------------------
+        rem Environment-Variablen f&uuml;r die Ablaufumgebung
+        rem ----------------------------------------------------------------------------
+        set runtime=C:\Users\\Daten\Java\Applications
+        set runtime_application=%runtime%\application
+        set runtime_jar_file=%runtime_application%\application.jar
+        set runtime_log4j_config_file="log4j.configurationFile=file://properties/log4j2.xml"
+      
+        rem ----------
+        rem Ausf&uuml;hrung
+        rem ----------
+        java -Dfile.encoding=UTF8 -jar %runtime_jar_file% -D%runtime_log4j_config_file%
+    </code>
+                    </pre>
+                      
+                </div>
+            </div>
+        </div>
+        <script src="http://localhost:8080/xdoc/resources/lib/angular.js"></script><script src="http://localhost:8080/xdoc/resources/lib/jquery-3.2.1.min.js"></script><script src="http://localhost:8080/xdoc/resources/lib/popper.min.js"></script><script src="http://localhost:8080/xdoc/resources/lib/bootstrap.min.js"></script><script src="http://localhost:8080/xdoc/resources/lib/bootstrap-toc.min.js"></script>
+    </body>
+</html>

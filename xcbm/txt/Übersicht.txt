@@ -1,0 +1,58 @@
+Übersicht
+=========
+Diese Seite beschreibt eine Übersicht der CBM-Anwendung. Es wird die Architektur und Komponentensicht der Anwendung
+dargestellt ohne auf die Details der Verabeitung zu sehr einzugehen. 
+
+
+Fachlicher Hintergrund
+======================
+Das Chessbase-Magazin (CBM) erscheint mehrmals jährlich und beinhaltet unter anderem digitale fachliche Artikel zu Schacheröffnungen. Diese Artikel 
+werden über einen Eröffnungsschlüssel namens ECO-Key identifiziert. Hierbei steht ECO für Encyclopedia of Chess Openings. Dies ist ein Index, der 
+von dem Belgrader Verlag Chess Informant entwickelt wurde, um Eröffnungen zu klassifizieren und zu strukturieren. 
+
+Die Anwendung soll aus allen verfügbaren Ausgaben diese Eröffnungsartikel extrahieren und sie in der Anwendungsdatenbank in einer geordneten Struktur persistieren. 
+Hieraus soll ein Bericht im CSV-Format generiert werden, der alle erforderlichen Informationen enthält. Der Anwendungskontext besteht daher aus den folgenden Bereichen:
+
+  1. Das Dateisystem, das sind Laufwerke und Verzeichnisse
+  2. Der Anwendungskern, das sind Skripte mit eigenständigen Aufgaben
+  3. Die Datenbank als Persistenzbereich für die verarbeiteten Daten
+
+           
+Architektur
+===========
+Dieser Abschnitt beschreibt die Architektur der Anwendung. Die Anwendung besteht aus einem Kern und Umsystemen. 
+
+    * Der Kern besteht aus drei Skripten, die in einer Python-Laufzeitumgebung prozessieren
+    * Die Umsysteme sind das Dateisystem und die anwendungsspezifische Datenbank
+
+Die folgende Abbildung beschreibt das Zusammenspiel der Komponenten und skizziert im wesentlichen den Ablauf der 
+Verarbeitung vom Start links oben bis zum Ende rechts unten. 
+
+Abbildung 1 --> Architektur.svg
+Abbildung 1: Architektur der Anwendung
+
+
+Verarbeitung
+=============
+Die Verarbeitung enthält folgende Schritte: 
+
+    1. Der Parser liest Informationen aus den CBM-Magazinen, verbindet diese mit der Konfiguration der Eröffnungsschlüssel und schreibt diese Informationen in Dateien auf dem Dateisystem
+    2. Der Importeur überträgt diese Informationen aus dem Dateisystem in die Datenbank, indem er zuerst die Tabellen initialisiert und danach diese befüllt
+    3. Der Exporteur baut den Ziel-Bericht auf und befüllt diesen mit Daten aus der Datenbank
+
+    
+Aufruf der Anwendung
+====================
+Die Anwendung wird mit dem folgenden Skript cbm.bat auf der Kommandozeile in dem Projektpfad aufgerufen:
+
+_
+    rem cbm.bat
+    rem -----------------------------------------------------------------
+    rem Skripte zum Aufbau, dem Laden und dem Auswerten der CBM-Datenbank
+    rem -----------------------------------------------------------------
+    python .\cbmParser.py
+    python .\cbmImport.py
+    python .\cbmExport.py
+_
+
+Hierbei werden die drei Skripte sequentiell aufgerufen.

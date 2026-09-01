@@ -1,0 +1,8 @@
+Eine Unterbereichseite
+======================
+Muster für eine Subdomänenseite
+
+
+Inhalt
+======
+Unterbereich-Referenz

@@ -1,0 +1,270 @@
+<html lang="de">
+    <head>
+        <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>Datenmodell</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="http://localhost:8080/xdoc/resources/css/bootstrap.min.css">
+        <link rel="stylesheet" href="http://localhost:8080/xdoc/resources/css/bootstrap-toc.min.css">
+        <link rel="icon" href="http://localhost:8080/xdoc/resources/favicon.ico">
+    </head>
+    <body data-spy="scroll" data-target="#toc">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-2 bg-light">
+                    <figure class="figure">
+                        <img class="figure-img img-fluid rounded" src="http://localhost:8080/xdoc/resources/getsitelogo.png">
+                    </figure>
+                    <nav id="toc" class="sticky-top" data-toggle="toc"></nav>
+                </div>
+                <div class="col-sm-10">
+                    <nav class="navbar navbar-expand-lg sticky-top navbar-light bg-light">
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav mr-auto">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="http://localhost:8080/xdoc/xcbm/html/xcbm.html">Home</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                    <p></p>
+                        
+                    <h2>Datenmodell</h2>
+                        
+                    <p></p>
+                          Das Datenmodell f&uuml;r die CBM-Anwendung organisiert die logischen Einheiten der Anwendung und ihre Beziehungen untereinander (Entity-Relatioship Model ERM).
+      Aus dem Datenmodell erkennt man sofort, welche Daten zusammengeh&ouml;ren. Da es nicht hierarchisch, sondern als Relationen-Algebra sturkturiert ist, ist 
+      es flexibel und leicht erweiterbar. Jedes relationale Datemodell l&auml;&szlig;t sich einem entsprechenden Relationalen Datenbank-Managementsystem (RDBMS) in 
+      einer Datenbank abbilden.
+    
+                    <p></p>
+                        
+                    <h3>&Uuml;berblick</h3>
+                        
+                    <p></p>
+                          Insgesamt besteht das Modell aus zwei logischen Entit&auml;ten und einer informationstragenden Beziehung. Diese k&ouml;nnen in einer Entity-Relatioship Diagramm (ERD) 
+      veranschaulicht werden:
+    
+                    <p></p>
+                        
+                    <figure class="figure">
+                        <img class="figure-img img-fluid rounded" src="http://localhost:8080/xdoc/xcbm/img/Datenmodell.svg">
+                        <figcaption class="figure-caption text-left">
+        Abbildung 1: Entity-Relationship Diagramm des Datenmodells der Anwendung
+      </figcaption>
+                    </figure>
+                        
+                    <h3>Basisdatentypen</h3>
+                        
+                    <p></p>
+                          Folgende Basisdatentypen werden verwendet:
+    
+                    <p></p>
+                        
+                    <p></p>
+                    <table class="table table-hover table-responsive-sm">
+                        <thead class="thead-light">
+                            <tr>
+                                <th>Datentyp</th><th>Format</th>
+                            </tr>
+                            <tr></tr>
+                        </thead>
+                        <tbody>
+                            <tr></tr>
+                            <tr>
+                                <td>Ganzzahl</td><td>Ganze Zahl von -2.147.483.648 bis 2.147.483.647</td>
+                            </tr>
+                            <tr></tr>
+                            <tr>
+                                <td>Langtext</td><td>Zeichenkette von maximal 255 alphanumerischen Zeichen</td>
+                            </tr>
+                            <caption>Tabelle 1: Basisdatentypen</caption>
+                        </tbody>
+                    </table>
+                    <p></p>
+                        
+                    <p></p>
+                          Diese Basisdatentypen typisieren keine speziellen fachlichen Objekte, sondern repr&auml;sentieren allgemeine Formate. 
+    
+                    <p></p>
+                        
+                    <h3>Fachliche Datentypen</h3>
+                        
+                    <p></p>
+                          Folgende fachliche Datentypen werden verwendet:
+    
+                    <p></p>
+                        
+                    <p></p>
+                    <table class="table table-hover table-responsive-sm">
+                        <thead class="thead-light">
+                            <tr>
+                                <th>Datentyp</th><th>Format</th>
+                            </tr>
+                            <tr></tr>
+                        </thead>
+                        <tbody>
+                            <tr></tr>
+                            <tr>
+                                <td>CBM-Nummer</td><td>Sechstelliger alphanumerischer Verbund aus dem fixen K&uuml;rzel 'CBM' und der Zahldarstellung 001 bis 999</td>
+                            </tr>
+                            <tr></tr>
+                            <tr>
+                                <td>ECO-Nummer</td><td>Dreistelliger alphanumerischer Verbund zwischen einem Buchstaben von A bis E und der Zahldarstellung 00 bis 99</td>
+                            </tr>
+                            <caption>Tabelle 2: Fachdatentypen</caption>
+                        </tbody>
+                    </table>
+                    <p></p>
+                        
+                    <p></p>
+                    <b>Erl&auml;uterung</b>
+                    <p></p>
+                        
+                    <ul>
+                        <li>Die CBM-Nummer ist eine fortlaufende Nummer, die hochgez&auml;hlt wird, zum Beispiel CBM 212</li>
+                        <li>Die ECO-Nummer ist ein Enzyklop&auml;die-Index-Schl&uuml;ssel mit f&uuml;nf Hauptgruppen von A bis E und 100 Untergruppen von 00 bis 99, zum Beispiel C54</li>
+                    </ul>
+                        
+                    <h3>Entit&auml;t Magazin</h3>
+                        
+                    <p></p>
+                          Die Entit&auml;t (oder das Objekt) Magazin besteht aus folgenden Feldern:
+    
+                    <p></p>
+                        
+                    <p></p>
+                    <table class="table table-hover table-responsive-sm">
+                        <thead class="thead-light">
+                            <tr>
+                                <th>Attribut</th><th>Datentyp</th><th>Erl&auml;uterung</th>
+                            </tr>
+                            <tr></tr>
+                        </thead>
+                        <tbody>
+                            <tr></tr>
+                            <tr>
+                                <td>Identifikator</td><td>Ganzzahl</td><td>Technischer Schl&uuml;ssel</td>
+                            </tr>
+                            <tr></tr>
+                            <tr>
+                                <td>Ausgabe</td><td>CBM-Nummer</td><td>Fachlicher Schl&uuml;ssel</td>
+                            </tr>
+                            <caption>Tabelle 3: Felder der Entit&auml;t Magazin</caption>
+                        </tbody>
+                    </table>
+                    <p></p>
+                        
+                    <p></p>
+                          Die Entit&auml;t Magazin repr&auml;sentiert das Objekt ChessBase-Magazin. Jede Instanz des Objekts besteht aus einem Identifikator als technischer Prim&auml;rschl&uuml;ssel und einer Magazin-Nummer als fachlicher Schl&uuml;ssel.
+    
+                    <p></p>
+                        
+                    <h3>Entit&auml;t Er&ouml;ffnungsschl&uuml;ssel</h3>
+                        
+                    <p></p>
+                          Die Entit&auml;t Er&ouml;ffnungsschl&uuml;ssel besteht aus folgenden Feldern:
+    
+                    <p></p>
+                        
+                    <p></p>
+                    <table class="table table-hover table-responsive-sm">
+                        <thead class="thead-light">
+                            <tr>
+                                <th>Attribut</th><th>Datentyp</th><th>Erl&auml;uterung</th>
+                            </tr>
+                            <tr></tr>
+                        </thead>
+                        <tbody>
+                            <tr></tr>
+                            <tr>
+                                <td>Identifikator</td><td>Ganzzahl</td><td>Technischer Schl&uuml;ssel</td>
+                            </tr>
+                            <tr></tr>
+                            <tr>
+                                <td>Er&ouml;ffnungsschl&uuml;ssel</td><td>ECO-Nummer</td><td>Fachlicher Schl&uuml;ssel</td>
+                            </tr>
+                            <tr></tr>
+                            <tr>
+                                <td>Zugfolge</td><td>Langtext</td><td>Folge der Anfangsz&uuml;ge der Er&ouml;ffnung</td>
+                            </tr>
+                            <tr></tr>
+                            <tr>
+                                <td>Beschreibung</td><td>Langtext</td><td>Beschreibung der Er&ouml;ffnung</td>
+                            </tr>
+                            <caption>Tabelle 4: Felder der Entit&auml;t Magazin</caption>
+                        </tbody>
+                    </table>
+                    <p></p>
+                        
+                    <p></p>
+                          Die Entit&auml;t Er&ouml;ffnungsschl&uuml;ssel repr&auml;sentiert das Objekt Er&ouml;ffnungscode.
+      Jede Instanz des Objekts besteht aus einem Identifikator als technischer Prim&auml;rsschl&uuml;ssel und einer Er&ouml;ffnungsschl&uuml;ssel-Nummer als fachlicher Schl&uuml;ssel.
+      Weiterhin kennzeichnen eine Zugfolge in algebraischer Notation und eine Er&ouml;ffnungsbeschreibung das Objekt.
+    
+                    <p></p>
+                        
+                    <h3>Informationstragende Beziehung Er&ouml;ffnungsartikel</h3>
+                        
+                    <p></p>
+                          Die Beziehung Er&ouml;ffnungsartikel besteht aus folgenden Feldern:
+    
+                    <p></p>
+                        
+                    <p></p>
+                    <table class="table table-hover table-responsive-sm">
+                        <thead class="thead-light">
+                            <tr>
+                                <th>Attribut</th><th>Datentyp</th><th>Erl&auml;uterung</th>
+                            </tr>
+                            <tr></tr>
+                        </thead>
+                        <tbody>
+                            <tr></tr>
+                            <tr>
+                                <td>Identifikator</td><td>Ganzzahl</td><td>Technischer Schl&uuml;ssel</td>
+                            </tr>
+                            <tr></tr>
+                            <tr>
+                                <td>Identifikator_Magazin</td><td>Ganzzahl</td><td>Fachlicher Fremdschl&uuml;ssel</td>
+                            </tr>
+                            <tr></tr>
+                            <tr>
+                                <td>Identifikator_Er&ouml;ffnungsschl&uuml;ssel</td><td>Ganzzahl</td><td>Fachlicher Fremdschl&uuml;ssel</td>
+                            </tr>
+                            <tr></tr>
+                            <tr>
+                                <td>Artikelkurzbeschreibung</td><td>Langtext</td><td>Stichworte zum Artikel</td>
+                            </tr>
+                            <caption>Tabelle 5: Felder der informationstragenden Beziehung Er&ouml;ffnungsartikel</caption>
+                        </tbody>
+                    </table>
+                    <p></p>
+                        
+                    <p></p>
+                          Diese informationstragende Beziehung zwischen Magazin und Er&ouml;ffnungsschl&uuml;ssel repr&auml;sentiert das Objekt Er&ouml;ffnungsartikel.
+      Jede Instanz des Objekts besteht aus einem Identifikator als Prim&auml;rschl&uuml;ssel und jeweils einem Fremdschl&uuml;ssel f&uuml;r eine Instanz des
+      Magazins und des Er&ouml;ffnungsschl&uuml;ssels. Die Artikelkurzbeschreibung ist kurze, stichwortartige Beschreibung des Er&ouml;ffnungsartikels.
+    
+                    <p></p>
+                        
+                    <h3>Kardin&auml;lit&auml;ten</h3>
+                        
+                    <p></p>
+                          Die Kardinalit&auml;ten der Beziehung resultieren aus folgenden Tatsachen:
+    
+                    <p></p>
+                        
+                    <ul>
+                        <li>Ein Magazin hat einen oder mehrere Er&ouml;ffnungsartikel</li>
+                        <li>Ein Er&ouml;ffnungsartikel geh&ouml;rt zu genau einem Magazin</li>
+                        <li>Ein Er&ouml;ffnungsschl&uuml;ssel taucht in keinem oder in mehreren Er&ouml;ffnungsartikeln auf</li>
+                        <li>Ein Er&ouml;ffnungsartikel geh&ouml;rt zu genau einem Er&ouml;ffnungsschl&uuml;ssel.</li>
+                    </ul>
+                      
+                </div>
+            </div>
+        </div>
+        <script src="http://localhost:8080/xdoc/resources/lib/angular.js"></script><script src="http://localhost:8080/xdoc/resources/lib/jquery-3.2.1.min.js"></script><script src="http://localhost:8080/xdoc/resources/lib/popper.min.js"></script><script src="http://localhost:8080/xdoc/resources/lib/bootstrap.min.js"></script><script src="http://localhost:8080/xdoc/resources/lib/bootstrap-toc.min.js"></script>
+    </body>
+</html>

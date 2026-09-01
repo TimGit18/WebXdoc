@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" standalone='yes'?>
+<document env="xdoc">
+
+  <main>
+    <topic name="Home" link="http://localhost:8080/xdoc/xdoc/html/xdoc.html"/>
+  </main>
+
+  <links>
+    <link type="stylesheet">http://localhost:8080/xdoc/resources/css/bootstrap.min.css</link>
+    <link type="stylesheet">http://localhost:8080/xdoc/resources/css/bootstrap-toc.min.css</link>
+    <link type="icon">http://localhost:8080/xdoc/resources/favicon.ico</link>
+  </links>
+
+  <scripts>
+    <script>http://localhost:8080/xdoc/resources/lib/angular.js</script>
+    <script>http://localhost:8080/xdoc/resources/lib/jquery-3.2.1.min.js</script>
+    <script>http://localhost:8080/xdoc/resources/lib/popper.min.js</script>
+    <script>http://localhost:8080/xdoc/resources/lib/bootstrap.min.js</script>
+    <script>http://localhost:8080/xdoc/resources/lib/bootstrap-toc.min.js</script>
+  </scripts>
+
+  <title>Motivation</title>
+  <author>Tim Schmitz</author>
+  <date>22.03.2025</date>
+
+  <content>
+    <headline>Motivation</headline>
+    <abstract>
+      Technische Dokumentationen sollten sich auf Inhalte und die Vermittlung von Informationen konzentrieren. 
+      Leider ist die Erstellung von Dokumenten in technologie-neutralen, portablen Formaten aufwändig. 
+      Daher wurde eine Lösung entwickelt, die auf der Verwendung der universellen Auszeichnungssprache XML basiert.
+      Dabei dient diese Sprache als ein Format, um die textuellen Primärdokumente, Bilder und Verzeichnisse in die 
+      entsprechende Zieldokumentation zu überführen. Der Name xdoc ist also Kunstwort, das sowohl die verwendete 
+      Technologie als auch den Zweck der Anwendung beschreibt.
+    </abstract>
+
+
+    <subheadline id="Grundidee">Grundidee</subheadline>
+
+    <text>
+      Die einfache Grundidee besteht darin, dass für eine angemessene Dokumentation technischer komplexer Sachverhalte
+      nur drei wesentliche Komponenten benötigt werden:
+    </text>
+    <list>
+      <listitem>Texte </listitem>
+      <listitem>Bilder </listitem>
+      <listitem>Verzeichnisse</listitem>
+    </list>
+
+
+    <text>
+      Texte beschreiben sprachlich Sachverhalte und Zusammenhänge, sie müssen dabei verständlich und korrekt von Menschen 
+      geschrieben werden. Bilder können Texte ergänzen und erläutern, indem sie Abläufe oder Situationen illustrieren und den
+      beschriebenen Sachverhalt abbilden. Verzeichnisse dienen zur Strukturierung von Dateien und sollten so aufgebaut sein, 
+      dass sie einen logischen Zusammenhang zwischen ihren Elementen und anderen Verzeichnissen herstellen. 
+    </text>
+    <figure>
+      <image link="http://localhost:8080/xdoc/xdoc/img/Grundidee.svg" source="file:///C:/Users/Test/Daten/Web/xdoc/xdoc/img/Grundidee.svg"/>
+      <figurecaption class="figure-caption text-left">
+        Abbildung 1: Grundidee
+      </figurecaption>
+    </figure>
+  </content>
+</document>

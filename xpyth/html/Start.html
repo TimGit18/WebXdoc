@@ -1,0 +1,367 @@
+<html lang="de">
+    <head>
+        <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>Start</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="http://localhost:8080/xdoc/resources/css/bootstrap.min.css">
+        <link rel="stylesheet" href="http://localhost:8080/xdoc/resources/css/bootstrap-toc.min.css">
+        <link rel="icon" href="http://localhost:8080/xdoc/resources/favicon.ico">
+    </head>
+    <body data-spy="scroll" data-target="#toc">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-2 bg-light">
+                    <figure class="figure">
+                        <img class="figure-img img-fluid rounded" src="http://localhost:8080/xdoc/resources/getsitelogo.png">
+                    </figure>
+                    <nav id="toc" class="sticky-top" data-toggle="toc"></nav>
+                </div>
+                <div class="col-sm-10">
+                    <nav class="navbar navbar-expand-lg sticky-top navbar-light bg-light">
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav mr-auto">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="http://localhost:8080/xdoc/xpyth/html/xpyth.html">Home</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                    <p></p>
+                        
+                    <h2>Start</h2>
+                        
+                    <p></p>
+                          Um mit der Programmierung mit Python zu starten, ben&ouml;tigt man zun&auml;chst einen Interpreter sowie einen Editor. Die Beispiele 
+      wurden ausgef&uuml;hrt auf der Linux-Applikation Ubuntu 18.04 LTS unter Windows 10.
+    
+                    <p></p>
+                        
+                    <h3>Interpreter</h3>
+                        
+                    <p></p>
+                          Der Interpreter ist eine Software, die ein Python-Programm ausf&uuml;hrt. Auf vielen Betriebssystemen wie etwa Linux ist er 
+      vorinstalliert. Der Interpreter kann auf zwei Arten aufgerufen werden:
+    
+                    <p></p>
+                        
+                    <ol>
+                        <li>Als Programm, das ein vorgegebenes Skript ausf&uuml;hrt</li>
+                        <li>Als Kommandozeilen-Werkzeug, das hintereinander Kommandos ausf&uuml;hrt</li>
+                    </ol>
+                        
+                    <p></p>
+                          Die folgenden Beispiele wurden alle mit der Entwicklungsumgebung vim (Visual Editor Improved) und dem Python 3.6.7-Interpreter f&uuml;r Linux 
+      ausgef&uuml;hrt, insbesondere wenn die Syntax im Header an den Aufruf des Linux-Interpreters erinnert. Das folgende Programm f&uuml;hrt zwei 
+      Ausgaben auf der Kommandozeile aus:
+    
+                    <p></p>
+                        
+                    <pre>
+                        <code>
+        #!/usr/bin/python3
+        # helloWorld.py
+      
+        print('hello world')
+        print(2 ** 100)
+    </code>
+                    </pre>
+                        
+                    <p></p>
+                          Gestartet wird das Programm mit dem folgenden Befehl python auf der Kommandozeile. Der Befehl startet den 
+      Interpreter und liefert als Ergebnis die Ausgabe eines Strings und einer Zahl, genauer gesagt die einer arithmetischen Operation (2 hoch 100). 
+    
+                    <p></p>
+                        
+                    <pre>
+                        <code>
+        # python helloWorld.py
+        hello world
+        1267650600228229401496703205376
+    </code>
+                    </pre>
+                        
+                    <h3>&Uuml;bersetzungsprozess</h3>
+                        
+                    <p></p>
+                          Der &Uuml;bersetzungsprozess einer Python-Datei ist denkbar einfach und &auml;hnelt denen der anderer Skriptsprachen. Er ist in folgeder Abbildung 
+      dargestellt:
+    
+                    <p></p>
+                        
+                    <figure class="figure">
+                        <img class="figure-img img-fluid rounded" src="http://localhost:8080/xdoc/xpyth/img/%C3%9Cbersetzung.svg">
+                        <figcaption class="figure-caption text-left">
+        Abbildung 1: &Uuml;bersetzung einer Python-Datei
+      </figcaption>
+                    </figure>
+                        
+                    <p></p>
+                          Nachdem die Datei editiert wurde, wird sie &uuml;ber den Python-Interpreter &uuml;bersetzt, indem der Python-Interpreter ausgef&uuml;hrt wird. 
+      Dabei wird im ersten Schritt durch Python der Quellcode in den sogenannten Byte-Code &uuml;bersetzt. Die Kompilation ist hier lediglich 
+      eine &Uuml;bersetzung einer Hochsprache in eine niedrigere, plattform-unabh&auml;ngige Repr&auml;sentation des Quellcodes. Dabei ist die Dekomposition in
+      Byte-Code n&uuml;tzlich, da dieser Code sehr viel schneller als der Quellcode interpretiert werden kann. 
+    
+                    <p></p>
+                        
+                    <p></p>
+                          Die &Uuml;bersetzung in Byte-Code bleibt normalerweise dem Ausf&uuml;hrenden verborgen. Falls der Python-Prozess allerdings Zugriffsrechte auf den 
+      lokalen Rechner besitzt, dann speichert dieser den Byte-Code in einer Datei mit dem Suffix .pyc (python compiled). Diese Dateien werden 
+      dann in einem Verzeichnis mit dem Namen __pycache__ gespeichert, welches in dem gleichen Verzeichnis wie das der Quelldateien angelegt 
+      wird. Hierbei wird auch die Python-Version referenziert. 
+    
+                    <p></p>
+                        
+                    <p></p>
+                          Anschlie&szlig;end wird die Byte-Code-Datei an die Python Virtual Machine (PVM) ausgeliefert, die als Laufzeitumgebung iterativ den Byte-Code 
+      abarbeitet. Technisch gesehen ist dies nur der letzte Schritt der Interpretation einer Python-Datei. 
+    
+                    <p></p>
+                        
+                    <p></p>
+                          Abgesehen von impliziten Nachteilen in der Performance gegeben&uuml;ber bin&auml;r &uuml;bersetzten Sprachen bietet das Entwicklungsmodell den Vorteil, 
+      dass hier zwischen Produktions- und Entwicklungsumgebung nicht mehr unterschieden werden kann. 
+    
+                    <p></p>
+                        
+                    <h3>Interaktion</h3>
+                        
+                    <p></p>
+                          Es gibt ebenfalls die M&ouml;glichkeit, den Interpreter interaktiv (&uuml;ber den Prompt) aufzurufen. Dies geschieht auf der Linux-Konsole wie folgt:
+    
+                    <p></p>
+                        
+                    <pre>
+                        <code>
+        # python
+        Python 3.6.7 (default, Oct 22 2018, 11:32:17)
+        [GCC 8.2.0] on linux
+        Type "help", "copyright", "credits" or "license" for more information.
+        &gt;&gt;&gt; CRTL + D
+    </code>
+                    </pre>
+                        
+                    <p></p>
+                          Der Vorteil des interaktiven Prompts liegt darin, sehr schnell Kommandos ausf&uuml;hren zu k&ouml;nnen. Zum Beispiel muss man bei der Ausgabe von 
+      Variablen nicht das Schl&uuml;sselwort print angeben, wenn man den Wert einer zuvor zugewiesenen Variablen ausgeben will. Fehler hingegen 
+      werden nicht zugelassen, wie zum Beispiel der Gebrauch nicht-initialisierter Variablen. Es ist auch m&ouml;glich, komplexere Ausdr&uuml;cke im 
+      interaktiven Prompt auszuwerten wie in folgendem Beispiel:
+    
+                    <p></p>
+                        
+                    <pre>
+                        <code>
+        &gt;&gt;&gt; import os
+        &gt;&gt;&gt; os.getcwd()
+        '/home/tim/python/start'
+    </code>
+                    </pre>
+                        
+                    <p></p>
+                          Zun&auml;chst wird vom Interpreter ein vorkodiertes Modul importiert. Anschlie&szlig;end wird eine Standardbibliothek ausgegeben. Sie meldet das 
+      aktuelle Arbeitsverzeichnis (get current working directory), das direkt vom Prompt ausgegeben wird. Statements, die sich &uuml;ber mehrere
+      Zeilen erstrecken, sollten daher besser in Form von Skripten ausgef&uuml;hrt werden. 
+    
+                    <p></p>
+                        
+                    <h3>Modularisierung</h3>
+                        
+                    <p></p>
+                          Wenn man Programme als Sequenzen interpretierbarer Statements auffasst, dann werden sie in Dateien gespeichert, die als Module bezeichnet
+      werden. Es sind einfache Text-Dateien, die entweder direkt vom Interpreter ausgef&uuml;hrt werden k&ouml;nnen oder die von anderen Programmen, den 
+      Hauptprogrammen oder Skripten, geladen und ausgef&uuml;hrt werden. Die Beziehungen sind in der folgenden Abbildung zu sehen:
+    
+                    <p></p>
+                        
+                    <figure class="figure">
+                        <img class="figure-img img-fluid rounded" src="http://localhost:8080/xdoc/xpyth/img/Modularisierung.svg">
+                        <figcaption class="figure-caption text-left">
+        Abbildung 2: Modularisierung von Python-Programmen
+      </figcaption>
+                    </figure>
+                        
+                    <p></p>
+                          Das Modul, was nun von verschiedenen anderen Programmen ausgef&uuml;hrt werden soll, lautet wie folgt:
+    
+                    <p></p>
+                        
+                    <pre>
+                        <code>
+        #!/usr/bin/python
+        # module.py
+      
+        #-------------------------------------------#
+        # Laden und Ausgabe eines Bibliotheksmoduls #
+        #-------------------------------------------#
+        import sys
+        print(sys.platform)	# aktuelles Betriebssystem
+      
+        #--------------------------------------------------#
+        # Ausgabe einer Zahl und einer String-Wiederholung #
+        #--------------------------------------------------#
+        print(2 ** 32)	# 2 hoch 32
+        x = 'Spam!'
+        print(x * 8)		# achtfache Wiederholung von 'Spam!'
+    </code>
+                    </pre>
+                        
+                    <p></p>
+                          Nat&uuml;rlich k&ouml;nnte man das Modul auch direkt mit dem Interpreter via python module.py ausf&uuml;hren. Hier soll aber ein Ansatz betrachtet werden, 
+      der die Programm-Architektur von Python in den Mittelpunkt stellt. Dabei l&auml;dt ein Hauptprogramm (das Skript) das Modul und der Import des 
+      Moduls ist das Ausf&uuml;hren des Codes. Die folgende Sequenz des Hauptprogramms importModule.py importiert das Modul und f&uuml;rhrt den Code 
+      aus:
+    
+                    <p></p>
+                        
+                    <pre>
+                        <code>
+        #!/usr/bin/python3
+        # moduleImport.py
+      
+        import module
+    </code>
+                    </pre>
+                        
+                    <p></p>
+                          Das Ergebnis auf der Kommandozeile lautet wie folgt:
+    
+                    <p></p>
+                        
+                    <pre>
+                        <code>
+        # python moduleImport.py
+        linux
+        4294967296
+        Spam!Spam!Spam!Spam!Spam!Spam!Spam!Spam!
+    </code>
+                    </pre>
+                        
+                    <h3>Attribute</h3>
+                        
+                    <p></p>
+                          Grunds&auml;tzlich gilt: ein Modul ist eigentlich ein Paket von Variablennamen, der sogenannte Namensraum oder Namespace. Die Namen dieses Pakets
+      werden Attribute genannt. Ein Attribut ist also nichts anderes als ein Variablennamen, der an einem bestimmten Objekt (wie etwa einem Modul)
+      h&auml;ngt. 
+    
+                    <p></p>
+                        
+                    <p></p>
+                          Der Zugriff auf Attribute von Modulen geschieht in Python &uuml;ber die Statements import und from (auch im Zusammenhang mit dem reload-Statement).
+      Beispielsweise beinhaltet das folgende Modul file.py ein Attribut title:
+    
+                    <p></p>
+                        
+                    <pre>
+                        <code>
+        #!/usr/bin/python3
+        # file.py
+      
+        title = "The Meaning of Life"
+    </code>
+                    </pre>
+                        
+                    <p></p>
+                          Der Zugriff erfolgt &uuml;ber einen dezidierten und qualifizierten Import:
+    
+                    <p></p>
+                        
+                    <pre>
+                        <code>
+        #!/usr/bin/python3
+        # fileTitleImport.py
+      
+        import file
+        print(file.title)
+    </code>
+                    </pre>
+                        
+                    <p></p>
+                          Das Ergebnis auf der Kommandozeile lautet dann:
+    
+                    <p></p>
+                        
+                    <pre>
+                        <code>
+        # python fileTitleImport.py
+        The Meaning of Life
+    </code>
+                    </pre>
+                        
+                    <p></p>
+                          Alternativ zu dem Zugriff auf Objekt-Attribute &uuml;ber das Import-Statement kann &uuml;ber das from-Statement Namen von Modulen abgreifen (tats&auml;chlich werden
+      sie kopiert):
+    
+                    <p></p>
+                        
+                    <pre>
+                        <code>
+        #!/usr/bin/python3
+        # fileTitleImportFrom.py
+      
+        from file import title
+        print(title)
+    </code>
+                    </pre>
+                        
+                    <p></p>
+                          Die Built in-Funktion dir kann dagegen noch viel mehr liefern als lediglich die Objekt-Attribute, sondern alle Namen, die innerhalb eines Moduls 
+      verf&uuml;gbar sind. Dazu dient folgenden Import-Sequenz:
+    
+                    <p></p>
+                        
+                    <pre>
+                        <code>
+        #!/usr/bin/python3
+        # fileTitleImportDir.py
+      
+        import file
+        print(dir(file))
+    </code>
+                    </pre>
+                        
+                    <p></p>
+                          Das Ergebnis liefert folgende Liste zur&uuml;ck:
+    
+                    <p></p>
+                        
+                    <pre>
+                        <code>
+        # python fileTitleImportDir.py
+        ['__builtins__', '__cached__', '__doc__', '__file__', '__loader__', '__name__', '__package__', '__spec__', 'title']
+    </code>
+                    </pre>
+                        
+                    <p></p>
+                          Alle Namen, die in diesem Ergebnisarray als doppelt unterstrichen gekennzeichnet sind, sind eingebaute Built In-Namen, die von Python 
+      vordefiniert sind und eine spezielle Bedeutung f&uuml;r den Interpreter haben. 
+    
+                    <p></p>
+                        
+                    <p></p>
+                          Eine weitere Alternative zum Import-Statement stellt das Exec-Statement dar, das dazu dient, den Programmcode eines gerufenen Moduls zu 
+      durchlaufen. Dabei wird das gerufene Modul nicht geladen. Vorsicht ist geboten beim Aufruf der Exec-Funktion, denn lokale Variablen k&ouml;nnen 
+      durch den Aufruf von Modulvariablen &uuml;berschrieben werden. Dies kann im Import nicht geschehen, da dieser die Namespaces respektiert. Der 
+      Exec-Aufruf hat folgende Struktur:
+    
+                    <p></p>
+                        
+                    <pre>
+                        <code>
+        #!/usr/bin/python3
+        # moduleExec.py
+      
+        exec(open('module.py').read())
+    </code>
+                    </pre>
+                        
+                    <p></p>
+                          Das Ergebnis ist das gleiche wie bei dem Import.
+    
+                    <p></p>
+                      
+                </div>
+            </div>
+        </div>
+        <script src="http://localhost:8080/xdoc/resources/lib/angular.js"></script><script src="http://localhost:8080/xdoc/resources/lib/jquery-3.2.1.min.js"></script><script src="http://localhost:8080/xdoc/resources/lib/popper.min.js"></script><script src="http://localhost:8080/xdoc/resources/lib/bootstrap.min.js"></script><script src="http://localhost:8080/xdoc/resources/lib/bootstrap-toc.min.js"></script>
+    </body>
+</html>

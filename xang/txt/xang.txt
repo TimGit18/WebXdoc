@@ -1,0 +1,17 @@
+Angular
+=======
+Diese Seite beschreibt eine Einführung in das JavaScript-Framework Angular, das auf der Programmiersprache
+TypeScript beruht. Das zentrale Architekturkonzept beruht auf einer Hierarchie von Komponenten. 
+
+
+Inhalt
+======
+Start
+Initialisierung
+Bausteine
+Module
+Komponenten
+Services
+
+
+

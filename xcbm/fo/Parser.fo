@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="UTF-8"?><fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format">
+    <fo:layout-master-set>
+        <fo:simple-page-master master-name="page" page-height="29.7cm" page-width="21cm" margin-top="1cm" margin-bottom="1cm" margin-left="2.5cm" margin-right="2.5cm">
+            <fo:region-body margin-top="1cm"/>
+            <fo:region-before extent="3cm"/>
+            <fo:region-after extent="0.5cm"/>
+            <fo:region-start extent="2cm"/>
+            <fo:region-end extent="0.5cm"/>
+        </fo:simple-page-master>
+        <fo:page-sequence-master master-name="single-page">
+            <fo:repeatable-page-master-reference master-reference="page"/>
+        </fo:page-sequence-master>
+    </fo:layout-master-set>
+    <fo:page-sequence master-reference="single-page" initial-page-number="1">
+        <fo:static-content flow-name="xsl-region-before">
+            <fo:block space-after="4pt" space-before="4pt" text-align="right">
+                <fo:external-graphic src="url('file:///C:/Users/test/Daten/Web/xdoc/resources/logo.svg')" text-align="right"/>
+            </fo:block>
+        </fo:static-content>
+        <fo:static-content flow-name="xsl-region-after">
+            <fo:block text-align="outside" font-family="Helvetica, Arial, sans-serif" font-size="10pt">
+                          Seite
+          
+                <fo:page-number/>
+            </fo:block>
+        </fo:static-content>
+        <fo:flow flow-name="xsl-region-body">
+            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="20pt" font-weight="bold" space-after="10pt" space-before="10pt" text-align="start">
+          &#133;Parser</fo:block>
+            <fo:block text-align="start" font-family="Helvetica, Arial, sans-serif" font-size="10pt">Tim Schmitz</fo:block>
+            <fo:block text-align="start" font-family="Helvetica, Arial, sans-serif" font-size="10pt">25.10.2024</fo:block>
+        </fo:flow>
+    </fo:page-sequence>
+    <fo:page-sequence master-reference="single-page" initial-page-number="2">
+        <fo:static-content flow-name="xsl-region-after">
+            <fo:block text-align="outside" font-family="Helvetica, Arial, sans-serif" font-size="10pt">
+                          Seite
+          
+                <fo:page-number/>
+            </fo:block>
+        </fo:static-content>
+        <fo:flow flow-name="xsl-region-body">
+            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="14pt" font-weight="bold" space-after="10pt" space-before="10pt" text-align="start">
+      Inhalt
+    </fo:block>
+            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+                <fo:block text-align-last="justify">
+                    <fo:inline>
+                        Dateien
+                        <fo:leader leader-pattern="dots"/>
+                        <fo:page-number-citation ref-id="Dateien"/>
+                    </fo:inline>
+                </fo:block>
+                <fo:block text-align-last="justify">
+                    <fo:inline>
+                        Hauptprogramm
+                        <fo:leader leader-pattern="dots"/>
+                        <fo:page-number-citation ref-id="Hauptprogramm"/>
+                    </fo:inline>
+                </fo:block>
+                <fo:block text-align-last="justify">
+                    <fo:inline>
+                        Initialisierung der Dateien
+                        <fo:leader leader-pattern="dots"/>
+                        <fo:page-number-citation ref-id="Initialisierung der Dateien"/>
+                    </fo:inline>
+                </fo:block>
+                <fo:block text-align-last="justify">
+                    <fo:inline>
+                        Erzeugen des Dictionary
+                        <fo:leader leader-pattern="dots"/>
+                        <fo:page-number-citation ref-id="Erzeugen des Dictionary"/>
+                    </fo:inline>
+                </fo:block>
+            </fo:block>
+        </fo:flow>
+    </fo:page-sequence>
+    <fo:page-sequence master-reference="single-page" initial-page-number="3">
+        <fo:static-content flow-name="xsl-region-after">
+            <fo:block text-align="outside" font-family="Helvetica, Arial, sans-serif" font-size="10pt" line-height="14pt">
+                          Seite
+          
+                <fo:page-number/>
+            </fo:block>
+        </fo:static-content>
+        <fo:flow flow-name="xsl-region-body">
+            <fo:block break-after="page" font-family="Helvetica, Arial, sans-serif">
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="20pt" font-weight="bold" space-after="10pt" space-before="10pt" text-align="start">Parser</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Das Skript cbmParser.py ist ein Python-Programm, welches Daten aus dem Dateisystem ausliest und hieraus drei neue Dateien im 
+      Dateisystem erzeugt, um sie später in die CBM-Datenbank zu importieren.
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="14pt" font-weight="bold" space-after="10pt" space-before="10pt" text-align="start" id="Dateien">Dateien</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Die folgenden Dateien werden im Skript verwendet bzw. von dem Skript selbst erzeugt:
+    </fo:block>
+                    
+                <fo:block space-after="10pt" space-before="10pt">
+                    <fo:table table-layout="fixed" width="100%">
+                        <fo:table-header>
+                            <fo:table-row>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block background-color="#f0f0f0" font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="bold">Dateiname</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block background-color="#f0f0f0" font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="bold">Dateityp</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block background-color="#f0f0f0" font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="bold">Bedeutung</fo:block>
+                                </fo:table-cell>
+                            </fo:table-row>
+                        </fo:table-header>
+                        <fo:table-body>
+                            <fo:table-row>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">ECO.txt</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">Input-Datei</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">Vorgegebene Liste von Eröffnungsschlüsseln aus Wikipedia</fo:block>
+                                </fo:table-cell>
+                            </fo:table-row>
+                            <fo:table-row>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">ecoFile.txt</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">Output-Datei</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">Indizierte Liste von Eröffnungsschlüsseln aus der Input-Datei</fo:block>
+                                </fo:table-cell>
+                            </fo:table-row>
+                            <fo:table-row>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">cbmFile.txt</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">Output-Datei</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">Indizierte Liste von CBM-Magazinnummern aus dem Verzeichnissystem</fo:block>
+                                </fo:table-cell>
+                            </fo:table-row>
+                            <fo:table-row>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">cbmEcoFile.txt</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">Output-Datei</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">Kombinierte Liste von CBM-Magazinnummern und Eröffnungsschlüsseln</fo:block>
+                                </fo:table-cell>
+                            </fo:table-row>
+                        </fo:table-body>
+                    </fo:table>
+                    <fo:block space-after="6pt" space-before="6pt" font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-style="italic">Tabelle 1: Von dem Skript verwendete bzw. erzeugte Dateien</fo:block>
+                </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Als Speicherort im Dateisystem wird ein Verzeichnis innerhalb des Projektverzeichnisses gewählt, etwa C:\Users\username\Daten\Python\CBM\Files. Um die 
+      Dateien auszulesen bzw. zu erzeugen sind einige technische Vorbedingungen in dem Python-Skript notwendig, damit die gewünschten Funktionen programmgemäß 
+      arbeiten.
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Die Input-Datei ECO.txt ist eine CSV-Datei (Comma Separated Value-Datei mit einem Semikolon als Trennzeichen) und hat folgendes Aussehen:
+    </fo:block>
+                    
+                <fo:block font-family="Courier" font-size="6pt" linefeed-treatment="preserve" white-space-treatment="preserve" space-before="0pt" space-after="4pt" text-align="start" white-space-collapse="false">
+         A24;1. c4 e5 2. Sc3 Sf6 3. g3 g6;
+         A25;1. c4 e5 2. Sc3 Sc6;3. g3 g6 4. Lg2 Lg7 5. e3
+         A26;1. c4 e5 2. Sc3 Sc6 3. g3 g6 4. Lg2 Lg7 5. d3;
+         A27;1. c4 e5 2. Sc3 Sc6 3. Sf3;Dreispringer-Variante_ Holländische Struktur
+         A28;1. c4 e5 2. Sc3 Sc6 3. Sf3 Sf6;Vierspringer-Variante
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Dabei bezeichnet die erste Spalte den eindeutigen Schlüssel, nämlich den ECO-Code. Die zweite Spalte benennt die ersten Züge, die zu diesem Schlüssel gehören. 
+      Die dritte Spalte ist optional und dient der Erläuterung des Codes.
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="14pt" font-weight="bold" space-after="10pt" space-before="10pt" text-align="start" id="Hauptprogramm">Hauptprogramm</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Idealerweise steht das Hauptprogramm am Ende des Skripts, um keine zusätzlichen Ladezeiten im Python-Interpreter bereitstellen zu müssen. Das Hauptprogramm ist 
+      so kodiert, dass es einfach durchlaufen werden kann. Das Hauptprogramm besteht aus zwei Teilen:
+    </fo:block>
+                    
+                <fo:list-block provisional-distance-between-starts="50mm" provisional-label-separation="10mm" space-after="4pt" space-before="4pt">
+                    <fo:list-item>
+                        <fo:list-item-label>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="normal">1.
+          </fo:block>
+                        </fo:list-item-label>
+                        <fo:list-item-body>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" start-indent="5mm">Im ersten Teil werden die FileHandler für die eine Eingabedatei und die drei Ausgabedateien initialisiert</fo:block>
+                        </fo:list-item-body>
+                    </fo:list-item>
+                    <fo:list-item>
+                        <fo:list-item-label>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="normal">2.
+          </fo:block>
+                        </fo:list-item-label>
+                        <fo:list-item-body>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" start-indent="5mm">Im zweiten Teil werden das CBM-Dictionary und die Ausgabedateien erzeugt</fo:block>
+                        </fo:list-item-body>
+                    </fo:list-item>
+                </fo:list-block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Bei dem Dictionary handelt es sich um eine Datenstruktur in Python, die aus Schlüssel-Wert-Paaren besteht. Der erste Teil des Hauptprogramms beteht aus vier Aufrufen:
+    </fo:block>
+                    
+                <fo:list-block provisional-distance-between-starts="50mm" provisional-label-separation="10mm" space-after="4pt" space-before="4pt">
+                    <fo:list-item>
+                        <fo:list-item-label>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="normal">•
+          </fo:block>
+                        </fo:list-item-label>
+                        <fo:list-item-body>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" start-indent="5mm">Zunächst wird der Output-FileHandler für das CBM-File initalisiert, das ist diejenige Datei, die alle CBM-Ausgaben mit ihrer laufenden Nummer und einem fortlaufenden Index beinhaltet</fo:block>
+                        </fo:list-item-body>
+                    </fo:list-item>
+                    <fo:list-item>
+                        <fo:list-item-label>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="normal">•
+          </fo:block>
+                        </fo:list-item-label>
+                        <fo:list-item-body>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" start-indent="5mm">Anschließend erfolgt die Initialisierung des Input-FileHandlers für das ECO-Input-File. Diese Datei enthält alle ECO-Schlüssel mit Anfangszügen und einer Kurzbeschreibung aus Wikipedia</fo:block>
+                        </fo:list-item-body>
+                    </fo:list-item>
+                    <fo:list-item>
+                        <fo:list-item-label>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="normal">•
+          </fo:block>
+                        </fo:list-item-label>
+                        <fo:list-item-body>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" start-indent="5mm">Danach wird der Output-FileHandler für das ECO-Output-File erzeugt. Diese Datei entspricht der ECO-Input-Datei mitsamt Indizierung</fo:block>
+                        </fo:list-item-body>
+                    </fo:list-item>
+                    <fo:list-item>
+                        <fo:list-item-label>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="normal">•
+          </fo:block>
+                        </fo:list-item-label>
+                        <fo:list-item-body>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" start-indent="5mm">Zum Schluss wird der FileHandler für das CBM-ECO-File kreiiert. Diese Datei beinhaltet alle Verweise auf Eröffnungsartikel und verknüpft sie mit der entsprechenden Inforamtion aus dem CBM- und dem ECO-File</fo:block>
+                        </fo:list-item-body>
+                    </fo:list-item>
+                </fo:list-block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Der erste Teil des Hauptprogramms besteht also aus vier Zeilen. Jede Zeile entspricht einer Datei als Rückgabewerte der Initialisierungs-Subfunktionen. Damit erfüllt jede der Subfunktionen eine genau abgegrenzte, 
+      enge Aufgabe. 
+    </fo:block>
+                    
+                <fo:block font-family="Courier" font-size="6pt" linefeed-treatment="preserve" white-space-treatment="preserve" space-before="0pt" space-after="4pt" text-align="start" white-space-collapse="false">
+        #----------------------------------------------------------#
+        # Das Hauptprogramm ruft sequentiell die Unterprogramme    #
+        # auf. Zunächst werden die FileHandler initialisiert.      #
+        #----------------------------------------------------------#         
+        cbmFile       = initCbmFile()
+        ecoInputFile  = initEcoInputFile()
+        ecoOutputFile = initEcoOutputFile()
+        cbmEcoFile    = initCbmEcoFile()
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Im zweiten Teil des Hauptprogramms werden die eigentlichen Funktionen des Skripts aufgerufen und abgearbeitet. Jede Funktion erzeugt eine Datei im Dateisystem.
+    </fo:block>
+                    
+                <fo:list-block provisional-distance-between-starts="50mm" provisional-label-separation="10mm" space-after="4pt" space-before="4pt">
+                    <fo:list-item>
+                        <fo:list-item-label>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="normal">1.
+          </fo:block>
+                        </fo:list-item-label>
+                        <fo:list-item-body>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" start-indent="5mm">Die Funktion createCbmEcoFile() erzeugt zunächst das CBM-Dictionary. Anschließend werden die Eröffnungsartikel identifiziert, indiziert und in das CBM-ECO-File geschrieben.</fo:block>
+                        </fo:list-item-body>
+                    </fo:list-item>
+                    <fo:list-item>
+                        <fo:list-item-label>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="normal">2.
+          </fo:block>
+                        </fo:list-item-label>
+                        <fo:list-item-body>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" start-indent="5mm">Die Funktion createEcoFile() erzeugt aus der vorgegebenen Liste der Eröffnungsschlüssel eine indizierte Liste derselben.</fo:block>
+                        </fo:list-item-body>
+                    </fo:list-item>
+                    <fo:list-item>
+                        <fo:list-item-label>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="normal">3.
+          </fo:block>
+                        </fo:list-item-label>
+                        <fo:list-item-body>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" start-indent="5mm">Die Funktion createCbmFile() erzeugt aus dem Verzeichnis der CBM-Magazine eine indizierte Liste aller CBM-Magazinnummern.</fo:block>
+                        </fo:list-item-body>
+                    </fo:list-item>
+                </fo:list-block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Der zweite Teil des Hauptprogramms besteht also aus drei Zeilen, die jeweils einem Funktionsaufruf entsprechen.
+    </fo:block>
+                    
+                <fo:block font-family="Courier" font-size="6pt" linefeed-treatment="preserve" white-space-treatment="preserve" space-before="0pt" space-after="4pt" text-align="start" white-space-collapse="false">
+        #----------------------------------------------------------#
+        # Anschließend werden das Dictionary und die               #
+        # Ausgabedateien erzeugt                                   #
+        #----------------------------------------------------------#
+        CbmDictionary = createCbmEcoFile()
+        createEcoFile(ecoInputFile, ecoOutputFile) 
+        createCbmFile(CbmDictionary, cbmFile) 
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="14pt" font-weight="bold" space-after="10pt" space-before="10pt" text-align="start" id="Initialisierung der Dateien">Initialisierung der Dateien</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Zur Initialisierung von Input- oder Output-Dateien in Python werden FileHandler verwendet. Das ist im allgmeinenen ein Begriff für die Handhabung von Dateien in Python, es gibt aber auch 
+      eine spezielle Verwendung des Begriffs. Dabei ist der FileHandler in Python ein Bestandteil des logging-Moduls und wird verwendet, um Log-Nachrichten in eine Datei zu schreiben. 
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Es gibt die folgenden Modalkennzeichen:
+    </fo:block>
+                    
+                <fo:list-block provisional-distance-between-starts="50mm" provisional-label-separation="10mm" space-after="4pt" space-before="4pt">
+                    <fo:list-item>
+                        <fo:list-item-label>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="normal">•
+          </fo:block>
+                        </fo:list-item-label>
+                        <fo:list-item-body>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" start-indent="5mm">Für das Lesen einer Datei: 'r' für read</fo:block>
+                        </fo:list-item-body>
+                    </fo:list-item>
+                    <fo:list-item>
+                        <fo:list-item-label>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="normal">•
+          </fo:block>
+                        </fo:list-item-label>
+                        <fo:list-item-body>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" start-indent="5mm">Für das Schreiben einer Datei: 'w' für write</fo:block>
+                        </fo:list-item-body>
+                    </fo:list-item>
+                    <fo:list-item>
+                        <fo:list-item-label>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="normal">•
+          </fo:block>
+                        </fo:list-item-label>
+                        <fo:list-item-body>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" start-indent="5mm">Für das Anhängen an eine Datei: 'a' für add</fo:block>
+                        </fo:list-item-body>
+                    </fo:list-item>
+                </fo:list-block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Im Grunde sind die FileHandler für Input- und Output-Dateien sehr ähnlich und unterscheiden sich nur durch ein Modalkennzeichen, das den Modus für diese Datei angibt. Der FileHandler für 
+      die Input-Datei ECO.txt wird in folgender Subroutine definiert, die diesen als Rückgabewert behandelt. 
+    </fo:block>
+                    
+                <fo:block font-family="Courier" font-size="6pt" linefeed-treatment="preserve" white-space-treatment="preserve" space-before="0pt" space-after="4pt" text-align="start" white-space-collapse="false">
+        #-----------------------------------------------------#
+        # Die Funktion initEcoInputFile() initialisiert den   #
+        # ECO-Input-Dateihandler des Programms                #
+        #-----------------------------------------------------#
+        def initEcoInputFile():
+          print("Initialisiere EcoInputFileHandler ...")
+          ecoInputFile = open(FILE_LOCATION + 'ECO.txt','r')
+          return ecoInputFile
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="14pt" font-weight="bold" space-after="10pt" space-before="10pt" text-align="start" id="Erzeugen des Dictionary">Erzeugen des Dictionary</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      In der Routine createCbmEcoFile() erzeugt das sogenannte Dictionary. Ein Dictionary ist eine Datenstruktur, die aus einfachen Schlüssel-Werte-Paaren besteht.
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Die folgende Abbildung beschreibt den Ablauf der Subfunktion und skizziert im wesentlichen den Ablauf der 
+      Verarbeitung vom Start links oben bis zum Ende rechts unten. 
+    </fo:block>
+                    
+                <fo:block space-after="4pt" space-before="4pt" line-height="0pt">
+                    <fo:external-graphic src="url('file:///C:/Users/Test/Daten/Web/xdoc/xcbm/img/ParserCreateCbmEcoFile.svg')"/>
+                </fo:block>
+                <fo:block space-after="6pt" space-before="6pt" font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-style="italic">
+        Abbildung 1: Ablauf der Subfunktion
+      </fo:block>
+                  
+            </fo:block>
+        </fo:flow>
+    </fo:page-sequence>
+</fo:root>

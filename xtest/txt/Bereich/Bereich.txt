@@ -1,0 +1,9 @@
+Ein Bereichsseite
+=================
+Diese Seite ist ein Muster für eine Domänenseite. Der Name der Seite ist identisch zum Verzeichnis.
+
+
+Inhalt
+======
+Bereich-Referenz
+Unterbereich

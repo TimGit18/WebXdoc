@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" standalone='yes'?>
+<document env="xapp">
+
+  <main>
+    <topic name="Home" link="http://localhost:8080/xdoc/xapp/html/xapp.html"/>
+  </main>
+
+  <links>
+    <link type="stylesheet">http://localhost:8080/xdoc/resources/css/bootstrap.min.css</link>
+    <link type="stylesheet">http://localhost:8080/xdoc/resources/css/bootstrap-toc.min.css</link>
+    <link type="icon">http://localhost:8080/xdoc/resources/favicon.ico</link>
+  </links>
+
+  <scripts>
+    <script>http://localhost:8080/xdoc/resources/lib/angular.js</script>
+    <script>http://localhost:8080/xdoc/resources/lib/jquery-3.2.1.min.js</script>
+    <script>http://localhost:8080/xdoc/resources/lib/popper.min.js</script>
+    <script>http://localhost:8080/xdoc/resources/lib/bootstrap.min.js</script>
+    <script>http://localhost:8080/xdoc/resources/lib/bootstrap-toc.min.js</script>
+  </scripts>
+
+  <title>Anwendungsarchitektur</title>
+  <author>Tim Schmitz</author>
+  <date>01.09.2026</date>
+
+  <content>
+    <headline>Anwendungsarchitektur</headline>
+    <abstract>
+      Obwohl es sich bei der Beispiel-Anwendung um eine kleine Stand-Alone-Applikation handelt ohne Web-API oder User Interface handelt, ist es bereits notwendig, 
+      einige grundlegende architektonische Konzepte und Prinzipien zu beachten. Diese dienen dazu, die Anwendung verständlich und wartbar zu halten. Gleichzeitig 
+      kann die Applikation als Muster für weitergehende, komplexere Anwendungsmodelle verwendet werden.
+    </abstract>
+
+
+    <subheadline id="Aufrufhierarchie">Aufrufhierarchie</subheadline>
+
+    <text>
+      Die Aufrufhierarchie der Anwendung lautet wie folgt:
+    </text>
+    <list>
+      <listitem>Durch die Hauptklasse ApplicationMain wird die Anwendung von außen gestartet</listitem>
+      <listitem>Die Hauptklasse ruft den Wrapper ApplicationStart </listitem>
+      <listitem>Dieser Wrapper delegiert die Programmausführung an die Ladeklasse ApplicationBootstrap</listitem>
+      <listitem>Die Ladeklasse ApplicationBootstrap lädt die Konfiguration über die entsprechende Klasse ApplicationConfig</listitem>
+      <listitem>Im nächsten Schritt ermittelt die Ladeklasse den Hostnamen über die Klasse HostNameResolver</listitem>
+      <listitem>Mittels des Hostnamen und der Konfiguration wird der passende Log-Pfad über die Klasse LogPathResolver ermittelt</listitem>
+      <listitem>Danach wird von der Ladeklasse der ControlService gestartet, der die drei Phasen start(), process() und complete() verwaltet.</listitem>
+    </list>
+
+
+    <subheadline id="Kapselung">Kapselung</subheadline>
+
+    <text>
+      Das Prinzip der Kapselung von Daten und Methoden ermöglicht es, nur diejenigen Informationen und Daten in einem Modul zu verarbeiten, die gleichartige 
+      Anwendungszwecke besitzen. Dazu werden die Module bewusst klein und kompakt gehalten. 
+    </text>
+  </content>
+</document>

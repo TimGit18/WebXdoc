@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8" standalone='yes'?>
+<document env="xang">
+
+  <main>
+    <topic name="Home" link="http://localhost:8080/xdoc/xang/html/xang.html"/>
+  </main>
+
+  <links>
+    <link type="stylesheet">http://localhost:8080/xdoc/xang/css/bootstrap.min.css</link>
+    <link type="stylesheet">http://localhost:8080/xdoc/xang/css/bootstrap-toc.min.css</link>
+    <link type="icon">http://localhost:8080/xdoc/xang/img/favicon.svg</link>
+  </links>
+
+  <scripts>
+    <script>http://localhost:8080/xdoc/xang/lib/angular.js</script>
+    <script>http://localhost:8080/xdoc/xang/lib/jquery-3.2.1.min.js</script>
+    <script>http://localhost:8080/xdoc/xang/lib/popper.min.js</script>
+    <script>http://localhost:8080/xdoc/xang/lib/bootstrap.min.js</script>
+    <script>http://localhost:8080/xdoc/xang/lib/bootstrap-toc.min.js</script>
+  </scripts>
+
+  <title>Komponenten</title>
+  <author>Tim Schmitz</author>
+  <date>05.07.2023</date>
+
+  <content>
+    <headline>Komponenten</headline>
+    <abstract>
+      Komponenten definieren Ansichten (Views) für die Anwendung. Komponenten definieren also, was der Benutzer von der 
+      Anwendung sieht. Technisch gesehen werden mit Komponenten neue HTML-Tags definiert. 
+    </abstract>
+
+
+    <subheadline id="Definition">Definition</subheadline>
+
+    <text>
+      Eine Komponente besteht aus drei Teilen:
+    </text>
+    <numlist>
+      <listitem>Eine Klasse mit dem Component-Decorator. Dieser definiert die Klasse zu einer Komponente.</listitem>
+      <listitem>Ein Template, das im Grunde das HTML der Komponente enthält.</listitem>
+      <listitem>Die Styles der Komponente, die über CSS-Stylesheets erzeugt werden können.	</listitem>
+    </numlist>
+
+
+    <text>
+      Die Klasse und das Template sind erforderlich, die Styles dagegen sind optional. Es gibt zwei Möglichkeiten, das 
+      Template und die Styles zu definieren. 
+    </text>
+    <list>
+      <listitem>Sie können direkt im Decorator als inline-Deklarationen angegeben werden</listitem>
+      <listitem>Sie können auch in eigenen Dateien definiert werden und dann im Decorator referenziert werden</listitem>
+    </list>
+
+
+    <text>
+      In dem letzteren Fall sollten die Komponenten dieselben Dateiendungen wie die Dateien mit den entsprechenden Klassen besitzen:
+    </text>
+    <table>
+      <tableheadline>
+        <tablerow>
+          <tableheaditem>Kompomente</tableheaditem>
+          <tableheaditem>Namen</tableheaditem>
+        </tablerow>
+      </tableheadline>
+      <tablebody>
+        <tablerow>
+          <tableitem>Klasse</tableitem>
+          <tableitem>app.component.ts</tableitem>
+        </tablerow>
+        <tablerow>
+          <tableitem>Template</tableitem>
+          <tableitem>app.component.html</tableitem>
+        </tablerow>
+        <tablerow>
+          <tableitem>Style</tableitem>
+          <tableitem>app.component.css</tableitem>
+        </tablerow>
+        <tablecaption>Tabelle 1: Bezeichner für Komponenten</tablecaption>
+      </tablebody>
+    </table>
+
+    <subheadline id="Hauptkomponente">Hauptkomponente</subheadline>
+
+    <text>
+      Die Hauptkomponente wurde von der Angular-Enwicklungsumgebung erzeugt und besitzt folgendes Aussehen:
+    </text>
+    <codebox>
+        import { Component } from '@angular/core';
+      
+        @Component({
+          selector: 'app-root',
+          templateUrl: './app.component.html',
+          styleUrls: ['./app.component.css']
+        })
+        export class AppComponent {
+          title = 'The Contacts-Manager';
+        }
+    </codebox>
+
+
+    <text>
+      Diese Klasse definiert Eigenschaften und Methoden. Diese können im Template referenziert werden und zum Beispiel
+      dem Benutzer den Wert einer Eigenschaft anzeigen. Standardmäßig wird in der Hauptkomponente nur die Eigenschaft 
+      "title" angezeigt. 
+    </text>
+
+    <subheadline id="Decorator">Decorator</subheadline>
+
+    <text>
+      Der Component-Decorator wird mit dem Schlüsselwort @Component deklariert und besitzt die folgenden Eigenschaften:
+    </text>
+    <bold>selector</bold>
+
+    <text>
+      Diese Eigenschaft definiert den Tag-Namen (app-root), mit dem die Komponente im Template (app.component.html) 
+      referenziert wird. 
+    </text>
+    <bold>templateUrl</bold>
+
+    <text>
+      Diese Eigenschaft definiert das Template der Komponente. Normalerweise steht hier ein relativer Pfad zu einer 
+      HTML-Datei. Wird hingegen nur die Eigenschaft "template" angegeben, so folgt ein vollqualifizierter HTML-Pfad.
+      Diese Eigenschaft ist die einzige, die nicht optional ist. 
+    </text>
+    <bold>styleUrls </bold>
+
+    <text>
+      Diese Eigenschaft definiert den Style der Komponente. Hier steht ein Array von Strings, jeder String ist ein 
+      relativer Pfad zu einer CSS-Datei. 
+    </text>
+    <bold>providers</bold>
+
+    <text>
+      Dieser Array registriert Providers für die Komponente und alle ihre Kinder.
+    </text>
+    <bold>viewEnscapsulation</bold>
+
+    <text>
+      Diese Eigenschaft kapselt die Auswirkung von CSS-Styles auf bestimmte Bereiche. 
+    </text>
+
+    <subheadline id="Template">Template</subheadline>
+
+    <text>
+      Das Template der Komponente ist eine HTML-Datei. Sie definiert, was der Nutzer zur Laufzeit sieht und wie der 
+      Nutzer mit dieser interagiert. Das Template schreibt man mit HTML und weiteren Syntaxelementen, die in Angular 
+      zur Verfügung stehen. 
+    </text>
+
+    <text>
+      Zum Beispiel gibt es im normalen HTML keine Möglichkeit aus einem Template eine Eigenscahft aus TypeScript zu 
+      referenzieren. In Angular geschieht dies über das "Data Binding" (Datenbindung). Damit werden Eigenschaften und 
+      Methoden im Template nutzbar.
+    </text>
+
+    <text>
+      Ein Ausschnitt des Templates lautet zum Beispiel:
+    </text>
+    <codebox>
+        &lt;div class="card highlight-card card-small"&gt;
+          &lt;span&gt;{{ title }} app is running now!&lt;/span&gt;
+          ...	
+        &lt;/div&gt;
+    </codebox>
+
+
+    <text>
+      Die Datenbindung lautet damit {{title}}. Damit sieht der Benutzer zur Laufzeit den Wert der Eigenschaft title aus 
+      der Komponente. Diese Eigenschaft und deren Wert sind in der Klasse der Komponente definiert.
+    </text>
+    <codebox>
+        export class AppComponent {
+          title = 'The Contacts-Manager';
+        }
+    </codebox>
+
+
+    <text>
+      Falls sich der Wert von title zur Laufzeit ändert, dann wird auch die Ansicht entsprechend angepasst. Abgesehen davon 
+      besteht der Rest des Templates aus regulärem HTML. Diese Art der Datenbindung heißt Interpolation, die sich am besten 
+      für Strings und Zahlen als Werte eignet. 
+    </text>
+
+    <text>
+      Der Prozess, der auf die Datenbindung reagiert, heißt in Angular Change Detection. Er überprüft, ob sich Daten geändert 
+      haben. Der Prozess selbst wird vom Webserver durchgeführt, sobald ein Ereignis eintritt.
+    </text>
+
+    <subheadline id="Styles">Styles</subheadline>
+
+    <text>
+      Jede Komponente kann ihre eigenen Styles besitzen.  Diese stehen in einer (leer generierten) Datei app.component.css. 
+      Die globalen Styles stehen in der Hauptdatei styles.css. Es macht Sinn die Styles zu lokalisieren, um die globale Datei 
+      zu entlasten und die Auswirkungen zu limitieren. Referenziert werden die Styles in dem Stylesheet-Pfad des Decorators
+      unter der Eigenschaft styleUrls. 
+    </text>
+
+    <text>
+      Es gibt folgende Vorteile, Styles für eine Komponente zu definieren:
+    </text>
+    <list>
+      <listitem>Es gibt weniger globale Styles und somit auch eine kleinere globale Datei styles.css</listitem>
+      <listitem>Komponenten-lokale Styles habe keine Auswirkungen auf andere Komponenten</listitem>
+    </list>
+
+
+    <text>
+      Diese Einschränkungen können durch ViewEncapsulation geändert werden. 
+    </text>
+    <list>
+      <listitem>None: Die Styles werden global angewendet, man kann aber externe Bibliotheken wie Bootstrap einbinden</listitem>
+      <listitem>Emulated: Das ist die Standardeinstellung, in der die Styles nur lokal angewendet werden, globale Styles allerdings auch</listitem>
+      <listitem>ShadowDom: Die Styles wirken sich nur auf die definierende Komponente aus</listitem>
+    </list>
+
+
+    <subheadline id="Deklaration">Deklaration</subheadline>
+
+    <text>
+      Jede Komponente muss deklariert werden, d.h. die Klasse der Komponente muss im declarations-Array des Angular-Modul stehen. Ansonsten
+      würde es zur Laufzeit zu einer Exception kommen. Das Code-Listing des Modules sieht wie folgt aus:
+    </text>
+    <codebox>
+        import { AppComponent } from './app.component';
+        
+        @NgModule({
+          declarations: [
+            AppComponent
+          ],
+          ...
+        })
+        export class AppModule { }
+    </codebox>
+
+
+    <text>
+      Damit gehört die Komponente zum Module. Die Komponente darf nur in genau einem Angular-Modul deklariert werden. 
+    </text>
+  </content>
+</document>

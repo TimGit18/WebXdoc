@@ -1,0 +1,15 @@
+Java-Applikation
+================
+Diese Seite beschreibt die Entwicklung einer einfachen Java-Applikation, die als Rahmenwerk angesehen werden kann. 
+Die Anwendung selber leistet nichts. Sie soll nur das Gerüst bereitstellen, damit auf dieser Basis Funktionalität angebaut 
+werden kann. Die Architektur beschreibt eine Minimal-Konfiguration für eine Applikation.
+
+
+Inhalt
+======
+Programmiermodell
+Entwicklungsumgebung
+Anwendungsarchitektur
+Build-Prozess
+JUnit-Tests
+

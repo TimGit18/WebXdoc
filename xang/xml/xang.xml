@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" standalone='yes'?>
+<document env="xang">
+
+  <main>
+    <topic name="Home" link="http://localhost:8080/xdoc/xang/html/xang.html"/>
+  </main>
+
+  <links>
+    <link type="stylesheet">http://localhost:8080/xdoc/xang/css/bootstrap.min.css</link>
+    <link type="stylesheet">http://localhost:8080/xdoc/xang/css/bootstrap-toc.min.css</link>
+    <link type="icon">http://localhost:8080/xdoc/xang/img/favicon.svg</link>
+  </links>
+
+  <scripts>
+    <script>http://localhost:8080/xdoc/xang/lib/angular.js</script>
+    <script>http://localhost:8080/xdoc/xang/lib/jquery-3.2.1.min.js</script>
+    <script>http://localhost:8080/xdoc/xang/lib/popper.min.js</script>
+    <script>http://localhost:8080/xdoc/xang/lib/bootstrap.min.js</script>
+    <script>http://localhost:8080/xdoc/xang/lib/bootstrap-toc.min.js</script>
+  </scripts>
+
+  <title>xang</title>
+  <author>Tim Schmitz</author>
+  <date>05.07.2023</date>
+
+  <content>
+    <headline>Angular</headline>
+    <abstract>
+      Diese Seite beschreibt eine Einführung in das JavaScript-Framework Angular, das auf der Programmiersprache
+      TypeScript beruht. Das zentrale Architekturkonzept beruht auf einer Hierarchie von Komponenten. 
+    </abstract>
+
+    <horizontal/>
+    <tableofcontent>
+      <item>
+        <html name="Start" link="http://localhost:8080/xdoc/xang/html/Start.html" type="content"/>
+        <pdf name="Als PDF-Dokument" link="http://localhost:8080/xdoc/xang/pdf/Start.pdf"/>
+      </item>
+      <item>
+        <html name="Initialisierung" link="http://localhost:8080/xdoc/xang/html/Initialisierung.html" type="content"/>
+        <pdf name="Als PDF-Dokument" link="http://localhost:8080/xdoc/xang/pdf/Initialisierung.pdf"/>
+      </item>
+      <item>
+        <html name="Bausteine" link="http://localhost:8080/xdoc/xang/html/Bausteine.html" type="content"/>
+        <pdf name="Als PDF-Dokument" link="http://localhost:8080/xdoc/xang/pdf/Bausteine.pdf"/>
+      </item>
+      <item>
+        <html name="Module" link="http://localhost:8080/xdoc/xang/html/Module.html" type="content"/>
+        <pdf name="Als PDF-Dokument" link="http://localhost:8080/xdoc/xang/pdf/Module.pdf"/>
+      </item>
+      <item>
+        <html name="Komponenten" link="http://localhost:8080/xdoc/xang/html/Komponenten.html" type="content"/>
+        <pdf name="Als PDF-Dokument" link="http://localhost:8080/xdoc/xang/pdf/Komponenten.pdf"/>
+      </item>
+      <item>
+        <html name="Services" link="http://localhost:8080/xdoc/xang/html/Services.html" type="content"/>
+        <pdf name="Als PDF-Dokument" link="http://localhost:8080/xdoc/xang/pdf/Services.pdf"/>
+      </item>
+    </tableofcontent>
+  </content>
+</document>

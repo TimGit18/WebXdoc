@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="UTF-8"?><fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format">
+    <fo:layout-master-set>
+        <fo:simple-page-master master-name="page" page-height="29.7cm" page-width="21cm" margin-top="1cm" margin-bottom="1cm" margin-left="2.5cm" margin-right="2.5cm">
+            <fo:region-body margin-top="1cm" margin-bottom="2cm"/>
+            <fo:region-before extent="3cm"/>
+            <fo:region-after extent="0.5cm"/>
+            <fo:region-start extent="2cm"/>
+            <fo:region-end extent="0.5cm"/>
+        </fo:simple-page-master>
+        <fo:page-sequence-master master-name="single-page">
+            <fo:repeatable-page-master-reference master-reference="page"/>
+        </fo:page-sequence-master>
+    </fo:layout-master-set>
+    <fo:page-sequence master-reference="single-page" initial-page-number="1">
+        <fo:static-content flow-name="xsl-region-before">
+            <fo:block space-after="4pt" space-before="4pt" text-align="right">
+                <fo:external-graphic src="url('file:///C:/Users/schmi/Daten/Web/xdoc/resources/logo.svg')" text-align="right"/>
+            </fo:block>
+        </fo:static-content>
+        <fo:static-content flow-name="xsl-region-after">
+            <fo:block text-align="outside" font-family="Helvetica, Arial, sans-serif" font-size="10pt">
+                          Seite
+          
+                <fo:page-number/>
+            </fo:block>
+        </fo:static-content>
+        <fo:flow flow-name="xsl-region-body">
+            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="20pt" font-weight="bold" space-after="10pt" space-before="10pt" text-align="start">
+          &#133;JUnit-Tests</fo:block>
+            <fo:block text-align="start" font-family="Helvetica, Arial, sans-serif" font-size="10pt">Tim Schmitz</fo:block>
+            <fo:block text-align="start" font-family="Helvetica, Arial, sans-serif" font-size="10pt">01.09.2026</fo:block>
+        </fo:flow>
+    </fo:page-sequence>
+    <fo:page-sequence master-reference="single-page" initial-page-number="2">
+        <fo:static-content flow-name="xsl-region-after">
+            <fo:block text-align="outside" font-family="Helvetica, Arial, sans-serif" font-size="10pt">
+                          Seite
+          
+                <fo:page-number/>
+            </fo:block>
+        </fo:static-content>
+        <fo:flow flow-name="xsl-region-body">
+            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="14pt" font-weight="bold" space-after="10pt" space-before="10pt" text-align="start">
+      Inhalt
+    </fo:block>
+            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+                <fo:block text-align-last="justify">
+                    <fo:inline>
+                        Test-Verzeichnis
+                        <fo:leader leader-pattern="dots"/>
+                        <fo:page-number-citation ref-id="Test-Verzeichnis"/>
+                    </fo:inline>
+                </fo:block>
+                <fo:block text-align-last="justify">
+                    <fo:inline>
+                        Bibliotheken
+                        <fo:leader leader-pattern="dots"/>
+                        <fo:page-number-citation ref-id="Bibliotheken"/>
+                    </fo:inline>
+                </fo:block>
+                <fo:block text-align-last="justify">
+                    <fo:inline>
+                        Test-Klasse
+                        <fo:leader leader-pattern="dots"/>
+                        <fo:page-number-citation ref-id="Test-Klasse"/>
+                    </fo:inline>
+                </fo:block>
+                <fo:block text-align-last="justify">
+                    <fo:inline>
+                        Voraussetzungen für Testfälle
+                        <fo:leader leader-pattern="dots"/>
+                        <fo:page-number-citation ref-id="Voraussetzungen für Testfälle"/>
+                    </fo:inline>
+                </fo:block>
+            </fo:block>
+        </fo:flow>
+    </fo:page-sequence>
+    <fo:page-sequence master-reference="single-page" initial-page-number="3">
+        <fo:static-content flow-name="xsl-region-after">
+            <fo:block text-align="outside" font-family="Helvetica, Arial, sans-serif" font-size="10pt" line-height="14pt">
+                          Seite
+          
+                <fo:page-number/>
+            </fo:block>
+        </fo:static-content>
+        <fo:flow flow-name="xsl-region-body">
+            <fo:block break-after="page" font-family="Helvetica, Arial, sans-serif">
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="20pt" font-weight="bold" space-after="10pt" space-before="10pt" text-align="start">JUnit-Tests</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Das Testen der Anwendungsmodule geschieht am besten über das Testframework JUnit. Im folgenden wird die Minimalkonfiguration und 
+      die einfache Verweundung des Testframeworks beschrieben-.
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="14pt" font-weight="bold" space-after="10pt" space-before="10pt" text-align="start" id="Test-Verzeichnis">Test-Verzeichnis</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Das globale Testverzeichnis der Applikation wird unterhalb der Ebene der Applikation angelegt.
+    </fo:block>
+                    
+                <fo:block space-after="6pt" space-before="6pt">
+                    <fo:table table-layout="fixed" width="100%">
+                        <fo:table-column column-width="30mm"/>
+                        <fo:table-column column-width="10mm"/>
+                        <fo:table-column column-width="60mm"/>
+                        <fo:table-column column-width="60mm"/>
+                        <fo:table-body>
+                                  
+                            <fo:table-row>
+                                <fo:table-cell>
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">application</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell>
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">
+          ==&gt;
+        </fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell>
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">New...</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell>
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt"/>
+                                </fo:table-cell>
+                            </fo:table-row>
+                                  
+                            <fo:table-row>
+                                <fo:table-cell>
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt"/>
+                                </fo:table-cell>
+                                <fo:table-cell>
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">
+          ==&gt;
+        </fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell>
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">Directory</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell>
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt"/>
+                                </fo:table-cell>
+                            </fo:table-row>
+                                  
+                            <fo:table-row>
+                                <fo:table-cell>
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt"/>
+                                </fo:table-cell>
+                                <fo:table-cell>
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">
+          ==&gt;
+        </fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell>
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">
+                                        <fo:block font-weight="bold">New Directory-Dialog</fo:block>
+                                    </fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell>
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt"/>
+                                </fo:table-cell>
+                            </fo:table-row>
+                                  
+                            <fo:table-row>
+                                <fo:table-cell>
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt"/>
+                                </fo:table-cell>
+                                <fo:table-cell>
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt"/>
+                                </fo:table-cell>
+                                <fo:table-cell>
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">Name:</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell>
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">test</fo:block>
+                                </fo:table-cell>
+                            </fo:table-row>
+                                
+                        </fo:table-body>
+                    </fo:table>
+                </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Anschließend wird das Verzeichnis wie folgt markiert:
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Wichtig ist, dass das Verzeichnis properties, das auf der ersten Ebene der Applikation liegt, wie folgt markiert wird:
+    </fo:block>
+                    
+                <fo:block space-after="6pt" space-before="6pt">
+                    <fo:table table-layout="fixed" width="100%">
+                        <fo:table-column column-width="30mm"/>
+                        <fo:table-column column-width="10mm"/>
+                        <fo:table-column column-width="60mm"/>
+                        <fo:table-column column-width="60mm"/>
+                        <fo:table-body>
+                                  
+                            <fo:table-row>
+                                <fo:table-cell>
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">test</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell>
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">
+          ==&gt;
+        </fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell>
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">Kontextmenü</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell>
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt"/>
+                                </fo:table-cell>
+                            </fo:table-row>
+                                  
+                            <fo:table-row>
+                                <fo:table-cell>
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt"/>
+                                </fo:table-cell>
+                                <fo:table-cell>
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">
+          ==&gt;
+        </fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell>
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">Mark Directory as</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell>
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt"/>
+                                </fo:table-cell>
+                            </fo:table-row>
+                                  
+                            <fo:table-row>
+                                <fo:table-cell>
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt"/>
+                                </fo:table-cell>
+                                <fo:table-cell>
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">
+          ==&gt;
+        </fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell>
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">Test Sources Root</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell>
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt"/>
+                                </fo:table-cell>
+                            </fo:table-row>
+                                
+                        </fo:table-body>
+                    </fo:table>
+                </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Die Test-Struktur der Anwendung mit den neuen Test-Klassen sieht vereinfacht wie folgt aus:
+    </fo:block>
+                    
+                <fo:block font-family="Courier" font-size="6pt" linefeed-treatment="preserve" white-space-treatment="preserve" space-before="0pt" space-after="4pt" text-align="start" white-space-collapse="false">
+      application
+        --test
+          -- de
+            -- domain
+              -- application
+                -- config
+                  -- ApplicationConfigTest.java
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Also eine neue Struktur.
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="14pt" font-weight="bold" space-after="10pt" space-before="10pt" text-align="start" id="Bibliotheken">Bibliotheken</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Analog den Logging-Bibliotheken werden die folgenden beiden JUnit-Testframework-Libraries eingebunden:
+    </fo:block>
+                    
+                <fo:list-block provisional-distance-between-starts="50mm" provisional-label-separation="10mm" space-after="4pt" space-before="4pt">
+                    <fo:list-item>
+                        <fo:list-item-label>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="normal">•
+          </fo:block>
+                        </fo:list-item-label>
+                        <fo:list-item-body>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" start-indent="5mm">junit-jupiter-api-5.6.1	</fo:block>
+                        </fo:list-item-body>
+                    </fo:list-item>
+                    <fo:list-item>
+                        <fo:list-item-label>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="normal">•
+          </fo:block>
+                        </fo:list-item-label>
+                        <fo:list-item-body>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" start-indent="5mm">junit-platform-commons-1.6.1</fo:block>
+                        </fo:list-item-body>
+                    </fo:list-item>
+                </fo:list-block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="14pt" font-weight="bold" space-after="10pt" space-before="10pt" text-align="start" id="Test-Klasse">Test-Klasse</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Die JUnit Test-Klasse hat einen möglichst ähnlichen Namen und einen analogen Paketpfad wie die Klasse, die unter diesem Test steht. 
+      Ebenso sollten die Methoden der JUnit Test-Klasse entsprechend lautende Namen besitzen wie in dem folgenden Beispiel:
+    </fo:block>
+                    
+                <fo:block space-after="10pt" space-before="10pt">
+                    <fo:table table-layout="fixed" width="100%">
+                        <fo:table-header>
+                            <fo:table-row>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block background-color="#f0f0f0" font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="bold">Bezeichnung</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block background-color="#f0f0f0" font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="bold">Source</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block background-color="#f0f0f0" font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="bold">JUnit Test</fo:block>
+                                </fo:table-cell>
+                            </fo:table-row>
+                        </fo:table-header>
+                        <fo:table-body>
+                            <fo:table-row>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">Klassen-Name</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">ApplicationConfig</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">ApplicationConfigTest</fo:block>
+                                </fo:table-cell>
+                            </fo:table-row>
+                            <fo:table-row>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">Paket</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">de.domain.application.config</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">de.domain.application.config</fo:block>
+                                </fo:table-cell>
+                            </fo:table-row>
+                        </fo:table-body>
+                    </fo:table>
+                    <fo:block space-after="6pt" space-before="6pt" font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-style="italic">Tabelle 1: Bezeichner von Original und Test-Klasse</fo:block>
+                </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="14pt" font-weight="bold" space-after="10pt" space-before="10pt" text-align="start" id="Voraussetzungen für Testfälle">Voraussetzungen für Testfälle</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Bevor Tests ausgeführt werden können, müssen in der Regel bestimmte Voraussetzungen erfüllt sein.
+    </fo:block>
+                  
+            </fo:block>
+        </fo:flow>
+    </fo:page-sequence>
+</fo:root>

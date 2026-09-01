@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8" standalone='yes'?>
+<document env="xapp">
+
+  <main>
+    <topic name="Home" link="http://localhost:8080/xdoc/xapp/html/xapp.html"/>
+  </main>
+
+  <links>
+    <link type="stylesheet">http://localhost:8080/xdoc/resources/css/bootstrap.min.css</link>
+    <link type="stylesheet">http://localhost:8080/xdoc/resources/css/bootstrap-toc.min.css</link>
+    <link type="icon">http://localhost:8080/xdoc/resources/favicon.ico</link>
+  </links>
+
+  <scripts>
+    <script>http://localhost:8080/xdoc/resources/lib/angular.js</script>
+    <script>http://localhost:8080/xdoc/resources/lib/jquery-3.2.1.min.js</script>
+    <script>http://localhost:8080/xdoc/resources/lib/popper.min.js</script>
+    <script>http://localhost:8080/xdoc/resources/lib/bootstrap.min.js</script>
+    <script>http://localhost:8080/xdoc/resources/lib/bootstrap-toc.min.js</script>
+  </scripts>
+
+  <title>JUnit-Tests</title>
+  <author>Tim Schmitz</author>
+  <date>01.09.2026</date>
+
+  <content>
+    <headline>JUnit-Tests</headline>
+    <abstract>
+      Das Testen der Anwendungsmodule geschieht am besten über das Testframework JUnit. Im folgenden wird die Minimalkonfiguration und 
+      die einfache Verweundung des Testframeworks beschrieben-.
+    </abstract>
+
+
+    <subheadline id="Test-Verzeichnis">Test-Verzeichnis</subheadline>
+
+    <text>
+      Das globale Testverzeichnis der Applikation wird unterhalb der Ebene der Applikation angelegt.
+    </text>
+    <sequence>
+      <sequenceline start="application" target="New..."/>
+      <sequenceline target="Directory"/>
+      <sequenceline target="New Directory-Dialog" dialogue="yes"/>
+      <sequenceitem target="Name:" comment="test"/>
+    </sequence>
+
+    <text>
+      Anschließend wird das Verzeichnis wie folgt markiert:
+    </text>
+
+    <text>
+      Wichtig ist, dass das Verzeichnis properties, das auf der ersten Ebene der Applikation liegt, wie folgt markiert wird:
+    </text>
+    <sequence>
+      <sequenceline start="test" target="Kontextmenü"/>
+      <sequenceline target="Mark Directory as"/>
+      <sequenceline target="Test Sources Root"/>
+    </sequence>
+
+    <text>
+      Die Test-Struktur der Anwendung mit den neuen Test-Klassen sieht vereinfacht wie folgt aus:
+    </text>
+    <codebox>
+      application
+        --test
+          -- de
+            -- domain
+              -- application
+                -- config
+                  -- ApplicationConfigTest.java
+    </codebox>
+
+
+    <text>
+      Also eine neue Struktur.
+    </text>
+
+    <subheadline id="Bibliotheken">Bibliotheken</subheadline>
+
+    <text>
+      Analog den Logging-Bibliotheken werden die folgenden beiden JUnit-Testframework-Libraries eingebunden:
+    </text>
+    <list>
+      <listitem>junit-jupiter-api-5.6.1	</listitem>
+      <listitem>junit-platform-commons-1.6.1</listitem>
+    </list>
+
+
+    <subheadline id="Test-Klasse">Test-Klasse</subheadline>
+
+    <text>
+      Die JUnit Test-Klasse hat einen möglichst ähnlichen Namen und einen analogen Paketpfad wie die Klasse, die unter diesem Test steht. 
+      Ebenso sollten die Methoden der JUnit Test-Klasse entsprechend lautende Namen besitzen wie in dem folgenden Beispiel:
+    </text>
+    <table>
+      <tableheadline>
+        <tablerow>
+          <tableheaditem>Bezeichnung</tableheaditem>
+          <tableheaditem>Source</tableheaditem>
+          <tableheaditem>JUnit Test</tableheaditem>
+        </tablerow>
+      </tableheadline>
+      <tablebody>
+        <tablerow>
+          <tableitem>Klassen-Name</tableitem>
+          <tableitem>ApplicationConfig</tableitem>
+          <tableitem>ApplicationConfigTest</tableitem>
+        </tablerow>
+        <tablerow>
+          <tableitem>Paket</tableitem>
+          <tableitem>de.domain.application.config</tableitem>
+          <tableitem>de.domain.application.config</tableitem>
+        </tablerow>
+        <tablecaption>Tabelle 1: Bezeichner von Original und Test-Klasse</tablecaption>
+      </tablebody>
+    </table>
+
+    <subheadline id="Voraussetzungen für Testfälle">Voraussetzungen für Testfälle</subheadline>
+
+    <text>
+      Bevor Tests ausgeführt werden können, müssen in der Regel bestimmte Voraussetzungen erfüllt sein.
+    </text>
+  </content>
+</document>

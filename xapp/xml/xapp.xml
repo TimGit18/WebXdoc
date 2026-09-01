@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" standalone='yes'?>
+<document env="xapp">
+
+  <main>
+    <topic name="Home" link="http://localhost:8080/xdoc/xapp/html/xapp.html"/>
+  </main>
+
+  <links>
+    <link type="stylesheet">http://localhost:8080/xdoc/resources/css/bootstrap.min.css</link>
+    <link type="stylesheet">http://localhost:8080/xdoc/resources/css/bootstrap-toc.min.css</link>
+    <link type="icon">http://localhost:8080/xdoc/resources/favicon.ico</link>
+  </links>
+
+  <scripts>
+    <script>http://localhost:8080/xdoc/resources/lib/angular.js</script>
+    <script>http://localhost:8080/xdoc/resources/lib/jquery-3.2.1.min.js</script>
+    <script>http://localhost:8080/xdoc/resources/lib/popper.min.js</script>
+    <script>http://localhost:8080/xdoc/resources/lib/bootstrap.min.js</script>
+    <script>http://localhost:8080/xdoc/resources/lib/bootstrap-toc.min.js</script>
+  </scripts>
+
+  <title>xapp</title>
+  <author>Tim Schmitz</author>
+  <date>01.09.2026</date>
+
+  <content>
+    <headline>Java-Applikation</headline>
+    <abstract>
+      Diese Seite beschreibt die Entwicklung einer einfachen Java-Applikation, die als Rahmenwerk angesehen werden kann. 
+      Die Anwendung selber leistet nichts. Sie soll nur das Gerüst bereitstellen, damit auf dieser Basis Funktionalität angebaut 
+      werden kann. Die Architektur beschreibt eine Minimal-Konfiguration für eine Applikation.
+    </abstract>
+
+    <horizontal/>
+    <tableofcontent>
+      <item>
+        <html name="Programmiermodell" link="http://localhost:8080/xdoc/xapp/html/Programmiermodell.html" type="content"/>
+        <pdf name="Als PDF-Dokument" link="http://localhost:8080/xdoc/xapp/pdf/Programmiermodell.pdf"/>
+      </item>
+      <item>
+        <html name="Entwicklungsumgebung" link="http://localhost:8080/xdoc/xapp/html/Entwicklungsumgebung.html" type="content"/>
+        <pdf name="Als PDF-Dokument" link="http://localhost:8080/xdoc/xapp/pdf/Entwicklungsumgebung.pdf"/>
+      </item>
+      <item>
+        <html name="Anwendungsarchitektur" link="http://localhost:8080/xdoc/xapp/html/Anwendungsarchitektur.html" type="content"/>
+        <pdf name="Als PDF-Dokument" link="http://localhost:8080/xdoc/xapp/pdf/Anwendungsarchitektur.pdf"/>
+      </item>
+      <item>
+        <html name="Build-Prozess" link="http://localhost:8080/xdoc/xapp/html/Build-Prozess.html" type="content"/>
+        <pdf name="Als PDF-Dokument" link="http://localhost:8080/xdoc/xapp/pdf/Build-Prozess.pdf"/>
+      </item>
+      <item>
+        <html name="JUnit-Tests" link="http://localhost:8080/xdoc/xapp/html/JUnit-Tests.html" type="content"/>
+        <pdf name="Als PDF-Dokument" link="http://localhost:8080/xdoc/xapp/pdf/JUnit-Tests.pdf"/>
+      </item>
+    </tableofcontent>
+  </content>
+</document>

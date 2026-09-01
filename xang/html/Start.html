@@ -1,0 +1,340 @@
+<html lang="de">
+    <head>
+        <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>Start</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="http://localhost:8080/xdoc/xang/css/bootstrap.min.css">
+        <link rel="stylesheet" href="http://localhost:8080/xdoc/xang/css/bootstrap-toc.min.css">
+        <link rel="icon" href="http://localhost:8080/xdoc/xang/img/favicon.svg">
+    </head>
+    <body data-spy="scroll" data-target="#toc">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-2 bg-light">
+                    <figure class="figure">
+                        <img class="figure-img img-fluid rounded" src="http://localhost:8080/xdoc/Ressources/getsitelogo.png">
+                    </figure>
+                    <nav id="toc" class="sticky-top" data-toggle="toc"></nav>
+                </div>
+                <div class="col-sm-10">
+                    <nav class="navbar navbar-expand-lg sticky-top navbar-light bg-light">
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav mr-auto">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="http://localhost:8080/xdoc/xang/html/xang.html">Home</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                    <p></p>
+                        
+                    <h2>Start einer Angular-Anwendung</h2>
+                        
+                    <p></p>
+                          Bevor eine Angular-Anwendung, was im Grunde eine client-seitige Web-Anwendung darstellt, entwickelt werden kann, 
+      m&uuml;ssen zun&auml;chst einige Vorarbeiten geschehen. 
+    
+                    <p></p>
+                        
+                    <h3>Fachbegriffe</h3>
+                        
+                    <p></p>
+                          Folgende Fachbegriffe sollte man kennen:
+    
+                    <p></p>
+                        
+                    <ul>
+                        <li>TypeScript: Echte Programmiersprache, der Angular zugrundeliegt und die nach JavaScript &uuml;bersetzt wird</li>
+                        <li>ES5: ECMAScript-5-Standard (JavaScript)</li>
+                        <li>Visual Studio Code: Kostenloser Texteditor von Microsoft mit vielen Entwicklungs-Tools</li>
+                        <li>TSLint: Code-Analyzer f&uuml;r TypeScript und Angular</li>
+                        <li>Prettier: Formatierer f&uuml;r TypeScript (in VS Code enthalten)</li>
+                        <li>Karma: Testwerkzeug f&uuml;r Angular</li>
+                        <li>Node.js: JavaScript-Laufzeitumgebung au&szlig;erhalb eines Browsers</li>
+                        <li>npm: Node Package Manager, ein Tool f&uuml;r die richtige Installation und korrekte Paketabh&auml;ngigkeiten</li>
+                        <li>Angular CLI: Kommandozeilenbasierte Entwicklungs- und Build-Umgebung</li>
+                    </ul>
+                        
+                    <h3>Node.js und npm</h3>
+                        
+                    <p></p>
+                          Node.js kann auch f&uuml;r server-seitiges JavaScript verwendet werden. Es f&uuml;hrt als Laufzeitumgebung selber 
+      JavaScript aus und liefert auch einen Web-Server (http-server) mit. Bevor man &uuml;berhaupt anfangen kann, 
+      sollte man die Laufzeitumgebung, die &uuml;brigens ein Bin&auml;rprogramm ist, installieren und auch ein Kommandozeilen-Tool,
+      das funktional &uuml;ber die DOS-Box hinausgeht. 
+    
+                    <p></p>
+                        
+                    <ul>
+                        <li>Download von Node.js 	(npm ist enthalten)</li>
+                        <li>Download von Cmdr 	(als Kommandozeilen-Tool)	</li>
+                    </ul>
+                        
+                    <p></p>
+                          Mit den folgenden Befehlen &uuml;berpr&uuml;ft man die Versionen von Node.js und npm:
+    
+                    <p></p>
+                        
+                    <pre>
+                        <code>
+        node --version (v10.16.3)
+        npm --version	 (6.9.0)
+    </code>
+                    </pre>
+                        
+                    <h3>package.json</h3>
+                        
+                    <p></p>
+                          Die Abh&auml;ngigkeiten des Projekts werden in der Konfigurationsdatei package.json. Hier kann man auch lokale 
+      npm-Pakete definieren, die nur innerhalb des Projekts in dem Verzeichnis node_modules verwendet werden. Die 
+      Konfigurationsdatei (des sp&auml;ter initialisierten Projekts) hat folgendes Aussehen:
+    
+                    <p></p>
+                        
+                    <pre>
+                        <code>
+        {
+          "name": "contacts-manager",
+          "version": "0.0.0",
+          "scripts": {
+            "ng": "ng",
+            "start": "ng serve",
+            "build": "ng build",
+            "test": "ng test",
+            "lint": "ng lint",
+            "e2e": "ng e2e"
+          },
+          "private": true,
+          "dependencies": {
+            "@angular/animations": "~10.1.1",
+            "@angular/common": "~10.1.1",
+            ...
+          },
+          "devDependencies": {
+            "@angular-devkit/build-angular": "~0.1001.1",
+            "@angular/cli": "~10.1.1",
+            ...
+          },
+    </code>
+                    </pre>
+                        
+                    <p></p>
+                    <b>name</b>
+                    <p></p>
+                        
+                    <p></p>
+                          Hier wird der Name des Projekts beschrieben.
+    
+                    <p></p>
+                        
+                    <p></p>
+                    <b>version</b>
+                    <p></p>
+                        
+                    <p></p>
+                          In diesem Wert steht die Version des Projekts. 
+    
+                    <p></p>
+                        
+                    <p></p>
+                    <b>scripts</b>
+                    <p></p>
+                        
+                    <p></p>
+                          Dieses Objekt beinhaltet Skripte, die &uuml;ber npm gestartet werden. Wenn man das Skript "start" startet, 
+      dann wird in Wirklichkeit der Befehl "ng serve" ausgef&uuml;hrt. Die Ausf&uuml;hrung eines Skripts wird mit folgendem 
+      Befehl durchgef&uuml;hrt:
+    
+                    <p></p>
+                        
+                    <pre>
+                        <code>npm run skriptname</code>
+                    </pre>
+                        
+                    <p></p>
+                          Mit dem Befehl 
+    
+                    <p></p>
+                        
+                    <pre>
+                        <code>npm run</code>
+                    </pre>
+                        
+                    <p></p>
+                          erh&auml;lt man eine &Uuml;bersicht &uuml;ber die Skripte im Projekt. 
+    
+                    <p></p>
+                        
+                    <p></p>
+                    <b>dependencies</b>
+                    <p></p>
+                        
+                    <p></p>
+                          In diesem Objekt stehen alle Abh&auml;ngigkeiten, die ben&ouml;tigt werden, um die Anwendung zum Laufen zu bringen. 
+    
+                    <p></p>
+                        
+                    <p></p>
+                    <b>devDependencies</b>
+                    <p></p>
+                        
+                    <p></p>
+                          In diesem Objekt befinden sich Abh&auml;ngigkeiten, die w&auml;hrend der Entwicklung, aber nicht mehr zur Laufzeit gebraucht
+      werden. 
+    
+                    <p></p>
+                        
+                    <p></p>
+                    <b>Spezielle Zeichen</b>
+                    <p></p>
+                        
+                    <p></p>
+                          Die Tilde(~) und der Zirkumflex(^) haben spezielle Bedeutungen. Die Tilde vor eine Version gibt an, dass in der 
+      dritten Versionsnummer die neueste genommen werden muss. Der Zirkumflex vor einer Version gibt an, dass in der 
+      zweiten Versionsnummer die neueste genommen werden muss. 
+    
+                    <p></p>
+                        
+                    <p></p>
+                          Neben der Konfigurationsdatei existiert noch ein Datei package-lock.json mit den npm-Paketen, die sich im Verzeichnis 
+      node_modules befinden, und ihrer jeweilgen Version. 
+    
+                    <p></p>
+                        
+                    <h3>Compiler</h3>
+                        
+                    <p></p>
+                          TypeScript ist eine typisierte Programmiersprache, von der JavaScript eine Untermenge ist. Der Compiler hat zwei Funktionen:
+    
+                    <p></p>
+                        
+                    <ol>
+                        <li>Entdeckung von Programmierfehlern</li>
+                        <li>Umwandlung von TypeScript-Code in JavaScript-Code</li>
+                    </ol>
+                        
+                    <p></p>
+                          Die Zielversion von JavaScript kann man mit den Compiler-Optionen &auml;ndern. Die Entwicklungsumgebung Angular CLI wandelt TypeScript 
+      in die JavaScript-Version ES5 (ECMAScript-5-Standard) um, den alle moderenen Browser unterst&uuml;tzen. 
+    
+                    <p></p>
+                        
+                    <p></p>
+                    <b>Compiler-Fehlermeldungen</b>
+                    <p></p>
+                        
+                    <p></p>
+                          Die haupts&auml;chlichen Fehlermeldungen sind Typfehler oder Syntaxfehler. Typfehler entstehen, wenn Konstrukte wie Variablen typfremd 
+      verwendet werden, etwa durch falsche Zuweisungen. Die fehlende Typisierung in JavaScript wird hiermit erzwungen. Syntaxfehler 
+      entstehen durch fehlerhaften Code. Folgende Fehler k&ouml;nnen ebenfalls gemeldet werden, wenn die Compiler-Optionen entsprechend 
+      angepasst sind:
+    
+                    <p></p>
+                        
+                    <ul>
+                        <li>Unerreichbarer Code</li>
+                        <li>&Uuml;berfl&uuml;ssige Funktionsparameter und Variablen</li>
+                        <li>Fehlen von break- oder return-Anweisungen</li>
+                    </ul>
+                        
+                    <p></p>
+                    <b>Compiler-Optionen</b>
+                    <p></p>
+                        
+                    <p></p>
+                          Die Anpassung der Compiler-Optionen geschieht in der ensprechenden Konfigurationsdatei tsconfig.json. Wie auch in der 
+      zentralen Konfigurationsdatei package.json sind die Daten im JSON-Format als Key-Value-Paare abgelegt. Die folgenden 
+      Optionen werden in die Konfigurationsdatei der zuk&uuml;nftig erzeugten Projekte der Angular CLI eingef&uuml;gt. 
+    
+                    <p></p>
+                        
+                    <pre>
+                        <code>
+        "compilerOptions": {
+          ...		
+          "noFallthroughCasesInSwitch": true,
+          "noImplicitAny": true,
+          "noUnusedLocals": true,
+          "noUnusedParameters": true
+        }
+    </code>
+                    </pre>
+                        
+                    <p></p>
+                    <table class="table table-hover table-responsive-sm">
+                        <thead class="thead-light">
+                            <tr>
+                                <th>Option</th><th>Bedeutung</th>
+                            </tr>
+                            <tr></tr>
+                        </thead>
+                        <tbody>
+                            <tr></tr>
+                            <tr>
+                                <td>noFallthroughCasesInSwitch</td><td>Fehlende break- oder return-Anweisung</td>
+                            </tr>
+                            <tr></tr>
+                            <tr>
+                                <td>noImplicitAny</td><td>Impliziter Typ Any</td>
+                            </tr>
+                            <tr></tr>
+                            <tr>
+                                <td>noUnusedLocals</td><td>Nicht verwendete Variablen</td>
+                            </tr>
+                            <tr></tr>
+                            <tr>
+                                <td>noUnusedParameters</td><td>Nicht verwendete Parameter</td>
+                            </tr>
+                            <caption>Tabelle 1: Neue Compiler-Optionen</caption>
+                        </tbody>
+                    </table>
+                    <p></p>
+                        
+                    <h3>Weitere Tools</h3>
+                        
+                    <p></p>
+                          Es gibt noch weitere Tools, die bei der Erstellung von Angular-Anwendungen hilfreich sind. 
+    
+                    <p></p>
+                        
+                    <p></p>
+                    <b>TSLint</b>
+                    <p></p>
+                        
+                    <p></p>
+                          Dieses Werkzeug analysiert den TypeScript-Code auf Wartbarkeit, Konsistenz und Schreibstil. Au&szlig;erdem &uuml;berpr&uuml;ft er 
+      den Code auch auf Fehler. Die Konfiguration erfolgt wie &uuml;blich in einer Konfigurationsdatei tslint.json. Diese 
+      Regeln gelten f&uuml;r das gesamte Projekt. Das codelyzer-Plugin sorgt f&uuml;r die korrekte Benenenung der Bausteine. 
+    
+                    <p></p>
+                        
+                    <p></p>
+                          Das Kommando 
+    
+                    <p></p>
+                        
+                    <pre>
+                        <code>ng lint</code>
+                    </pre>
+                        
+                    <p></p>
+                          analysiert den Code. Wenn keine R&uuml;ckmeldung kommt, war der Code gut.
+    
+                    <p></p>
+                        
+                    <p></p>
+                    <b>Prettier</b>
+                    <p></p>
+                        
+                    <p></p>
+                          Dieses Werkzeug formatiert den TypeScript-Code. 
+    
+                    <p></p>
+                      
+                </div>
+            </div>
+        </div>
+        <script src="http://localhost:8080/xdoc/xang/lib/angular.js"></script><script src="http://localhost:8080/xdoc/xang/lib/jquery-3.2.1.min.js"></script><script src="http://localhost:8080/xdoc/xang/lib/popper.min.js"></script><script src="http://localhost:8080/xdoc/xang/lib/bootstrap.min.js"></script><script src="http://localhost:8080/xdoc/xang/lib/bootstrap-toc.min.js"></script>
+    </body>
+</html>

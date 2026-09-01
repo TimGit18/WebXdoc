@@ -1,0 +1,20 @@
+Java-Applikation
+================
+Diese Seite beschreibt die Entwicklung einer einfachen Java-Applikation, die als Muster oder Rahmenwerk angesehen werden kann. Die Anwendung selber
+leistet nichts. Sie soll nur das generische Gerüst bereitstellen, damit auf dieser Basis Funktionalität angebaut werden kann. Es wird nur eine sehr 
+allgemeine Architektur für einfache Aufgaben skizziert, die nicht für Web-Anwendungen oder Systeme mit Hochverfügbarkeit geeignet ist. 
+
+
+Inhalt
+======
+Programmiermodell
+Kommandozeilen-Werkzeuge
+Java Archive Tool
+Einfacher Build-Prozess
+Ablaufumgebung
+Entwicklungsumgebung
+Komplexer Build-Prozess
+Anwendungsarchitektur
+Logging
+JUnit-Tests
+

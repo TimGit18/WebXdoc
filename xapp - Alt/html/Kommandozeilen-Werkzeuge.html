@@ -1,0 +1,189 @@
+<html lang="de">
+    <head>
+        <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>Kommandozeilen-Werkzeuge</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="http://localhost:8080/xdoc/resources/css/bootstrap.min.css">
+        <link rel="stylesheet" href="http://localhost:8080/xdoc/resources/css/bootstrap-toc.min.css">
+        <link rel="icon" href="http://localhost:8080/xdoc/resources/favicon.ico">
+    </head>
+    <body data-spy="scroll" data-target="#toc">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-2 bg-light">
+                    <figure class="figure">
+                        <img class="figure-img img-fluid rounded" src="http://localhost:8080/xdoc/resources/getsitelogo.png">
+                    </figure>
+                    <nav id="toc" class="sticky-top" data-toggle="toc"></nav>
+                </div>
+                <div class="col-sm-10">
+                    <nav class="navbar navbar-expand-lg sticky-top navbar-light bg-light">
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav mr-auto">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="http://localhost:8080/xdoc/xapp/html/xapp.html">Home</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                    <p></p>
+                        
+                    <h2>Kommandozeilen-Werkzeuge</h2>
+                        
+                    <p></p>
+                          Um Anwendungen in Java zu entwickeln, werden Projekte und Entwicklungswerkzeuge ben&ouml;tigt. Der gew&ouml;hnliche Entwicklungszyklus besteht aus dem 
+      Editieren des Quellcodes, Kompilieren der Klassen, Testen der Anwendung, Auslieferung in die Laufzeitumgebung und Ausf&uuml;hrung der Anwendung.  
+      Eine geeignete Projektstruktur unterst&uuml;tzt dieses Vorgehen und trennt die einzelnen Komponenten des Projekts nach Anwendungsbereichen. Bevor 
+      man sich mit komplexen und leistungsf&auml;higen Werkzeugen wie Integrierten Entwicklungsumgebungen (IDEs) oder Build-Pipelines besch&auml;ftigt, macht 
+      es Sinn einfache Kommandozeilen-Werkzeuge zu kennen, um Basisaufgaben beherrschen zu k&ouml;nnen. Die einfachsten Kommandozeilen-Werkzeuge sind der 
+      Java-Compiler, der Java-Interpreter und der Java-Archiver. In diesem Dokument werden nur der Compiler und der Interpreter behandelt. Der 
+      Archiver erh&auml;lt ein eigenes Dokument.
+    
+                    <p></p>
+                        
+                    <h3>Pfad einbinden</h3>
+                        
+                    <p></p>
+                          Der einfachste Weg, um die Kommandozeilen-Werkzeuge in den Ausf&uuml;hrungspfad des Betriebssystems einzubinden und damit direkt von der 
+      Kommandozeile aus aufzurufen, besteht darin, das Ausf&uuml;hrungsverzeichnis bin des Java Development Kit in den Pfad einzubinden. Dazu 
+      erweitert man die Umgebungsvariable PATH des Betriebssystems um diesen Pfad. In Windows sieht diese Erweiterung folgenderma&szlig;en aus: 
+    
+                    <p></p>
+                        
+                    <pre>
+                        <code>set PATH=%PATH%;C:\Programme\Java\jdk21\bin</code>
+                    </pre>
+                        
+                    <h3>Java-Compiler</h3>
+                        
+                    <p></p>
+                          Der Java-Compiler javac ist das Kommandozeilen-Werkzeug f&uuml;r die &Uuml;bersetzung von Java-Quellen. Er &uuml;bersetzt die vom Entwickler editierte 
+      Quelldatei und erzeugt die Klassendatei. Die Quelldatei besitzt das Suffix .java und die Klassendatei das Suffix .class. 
+    
+                    <p></p>
+                        
+                    <p></p>
+                          Der Aufruf lautet:
+    
+                    <p></p>
+                        
+                    <pre>
+                        <code>javac [Optionen] Quelldateien</code>
+                    </pre>
+                        
+                    <p></p>
+                    <b>Quelldateien</b>
+                    <p></p>
+                        
+                    <p></p>
+                          Die Quelldateien besitzen immer die Endung .java. Es wird immer der komplette Pfad in &Uuml;bereinstimmung mit der Paketstruktur &uuml;bergeben. 
+    
+                    <p></p>
+                        
+                    <p></p>
+                          Folgende Optionen sind m&ouml;glich:
+    
+                    <p></p>
+                        
+                    <p></p>
+                    <b>-cp [Pfad]</b>
+                    <p></p>
+                        
+                    <p></p>
+                          Mit dieser Option werden benutzerdefinierte Klassenpfade spezifiziert. Die Angabe von vollst&auml;ndigen Verzeichnissen oder einzelner Dateien 
+      wie .jar-Files ist m&ouml;glich.
+    
+                    <p></p>
+                        
+                    <p></p>
+                    <b>-d [Verzeichnis]</b>
+                    <p></p>
+                        
+                    <p></p>
+                          Mit dieser Option wird dem Compiler das Zielverzeichnis f&uuml;r die &uuml;bersetzten Klassen angegeben. Es reicht die Angabe eines Oberverzeichnisses. 
+      Aus der Paketstruktur kann der Compiler die Unterverzeichnisse im Zielverzeichnis konstruieren. 
+    
+                    <p></p>
+                        
+                    <p></p>
+                    <b>-nowarn</b>
+                    <p></p>
+                        
+                    <p></p>
+                          Mit dieser werden Warnhinweise auf der Kommandozeilenausgabe unterdr&uuml;ckt. Die Quelldatei wird genauso &uuml;bersetzt wie bei einem Compile ohne Warnung. 
+    
+                    <p></p>
+                        
+                    <h3>Java-Interpreter</h3>
+                        
+                    <p></p>
+                          Der Java-Interpreter java exekutiert ausf&uuml;hrbare Hauptklassen oder Java-Archive. Der Aufruf im Fall einer ausf&uuml;hrbaren Hauptklasse lautet:
+    
+                    <p></p>
+                        
+                    <pre>
+                        <code>java [Optionen] Klasse [Argumente]</code>
+                    </pre>
+                        
+                    <p></p>
+                          Der Aufruf f&uuml;r die Ausf&uuml;hrung eines Archivs lautet:
+    
+                    <p></p>
+                        
+                    <pre>
+                        <code>java [Optionen] -jar Archivdatei [Argumente]</code>
+                    </pre>
+                        
+                    <p></p>
+                    <b>Ausf&uuml;hrung einer Klasse</b>
+                    <p></p>
+                        
+                    <p></p>
+                          Es kann nur die Hauptklasse einer Anwendung, die eine main-Methode enth&auml;lt, ausgef&uuml;hrt werden. Die Klasse muss mit dem vollen Paketnamen 
+      qualifiziert werden. 
+    
+                    <p></p>
+                        
+                    <p></p>
+                    <b>Ausf&uuml;hrung eines Archivs</b>
+                    <p></p>
+                        
+                    <p></p>
+                          Die Option -jar f&uuml;hrt das im Archiv gekapselte Programm aus. Das Archiv ist die Quelle aller Anwendungsklassen. Alle anderen benutzerdefinierten
+      Klassenpfade werden vom Interpreter beim Gebrauch dieser Option ignoriert. Bei Erstellung des Archivs muss eine Manifest-Datei mitgegeben werden, 
+      damit der Interpreter die Hauptklasse der Anwendung findet. 
+    
+                    <p></p>
+                        
+                    <p></p>
+                          Folgende Optionen sind m&ouml;glich:
+    
+                    <p></p>
+                        
+                    <p></p>
+                    <b>-cp [Pfad]</b>
+                    <p></p>
+                        
+                    <p></p>
+                          Mit dieser Option werden benutzerdefinierte Klassenpfade spezifiziert. Die Angabe von vollst&auml;ndigen Verzeichnissen oder einzelner Dateien wie 
+      verschiedene Verzeichnisse und Dateien in einem Klassenpfad zu spezifizieren, m&uuml;ssen diese
+      mit Amnf&uuml;hrungsstrichen eingebunden und mit Semikola getrennt werden. 
+    
+                    <p></p>
+                        
+                    <p></p>
+                    <b>-Dname=value</b>
+                    <p></p>
+                        
+                    <p></p>
+                          Diese Option setzt eine Systemeigenschaft zur Laufzeit der Anwendung wie etwa Benutzername.
+    
+                    <p></p>
+                      
+                </div>
+            </div>
+        </div>
+        <script src="http://localhost:8080/xdoc/resources/lib/angular.js"></script><script src="http://localhost:8080/xdoc/resources/lib/jquery-3.2.1.min.js"></script><script src="http://localhost:8080/xdoc/resources/lib/popper.min.js"></script><script src="http://localhost:8080/xdoc/resources/lib/bootstrap.min.js"></script><script src="http://localhost:8080/xdoc/resources/lib/bootstrap-toc.min.js"></script>
+    </body>
+</html>

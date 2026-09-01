@@ -1,0 +1,6 @@
+Starten mit TypeScript
+======================
+Es handelt um eine modernisierte Variante des sogenannten ECMA5-Standards von JavaScript. 
+Dabei besitzt die Sprache eine statische Typisierung, sie verfügt über moderne Programmierkonzepte 
+wie Klassen und Interfaces und stellt Namespaces und Module bereit. 
+

@@ -1,0 +1,54 @@
+Ubuntu
+======
+Ubuntu ist eine GNU/Linux-Distribution, die sehr leicht unter Windows installiert werden kann.
+
+
+Ubuntu-Installation
+===================
+Die Ubuntu-App wird wie aus dem Microsoft Store installiert (hier in der Version 22.04). Wichtig ist die Festlegung 
+des Administrators, der auch Besitzer des Trägerssystems ist und in der Unix-Terminologie Root heißt.
+
+	* Root:			tim
+	* Root-Passwort:	timubu
+
+
+Windows-Subsystem für Linux (WSL)
+=================================
+Das WSL ist eine Kompatibilitätsschicht unter Windows 11, um ein Ubuntu-Image herunterzuladen und zu installieren. 
+Die Anwendungen des Image können mit WSL nativ unter Windows ausgeführt werden. Dafür müssen folgende Schritte durchgeführt 
+werden: 
+
+	1. Aktivieren des Entwicklermodus unter Windows
+	2. Aktivieren des Windows-Subsystems für Linux
+
+Der Entwicklermodus unter Windows wird wie folgt aktiviert:
+
+Start	==>	Einstellungen
+	==>	System
+	==>	Erweitert
+	==>	Entwicklermodus: Ein
+
+Das Windows-Subsystem für Linux (WSL) wird wie folgt aktiviert:
+	
+Windows + R	==>	optionalfeatures.exe
+		==>	Windows Subsystem for Linux
+		==>	Checkbox aktivieren
+		==>	OK		 
+
+
+Info-Message
+============
+Folgerndermaßen wird die Info-Message zum Start deaktiviert. 
+
+_	vim /home/tim/.hushlogin _
+
+Dies ist eine leere Datei im eigenen Home-Verzeichnis. Sie dient nur zum Deaktivieren der Info-Message.
+
+
+Installation neuer Software-Pakete
+==================================
+Neue Software-Pakete werden mit dem folgenden Kommando installiert:
+
+_	sudo apt-get install packagename	_
+
+

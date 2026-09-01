@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8" standalone='yes'?>
+<document env="xapp">
+
+  <main>
+    <topic name="Home" link="http://localhost:8080/xdoc/xapp/html/xapp.html"/>
+  </main>
+
+  <links>
+    <link type="stylesheet">http://localhost:8080/xdoc/resources/css/bootstrap.min.css</link>
+    <link type="stylesheet">http://localhost:8080/xdoc/resources/css/bootstrap-toc.min.css</link>
+    <link type="icon">http://localhost:8080/xdoc/resources/favicon.ico</link>
+  </links>
+
+  <scripts>
+    <script>http://localhost:8080/xdoc/resources/lib/angular.js</script>
+    <script>http://localhost:8080/xdoc/resources/lib/jquery-3.2.1.min.js</script>
+    <script>http://localhost:8080/xdoc/resources/lib/popper.min.js</script>
+    <script>http://localhost:8080/xdoc/resources/lib/bootstrap.min.js</script>
+    <script>http://localhost:8080/xdoc/resources/lib/bootstrap-toc.min.js</script>
+  </scripts>
+
+  <title>Komplexer Build-Prozess</title>
+  <author>Tim Schmitz</author>
+  <date>16.05.2026</date>
+
+  <content>
+    <headline>Ein komplexerer Build-Prozess</headline>
+    <abstract>
+      Hier wird ein komplexerer Build-Prozess vorgestellt, der auf dem Apache Build-Tool ant basiert. Dieser Build-Prozess wird, anders als der oben 
+      vorgestellte einfache Build-Prozess, aus der Entwicklungsumgebung heraus gestartet. Wie zuvor auch wird die kompilierte Anwendung in eine Java 
+      Archive-Datei verpackt und diese dann in die Produktivumgebung deployet. 
+    </abstract>
+
+
+    <subheadline id="Übersicht">Übersicht</subheadline>
+
+    <text>
+      Für den lokalen Build- und Deployment-Prozess benötigt man zwei Dateien:
+    </text>
+    <numlist>
+      <listitem>Eine Datei build.properties, um die Eigenschaften separat zu definieren</listitem>
+      <listitem>Eine Datei build.xml, die das Build-File für den Prozess definiert</listitem>
+    </numlist>
+
+
+    <text>
+      Das Zusammenspiel der Dateien mit dem Ant Build-Prozess sieht man in der folgenden Abbildung:
+    </text>
+    <figure>
+      <image link="http://localhost:8080/xdoc/xapp/img/Komplexer Build-Prozess.svg" source="file:///C:/Users/schmi/Daten/Web/xdoc/xapp/img/Komplexer Build-Prozess.svg"/>
+      <figurecaption class="figure-caption text-left">
+        Abbildung 1: Komplexer Build-Prozess
+      </figurecaption>
+    </figure>
+
+    <subheadline id="Die Properties-Datei">Die Properties-Datei</subheadline>
+
+    <text>
+      Die Properties-Datei build.properties definiert die folgenden Parameter, die umgebungsabhängig sind. Im Beispiel wurde eine Umgebung des 
+      Users "test" verwendet.
+    </text>
+    <codebox>
+        #-----------------------#
+        # Allgemeine Parameter  #
+        #-----------------------#
+        projects            = C:/Users/test/Daten/Java/Projects
+        runtime             = C:/Users/test/Daten/Java/Applications
+        libraries           = C:/Users/test/Daten/Java/Libraries
+      
+        #-----------------------#
+        # Projekt-Parameter     #
+        #-----------------------#
+        project.application = ${projects}/application
+        project.source      = ${project.application}/src
+        project.properties  = ${project.application}/properties
+        project.metainf     = ${project.application}/META-INF
+      
+        #-----------------------#
+        # Laufzeit-Parameter    #
+        #-----------------------#
+        runtime.application = ${runtime}/application
+        runtime.build       = ${runtime.application}/build
+        runtime.properties  = ${runtime.application}/properties
+        runtime.metainf     = ${runtime.application}/META-INF
+      
+        #-----------------------#
+        # Bibliotheken          #
+        #-----------------------#
+        log4j.api           = ${libraries}/apache-log4j-2.11.1-bin
+        junit.api           = ${libraries}/junit-5
+      
+        #-----------------------#
+        # Test-Parameter        #
+        #-----------------------#
+        project.test      = ${project.application}/test
+        runtime.test      = ${runtime.application}/test
+        runtime.output    = ${runtime.application}/output
+    </codebox>
+
+    <bold>Allgemeine Parameter</bold>
+
+    <text>
+      Die allgemeinen Parameter sind die Parameter, die als Basisverzeichnisse für die einzelnen Parameter definiert wurden. In diesem Fall ist dies die 
+      Entwicklungsumgebung (projects), die Ablauf- oder Laufzeitumgebung (runtime) und die Bibliotheksumgebung (libraries). 
+    </text>
+    <bold>Projekt-Parameter</bold>
+
+    <text>
+      Projekt-Parameter sind zunächst einmal der Pfad zum Projekt selbst (xdoc), dann das Quellcode-Verzeichnis (source) sowie die Properties-Umgebung und 
+      die Meta-Informationen, die zur Entwicklungsumgebung gehören. 
+    </text>
+    <bold>Laufzeit-Parameter</bold>
+
+    <text>
+      Laufzeit-Parameter sind der Ausführungspfad zur Anwendung (xdoc), die Umgebung für die Übersetzung der Anwendung (build) sowie die Properties-Umgebung und 
+      die Meta-Informationen mit der Manifest-Datei, die für das ausführbare Java-Archiv benötigt wird. 
+    </text>
+    <bold>Bibliotheken</bold>
+
+    <text>
+      Die verwendeten Bibliothekspfade liegen alle in einem zentralen Verzeichnis, das neben der Entwicklungs- und der Ablaufumgebung liegt. Die 
+      verwendeten APIs wie Log4j2, Junit, Batik und FOP werden hierüber referenziert. 
+    </text>
+    <bold>Test-Parameter</bold>
+
+    <text>
+      Test-Parameter werden benötigt, um die Test-Umgebung der Entwicklungsumgebung wie auch für den finalen Test der Ablaufumgebung zu 
+      referenzieren mitsamt des Orts, an dem die Testresultate geschrieben werden. 
+    </text>
+
+    <subheadline id="Die Build-Datei">Die Build-Datei</subheadline>
+
+    <text>
+      Die Build-Datei build.xml definiert verschiedene Ziele, sogenannte Targets, und hat folgendes Aussehen:
+    </text>
+    <codebox>
+        &lt;?xml version="1.0" encoding="UTF-8" standalone='yes'?&gt;
+        &lt;project name="application" default="all" basedir="."&gt;
+      
+          &lt;!-- ******************************************************* --&gt;
+          &lt;!-- Verwendung des Property-Files hängt von der Umgebung ab --&gt;
+          &lt;!-- ******************************************************* --&gt;
+          &lt;property file="properties/build.properties"/&gt;
+      
+          &lt;!-- ************** --&gt;
+          &lt;!-- General Target --&gt;
+          &lt;!-- ************** --&gt;
+          &lt;target name="all" depends="clean,prepare,compile,compile-test,test,deploy,run"/&gt;
+      
+          &lt;!-- ******************************************************* --&gt;
+          &lt;!-- Target clean löscht die Artefakte der Laufzeitumgebung  --&gt;
+          &lt;!-- ******************************************************* --&gt;
+          &lt;target name="clean"&gt;
+            &lt;delete dir="${runtime.build}"/&gt;
+            &lt;delete dir="${runtime.properties}"/&gt;
+            &lt;delete dir="${runtime.metainf}"/&gt;
+            &lt;delete dir="${runtime.test}"/&gt;
+            &lt;delete dir="${runtime.output}"/&gt;
+            &lt;delete file="${runtime.application}/application.jar"/&gt;
+          &lt;/target&gt;
+      
+          &lt;!-- *************************************************************** --&gt;
+          &lt;!-- Target prepare bereitet die Artefakte der Laufzeitumgebung vor --&gt;
+          &lt;!-- *************************************************************** --&gt;
+          &lt;target name="prepare" depends="clean"&gt;
+            &lt;mkdir dir="${runtime.build}"/&gt;
+            &lt;mkdir dir="${runtime.properties}"/&gt;
+            &lt;mkdir dir="${runtime.metainf}"/&gt;
+            &lt;mkdir dir="${runtime.test}"/&gt;
+            &lt;mkdir dir="${runtime.output}"/&gt;
+          &lt;/target&gt;
+      
+          &lt;!-- ******************************************************* --&gt;
+          &lt;!-- Target compile übersetzt die Quellen in Klassenobjekte  --&gt;
+          &lt;!-- ******************************************************* --&gt;
+          &lt;target name="compile" description="Übersetzung der Quellen" depends="prepare"&gt;
+            &lt;javac srcdir="${project.source}" destdir="${runtime.build}" includeantruntime="false" deprecation="off"&gt;
+              &lt;classpath&gt;
+                &lt;pathelement path="${runtime.build}"/&gt;
+                &lt;pathelement location="${log4j.api}/log4j-api-2.11.1.jar"/&gt;
+                &lt;pathelement location="${log4j.api}/log4j-core-2.11.1.jar"/&gt;
+              &lt;/classpath&gt;
+            &lt;/javac&gt;
+          &lt;/target&gt;
+      
+          &lt;!-- ********************************************* --&gt;
+          &lt;!-- Target compile-test übersetzt die Testtreiber --&gt;
+          &lt;!-- ********************************************* --&gt;
+          &lt;target name="compile-test" depends="compile"&gt;
+            &lt;javac srcdir="${project.test}" destdir="${runtime.test}" includeantruntime="false"&gt;
+              &lt;classpath&gt;
+                &lt;pathelement location="${junit.api}/junit-jupiter-api-5.6.1.jar"/&gt;
+                &lt;pathelement path="${runtime.build}"/&gt;
+              &lt;/classpath&gt;
+            &lt;/javac&gt;
+          &lt;/target&gt;
+      
+          &lt;!-- ************************************************************************************+* --&gt;
+          &lt;!-- Target test führt die Tests durch                                                      --&gt;
+          &lt;!-- ACHTUNG: die jupiter- und junit-apis werden in den ant/lib-Ordner von IntelliJ kopiert --&gt;
+          &lt;!-- ************************************************************************************** --&gt;
+          &lt;target name="test" depends="compile-test"&gt;
+            &lt;junitlauncher&gt;
+              &lt;classpath&gt;
+                &lt;pathelement path="${junit.api}"/&gt;
+                &lt;pathelement path="${runtime.test}"/&gt;
+                &lt;pathelement path="${runtime.build}"/&gt;
+              &lt;/classpath&gt;
+              &lt;testclasses outputdir="${runtime.output}"&gt;
+                &lt;fileset dir="${runtime.test}"/&gt;
+                &lt;listener type="legacy-brief" sendSysOut="true"/&gt;
+                &lt;listener type="legacy-xml" sendSysErr="true" sendSysOut="true"/&gt;
+              &lt;/testclasses&gt;
+            &lt;/junitlauncher&gt;
+          &lt;/target&gt;
+      
+          &lt;!-- ****************************************************************************** --&gt;
+          &lt;!-- Target deploy sorgt für die Auslieferung der Anwendung in die Laufzeitumgebung --&gt;
+          &lt;!-- ****************************************************************************** --&gt;
+          &lt;target name="deploy" description="Auslieferung der Anwendung" depends="compile"&gt;
+            &lt;copy file="${project.properties}/application.properties" todir="${runtime.properties}"/&gt;
+            &lt;copy file="${project.properties}/log4j2.xml" todir="${runtime.properties}"/&gt;
+            &lt;copy file="${project.metainf}/MANIFEST.MF" todir="${runtime.metainf}"/&gt;
+            &lt;jar destfile="${runtime.application}/application.jar"
+                basedir="${runtime.build}"
+                manifest="${runtime.metainf}/MANIFEST.MF"&gt;
+            &lt;/jar&gt;
+          &lt;/target&gt;
+      
+          &lt;!-- ******************************************************** --&gt;
+          &lt;!-- Target run startet die Anwendung in der Laufzeitumgebung --&gt;
+          &lt;!-- ******************************************************** --&gt;
+          &lt;target name="run" description="Ausführung der Anwendung" depends="deploy"&gt;
+            &lt;java jar="${runtime.application}/application.jar" fork="yes"&gt;
+              &lt;sysproperty key="log4j.configurationFile" value="file://${runtime.properties}/log4j2.xml"/&gt;
+            &lt;/java&gt;
+          &lt;/target&gt;
+      
+        &lt;/project&gt;
+    </codebox>
+
+
+    <text>
+      Das Ant Build-File gehorcht der Nomenklatur für XML-Dateien. Wichtig ist die Kodierung im universellen Zeichensatz UTF-8, die auch in den Targets 
+      referiert wird. Die verschiedenen Targets, mit denen das Build-Tool Apache Ant gerufen werden kann, haben dabei folgende Bedeutung:
+    </text>
+    <bold>Target all</bold>
+
+    <text>
+      Dieses Target umspannt alle anderen Targets, das heißt mit ant all wird die komplette Kommandokette von der Säuberung der Verzeichnisse bis 
+      hin zum Start der Anwendung durchlaufen. 
+    </text>
+    <bold>Target clean</bold>
+
+    <text>
+      Dieses Target dient zur Säuberung der Ablaufumgebung. Die Zielverzeichnisse werden gelöscht. Dazu wird die Ant Task delete verwendet. 
+    </text>
+    <bold>Target prepare</bold>
+
+    <text>
+      Dieses Target dient zur Vorbereitung der Ablaufumgebung. Die Zielverzeichnisse werden erzeugt. Dazu wird das Ant Task mkdir verwendet. 
+    </text>
+    <bold>Target compile</bold>
+
+    <text>
+      Das Target übersetzt die Quellen in Klassenobjekte und verwendet die Zeichensatz-Kodierung UTF-8. Dazu wird die Ant Task javac verwendet. 
+      Die Klassenobjekte werden in das Build-Zielverzeichnis der Laufzeitumgebung geschrieben. Im Klassenpfad wird das Build-Zielverzeichnis als 
+      Pfadelement mitaufgeführt wie auch alle Bibliotheken, die für die Übersetzung notwendig sind. 
+    </text>
+    <bold>Target compile-test</bold>
+
+    <text>
+      Dieses Target übersetzt die Quellen der Testklassen und schreibt sie in das Zielverzeichnis. Im Gegensatz zur Quellcode-Übersetzung wird hier nur 
+      eine andere externe Bibliothek als Pfadelement verwendet, nämlich die Testbibliothek JUnit für Java. 
+    </text>
+    <bold>Target test</bold>
+
+    <text>
+      Dieses Target führt die Tests auf den übersetzten Testklassen mittels des Ant Tasks junitlauncher durch. Dabei werden im Klassenpfad die 
+      Klassenverzeichnisse der Quellcode-Klassen und der Testklassen referenziert. Die Testergebnisse werden in das Ausgabeverzeichnis geschrieben. 
+      Als Vorbereitung müssen die jupiter- und junit-apis werden in den ant/lib-Ordner von IntelliJ kopiert werden. 
+    </text>
+    <bold>Target deploy </bold>
+
+    <text>
+      Dieses Target sorgt für die Auslieferung der Anwendung in die Laufzeitumgebung. Dazu wird mehrfach die Ant Task copy verwendet, um die Ausführung 
+      der Anwendung vorzubereiten, indem die Anwendungs-Properties, die Logger-Konfiguration und das Manifest in die richtigen Verzeichnisse der 
+      Zielumgebung geschrieben werden. Anschließend wird die Ant Task jar benutzt, um das Java-Archiv mit der korrekten UTF-8-Kodierung und dem 
+      inkludierten Manifest zu erstellen.
+    </text>
+    <bold>Target run</bold>
+
+    <text>
+      Dieses Target startet die Anwendung in der Laufzeitumgebung. Es benutzt die Ant Task java und wird mit dem Namen des Verzeichnisses als Argument 
+      aufgerufen, auf dem die Anwendung operiert. Hierbei muss wieder auf die korrekte Zeichensatz-Kodierung der Java Virtual Machine geachtet werden 
+      sowie die Übergabe der korrekten Konfigurationsdatei für den Apache Logger. 
+    </text>
+  </content>
+</document>

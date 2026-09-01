@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone='yes'?>
+<document env="xapp">
+
+  <main>
+    <topic name="Home" link="http://localhost:8080/xdoc/xapp/html/xapp.html"/>
+  </main>
+
+  <links>
+    <link type="stylesheet">http://localhost:8080/xdoc/resources/css/bootstrap.min.css</link>
+    <link type="stylesheet">http://localhost:8080/xdoc/resources/css/bootstrap-toc.min.css</link>
+    <link type="icon">http://localhost:8080/xdoc/resources/favicon.ico</link>
+  </links>
+
+  <scripts>
+    <script>http://localhost:8080/xdoc/resources/lib/angular.js</script>
+    <script>http://localhost:8080/xdoc/resources/lib/jquery-3.2.1.min.js</script>
+    <script>http://localhost:8080/xdoc/resources/lib/popper.min.js</script>
+    <script>http://localhost:8080/xdoc/resources/lib/bootstrap.min.js</script>
+    <script>http://localhost:8080/xdoc/resources/lib/bootstrap-toc.min.js</script>
+  </scripts>
+
+  <title>Build-Prozess</title>
+  <author>Tim Schmitz</author>
+  <date>01.09.2026</date>
+
+  <content>
+    <headline>Build-Prozess</headline>
+    <abstract>
+      Ein einfacher Build-Prozess besteht aus einigen wenigen Schritten, bei dem lediglich die nativen Werkzeuge des JDK verwendet werden 
+      (Java-Compiler javac, Java Archive Tool jar und Java-Interpreter java). Die Steuerung des Builds erfolgt über gescriptete Batch-Dateien. 
+      Ansonsten benötigt man für den Prozess nur die Konmmandozeilen-Befehle der unterliegenden Betriebssystems, hier Windows. 
+    </abstract>
+
+  </content>
+</document>

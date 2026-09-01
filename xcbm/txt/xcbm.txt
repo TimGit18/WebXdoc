@@ -1,0 +1,14 @@
+CBM
+====
+Dies ist die Startseite für die CBM-Anwendung. Die Anwendung liest aus dem Dateisystem digitale Chessbase-Magazine aus,
+ordnet diese in eine Datenbank ein und exportiert die geordneten Informationen in einen Report. Sie besteht aus daher aus 
+nur drei Komponenten: einem Parser, einem Export- und einem Importmodul.
+
+
+Inhalt
+======
+Übersicht
+Datenmodell
+Datenbank
+Parser
+

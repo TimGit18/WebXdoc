@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8" standalone='yes'?>
+<document env="xang">
+
+  <main>
+    <topic name="Home" link="http://localhost:8080/xdoc/xang/html/xang.html"/>
+  </main>
+
+  <links>
+    <link type="stylesheet">http://localhost:8080/xdoc/xang/css/bootstrap.min.css</link>
+    <link type="stylesheet">http://localhost:8080/xdoc/xang/css/bootstrap-toc.min.css</link>
+    <link type="icon">http://localhost:8080/xdoc/xang/img/favicon.svg</link>
+  </links>
+
+  <scripts>
+    <script>http://localhost:8080/xdoc/xang/lib/angular.js</script>
+    <script>http://localhost:8080/xdoc/xang/lib/jquery-3.2.1.min.js</script>
+    <script>http://localhost:8080/xdoc/xang/lib/popper.min.js</script>
+    <script>http://localhost:8080/xdoc/xang/lib/bootstrap.min.js</script>
+    <script>http://localhost:8080/xdoc/xang/lib/bootstrap-toc.min.js</script>
+  </scripts>
+
+  <title>Services</title>
+  <author>Tim Schmitz</author>
+  <date>05.07.2023</date>
+
+  <content>
+    <headline>Services</headline>
+    <abstract>
+      Wie jeder andere Baustein auch ist ein Service eine Klasse in TypeScript. Ein Service definiert die Logik eines 
+      Anwendungsteils und enthält auch noch Hilfsmethoden. Diese Klasse wird aber erst dann zu einem Service, wenn sie 
+      von einem Provider verwendet wird. Alle Bausteine, die von diesem Service abhängen, erhalten diesen dann auch 
+      mittels Dependency Injection. 
+    </abstract>
+
+
+    <subheadline id="Definition">Definition</subheadline>
+
+    <text>
+      Das folgende Beispiel ist ein schlichter Service, der als einzige Funktion einen Array von Zahlen zurückgibt:
+    </text>
+    <codebox>
+        import { Injectable } from '@angular/core';
+      
+        @Injectable()
+          export class DemoService {
+            getData() {
+              return [1, 2, 3];
+          }
+        }
+    </codebox>
+
+
+    <text>
+      Diese Klasse wird mit dem Injectable-Decorator dekoriert. Somit erhält auch diese Klasse wie auch die Klassen von 
+      Komponenten und Angular-Modulen Metadaten. Der Service kann ohne weiteres nicht genutzt werden. Sondern er muss als
+      erstes registriert werden. 
+    </text>
+
+    <text>
+      Wenn man eine neue Klasse (hier die Klasse DemoService als datei demo.service.ts im Verzeichnis demo) einem Projekt 
+      hinzufügt, dann folgt manchmal die Warnung (im Visual Studio Code): "To enable code execution from the current workspace 
+      you must enable workspace library execution". Dies erfolgt wie folgt:
+    </text>
+    <numlist>
+      <listitem>Aufrufen der Kommandopalette mit Ctrl + Shift + P</listitem>
+      <listitem>Eingeben von "TSLint: Manage workspace library execution"</listitem>
+      <listitem>Aufnehmen des entsprechenden Eintrags aus der Vorschlagsliste und die Return-Taste bedienen</listitem>
+    </numlist>
+
+
+    <subheadline id="Registrierung">Registrierung</subheadline>
+
+    <text>
+      Bevor die Klasse DemoService zu einem Service wird und als solcher genutzt werden kann, muss er zunächst als Provider 
+      registriert werden. Um dies zu erreichen, gibt es zwei Möglichkeiten:
+    </text>
+    <numlist>
+      <listitem>Die Service-Klasse kann von dem Angular-Module in einem providers-Array registriert werden</listitem>
+      <listitem>Die Service-Klasse kann sich über den Injectable-Decorator selbst registrieren</listitem>
+    </numlist>
+
+
+    <text>
+      In der ersten Variante das Angular-Module AppModule den providers-Array nutzen, um die Service-Klasse zu registrieren:
+    </text>
+    <codebox>
+        import { DemoService } from './../demo/demo.service';
+        import { BrowserModule } from '@angular/platform-browser';
+        import { NgModule } from '@angular/core';
+        import { AppComponent } from './app.component';
+      
+        @NgModule({
+          declarations: [ AppComponent],
+          imports: [ BrowserModule],
+          providers: [ DemoService ],
+          bootstrap: [AppComponent]
+        })
+        export class AppModule { }
+    </codebox>
+
+
+    <text>
+      Da der DemoService im Verzeichnis demo neben dem Hauptvereichnis app liegt, muss die Import-Direktive den relativen Pfad 
+      qualifizieren. Die zweite Variante nutzt für die Selbstregistrierung wieder den Injectable-Decorator der Klasse DemoService.
+    </text>
+    <codebox>
+        import { Injectable } from '@angular/core';
+      
+        @Injectable({
+          providedIn: 'root'
+        })
+        export class DemoService {
+          getData() {
+            return [1, 2, 3];
+          }
+        }
+    </codebox>
+
+
+    <text>
+      Es wird ein Objekt mit der Eigenschaft "providedIn" übergeben. Der Wert dieser Eigenschaft gibt den Injektor an, in dem der 
+      Service als Provider übergeben werden soll. Die Wertausprägung "root" legt nun fest, dass der Service im globalen Injektor 
+      registriert werden soll. Der globale Injektor ist dabei identisch mit dem Angular-Hauptmodule AppModule. Man könnte auch ein
+      Angular-Modul oder eine Komponente als Injektor angeben. Diese Providers heißen tree-shakeable Providers und sind bevorzugt im 
+      Vergleich zu der Registrierung über providers-Arrays zu verwenden, da sie nur im JavaScript Code-Bundle verbleiben, wenn sie 
+      auch benutzt werden. 
+    </text>
+  </content>
+</document>

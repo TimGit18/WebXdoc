@@ -1,0 +1,586 @@
+<?xml version="1.0" encoding="UTF-8"?><fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format">
+    <fo:layout-master-set>
+        <fo:simple-page-master master-name="page" page-height="29.7cm" page-width="21cm" margin-top="1cm" margin-bottom="1cm" margin-left="2.5cm" margin-right="2.5cm">
+            <fo:region-body margin-top="1cm" margin-bottom="2cm"/>
+            <fo:region-before extent="3cm"/>
+            <fo:region-after extent="0.5cm"/>
+            <fo:region-start extent="2cm"/>
+            <fo:region-end extent="0.5cm"/>
+        </fo:simple-page-master>
+        <fo:page-sequence-master master-name="single-page">
+            <fo:repeatable-page-master-reference master-reference="page"/>
+        </fo:page-sequence-master>
+    </fo:layout-master-set>
+    <fo:page-sequence master-reference="single-page" initial-page-number="1">
+        <fo:static-content flow-name="xsl-region-before">
+            <fo:block space-after="4pt" space-before="4pt" text-align="right">
+                <fo:external-graphic src="url('file:///C:/Users/schmi/Daten/Web/xdoc/resources/logo.svg')" text-align="right"/>
+            </fo:block>
+        </fo:static-content>
+        <fo:static-content flow-name="xsl-region-after">
+            <fo:block text-align="outside" font-family="Helvetica, Arial, sans-serif" font-size="10pt">
+                          Seite
+          
+                <fo:page-number/>
+            </fo:block>
+        </fo:static-content>
+        <fo:flow flow-name="xsl-region-body">
+            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="20pt" font-weight="bold" space-after="10pt" space-before="10pt" text-align="start">
+          &#133;Bereich-Referenz</fo:block>
+            <fo:block text-align="start" font-family="Helvetica, Arial, sans-serif" font-size="10pt">Tim Schmitz</fo:block>
+            <fo:block text-align="start" font-family="Helvetica, Arial, sans-serif" font-size="10pt">29.08.2026</fo:block>
+        </fo:flow>
+    </fo:page-sequence>
+    <fo:page-sequence master-reference="single-page" initial-page-number="2">
+        <fo:static-content flow-name="xsl-region-after">
+            <fo:block text-align="outside" font-family="Helvetica, Arial, sans-serif" font-size="10pt">
+                          Seite
+          
+                <fo:page-number/>
+            </fo:block>
+        </fo:static-content>
+        <fo:flow flow-name="xsl-region-body">
+            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="14pt" font-weight="bold" space-after="10pt" space-before="10pt" text-align="start">
+      Inhalt
+    </fo:block>
+            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+                <fo:block text-align-last="justify">
+                    <fo:inline>
+                        Listenstrukturen
+                        <fo:leader leader-pattern="dots"/>
+                        <fo:page-number-citation ref-id="Listenstrukturen"/>
+                    </fo:inline>
+                </fo:block>
+                <fo:block text-align-last="justify">
+                    <fo:inline>
+                        Tabellenstrukturen
+                        <fo:leader leader-pattern="dots"/>
+                        <fo:page-number-citation ref-id="Tabellenstrukturen"/>
+                    </fo:inline>
+                </fo:block>
+                <fo:block text-align-last="justify">
+                    <fo:inline>
+                        Bild-Referenzen
+                        <fo:leader leader-pattern="dots"/>
+                        <fo:page-number-citation ref-id="Bild-Referenzen"/>
+                    </fo:inline>
+                </fo:block>
+                <fo:block text-align-last="justify">
+                    <fo:inline>
+                        Code
+                        <fo:leader leader-pattern="dots"/>
+                        <fo:page-number-citation ref-id="Code"/>
+                    </fo:inline>
+                </fo:block>
+                <fo:block text-align-last="justify">
+                    <fo:inline>
+                        Sequenzen
+                        <fo:leader leader-pattern="dots"/>
+                        <fo:page-number-citation ref-id="Sequenzen"/>
+                    </fo:inline>
+                </fo:block>
+                <fo:block text-align-last="justify">
+                    <fo:inline>
+                        Weitere Strukturen
+                        <fo:leader leader-pattern="dots"/>
+                        <fo:page-number-citation ref-id="Weitere Strukturen"/>
+                    </fo:inline>
+                </fo:block>
+                <fo:block text-align-last="justify">
+                    <fo:inline>
+                        Links
+                        <fo:leader leader-pattern="dots"/>
+                        <fo:page-number-citation ref-id="Links"/>
+                    </fo:inline>
+                </fo:block>
+            </fo:block>
+        </fo:flow>
+    </fo:page-sequence>
+    <fo:page-sequence master-reference="single-page" initial-page-number="3">
+        <fo:static-content flow-name="xsl-region-after">
+            <fo:block text-align="outside" font-family="Helvetica, Arial, sans-serif" font-size="10pt" line-height="14pt">
+                          Seite
+          
+                <fo:page-number/>
+            </fo:block>
+        </fo:static-content>
+        <fo:flow flow-name="xsl-region-body">
+            <fo:block break-after="page" font-family="Helvetica, Arial, sans-serif">
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="20pt" font-weight="bold" space-after="10pt" space-before="10pt" text-align="start">Bereich-Referenz für xdoc</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Dieser Text soll als Referenzdatei für den Dokumenten-Transformator in ein XML-Format fungieren. Zentrale Bedeutung 
+      haben die wesentlichen Struktur-Elemente von Textdateien (Listen, Tabellen, Bild-Referenzen, Code und Sequenzen). 
+      Und so weiter.
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="14pt" font-weight="bold" space-after="10pt" space-before="10pt" text-align="start" id="Listenstrukturen">Listenstrukturen</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Dieser Abschnitt beinhaltet Listenstrukturen. Zunächst eine nummerierte Liste, anschließend eine unnumerierte Liste. 
+      Die nummerierte Liste hat folgendes Format
+    </fo:block>
+                    
+                <fo:list-block provisional-distance-between-starts="50mm" provisional-label-separation="10mm" space-after="4pt" space-before="4pt">
+                    <fo:list-item>
+                        <fo:list-item-label>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="normal">1.
+          </fo:block>
+                        </fo:list-item-label>
+                        <fo:list-item-body>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" start-indent="5mm">Listenelement 1</fo:block>
+                        </fo:list-item-body>
+                    </fo:list-item>
+                    <fo:list-item>
+                        <fo:list-item-label>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="normal">2.
+          </fo:block>
+                        </fo:list-item-label>
+                        <fo:list-item-body>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" start-indent="5mm">Listenelement 2</fo:block>
+                        </fo:list-item-body>
+                    </fo:list-item>
+                    <fo:list-item>
+                        <fo:list-item-label>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="normal">3.
+          </fo:block>
+                        </fo:list-item-label>
+                        <fo:list-item-body>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" start-indent="5mm">Listenelement 3</fo:block>
+                        </fo:list-item-body>
+                    </fo:list-item>
+                </fo:list-block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Die unnummerierte Liste hat folgendes Format
+    </fo:block>
+                    
+                <fo:list-block provisional-distance-between-starts="50mm" provisional-label-separation="10mm" space-after="4pt" space-before="4pt">
+                    <fo:list-item>
+                        <fo:list-item-label>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="normal">•
+          </fo:block>
+                        </fo:list-item-label>
+                        <fo:list-item-body>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" start-indent="5mm">Listenelement A</fo:block>
+                        </fo:list-item-body>
+                    </fo:list-item>
+                    <fo:list-item>
+                        <fo:list-item-label>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="normal">•
+          </fo:block>
+                        </fo:list-item-label>
+                        <fo:list-item-body>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" start-indent="5mm">Listenelement B</fo:block>
+                        </fo:list-item-body>
+                    </fo:list-item>
+                    <fo:list-item>
+                        <fo:list-item-label>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="normal">•
+          </fo:block>
+                        </fo:list-item-label>
+                        <fo:list-item-body>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" start-indent="5mm">Listenelement C</fo:block>
+                        </fo:list-item-body>
+                    </fo:list-item>
+                </fo:list-block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="14pt" font-weight="bold" space-after="10pt" space-before="10pt" text-align="start" id="Tabellenstrukturen">Tabellenstrukturen</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Dieser Abschnitt beinhaltet Tabellenstrukturen.
+    </fo:block>
+                    
+                <fo:block space-after="10pt" space-before="10pt">
+                    <fo:table table-layout="fixed" width="100%">
+                        <fo:table-header>
+                            <fo:table-row>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block background-color="#f0f0f0" font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="bold">Spalte 1</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block background-color="#f0f0f0" font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="bold">Spalte 2</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block background-color="#f0f0f0" font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="bold">Spalte 3</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block background-color="#f0f0f0" font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="bold">Spalte 4</fo:block>
+                                </fo:table-cell>
+                            </fo:table-row>
+                        </fo:table-header>
+                        <fo:table-body>
+                            <fo:table-row>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">Element 1.1</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">Element 1.2</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">Element 1.3</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">Element 1.4</fo:block>
+                                </fo:table-cell>
+                            </fo:table-row>
+                            <fo:table-row>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">Element 2.1</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">Element 2.2</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">Element 2.3</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">Element 2.4</fo:block>
+                                </fo:table-cell>
+                            </fo:table-row>
+                            <fo:table-row>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">Element 3.1</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">Element 3.2</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">Element 3.3</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">Element 3.4</fo:block>
+                                </fo:table-cell>
+                            </fo:table-row>
+                        </fo:table-body>
+                    </fo:table>
+                    <fo:block space-after="6pt" space-before="6pt" font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-style="italic">Tabelle 1: Elemente</fo:block>
+                </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="14pt" font-weight="bold" space-after="10pt" space-before="10pt" text-align="start" id="Bild-Referenzen">Bild-Referenzen</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Dieser Abschnitt beinhaltet eine Referenz auf eine Bilddatei.
+    </fo:block>
+                    
+                <fo:block space-after="4pt" space-before="4pt" line-height="0pt">
+                    <fo:external-graphic src="url('file:///C:/Users/schmi/Daten/Web/xdoc/xtest/img/Bereich/Bereich-Bild.png')"/>
+                </fo:block>
+                <fo:block space-after="6pt" space-before="6pt" font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-style="italic">
+        Abbildung 1: Bildunterschrift
+      </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="14pt" font-weight="bold" space-after="10pt" space-before="10pt" text-align="start" id="Code">Code</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Code wird als Einrückung dargestellt. Zunächst ein mehrzeiliger Codeblock
+    </fo:block>
+                    
+                <fo:block font-family="Courier" font-size="6pt" linefeed-treatment="preserve" white-space-treatment="preserve" space-before="0pt" space-after="4pt" text-align="start" white-space-collapse="false">
+        String meldung = "hello";
+        System.out.println(meldung);
+        subroutine(value);
+        #?$
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Danach eine eine einzige Codezeile:
+    </fo:block>
+                    
+                <fo:block font-family="Courier" font-size="6pt" linefeed-treatment="preserve" white-space-treatment="preserve" space-before="4pt" space-after="4pt" text-align="start" white-space-collapse="false">print "a line";</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="14pt" font-weight="bold" space-after="10pt" space-before="10pt" text-align="start" id="Sequenzen">Sequenzen</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Sequenzen sind abfolgende Kommandos oder Dialoge
+    </fo:block>
+                    
+                <fo:block space-after="6pt" space-before="6pt">
+                    <fo:table table-layout="fixed" width="100%">
+                        <fo:table-column column-width="30mm"/>
+                        <fo:table-column column-width="10mm"/>
+                        <fo:table-column column-width="60mm"/>
+                        <fo:table-column column-width="60mm"/>
+                        <fo:table-body>
+                                  
+                            <fo:table-row>
+                                <fo:table-cell>
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">File</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell>
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">
+          ==&gt;
+        </fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell>
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">Open Project...</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell>
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt"/>
+                                </fo:table-cell>
+                            </fo:table-row>
+                                  
+                            <fo:table-row>
+                                <fo:table-cell>
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt"/>
+                                </fo:table-cell>
+                                <fo:table-cell>
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">
+          ==&gt;
+        </fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell>
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">
+                                        <fo:block font-weight="bold">Open Project-Dialog</fo:block>
+                                    </fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell>
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt"/>
+                                </fo:table-cell>
+                            </fo:table-row>
+                                  
+                            <fo:table-row>
+                                <fo:table-cell>
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt"/>
+                                </fo:table-cell>
+                                <fo:table-cell>
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt"/>
+                                </fo:table-cell>
+                                <fo:table-cell>
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">Scope</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell>
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">Select one of the following fields</fo:block>
+                                </fo:table-cell>
+                            </fo:table-row>
+                                  
+                            <fo:table-row>
+                                <fo:table-cell>
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt"/>
+                                </fo:table-cell>
+                                <fo:table-cell>
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt"/>
+                                </fo:table-cell>
+                                <fo:table-cell>
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">All Projects</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell>
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">all available projects of the daatabase</fo:block>
+                                </fo:table-cell>
+                            </fo:table-row>
+                                  
+                            <fo:table-row>
+                                <fo:table-cell>
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt"/>
+                                </fo:table-cell>
+                                <fo:table-cell>
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt"/>
+                                </fo:table-cell>
+                                <fo:table-cell>
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">All Prep Projects</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell>
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">available and tested projects</fo:block>
+                                </fo:table-cell>
+                            </fo:table-row>
+                                  
+                            <fo:table-row>
+                                <fo:table-cell>
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt"/>
+                                </fo:table-cell>
+                                <fo:table-cell>
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt"/>
+                                </fo:table-cell>
+                                <fo:table-cell>
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">All user-id Working Projects</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell>
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">own projects</fo:block>
+                                </fo:table-cell>
+                            </fo:table-row>
+                                  
+                            <fo:table-row>
+                                <fo:table-cell>
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt"/>
+                                </fo:table-cell>
+                                <fo:table-cell>
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">
+          ==&gt;
+        </fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell>
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">Project Name</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell>
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt"/>
+                                </fo:table-cell>
+                            </fo:table-row>
+                                  
+                            <fo:table-row>
+                                <fo:table-cell>
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt"/>
+                                </fo:table-cell>
+                                <fo:table-cell>
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt"/>
+                                </fo:table-cell>
+                                <fo:table-cell>
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">Project Version</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell>
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">version des Projekts</fo:block>
+                                </fo:table-cell>
+                            </fo:table-row>
+                                  
+                            <fo:table-row>
+                                <fo:table-cell>
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt"/>
+                                </fo:table-cell>
+                                <fo:table-cell>
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt"/>
+                                </fo:table-cell>
+                                <fo:table-cell>
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">Test without bracket</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell>
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt"/>
+                                </fo:table-cell>
+                            </fo:table-row>
+                                  
+                            <fo:table-row>
+                                <fo:table-cell>
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt"/>
+                                </fo:table-cell>
+                                <fo:table-cell>
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">
+          ==&gt;
+        </fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell>
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">Open</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell>
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt"/>
+                                </fo:table-cell>
+                            </fo:table-row>
+                                
+                        </fo:table-body>
+                    </fo:table>
+                </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="14pt" font-weight="bold" space-after="10pt" space-before="10pt" text-align="start" id="Weitere Strukturen">Weitere Strukturen</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Diese Struktur beschreibt wiederum eine Tabelle.
+    </fo:block>
+                    
+                <fo:block space-after="10pt" space-before="10pt">
+                    <fo:table table-layout="fixed" width="100%">
+                        <fo:table-header>
+                            <fo:table-row>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block background-color="#f0f0f0" font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="bold">Spalte 1</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block background-color="#f0f0f0" font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="bold">Spalte 2</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block background-color="#f0f0f0" font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="bold">Spalte 3</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block background-color="#f0f0f0" font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="bold">Spalte 4</fo:block>
+                                </fo:table-cell>
+                            </fo:table-row>
+                        </fo:table-header>
+                        <fo:table-body>
+                            <fo:table-row>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">Element 1.1</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">Element 1.2</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">Element 1.3</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">Element 1.4</fo:block>
+                                </fo:table-cell>
+                            </fo:table-row>
+                            <fo:table-row>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">Element 2.1</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">Element 2.2</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">Element 2.3</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">Element 2.4</fo:block>
+                                </fo:table-cell>
+                            </fo:table-row>
+                            <fo:table-row>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">Element 3.1</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">Element 3.2</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">Element 3.3</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell border-color="black" border-style="solid">
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">Element 3.4</fo:block>
+                                </fo:table-cell>
+                            </fo:table-row>
+                        </fo:table-body>
+                    </fo:table>
+                    <fo:block space-after="6pt" space-before="6pt" font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-style="italic">Tabelle 2: Weitere Elemente</fo:block>
+                </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="bold">Abschließend etwas Fettdruck</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="14pt" font-weight="bold" space-after="10pt" space-before="10pt" text-align="start" id="Links">Links</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Weitere Links sind im folgenden aufgeführt:
+    </fo:block>
+                    
+                <fo:block space-after="6pt" space-before="6pt">
+                    <fo:table table-layout="fixed" width="100%">
+                        <fo:table-column column-width="150mm"/>
+                        <fo:table-body>
+                            <fo:table-row>
+                                <fo:table-cell>
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">
+                                        Test
+                                        <fo:basic-link external-destination="http://localhost:8080/xdoc/Test/html/Test.html"/>
+                                    </fo:block>
+                                </fo:table-cell>
+                            </fo:table-row>
+                            <fo:table-row>
+                                <fo:table-cell>
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">
+                                        Bereich
+                                        <fo:basic-link external-destination="http://localhost:8080/xdoc/Test/html/Bereich/Bereich.html"/>
+                                    </fo:block>
+                                </fo:table-cell>
+                            </fo:table-row>
+                            <fo:table-row>
+                                <fo:table-cell>
+                                    <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt">
+                                        Thema
+                                        <fo:basic-link external-destination="http://localhost:8080/xdoc/Test/html/Thema/Thema.html"/>
+                                    </fo:block>
+                                </fo:table-cell>
+                            </fo:table-row>
+                        </fo:table-body>
+                    </fo:table>
+                </fo:block>
+                  
+            </fo:block>
+        </fo:flow>
+    </fo:page-sequence>
+</fo:root>

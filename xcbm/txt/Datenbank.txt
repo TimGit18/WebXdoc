@@ -1,0 +1,148 @@
+Datenbank
+=========
+Die Datenbank ist die physische Implementierung des logischen Datenmodells. Dabei wird idealerweise jeder Entität und jeder 
+Beziehung eine Tabelle zugeordnet. Aus Performance-Gründen wird die Datenbank oft nicht normalisiert abgebildet, sondern es 
+wird mit Datensichten oder denormalisierten Tabellen gearbeitet, dies ist aber bei kleinen Datenbanken wie der CBM-Datenbank 
+nicht notwendig. Im Grunde könnte man auch in dieser Anwendungsdomäne auch ohne Datenbank areiten, jedoch ist sie hier aus 
+didaktischen Gründen nützlich.
+
+
+Implementierung
+===============
+Das zugrundeliegende Relationale Datenbank-Managementsystem (RDBMS) ist ein SQL Server 2022 von Microsoft. Als Werkzeug zur 
+Administration der Datenbank wird dasw SQL Server Management Studio verwendet. 
+
+
+Überblick
+=========
+Insgesamt besteht die Datenbank aus drei Tabellen, wie in folgender Übersicht zu sehen ist:
+
+Abbildung 1 --> Datenbank.svg
+Abbildung 1: Tabellen der CBM-Datenbank
+
+
+Erstellung
+==========
+Die Erstellung der Datenbank benötigt eine Administrator-Account. Mit folgendem Kommando wird die Datenbank CBM angelegt:
+
+_	create database CBM;	_
+
+
+Tabelle Magazine
+================
+Die Tabelle Magazin ist die Implementierung der Entität Magazin. Sie wird mit dem folgenden Kommando in der Datenbank 
+angelegt:
+
+_
+  create table CBM.dbo.Magazine (
+    id integer not null,
+    issue nvarchar(6) not null,
+    primary key (id));	
+_
+
+Die Tabelle besteht aus folgenden Feldern:
+
+ ---------------------------------------------
+| Feld  | Datentyp    | Bedeutung             |
+ ---------------------------------------------
+| id    | int         | Technischer Schlüssel |
+| issue | nvarchar(6) | Fachlicher Schlüssel  |
+ ---------------------------------------------
+Tabelle 1: Felder der Tabelle Magazine
+
+
+Tabelle ECO
+===========
+Die Tabelle ECO ist die Implementierung der Entität Eröffnungsschlüssel. Sie wird mit dem folgenden Kommando in der Datenbank 
+angelegt:
+
+_
+  create table CBM.dbo.ECO (
+    id integer not null,
+    ecokey char(03) not null,
+    moves nvarchar(255) not null,	
+    eco_description nvarchar(255) not null,
+    primary key (id));	
+_
+
+Die Tabelle besteht aus folgenden Feldern:
+
+ ----------------------------------------------------------
+| Feld            | Datentyp      | Bedeutung              |
+ ----------------------------------------------------------
+| id              | int           | Technischer Schlüssel  |
+| ecokey          | char(03)      | Fachlicher Schlüssel   |
+| moves           | nvarchar(255) | Anfangszüge            |
+| eco_description | nvarchar(255) | Wikipedia-Beschreibung |
+ ----------------------------------------------------------
+Tabelle 2: Felder der Tabelle ECO
+
+
+Tabelle Magazine_ECO
+====================
+Die Tabelle Magazine_ECO ist die Implementierung der informationstragenden Beziehung Eröffnungsschlüssel. Sie wird mit dem folgenden Kommando in der Datenbank 
+angelegt:
+
+_
+  create table CBM.dbo.Magazine_ECO(
+    id integer not null,
+    id_magazine integer not null,
+    id_eco integer not null,
+    cbm_eco_description nvarchar(255) not null,
+    primary key (id));
+_
+
+Die Tabelle besteht aus folgenden Feldern:
+
+ ---------------------------------------------------------------
+| Feld                | Datentyp      | Bedeutung               |
+ ---------------------------------------------------------------
+| id                  | int           | Technischer Schlüssel   |
+| id_magazine         | int           | Fremdschlüssel          |
+| id_eco              | int           | Fremdschlüssel          |
+| cbm_eco_description | nvarchar(255) | Artikelkurzbeschreibung |
+ ---------------------------------------------------------------
+Tabelle 3: Felder der Tabelle Magazine_ECO
+
+
+Query über alle drei Tabellen
+=============================
+Die folgende Query stellt einen Join über alle drei verknüpften Tabellen dar:
+
+_
+  select t1.issue,
+         t2.ecokey,
+         t2.moves,
+         t2.eco_description,
+         t3.cbm_eco_description
+  from   CBM.dbo.Magazine t1,
+         CBM.dbo.ECO t2,
+         CBM.dbo.Magazine_ECO t3
+  where  t1.id = t3.id_magazine
+  and    t2.id = t3.id_eco
+  order by t2.ecokey;
+_
+
+Dieser Abfrage selektiert alle Eröffnungsartikel mitsamt den dazugehörigen Eröffnungsschlüsseln und Magazinen sowie den 
+dazugehörigen Beschreibungen und Zügen. Sortiert wird der Result Set am Ende nach den Eröffnungsschlüsseln wie in der 
+folgenden Teilmenge dessen zeigt:
+
+ --------------------------------------------------------------------------------------------------------------------------------------------------
+| issue  | ecokey | moves                         | eco_description                                                   | cbm_eco_descr              |
+ --------------------------------------------------------------------------------------------------------------------------------------------------
+| CBM204 | A01    | 1. b3                         | Larsen-Eröffnung                                                  | Larsen Opening             |
+| CBM195 | A05    | 1. Sf3 Sf6                    | Übergang in verschiedene Eröffnungen                              | Reti_2g3_b5                |
+| CBM171 | A05    | 1. Sf3 Sf6                    | Übergang in verschiedene Eröffnungen                              | Reti Opening               |
+| CBM170 | A07    | 1. Sf3 d5 2. g3 ohne 2. c5    | 3. Lg2 (Barcza-System)                                            | Reversed Pirc              |
+| CBM212 | A07    | 1. Sf3 d5 2. g3 ohne 2. c5    | 3. Lg2 (Barcza-System)                                            | Reti                       |
+| CBM220 | A07    | 1. Sf3 d5 2. g3 ohne 2. c5    | 3. Lg2 (Barcza-System)                                            | Reti                       |
+| CBM173 | A07    | 1. Sf3 d5 2. g3 ohne 2. c5    | 3. Lg2 (Barcza-System)                                            | Reti Opening               |
+| CBM173 | A09    | 1. Sf3 d5 2. c4	              | Réti-Eröffnung                                                    | Reti Opening               |
+| CBM168 | A09    | 1. Sf3 d5 2. c4               | Réti-Eröffnung                                                    | Reti Opening               |
+| CBM206 | A09    | 1. Sf3 d5 2. c4               | Réti-Eröffnung                                                    | Reti 3b4 g5                |
+| CBM201 | A10    | 1. c4 ohne 1. c6 1. e6 1. Sf6 | Abarten von Holländisch Damenindisch und Königsindisch (ohne d4)  | Stonewall against English  | 
+ --------------------------------------------------------------------------------------------------------------------------------------------------
+Tabelle 4: Ergebnisse der Query
+
+Hinweis: Aus Platzgründen wurde die Überschrift der letzten Tabellenspalte von cbm_eco_description auf cbm_eco_descr abgekürzt.
+

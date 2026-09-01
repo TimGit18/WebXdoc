@@ -1,0 +1,182 @@
+Start einer Angular-Anwendung
+=============================
+Bevor eine Angular-Anwendung, was im Grunde eine client-seitige Web-Anwendung darstellt, entwickelt werden kann, 
+müssen zunächst einige Vorarbeiten geschehen. 
+
+
+Fachbegriffe
+============
+Folgende Fachbegriffe sollte man kennen:
+
+	* TypeScript: Echte Programmiersprache, der Angular zugrundeliegt und die nach JavaScript übersetzt wird
+	* ES5: ECMAScript-5-Standard (JavaScript)
+	* Visual Studio Code: Kostenloser Texteditor von Microsoft mit vielen Entwicklungs-Tools
+	* TSLint: Code-Analyzer für TypeScript und Angular
+	* Prettier: Formatierer für TypeScript (in VS Code enthalten)
+	* Karma: Testwerkzeug für Angular
+	* Node.js: JavaScript-Laufzeitumgebung außerhalb eines Browsers
+	* npm: Node Package Manager, ein Tool für die richtige Installation und korrekte Paketabhängigkeiten
+	* Angular CLI: Kommandozeilenbasierte Entwicklungs- und Build-Umgebung
+
+
+Node.js und npm
+===============
+Node.js kann auch für server-seitiges JavaScript verwendet werden. Es führt als Laufzeitumgebung selber 
+JavaScript aus und liefert auch einen Web-Server (http-server) mit. Bevor man überhaupt anfangen kann, 
+sollte man die Laufzeitumgebung, die übrigens ein Binärprogramm ist, installieren und auch ein Kommandozeilen-Tool,
+das funktional über die DOS-Box hinausgeht. 
+
+	* Download von Node.js 	(npm ist enthalten)
+	* Download von Cmdr 	(als Kommandozeilen-Tool)	
+
+Mit den folgenden Befehlen überprüft man die Versionen von Node.js und npm:
+
+_
+  node --version (v10.16.3)
+  npm --version	 (6.9.0)
+_
+
+
+package.json
+============
+Die Abhängigkeiten des Projekts werden in der Konfigurationsdatei package.json. Hier kann man auch lokale 
+npm-Pakete definieren, die nur innerhalb des Projekts in dem Verzeichnis node_modules verwendet werden. Die 
+Konfigurationsdatei (des später initialisierten Projekts) hat folgendes Aussehen:
+
+_
+  {
+    "name": "contacts-manager",
+    "version": "0.0.0",
+    "scripts": {
+      "ng": "ng",
+      "start": "ng serve",
+      "build": "ng build",
+      "test": "ng test",
+      "lint": "ng lint",
+      "e2e": "ng e2e"
+    },
+    "private": true,
+    "dependencies": {
+      "@angular/animations": "~10.1.1",
+      "@angular/common": "~10.1.1",
+      ...
+    },
+    "devDependencies": {
+      "@angular-devkit/build-angular": "~0.1001.1",
+      "@angular/cli": "~10.1.1",
+      ...
+    },
+_
+
+:name
+
+Hier wird der Name des Projekts beschrieben.
+
+:version
+
+In diesem Wert steht die Version des Projekts. 
+
+:scripts
+
+Dieses Objekt beinhaltet Skripte, die über npm gestartet werden. Wenn man das Skript "start" startet, 
+dann wird in Wirklichkeit der Befehl "ng serve" ausgeführt. Die Ausführung eines Skripts wird mit folgendem 
+Befehl durchgeführt:
+
+_ npm run skriptname	_
+
+Mit dem Befehl 
+
+_	npm run	_
+
+erhält man eine Übersicht über die Skripte im Projekt. 
+
+:dependencies
+
+In diesem Objekt stehen alle Abhängigkeiten, die benötigt werden, um die Anwendung zum Laufen zu bringen. 
+
+:devDependencies
+
+In diesem Objekt befinden sich Abhängigkeiten, die während der Entwicklung, aber nicht mehr zur Laufzeit gebraucht
+werden. 
+
+:Spezielle Zeichen
+
+Die Tilde(~) und der Zirkumflex(^) haben spezielle Bedeutungen. Die Tilde vor eine Version gibt an, dass in der 
+dritten Versionsnummer die neueste genommen werden muss. Der Zirkumflex vor einer Version gibt an, dass in der 
+zweiten Versionsnummer die neueste genommen werden muss. 
+
+Neben der Konfigurationsdatei existiert noch ein Datei package-lock.json mit den npm-Paketen, die sich im Verzeichnis 
+node_modules befinden, und ihrer jeweilgen Version. 
+
+
+Compiler
+========
+TypeScript ist eine typisierte Programmiersprache, von der JavaScript eine Untermenge ist. Der Compiler hat zwei Funktionen:
+
+	1. Entdeckung von Programmierfehlern
+	2. Umwandlung von TypeScript-Code in JavaScript-Code
+
+Die Zielversion von JavaScript kann man mit den Compiler-Optionen ändern. Die Entwicklungsumgebung Angular CLI wandelt TypeScript 
+in die JavaScript-Version ES5 (ECMAScript-5-Standard) um, den alle moderenen Browser unterstützen. 
+
+:Compiler-Fehlermeldungen
+
+Die hauptsächlichen Fehlermeldungen sind Typfehler oder Syntaxfehler. Typfehler entstehen, wenn Konstrukte wie Variablen typfremd 
+verwendet werden, etwa durch falsche Zuweisungen. Die fehlende Typisierung in JavaScript wird hiermit erzwungen. Syntaxfehler 
+entstehen durch fehlerhaften Code. Folgende Fehler können ebenfalls gemeldet werden, wenn die Compiler-Optionen entsprechend 
+angepasst sind:
+
+	* Unerreichbarer Code
+	* Überflüssige Funktionsparameter und Variablen
+	* Fehlen von break- oder return-Anweisungen
+
+
+:Compiler-Optionen
+
+Die Anpassung der Compiler-Optionen geschieht in der ensprechenden Konfigurationsdatei tsconfig.json. Wie auch in der 
+zentralen Konfigurationsdatei package.json sind die Daten im JSON-Format als Key-Value-Paare abgelegt. Die folgenden 
+Optionen werden in die Konfigurationsdatei der zukünftig erzeugten Projekte der Angular CLI eingefügt. 
+
+_
+  "compilerOptions": {
+    ...		
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitAny": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true
+  }
+_
+
+ ---------------------------------------------------------------------
+| Option                     | Bedeutung                             |
+ --------------------------------------------------------------------
+| noFallthroughCasesInSwitch | Fehlende break- oder return-Anweisung |
+| noImplicitAny              | Impliziter Typ Any                    |
+| noUnusedLocals             | Nicht verwendete Variablen            |
+| noUnusedParameters         | Nicht verwendete Parameter            |
+ --------------------------------------------------------------------
+Tabelle 1: Neue Compiler-Optionen
+
+
+Weitere Tools
+=============
+Es gibt noch weitere Tools, die bei der Erstellung von Angular-Anwendungen hilfreich sind. 
+
+:TSLint
+
+Dieses Werkzeug analysiert den TypeScript-Code auf Wartbarkeit, Konsistenz und Schreibstil. Außerdem überprüft er 
+den Code auch auf Fehler. Die Konfiguration erfolgt wie üblich in einer Konfigurationsdatei tslint.json. Diese 
+Regeln gelten für das gesamte Projekt. Das codelyzer-Plugin sorgt für die korrekte Benenenung der Bausteine. 
+
+Das Kommando 
+
+_ ng lint _
+
+analysiert den Code. Wenn keine Rückmeldung kommt, war der Code gut.
+
+:Prettier
+
+Dieses Werkzeug formatiert den TypeScript-Code. 
+
+
+

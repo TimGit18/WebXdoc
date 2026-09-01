@@ -1,0 +1,49 @@
+Java-Programmiermodell
+======================
+Java ist eine objektorientierte Programmiersprache. Anwendungen bestehen aus Klassen, die in Paketen organisiert sind. 
+
+
+Sprachmerkmale
+==============
+Die wichtigste Sprachmerkmale lauten:
+
+    * Die Klassen definieren die Struktur und das Verhalten einer Java-Anwendung
+    * Die Attribute einer Klasse repräsentieren die Daten und beschreiben den Zustand der Anwendung
+    * Die Methoden einer definieren das Verhalten das Verhalten der Anwendung
+    * Objekte sind Instanzen von Klassen und besitzen einen Lebenszyklus
+
+
+Komponenten der Plattform
+=========================
+Die folgende Liste gibt einen Überblick über die Komponenten der Plattform:
+
+    * JDK (Java Development Kit) 
+    * JVM (Java Virtual Machine)
+    * JRE (Java Runtime Environment)
+
+
+JDK (Java Development Kit) 
+==========================
+Der Java Development Kit ist eine Software, die zur Entwicklung von Anwendungen dient. Es umfasst die folgenden Hauptbestandteile:
+
+    * Der Compiler javac übersetzt Quellcode in Bytecode
+    * Die Java Virtual Machine (JVM) führt Programme aus
+    * Die Standardbibliotheken (Core APIs) stellen grundlegende Funktionen bereit
+
+
+Java Runtime Environment (JRE)
+==============================
+Die JRE ist die Laufzeitumgebung für Java-Anwendungen. Sie umfasst:
+
+    * Die Java Virtual Machine (JVM)
+    * Die Laufzeitbibliotheken
+
+Hinweis: Seit Java 9 wird keine separate JRE mehr bereitgestellt. Die Laufzeitumgebung ist seitdem Bestandteil des JDK.
+
+
+Java-Projekte
+=============
+Um Anwendungen in Java zu entwickeln, werden Projekte und Entwicklungswerkzeuge benötigt. Der gewöhnliche Entwicklungszyklus 
+einer Anwendung besteht aus Editieren, Kompilieren, Testen, Ausliefern (Deployment) und Ausführung (Betrieb). 
+Eine geeignete Projektstruktur unterstützt dieses Vorgehen und trennt die einzelnen Komponenten des Projekt nach Anwendungsbereichen. 
+

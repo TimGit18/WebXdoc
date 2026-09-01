@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8" standalone='yes'?>
+<document env="xapp">
+
+  <main>
+    <topic name="Home" link="http://localhost:8080/xdoc/xapp/html/xapp.html"/>
+  </main>
+
+  <links>
+    <link type="stylesheet">http://localhost:8080/xdoc/resources/css/bootstrap.min.css</link>
+    <link type="stylesheet">http://localhost:8080/xdoc/resources/css/bootstrap-toc.min.css</link>
+    <link type="icon">http://localhost:8080/xdoc/resources/favicon.ico</link>
+  </links>
+
+  <scripts>
+    <script>http://localhost:8080/xdoc/resources/lib/angular.js</script>
+    <script>http://localhost:8080/xdoc/resources/lib/jquery-3.2.1.min.js</script>
+    <script>http://localhost:8080/xdoc/resources/lib/popper.min.js</script>
+    <script>http://localhost:8080/xdoc/resources/lib/bootstrap.min.js</script>
+    <script>http://localhost:8080/xdoc/resources/lib/bootstrap-toc.min.js</script>
+  </scripts>
+
+  <title>Kommandozeilen-Werkzeuge</title>
+  <author>Tim Schmitz</author>
+  <date>16.05.2026</date>
+
+  <content>
+    <headline>Kommandozeilen-Werkzeuge</headline>
+    <abstract>
+      Um Anwendungen in Java zu entwickeln, werden Projekte und Entwicklungswerkzeuge benötigt. Der gewöhnliche Entwicklungszyklus besteht aus dem 
+      Editieren des Quellcodes, Kompilieren der Klassen, Testen der Anwendung, Auslieferung in die Laufzeitumgebung und Ausführung der Anwendung.  
+      Eine geeignete Projektstruktur unterstützt dieses Vorgehen und trennt die einzelnen Komponenten des Projekts nach Anwendungsbereichen. Bevor 
+      man sich mit komplexen und leistungsfähigen Werkzeugen wie Integrierten Entwicklungsumgebungen (IDEs) oder Build-Pipelines beschäftigt, macht 
+      es Sinn einfache Kommandozeilen-Werkzeuge zu kennen, um Basisaufgaben beherrschen zu können. Die einfachsten Kommandozeilen-Werkzeuge sind der 
+      Java-Compiler, der Java-Interpreter und der Java-Archiver. In diesem Dokument werden nur der Compiler und der Interpreter behandelt. Der 
+      Archiver erhält ein eigenes Dokument.
+    </abstract>
+
+
+    <subheadline id="Pfad einbinden">Pfad einbinden</subheadline>
+
+    <text>
+      Der einfachste Weg, um die Kommandozeilen-Werkzeuge in den Ausführungspfad des Betriebssystems einzubinden und damit direkt von der 
+      Kommandozeile aus aufzurufen, besteht darin, das Ausführungsverzeichnis bin des Java Development Kit in den Pfad einzubinden. Dazu 
+      erweitert man die Umgebungsvariable PATH des Betriebssystems um diesen Pfad. In Windows sieht diese Erweiterung folgendermaßen aus: 
+    </text>
+    <codeline>set PATH=%PATH%;C:\Programme\Java\jdk21\bin</codeline>
+
+    <subheadline id="Java-Compiler">Java-Compiler</subheadline>
+
+    <text>
+      Der Java-Compiler javac ist das Kommandozeilen-Werkzeug für die Übersetzung von Java-Quellen. Er übersetzt die vom Entwickler editierte 
+      Quelldatei und erzeugt die Klassendatei. Die Quelldatei besitzt das Suffix .java und die Klassendatei das Suffix .class. 
+    </text>
+
+    <text>
+      Der Aufruf lautet:
+    </text>
+    <codeline>javac [Optionen] Quelldateien</codeline>
+    <bold>Quelldateien</bold>
+
+    <text>
+      Die Quelldateien besitzen immer die Endung .java. Es wird immer der komplette Pfad in Übereinstimmung mit der Paketstruktur übergeben. 
+    </text>
+
+    <text>
+      Folgende Optionen sind möglich:
+    </text>
+    <bold>-cp [Pfad]</bold>
+
+    <text>
+      Mit dieser Option werden benutzerdefinierte Klassenpfade spezifiziert. Die Angabe von vollständigen Verzeichnissen oder einzelner Dateien 
+      wie .jar-Files ist möglich.
+    </text>
+    <bold>-d [Verzeichnis]</bold>
+
+    <text>
+      Mit dieser Option wird dem Compiler das Zielverzeichnis für die übersetzten Klassen angegeben. Es reicht die Angabe eines Oberverzeichnisses. 
+      Aus der Paketstruktur kann der Compiler die Unterverzeichnisse im Zielverzeichnis konstruieren. 
+    </text>
+    <bold>-nowarn</bold>
+
+    <text>
+      Mit dieser werden Warnhinweise auf der Kommandozeilenausgabe unterdrückt. Die Quelldatei wird genauso übersetzt wie bei einem Compile ohne Warnung. 
+    </text>
+
+    <subheadline id="Java-Interpreter">Java-Interpreter</subheadline>
+
+    <text>
+      Der Java-Interpreter java exekutiert ausführbare Hauptklassen oder Java-Archive. Der Aufruf im Fall einer ausführbaren Hauptklasse lautet:
+    </text>
+    <codeline>java [Optionen] Klasse [Argumente]</codeline>
+
+    <text>
+      Der Aufruf für die Ausführung eines Archivs lautet:
+    </text>
+    <codeline>java [Optionen] -jar Archivdatei [Argumente]</codeline>
+    <bold>Ausführung einer Klasse</bold>
+
+    <text>
+      Es kann nur die Hauptklasse einer Anwendung, die eine main-Methode enthält, ausgeführt werden. Die Klasse muss mit dem vollen Paketnamen 
+      qualifiziert werden. 
+    </text>
+    <bold>Ausführung eines Archivs</bold>
+
+    <text>
+      Die Option -jar führt das im Archiv gekapselte Programm aus. Das Archiv ist die Quelle aller Anwendungsklassen. Alle anderen benutzerdefinierten
+      Klassenpfade werden vom Interpreter beim Gebrauch dieser Option ignoriert. Bei Erstellung des Archivs muss eine Manifest-Datei mitgegeben werden, 
+      damit der Interpreter die Hauptklasse der Anwendung findet. 
+    </text>
+
+    <text>
+      Folgende Optionen sind möglich:
+    </text>
+    <bold>-cp [Pfad]</bold>
+
+    <text>
+      Mit dieser Option werden benutzerdefinierte Klassenpfade spezifiziert. Die Angabe von vollständigen Verzeichnissen oder einzelner Dateien wie 
+      verschiedene Verzeichnisse und Dateien in einem Klassenpfad zu spezifizieren, müssen diese
+      mit Amnführungsstrichen eingebunden und mit Semikola getrennt werden. 
+    </text>
+    <bold>-Dname=value</bold>
+
+    <text>
+      Diese Option setzt eine Systemeigenschaft zur Laufzeit der Anwendung wie etwa Benutzername.
+    </text>
+  </content>
+</document>

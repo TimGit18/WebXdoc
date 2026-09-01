@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="utf-8" standalone='yes'?>
+<document env="xcbm">
+
+  <main>
+    <topic name="Home" link="http://localhost:8080/xdoc/xcbm/html/xcbm.html"/>
+  </main>
+
+  <links>
+    <link type="stylesheet">http://localhost:8080/xdoc/resources/css/bootstrap.min.css</link>
+    <link type="stylesheet">http://localhost:8080/xdoc/resources/css/bootstrap-toc.min.css</link>
+    <link type="icon">http://localhost:8080/xdoc/resources/favicon.ico</link>
+  </links>
+
+  <scripts>
+    <script>http://localhost:8080/xdoc/resources/lib/angular.js</script>
+    <script>http://localhost:8080/xdoc/resources/lib/jquery-3.2.1.min.js</script>
+    <script>http://localhost:8080/xdoc/resources/lib/popper.min.js</script>
+    <script>http://localhost:8080/xdoc/resources/lib/bootstrap.min.js</script>
+    <script>http://localhost:8080/xdoc/resources/lib/bootstrap-toc.min.js</script>
+  </scripts>
+
+  <title>Datenbank</title>
+  <author>Tim Schmitz</author>
+  <date>25.10.2024</date>
+
+  <content>
+    <headline>Datenbank</headline>
+    <abstract>
+      Die Datenbank ist die physische Implementierung des logischen Datenmodells. Dabei wird idealerweise jeder Entität und jeder 
+      Beziehung eine Tabelle zugeordnet. Aus Performance-Gründen wird die Datenbank oft nicht normalisiert abgebildet, sondern es 
+      wird mit Datensichten oder denormalisierten Tabellen gearbeitet, dies ist aber bei kleinen Datenbanken wie der CBM-Datenbank 
+      nicht notwendig. Im Grunde könnte man auch in dieser Anwendungsdomäne auch ohne Datenbank areiten, jedoch ist sie hier aus 
+      didaktischen Gründen nützlich.
+    </abstract>
+
+
+    <subheadline id="Implementierung">Implementierung</subheadline>
+
+    <text>
+      Das zugrundeliegende Relationale Datenbank-Managementsystem (RDBMS) ist ein SQL Server 2022 von Microsoft. Als Werkzeug zur 
+      Administration der Datenbank wird dasw SQL Server Management Studio verwendet. 
+    </text>
+
+    <subheadline id="Überblick">Überblick</subheadline>
+
+    <text>
+      Insgesamt besteht die Datenbank aus drei Tabellen, wie in folgender Übersicht zu sehen ist:
+    </text>
+    <figure>
+      <image link="http://localhost:8080/xdoc/xcbm/img/Datenbank.svg" source="file:///C:/Users/Test/Daten/Web/xdoc/xcbm/img/Datenbank.svg"/>
+      <figurecaption class="figure-caption text-left">
+        Abbildung 1: Tabellen der CBM-Datenbank
+      </figurecaption>
+    </figure>
+
+    <subheadline id="Erstellung">Erstellung</subheadline>
+
+    <text>
+      Die Erstellung der Datenbank benötigt eine Administrator-Account. Mit folgendem Kommando wird die Datenbank CBM angelegt:
+    </text>
+    <codeline>create database CBM;</codeline>
+
+    <subheadline id="Tabelle Magazine">Tabelle Magazine</subheadline>
+
+    <text>
+      Die Tabelle Magazin ist die Implementierung der Entität Magazin. Sie wird mit dem folgenden Kommando in der Datenbank 
+      angelegt:
+    </text>
+    <codebox>
+        create table CBM.dbo.Magazine (
+          id integer not null,
+          issue nvarchar(6) not null,
+          primary key (id));	
+    </codebox>
+
+
+    <text>
+      Die Tabelle besteht aus folgenden Feldern:
+    </text>
+    <table>
+      <tableheadline>
+        <tablerow>
+          <tableheaditem>Feld</tableheaditem>
+          <tableheaditem>Datentyp</tableheaditem>
+          <tableheaditem>Bedeutung</tableheaditem>
+        </tablerow>
+      </tableheadline>
+      <tablebody>
+        <tablerow>
+          <tableitem>id</tableitem>
+          <tableitem>int</tableitem>
+          <tableitem>Technischer Schlüssel</tableitem>
+        </tablerow>
+        <tablerow>
+          <tableitem>issue</tableitem>
+          <tableitem>nvarchar(6)</tableitem>
+          <tableitem>Fachlicher Schlüssel</tableitem>
+        </tablerow>
+        <tablecaption>Tabelle 1: Felder der Tabelle Magazine</tablecaption>
+      </tablebody>
+    </table>
+
+    <subheadline id="Tabelle ECO">Tabelle ECO</subheadline>
+
+    <text>
+      Die Tabelle ECO ist die Implementierung der Entität Eröffnungsschlüssel. Sie wird mit dem folgenden Kommando in der Datenbank 
+      angelegt:
+    </text>
+    <codebox>
+        create table CBM.dbo.ECO (
+          id integer not null,
+          ecokey char(03) not null,
+          moves nvarchar(255) not null,	
+          eco_description nvarchar(255) not null,
+          primary key (id));	
+    </codebox>
+
+
+    <text>
+      Die Tabelle besteht aus folgenden Feldern:
+    </text>
+    <table>
+      <tableheadline>
+        <tablerow>
+          <tableheaditem>Feld</tableheaditem>
+          <tableheaditem>Datentyp</tableheaditem>
+          <tableheaditem>Bedeutung</tableheaditem>
+        </tablerow>
+      </tableheadline>
+      <tablebody>
+        <tablerow>
+          <tableitem>id</tableitem>
+          <tableitem>int</tableitem>
+          <tableitem>Technischer Schlüssel</tableitem>
+        </tablerow>
+        <tablerow>
+          <tableitem>ecokey</tableitem>
+          <tableitem>char(03)</tableitem>
+          <tableitem>Fachlicher Schlüssel</tableitem>
+        </tablerow>
+        <tablerow>
+          <tableitem>moves</tableitem>
+          <tableitem>nvarchar(255)</tableitem>
+          <tableitem>Anfangszüge</tableitem>
+        </tablerow>
+        <tablerow>
+          <tableitem>eco_description</tableitem>
+          <tableitem>nvarchar(255)</tableitem>
+          <tableitem>Wikipedia-Beschreibung</tableitem>
+        </tablerow>
+        <tablecaption>Tabelle 2: Felder der Tabelle ECO</tablecaption>
+      </tablebody>
+    </table>
+
+    <subheadline id="Tabelle Magazine_ECO">Tabelle Magazine_ECO</subheadline>
+
+    <text>
+      Die Tabelle Magazine_ECO ist die Implementierung der informationstragenden Beziehung Eröffnungsschlüssel. Sie wird mit dem folgenden Kommando in der Datenbank 
+      angelegt:
+    </text>
+    <codebox>
+        create table CBM.dbo.Magazine_ECO(
+          id integer not null,
+          id_magazine integer not null,
+          id_eco integer not null,
+          cbm_eco_description nvarchar(255) not null,
+          primary key (id));
+    </codebox>
+
+
+    <text>
+      Die Tabelle besteht aus folgenden Feldern:
+    </text>
+    <table>
+      <tableheadline>
+        <tablerow>
+          <tableheaditem>Feld</tableheaditem>
+          <tableheaditem>Datentyp</tableheaditem>
+          <tableheaditem>Bedeutung</tableheaditem>
+        </tablerow>
+      </tableheadline>
+      <tablebody>
+        <tablerow>
+          <tableitem>id</tableitem>
+          <tableitem>int</tableitem>
+          <tableitem>Technischer Schlüssel</tableitem>
+        </tablerow>
+        <tablerow>
+          <tableitem>id_magazine</tableitem>
+          <tableitem>int</tableitem>
+          <tableitem>Fremdschlüssel</tableitem>
+        </tablerow>
+        <tablerow>
+          <tableitem>id_eco</tableitem>
+          <tableitem>int</tableitem>
+          <tableitem>Fremdschlüssel</tableitem>
+        </tablerow>
+        <tablerow>
+          <tableitem>cbm_eco_description</tableitem>
+          <tableitem>nvarchar(255)</tableitem>
+          <tableitem>Artikelkurzbeschreibung</tableitem>
+        </tablerow>
+        <tablecaption>Tabelle 3: Felder der Tabelle Magazine_ECO</tablecaption>
+      </tablebody>
+    </table>
+
+    <subheadline id="Query über alle drei Tabellen">Query über alle drei Tabellen</subheadline>
+
+    <text>
+      Die folgende Query stellt einen Join über alle drei verknüpften Tabellen dar:
+    </text>
+    <codebox>
+        select t1.issue,
+               t2.ecokey,
+               t2.moves,
+               t2.eco_description,
+               t3.cbm_eco_description
+        from   CBM.dbo.Magazine t1,
+               CBM.dbo.ECO t2,
+               CBM.dbo.Magazine_ECO t3
+        where  t1.id = t3.id_magazine
+        and    t2.id = t3.id_eco
+        order by t2.ecokey;
+    </codebox>
+
+
+    <text>
+      Dieser Abfrage selektiert alle Eröffnungsartikel mitsamt den dazugehörigen Eröffnungsschlüsseln und Magazinen sowie den 
+      dazugehörigen Beschreibungen und Zügen. Sortiert wird der Result Set am Ende nach den Eröffnungsschlüsseln wie in der 
+      folgenden Teilmenge dessen zeigt:
+    </text>
+    <table>
+      <tableheadline>
+        <tablerow>
+          <tableheaditem>issue</tableheaditem>
+          <tableheaditem>ecokey</tableheaditem>
+          <tableheaditem>moves</tableheaditem>
+          <tableheaditem>eco_description</tableheaditem>
+          <tableheaditem>cbm_eco_descr</tableheaditem>
+        </tablerow>
+      </tableheadline>
+      <tablebody>
+        <tablerow>
+          <tableitem>CBM204</tableitem>
+          <tableitem>A01</tableitem>
+          <tableitem>1. b3</tableitem>
+          <tableitem>Larsen-Eröffnung</tableitem>
+          <tableitem>Larsen Opening</tableitem>
+        </tablerow>
+        <tablerow>
+          <tableitem>CBM195</tableitem>
+          <tableitem>A05</tableitem>
+          <tableitem>1. Sf3 Sf6</tableitem>
+          <tableitem>Übergang in verschiedene Eröffnungen</tableitem>
+          <tableitem>Reti_2g3_b5</tableitem>
+        </tablerow>
+        <tablerow>
+          <tableitem>CBM171</tableitem>
+          <tableitem>A05</tableitem>
+          <tableitem>1. Sf3 Sf6</tableitem>
+          <tableitem>Übergang in verschiedene Eröffnungen</tableitem>
+          <tableitem>Reti Opening</tableitem>
+        </tablerow>
+        <tablerow>
+          <tableitem>CBM170</tableitem>
+          <tableitem>A07</tableitem>
+          <tableitem>1. Sf3 d5 2. g3 ohne 2. c5</tableitem>
+          <tableitem>3. Lg2 (Barcza-System)</tableitem>
+          <tableitem>Reversed Pirc</tableitem>
+        </tablerow>
+        <tablerow>
+          <tableitem>CBM212</tableitem>
+          <tableitem>A07</tableitem>
+          <tableitem>1. Sf3 d5 2. g3 ohne 2. c5</tableitem>
+          <tableitem>3. Lg2 (Barcza-System)</tableitem>
+          <tableitem>Reti</tableitem>
+        </tablerow>
+        <tablerow>
+          <tableitem>CBM220</tableitem>
+          <tableitem>A07</tableitem>
+          <tableitem>1. Sf3 d5 2. g3 ohne 2. c5</tableitem>
+          <tableitem>3. Lg2 (Barcza-System)</tableitem>
+          <tableitem>Reti</tableitem>
+        </tablerow>
+        <tablerow>
+          <tableitem>CBM173</tableitem>
+          <tableitem>A07</tableitem>
+          <tableitem>1. Sf3 d5 2. g3 ohne 2. c5</tableitem>
+          <tableitem>3. Lg2 (Barcza-System)</tableitem>
+          <tableitem>Reti Opening</tableitem>
+        </tablerow>
+        <tablerow>
+          <tableitem>CBM173</tableitem>
+          <tableitem>A09</tableitem>
+          <tableitem>1. Sf3 d5 2. c4</tableitem>
+          <tableitem>Réti-Eröffnung</tableitem>
+          <tableitem>Reti Opening</tableitem>
+        </tablerow>
+        <tablerow>
+          <tableitem>CBM168</tableitem>
+          <tableitem>A09</tableitem>
+          <tableitem>1. Sf3 d5 2. c4</tableitem>
+          <tableitem>Réti-Eröffnung</tableitem>
+          <tableitem>Reti Opening</tableitem>
+        </tablerow>
+        <tablerow>
+          <tableitem>CBM206</tableitem>
+          <tableitem>A09</tableitem>
+          <tableitem>1. Sf3 d5 2. c4</tableitem>
+          <tableitem>Réti-Eröffnung</tableitem>
+          <tableitem>Reti 3b4 g5</tableitem>
+        </tablerow>
+        <tablerow>
+          <tableitem>CBM201</tableitem>
+          <tableitem>A10</tableitem>
+          <tableitem>1. c4 ohne 1. c6 1. e6 1. Sf6</tableitem>
+          <tableitem>Abarten von Holländisch Damenindisch und Königsindisch (ohne d4)</tableitem>
+          <tableitem>Stonewall against English</tableitem>
+        </tablerow>
+        <tablecaption>Tabelle 4: Ergebnisse der Query</tablecaption>
+      </tablebody>
+    </table>
+
+    <text>
+      Hinweis: Aus Platzgründen wurde die Überschrift der letzten Tabellenspalte von cbm_eco_description auf cbm_eco_descr abgekürzt.
+    </text>
+  </content>
+</document>

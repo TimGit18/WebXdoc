@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="UTF-8"?><fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format">
+    <fo:layout-master-set>
+        <fo:simple-page-master master-name="page" page-height="29.7cm" page-width="21cm" margin-top="1cm" margin-bottom="1cm" margin-left="2.5cm" margin-right="2.5cm">
+            <fo:region-body margin-top="1cm"/>
+            <fo:region-before extent="3cm"/>
+            <fo:region-after extent="0.5cm"/>
+            <fo:region-start extent="2cm"/>
+            <fo:region-end extent="0.5cm"/>
+        </fo:simple-page-master>
+        <fo:page-sequence-master master-name="single-page">
+            <fo:repeatable-page-master-reference master-reference="page"/>
+        </fo:page-sequence-master>
+    </fo:layout-master-set>
+    <fo:page-sequence master-reference="single-page" initial-page-number="1">
+        <fo:static-content flow-name="xsl-region-before">
+            <fo:block space-after="4pt" space-before="4pt" text-align="right">
+                <fo:external-graphic src="url('file:///C:/Users/test/Daten/Web/xdoc/resources/logo.svg')" text-align="right"/>
+            </fo:block>
+        </fo:static-content>
+        <fo:static-content flow-name="xsl-region-after">
+            <fo:block text-align="outside" font-family="Helvetica, Arial, sans-serif" font-size="10pt">
+                          Seite
+          
+                <fo:page-number/>
+            </fo:block>
+        </fo:static-content>
+        <fo:flow flow-name="xsl-region-body">
+            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="20pt" font-weight="bold" space-after="10pt" space-before="10pt" text-align="start">
+          &#133;Start</fo:block>
+            <fo:block text-align="start" font-family="Helvetica, Arial, sans-serif" font-size="10pt">Tim Schmitz</fo:block>
+            <fo:block text-align="start" font-family="Helvetica, Arial, sans-serif" font-size="10pt">21.02.2024</fo:block>
+        </fo:flow>
+    </fo:page-sequence>
+    <fo:page-sequence master-reference="single-page" initial-page-number="2">
+        <fo:static-content flow-name="xsl-region-after">
+            <fo:block text-align="outside" font-family="Helvetica, Arial, sans-serif" font-size="10pt">
+                          Seite
+          
+                <fo:page-number/>
+            </fo:block>
+        </fo:static-content>
+        <fo:flow flow-name="xsl-region-body">
+            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="14pt" font-weight="bold" space-after="10pt" space-before="10pt" text-align="start">
+      Inhalt
+    </fo:block>
+            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+                <fo:block text-align-last="justify">
+                    <fo:inline>
+                        Interpreter
+                        <fo:leader leader-pattern="dots"/>
+                        <fo:page-number-citation ref-id="Interpreter"/>
+                    </fo:inline>
+                </fo:block>
+                <fo:block text-align-last="justify">
+                    <fo:inline>
+                        Übersetzungsprozess
+                        <fo:leader leader-pattern="dots"/>
+                        <fo:page-number-citation ref-id="Übersetzungsprozess"/>
+                    </fo:inline>
+                </fo:block>
+                <fo:block text-align-last="justify">
+                    <fo:inline>
+                        Interaktion
+                        <fo:leader leader-pattern="dots"/>
+                        <fo:page-number-citation ref-id="Interaktion"/>
+                    </fo:inline>
+                </fo:block>
+                <fo:block text-align-last="justify">
+                    <fo:inline>
+                        Modularisierung
+                        <fo:leader leader-pattern="dots"/>
+                        <fo:page-number-citation ref-id="Modularisierung"/>
+                    </fo:inline>
+                </fo:block>
+                <fo:block text-align-last="justify">
+                    <fo:inline>
+                        Attribute
+                        <fo:leader leader-pattern="dots"/>
+                        <fo:page-number-citation ref-id="Attribute"/>
+                    </fo:inline>
+                </fo:block>
+            </fo:block>
+        </fo:flow>
+    </fo:page-sequence>
+    <fo:page-sequence master-reference="single-page" initial-page-number="3">
+        <fo:static-content flow-name="xsl-region-after">
+            <fo:block text-align="outside" font-family="Helvetica, Arial, sans-serif" font-size="10pt">
+                          Seite
+          
+                <fo:page-number/>
+            </fo:block>
+        </fo:static-content>
+        <fo:flow flow-name="xsl-region-body">
+            <fo:block break-after="page" font-family="Helvetica, Arial, sans-serif">
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="20pt" font-weight="bold" space-after="10pt" space-before="10pt" text-align="start">Start</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Um mit der Programmierung mit Python zu starten, benötigt man zunächst einen Interpreter sowie einen Editor. Die Beispiele 
+      wurden ausgeführt auf der Linux-Applikation Ubuntu 18.04 LTS unter Windows 10.
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="14pt" font-weight="bold" space-after="10pt" space-before="10pt" text-align="start" id="Interpreter">Interpreter</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Der Interpreter ist eine Software, die ein Python-Programm ausführt. Auf vielen Betriebssystemen wie etwa Linux ist er 
+      vorinstalliert. Der Interpreter kann auf zwei Arten aufgerufen werden:
+    </fo:block>
+                    
+                <fo:list-block provisional-distance-between-starts="50mm" provisional-label-separation="10mm" space-after="4pt" space-before="4pt">
+                    <fo:list-item>
+                        <fo:list-item-label>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="normal">1.
+          </fo:block>
+                        </fo:list-item-label>
+                        <fo:list-item-body>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" start-indent="5mm">Als Programm, das ein vorgegebenes Skript ausführt</fo:block>
+                        </fo:list-item-body>
+                    </fo:list-item>
+                    <fo:list-item>
+                        <fo:list-item-label>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="normal">2.
+          </fo:block>
+                        </fo:list-item-label>
+                        <fo:list-item-body>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" start-indent="5mm">Als Kommandozeilen-Werkzeug, das hintereinander Kommandos ausführt</fo:block>
+                        </fo:list-item-body>
+                    </fo:list-item>
+                </fo:list-block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Die folgenden Beispiele wurden alle mit der Entwicklungsumgebung vim (Visual Editor Improved) und dem Python 3.6.7-Interpreter für Linux 
+      ausgeführt, insbesondere wenn die Syntax im Header an den Aufruf des Linux-Interpreters erinnert. Das folgende Programm führt zwei 
+      Ausgaben auf der Kommandozeile aus:
+    </fo:block>
+                    
+                <fo:block font-family="Courier" font-size="6pt" linefeed-treatment="preserve" white-space-treatment="preserve" space-before="0pt" space-after="4pt" text-align="start" white-space-collapse="false">
+        #!/usr/bin/python3
+        # helloWorld.py
+      
+        print('hello world')
+        print(2 ** 100)
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Gestartet wird das Programm mit dem folgenden Befehl python auf der Kommandozeile. Der Befehl startet den 
+      Interpreter und liefert als Ergebnis die Ausgabe eines Strings und einer Zahl, genauer gesagt die einer arithmetischen Operation (2 hoch 100). 
+    </fo:block>
+                    
+                <fo:block font-family="Courier" font-size="6pt" linefeed-treatment="preserve" white-space-treatment="preserve" space-before="0pt" space-after="4pt" text-align="start" white-space-collapse="false">
+        # python helloWorld.py
+        hello world
+        1267650600228229401496703205376
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="14pt" font-weight="bold" space-after="10pt" space-before="10pt" text-align="start" id="Übersetzungsprozess">Übersetzungsprozess</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Der Übersetzungsprozess einer Python-Datei ist denkbar einfach und ähnelt denen der anderer Skriptsprachen. Er ist in folgeder Abbildung 
+      dargestellt:
+    </fo:block>
+                    
+                <fo:block space-after="4pt" space-before="4pt">
+                    <fo:external-graphic src="url('file:///C:/Users/Test/Daten/Web/xdoc/xpyth/img/Übersetzung.svg')"/>
+                </fo:block>
+                <fo:block space-after="6pt" space-before="6pt" font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-style="italic">
+        Abbildung 1: Übersetzung einer Python-Datei
+      </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Nachdem die Datei editiert wurde, wird sie über den Python-Interpreter übersetzt, indem der Python-Interpreter ausgeführt wird. 
+      Dabei wird im ersten Schritt durch Python der Quellcode in den sogenannten Byte-Code übersetzt. Die Kompilation ist hier lediglich 
+      eine Übersetzung einer Hochsprache in eine niedrigere, plattform-unabhängige Repräsentation des Quellcodes. Dabei ist die Dekomposition in
+      Byte-Code nützlich, da dieser Code sehr viel schneller als der Quellcode interpretiert werden kann. 
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Die Übersetzung in Byte-Code bleibt normalerweise dem Ausführenden verborgen. Falls der Python-Prozess allerdings Zugriffsrechte auf den 
+      lokalen Rechner besitzt, dann speichert dieser den Byte-Code in einer Datei mit dem Suffix .pyc (python compiled). Diese Dateien werden 
+      dann in einem Verzeichnis mit dem Namen __pycache__ gespeichert, welches in dem gleichen Verzeichnis wie das der Quelldateien angelegt 
+      wird. Hierbei wird auch die Python-Version referenziert. 
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Anschließend wird die Byte-Code-Datei an die Python Virtual Machine (PVM) ausgeliefert, die als Laufzeitumgebung iterativ den Byte-Code 
+      abarbeitet. Technisch gesehen ist dies nur der letzte Schritt der Interpretation einer Python-Datei. 
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Abgesehen von impliziten Nachteilen in der Performance gegebenüber binär übersetzten Sprachen bietet das Entwicklungsmodell den Vorteil, 
+      dass hier zwischen Produktions- und Entwicklungsumgebung nicht mehr unterschieden werden kann. 
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="14pt" font-weight="bold" space-after="10pt" space-before="10pt" text-align="start" id="Interaktion">Interaktion</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Es gibt ebenfalls die Möglichkeit, den Interpreter interaktiv (über den Prompt) aufzurufen. Dies geschieht auf der Linux-Konsole wie folgt:
+    </fo:block>
+                    
+                <fo:block font-family="Courier" font-size="6pt" linefeed-treatment="preserve" white-space-treatment="preserve" space-before="0pt" space-after="4pt" text-align="start" white-space-collapse="false">
+        # python
+        Python 3.6.7 (default, Oct 22 2018, 11:32:17)
+        [GCC 8.2.0] on linux
+        Type "help", "copyright", "credits" or "license" for more information.
+        &gt;&gt;&gt; CRTL + D
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Der Vorteil des interaktiven Prompts liegt darin, sehr schnell Kommandos ausführen zu können. Zum Beispiel muss man bei der Ausgabe von 
+      Variablen nicht das Schlüsselwort print angeben, wenn man den Wert einer zuvor zugewiesenen Variablen ausgeben will. Fehler hingegen 
+      werden nicht zugelassen, wie zum Beispiel der Gebrauch nicht-initialisierter Variablen. Es ist auch möglich, komplexere Ausdrücke im 
+      interaktiven Prompt auszuwerten wie in folgendem Beispiel:
+    </fo:block>
+                    
+                <fo:block font-family="Courier" font-size="6pt" linefeed-treatment="preserve" white-space-treatment="preserve" space-before="0pt" space-after="4pt" text-align="start" white-space-collapse="false">
+        &gt;&gt;&gt; import os
+        &gt;&gt;&gt; os.getcwd()
+        '/home/tim/python/start'
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Zunächst wird vom Interpreter ein vorkodiertes Modul importiert. Anschließend wird eine Standardbibliothek ausgegeben. Sie meldet das 
+      aktuelle Arbeitsverzeichnis (get current working directory), das direkt vom Prompt ausgegeben wird. Statements, die sich über mehrere
+      Zeilen erstrecken, sollten daher besser in Form von Skripten ausgeführt werden. 
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="14pt" font-weight="bold" space-after="10pt" space-before="10pt" text-align="start" id="Modularisierung">Modularisierung</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Wenn man Programme als Sequenzen interpretierbarer Statements auffasst, dann werden sie in Dateien gespeichert, die als Module bezeichnet
+      werden. Es sind einfache Text-Dateien, die entweder direkt vom Interpreter ausgeführt werden können oder die von anderen Programmen, den 
+      Hauptprogrammen oder Skripten, geladen und ausgeführt werden. Die Beziehungen sind in der folgenden Abbildung zu sehen:
+    </fo:block>
+                    
+                <fo:block space-after="4pt" space-before="4pt">
+                    <fo:external-graphic src="url('file:///C:/Users/Test/Daten/Web/xdoc/xpyth/img/Modularisierung.svg')"/>
+                </fo:block>
+                <fo:block space-after="6pt" space-before="6pt" font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-style="italic">
+        Abbildung 2: Modularisierung von Python-Programmen
+      </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Das Modul, was nun von verschiedenen anderen Programmen ausgeführt werden soll, lautet wie folgt:
+    </fo:block>
+                    
+                <fo:block font-family="Courier" font-size="6pt" linefeed-treatment="preserve" white-space-treatment="preserve" space-before="0pt" space-after="4pt" text-align="start" white-space-collapse="false">
+        #!/usr/bin/python
+        # module.py
+      
+        #-------------------------------------------#
+        # Laden und Ausgabe eines Bibliotheksmoduls #
+        #-------------------------------------------#
+        import sys
+        print(sys.platform)	# aktuelles Betriebssystem
+      
+        #--------------------------------------------------#
+        # Ausgabe einer Zahl und einer String-Wiederholung #
+        #--------------------------------------------------#
+        print(2 ** 32)	# 2 hoch 32
+        x = 'Spam!'
+        print(x * 8)		# achtfache Wiederholung von 'Spam!'
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Natürlich könnte man das Modul auch direkt mit dem Interpreter via python module.py ausführen. Hier soll aber ein Ansatz betrachtet werden, 
+      der die Programm-Architektur von Python in den Mittelpunkt stellt. Dabei lädt ein Hauptprogramm (das Skript) das Modul und der Import des 
+      Moduls ist das Ausführen des Codes. Die folgende Sequenz des Hauptprogramms importModule.py importiert das Modul und fürhrt den Code 
+      aus:
+    </fo:block>
+                    
+                <fo:block font-family="Courier" font-size="6pt" linefeed-treatment="preserve" white-space-treatment="preserve" space-before="0pt" space-after="4pt" text-align="start" white-space-collapse="false">
+        #!/usr/bin/python3
+        # moduleImport.py
+      
+        import module
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Das Ergebnis auf der Kommandozeile lautet wie folgt:
+    </fo:block>
+                    
+                <fo:block font-family="Courier" font-size="6pt" linefeed-treatment="preserve" white-space-treatment="preserve" space-before="0pt" space-after="4pt" text-align="start" white-space-collapse="false">
+        # python moduleImport.py
+        linux
+        4294967296
+        Spam!Spam!Spam!Spam!Spam!Spam!Spam!Spam!
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="14pt" font-weight="bold" space-after="10pt" space-before="10pt" text-align="start" id="Attribute">Attribute</fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Grundsätzlich gilt: ein Modul ist eigentlich ein Paket von Variablennamen, der sogenannte Namensraum oder Namespace. Die Namen dieses Pakets
+      werden Attribute genannt. Ein Attribut ist also nichts anderes als ein Variablennamen, der an einem bestimmten Objekt (wie etwa einem Modul)
+      hängt. 
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Der Zugriff auf Attribute von Modulen geschieht in Python über die Statements import und from (auch im Zusammenhang mit dem reload-Statement).
+      Beispielsweise beinhaltet das folgende Modul file.py ein Attribut title:
+    </fo:block>
+                    
+                <fo:block font-family="Courier" font-size="6pt" linefeed-treatment="preserve" white-space-treatment="preserve" space-before="0pt" space-after="4pt" text-align="start" white-space-collapse="false">
+        #!/usr/bin/python3
+        # file.py
+      
+        title = "The Meaning of Life"
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Der Zugriff erfolgt über einen dezidierten und qualifizierten Import:
+    </fo:block>
+                    
+                <fo:block font-family="Courier" font-size="6pt" linefeed-treatment="preserve" white-space-treatment="preserve" space-before="0pt" space-after="4pt" text-align="start" white-space-collapse="false">
+        #!/usr/bin/python3
+        # fileTitleImport.py
+      
+        import file
+        print(file.title)
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Das Ergebnis auf der Kommandozeile lautet dann:
+    </fo:block>
+                    
+                <fo:block font-family="Courier" font-size="6pt" linefeed-treatment="preserve" white-space-treatment="preserve" space-before="0pt" space-after="4pt" text-align="start" white-space-collapse="false">
+        # python fileTitleImport.py
+        The Meaning of Life
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Alternativ zu dem Zugriff auf Objekt-Attribute über das Import-Statement kann über das from-Statement Namen von Modulen abgreifen (tatsächlich werden
+      sie kopiert):
+    </fo:block>
+                    
+                <fo:block font-family="Courier" font-size="6pt" linefeed-treatment="preserve" white-space-treatment="preserve" space-before="0pt" space-after="4pt" text-align="start" white-space-collapse="false">
+        #!/usr/bin/python3
+        # fileTitleImportFrom.py
+      
+        from file import title
+        print(title)
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Die Built in-Funktion dir kann dagegen noch viel mehr liefern als lediglich die Objekt-Attribute, sondern alle Namen, die innerhalb eines Moduls 
+      verfügbar sind. Dazu dient folgenden Import-Sequenz:
+    </fo:block>
+                    
+                <fo:block font-family="Courier" font-size="6pt" linefeed-treatment="preserve" white-space-treatment="preserve" space-before="0pt" space-after="4pt" text-align="start" white-space-collapse="false">
+        #!/usr/bin/python3
+        # fileTitleImportDir.py
+      
+        import file
+        print(dir(file))
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Das Ergebnis liefert folgende Liste zurück:
+    </fo:block>
+                    
+                <fo:block font-family="Courier" font-size="6pt" linefeed-treatment="preserve" white-space-treatment="preserve" space-before="0pt" space-after="4pt" text-align="start" white-space-collapse="false">
+        # python fileTitleImportDir.py
+        ['__builtins__', '__cached__', '__doc__', '__file__', '__loader__', '__name__', '__package__', '__spec__', 'title']
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Alle Namen, die in diesem Ergebnisarray als doppelt unterstrichen gekennzeichnet sind, sind eingebaute Built In-Namen, die von Python 
+      vordefiniert sind und eine spezielle Bedeutung für den Interpreter haben. 
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Eine weitere Alternative zum Import-Statement stellt das Exec-Statement dar, das dazu dient, den Programmcode eines gerufenen Moduls zu 
+      durchlaufen. Dabei wird das gerufene Modul nicht geladen. Vorsicht ist geboten beim Aufruf der Exec-Funktion, denn lokale Variablen können 
+      durch den Aufruf von Modulvariablen überschrieben werden. Dies kann im Import nicht geschehen, da dieser die Namespaces respektiert. Der 
+      Exec-Aufruf hat folgende Struktur:
+    </fo:block>
+                    
+                <fo:block font-family="Courier" font-size="6pt" linefeed-treatment="preserve" white-space-treatment="preserve" space-before="0pt" space-after="4pt" text-align="start" white-space-collapse="false">
+        #!/usr/bin/python3
+        # moduleExec.py
+      
+        exec(open('module.py').read())
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Das Ergebnis ist das gleiche wie bei dem Import.
+    </fo:block>
+                  
+            </fo:block>
+        </fo:flow>
+    </fo:page-sequence>
+</fo:root>
