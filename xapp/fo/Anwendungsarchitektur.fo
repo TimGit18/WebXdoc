@@ -28,7 +28,7 @@
             <fo:block font-family="Helvetica, Arial, sans-serif" font-size="20pt" font-weight="bold" space-after="10pt" space-before="10pt" text-align="start">
           &#133;Anwendungsarchitektur</fo:block>
             <fo:block text-align="start" font-family="Helvetica, Arial, sans-serif" font-size="10pt">Tim Schmitz</fo:block>
-            <fo:block text-align="start" font-family="Helvetica, Arial, sans-serif" font-size="10pt">01.09.2026</fo:block>
+            <fo:block text-align="start" font-family="Helvetica, Arial, sans-serif" font-size="10pt">22.09.2026</fo:block>
         </fo:flow>
     </fo:page-sequence>
     <fo:page-sequence master-reference="single-page" initial-page-number="2">
@@ -53,9 +53,9 @@
                 </fo:block>
                 <fo:block text-align-last="justify">
                     <fo:inline>
-                        Kapselung
+                        Architektur
                         <fo:leader leader-pattern="dots"/>
-                        <fo:page-number-citation ref-id="Kapselung"/>
+                        <fo:page-number-citation ref-id="Architektur"/>
                     </fo:inline>
                 </fo:block>
             </fo:block>
@@ -75,7 +75,7 @@
                 <fo:block font-family="Helvetica, Arial, sans-serif" font-size="20pt" font-weight="bold" space-after="10pt" space-before="10pt" text-align="start">Anwendungsarchitektur</fo:block>
                     
                 <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
-      Obwohl es sich bei der Beispiel-Anwendung um eine kleine Stand-Alone-Applikation handelt ohne Web-API oder User Interface handelt, ist es bereits notwendig, 
+      Bei der Beispiel-Anwendung application handelt es sich um eine sehr kleine Stand-Alone-Applikation ohne Web-API oder User Interface. Allerdings ist es bereits notwendig, 
       einige grundlegende architektonische Konzepte und Prinzipien zu beachten. Diese dienen dazu, die Anwendung verständlich und wartbar zu halten. Gleichzeitig 
       kann die Applikation als Muster für weitergehende, komplexere Anwendungsmodelle verwendet werden.
     </fo:block>
@@ -93,7 +93,7 @@
           </fo:block>
                         </fo:list-item-label>
                         <fo:list-item-body>
-                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" start-indent="5mm">Durch die Hauptklasse ApplicationMain wird die Anwendung von außen gestartet</fo:block>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" start-indent="5mm">Durch die Hauptklasse ApplicationMain wird die Anwendung von außen durch einen Akteur gestartet</fo:block>
                         </fo:list-item-body>
                     </fo:list-item>
                     <fo:list-item>
@@ -111,7 +111,7 @@
           </fo:block>
                         </fo:list-item-label>
                         <fo:list-item-body>
-                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" start-indent="5mm">Dieser Wrapper delegiert die Programmausführung an die Ladeklasse ApplicationBootstrap</fo:block>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" start-indent="5mm">Dieser Wrapper delegiert den ersten Teil der Programmausführung an die Ladeklasse ApplicationBootstrap</fo:block>
                         </fo:list-item-body>
                     </fo:list-item>
                     <fo:list-item>
@@ -129,7 +129,7 @@
           </fo:block>
                         </fo:list-item-label>
                         <fo:list-item-body>
-                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" start-indent="5mm">Im nächsten Schritt ermittelt die Ladeklasse den Hostnamen über die Klasse HostNameResolver</fo:block>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" start-indent="5mm">Im nächsten Schritt ermittelt die Ladeklasse den Hostnamen des physischen Geräts über die Klasse HostNameResolver</fo:block>
                         </fo:list-item-body>
                     </fo:list-item>
                     <fo:list-item>
@@ -138,7 +138,7 @@
           </fo:block>
                         </fo:list-item-label>
                         <fo:list-item-body>
-                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" start-indent="5mm">Mittels des Hostnamen und der Konfiguration wird der passende Log-Pfad über die Klasse LogPathResolver ermittelt</fo:block>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" start-indent="5mm">Mittels des Hostnamen und der Konfiguration wird der passende Logging-Pfad über die Klasse LogPathResolver ermittelt, da dieser an den jeweiligen Nutzer des Geräts gebunden ist    </fo:block>
                         </fo:list-item-body>
                     </fo:list-item>
                     <fo:list-item>
@@ -147,16 +147,50 @@
           </fo:block>
                         </fo:list-item-label>
                         <fo:list-item-body>
-                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" start-indent="5mm">Danach wird von der Ladeklasse der ControlService gestartet, der die drei Phasen start(), process() und complete() verwaltet.</fo:block>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" start-indent="5mm">Danach wird von der Ladeklasse die eigentliche Ausführung der Anwendung, der ControlService, gestartet</fo:block>
                         </fo:list-item-body>
                     </fo:list-item>
                 </fo:list-block>
                     
-                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="14pt" font-weight="bold" space-after="10pt" space-before="10pt" text-align="start" id="Kapselung">Kapselung</fo:block>
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="14pt" font-weight="bold" space-after="10pt" space-before="10pt" text-align="start" id="Architektur">Architektur</fo:block>
                     
                 <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
-      Das Prinzip der Kapselung von Daten und Methoden ermöglicht es, nur diejenigen Informationen und Daten in einem Modul zu verarbeiten, die gleichartige 
-      Anwendungszwecke besitzen. Dazu werden die Module bewusst klein und kompakt gehalten. 
+      Die folgende Abbildung veranschaulicht die Architektur der Anwendung. Sie legt Statik und Dynamik der Anwendung fest; hierbei werden Pakete, Klassen und ein Akteur verwendet.
+    </fo:block>
+                    
+                <fo:block space-after="4pt" space-before="4pt" line-height="0pt">
+                    <fo:external-graphic src="url('file:///C:/Users/schmi/Daten/Web/xdoc/xapp/img/Anwendungsarchitektur.svg')"/>
+                </fo:block>
+                <fo:block space-after="6pt" space-before="6pt" font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-style="italic">
+        Abbildung 1: Anwendungsarchitektur
+      </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Pakete bündeln Klassen aufgrund ihrer Merkmale und Aufgaben. Dabei haben die Pakete folgende Funktionen:
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="bold">core </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Dieses Paket ist der Kern der Anwendung. Es besteht aus der Klasse ApplicationMain, die als Einstiegspunkt für die Anwendung und als Schnittstelle nach außen fungiert.
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="bold">bootstrap </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Dieses Paket beschreibt die Urladung der Anwendung. Dabei dient die Klasse ApplicationStart als Wrapper, ist also eine Umhüllung für die anderen Klassen der Anwendung. 
+      Sie ruft unmittelbar die Urladung ApplicationBootstrap. Wenn die Urladung durchgeführt ist, dann wird die Ausführung der Anwendung an den ControlService übergeben.
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Die Urladung selbst verwendet die anderen drei Basispakete der Anwendung. Sie lädt die Anwendungskonfiguration, löst anschließend den Hostnamen auf und ermittelt aus 
+      diesem den Logging-Pfad.
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="bold">config </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Dieses Paket beinhaltet die Anwendungskonfiguration. Diese Klasse verwaltet die Konfigurationsdaten und verwendet dazu die Datei application.properties. 
     </fo:block>
                   
             </fo:block>

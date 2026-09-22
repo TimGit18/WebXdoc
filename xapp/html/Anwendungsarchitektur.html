@@ -32,7 +32,7 @@
                     <h2>Anwendungsarchitektur</h2>
                         
                     <p></p>
-                          Obwohl es sich bei der Beispiel-Anwendung um eine kleine Stand-Alone-Applikation handelt ohne Web-API oder User Interface handelt, ist es bereits notwendig, 
+                          Bei der Beispiel-Anwendung application handelt es sich um eine sehr kleine Stand-Alone-Applikation ohne Web-API oder User Interface. Allerdings ist es bereits notwendig, 
       einige grundlegende architektonische Konzepte und Prinzipien zu beachten. Diese dienen dazu, die Anwendung verst&auml;ndlich und wartbar zu halten. Gleichzeitig 
       kann die Applikation als Muster f&uuml;r weitergehende, komplexere Anwendungsmodelle verwendet werden.
     
@@ -46,20 +46,65 @@
                     <p></p>
                         
                     <ul>
-                        <li>Durch die Hauptklasse ApplicationMain wird die Anwendung von au&szlig;en gestartet</li>
+                        <li>Durch die Hauptklasse ApplicationMain wird die Anwendung von au&szlig;en durch einen Akteur gestartet</li>
                         <li>Die Hauptklasse ruft den Wrapper ApplicationStart </li>
-                        <li>Dieser Wrapper delegiert die Programmausf&uuml;hrung an die Ladeklasse ApplicationBootstrap</li>
+                        <li>Dieser Wrapper delegiert den ersten Teil der Programmausf&uuml;hrung an die Ladeklasse ApplicationBootstrap</li>
                         <li>Die Ladeklasse ApplicationBootstrap l&auml;dt die Konfiguration &uuml;ber die entsprechende Klasse ApplicationConfig</li>
-                        <li>Im n&auml;chsten Schritt ermittelt die Ladeklasse den Hostnamen &uuml;ber die Klasse HostNameResolver</li>
-                        <li>Mittels des Hostnamen und der Konfiguration wird der passende Log-Pfad &uuml;ber die Klasse LogPathResolver ermittelt</li>
-                        <li>Danach wird von der Ladeklasse der ControlService gestartet, der die drei Phasen start(), process() und complete() verwaltet.</li>
+                        <li>Im n&auml;chsten Schritt ermittelt die Ladeklasse den Hostnamen des physischen Ger&auml;ts &uuml;ber die Klasse HostNameResolver</li>
+                        <li>Mittels des Hostnamen und der Konfiguration wird der passende Logging-Pfad &uuml;ber die Klasse LogPathResolver ermittelt, da dieser an den jeweiligen Nutzer des Ger&auml;ts gebunden ist    </li>
+                        <li>Danach wird von der Ladeklasse die eigentliche Ausf&uuml;hrung der Anwendung, der ControlService, gestartet</li>
                     </ul>
                         
-                    <h3>Kapselung</h3>
+                    <h3>Architektur</h3>
                         
                     <p></p>
-                          Das Prinzip der Kapselung von Daten und Methoden erm&ouml;glicht es, nur diejenigen Informationen und Daten in einem Modul zu verarbeiten, die gleichartige 
-      Anwendungszwecke besitzen. Dazu werden die Module bewusst klein und kompakt gehalten. 
+                          Die folgende Abbildung veranschaulicht die Architektur der Anwendung. Sie legt Statik und Dynamik der Anwendung fest; hierbei werden Pakete, Klassen und ein Akteur verwendet.
+    
+                    <p></p>
+                        
+                    <figure class="figure">
+                        <img class="figure-img img-fluid rounded" src="http://localhost:8080/xdoc/xapp/img/Anwendungsarchitektur.svg">
+                        <figcaption class="figure-caption text-left">
+        Abbildung 1: Anwendungsarchitektur
+      </figcaption>
+                    </figure>
+                        
+                    <p></p>
+                          Pakete b&uuml;ndeln Klassen aufgrund ihrer Merkmale und Aufgaben. Dabei haben die Pakete folgende Funktionen:
+    
+                    <p></p>
+                        
+                    <p></p>
+                    <b>core </b>
+                    <p></p>
+                        
+                    <p></p>
+                          Dieses Paket ist der Kern der Anwendung. Es besteht aus der Klasse ApplicationMain, die als Einstiegspunkt f&uuml;r die Anwendung und als Schnittstelle nach au&szlig;en fungiert.
+    
+                    <p></p>
+                        
+                    <p></p>
+                    <b>bootstrap </b>
+                    <p></p>
+                        
+                    <p></p>
+                          Dieses Paket beschreibt die Urladung der Anwendung. Dabei dient die Klasse ApplicationStart als Wrapper, ist also eine Umh&uuml;llung f&uuml;r die anderen Klassen der Anwendung. 
+      Sie ruft unmittelbar die Urladung ApplicationBootstrap. Wenn die Urladung durchgef&uuml;hrt ist, dann wird die Ausf&uuml;hrung der Anwendung an den ControlService &uuml;bergeben.
+    
+                    <p></p>
+                        
+                    <p></p>
+                          Die Urladung selbst verwendet die anderen drei Basispakete der Anwendung. Sie l&auml;dt die Anwendungskonfiguration, l&ouml;st anschlie&szlig;end den Hostnamen auf und ermittelt aus 
+      diesem den Logging-Pfad.
+    
+                    <p></p>
+                        
+                    <p></p>
+                    <b>config </b>
+                    <p></p>
+                        
+                    <p></p>
+                          Dieses Paket beinhaltet die Anwendungskonfiguration. Diese Klasse verwaltet die Konfigurationsdaten und verwendet dazu die Datei application.properties. 
     
                     <p></p>
                       
