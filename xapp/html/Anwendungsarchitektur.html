@@ -47,12 +47,12 @@
                         
                     <ul>
                         <li>Durch die Hauptklasse ApplicationMain wird die Anwendung von au&szlig;en durch einen Akteur gestartet</li>
-                        <li>Die Hauptklasse ruft den Wrapper ApplicationStart </li>
-                        <li>Dieser Wrapper delegiert den ersten Teil der Programmausf&uuml;hrung an die Ladeklasse ApplicationBootstrap</li>
+                        <li>Die Hauptklasse ruft die Startklasse ApplicationStart als Wrapper der Anwendung</li>
+                        <li>Diese Startklasse delegiert die Initialisierung der Programmausf&uuml;hrung an die Ladeklasse ApplicationBootstrap</li>
                         <li>Die Ladeklasse ApplicationBootstrap l&auml;dt die Konfiguration &uuml;ber die entsprechende Klasse ApplicationConfig</li>
                         <li>Im n&auml;chsten Schritt ermittelt die Ladeklasse den Hostnamen des physischen Ger&auml;ts &uuml;ber die Klasse HostNameResolver</li>
                         <li>Mittels des Hostnamen und der Konfiguration wird der passende Logging-Pfad &uuml;ber die Klasse LogPathResolver ermittelt, da dieser an den jeweiligen Nutzer des Ger&auml;ts gebunden ist    </li>
-                        <li>Danach wird von der Ladeklasse die eigentliche Ausf&uuml;hrung der Anwendung, der ControlService, gestartet</li>
+                        <li>Danach wird von der Startklasse die eigentliche Ausf&uuml;hrung der Anwendung, der ControlService, gestartet</li>
                     </ul>
                         
                     <h3>Architektur</h3>
@@ -104,7 +104,19 @@
                     <p></p>
                         
                     <p></p>
-                          Dieses Paket beinhaltet die Anwendungskonfiguration. Diese Klasse verwaltet die Konfigurationsdaten und verwendet dazu die Datei application.properties. 
+                          Dieses Paket beinhaltet die Anwendungskonfiguration. Diese Klasse verwaltet die Konfigurationsdaten und verwendet dazu die Datei application.properties. Gem&auml;&szlig; der 
+      Anzahl potentiell eingesetzter Hosts gibt es ebensoviele private Felder, die jeweils als Paar (PC-Namen und Logging-Pfad) an einen der m&ouml;glichen Hosts gebunden sind. 
+    
+                    <p></p>
+                        
+                    <p></p>
+                          Als Einstiegspunkt f&uuml;r das Laden der Anwendungskonfiguration dient die Methode loadDefault(). Sie delegiert an die Methode load(), welche die Properties-Datei l&auml;dt.
+    
+                    <p></p>
+                        
+                    <p></p>
+                          Die Zuweisung des jeweiligen Property aus der geladenen Datei an das entsprechende Feld der Klasse erfolgt &uuml;ber die Methode getRequired(), die aus dem &uuml;bergebenen Schl&uuml;ssel 
+      den korrepondierenden Wert der Properties-Datei liest.
     
                     <p></p>
                       

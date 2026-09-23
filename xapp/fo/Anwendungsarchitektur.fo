@@ -28,7 +28,7 @@
             <fo:block font-family="Helvetica, Arial, sans-serif" font-size="20pt" font-weight="bold" space-after="10pt" space-before="10pt" text-align="start">
           &#133;Anwendungsarchitektur</fo:block>
             <fo:block text-align="start" font-family="Helvetica, Arial, sans-serif" font-size="10pt">Tim Schmitz</fo:block>
-            <fo:block text-align="start" font-family="Helvetica, Arial, sans-serif" font-size="10pt">22.09.2026</fo:block>
+            <fo:block text-align="start" font-family="Helvetica, Arial, sans-serif" font-size="10pt">23.09.2026</fo:block>
         </fo:flow>
     </fo:page-sequence>
     <fo:page-sequence master-reference="single-page" initial-page-number="2">
@@ -102,7 +102,7 @@
           </fo:block>
                         </fo:list-item-label>
                         <fo:list-item-body>
-                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" start-indent="5mm">Die Hauptklasse ruft den Wrapper ApplicationStart </fo:block>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" start-indent="5mm">Die Hauptklasse ruft die Startklasse ApplicationStart als Wrapper der Anwendung</fo:block>
                         </fo:list-item-body>
                     </fo:list-item>
                     <fo:list-item>
@@ -111,7 +111,7 @@
           </fo:block>
                         </fo:list-item-label>
                         <fo:list-item-body>
-                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" start-indent="5mm">Dieser Wrapper delegiert den ersten Teil der Programmausführung an die Ladeklasse ApplicationBootstrap</fo:block>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" start-indent="5mm">Diese Startklasse delegiert die Initialisierung der Programmausführung an die Ladeklasse ApplicationBootstrap</fo:block>
                         </fo:list-item-body>
                     </fo:list-item>
                     <fo:list-item>
@@ -147,7 +147,7 @@
           </fo:block>
                         </fo:list-item-label>
                         <fo:list-item-body>
-                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" start-indent="5mm">Danach wird von der Ladeklasse die eigentliche Ausführung der Anwendung, der ControlService, gestartet</fo:block>
+                            <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" start-indent="5mm">Danach wird von der Startklasse die eigentliche Ausführung der Anwendung, der ControlService, gestartet</fo:block>
                         </fo:list-item-body>
                     </fo:list-item>
                 </fo:list-block>
@@ -190,7 +190,17 @@
                 <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" font-weight="bold">config </fo:block>
                     
                 <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
-      Dieses Paket beinhaltet die Anwendungskonfiguration. Diese Klasse verwaltet die Konfigurationsdaten und verwendet dazu die Datei application.properties. 
+      Dieses Paket beinhaltet die Anwendungskonfiguration. Diese Klasse verwaltet die Konfigurationsdaten und verwendet dazu die Datei application.properties. Gemäß der 
+      Anzahl potentiell eingesetzter Hosts gibt es ebensoviele private Felder, die jeweils als Paar (PC-Namen und Logging-Pfad) an einen der möglichen Hosts gebunden sind. 
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Als Einstiegspunkt für das Laden der Anwendungskonfiguration dient die Methode loadDefault(). Sie delegiert an die Methode load(), welche die Properties-Datei lädt.
+    </fo:block>
+                    
+                <fo:block font-family="Helvetica, Arial, sans-serif" font-size="10pt" text-align="justify" space-before="10pt" space-after="10pt">
+      Die Zuweisung des jeweiligen Property aus der geladenen Datei an das entsprechende Feld der Klasse erfolgt über die Methode getRequired(), die aus dem übergebenen Schlüssel 
+      den korrepondierenden Wert der Properties-Datei liest.
     </fo:block>
                   
             </fo:block>
